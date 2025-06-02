@@ -1,0 +1,118 @@
+[
+  {
+    "feature": "explain",
+    "date": "2025-06-02 17:41",
+    "url": "comparison_report_explain_code_20250602_174114.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.6925,
+      "accuracy": 0.7140000000000001,
+      "quality": 0.5767499999999999,
+      "response_time": 1.0,
+      "overall": 0.6610833333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-02 17:40",
+    "url": "comparison_report_generate_code_20250602_174045.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8210000000000001,
+      "accuracy": 0.6832499999999999,
+      "quality": 0.852,
+      "response_time": 1.0,
+      "overall": 0.7854166666666665
+    }
+  },
+  {
+    "feature": "chat",
+    "date": "2025-06-02 17:38",
+    "url": "comparison_report_chat_window_20250602_173848.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8619999999999999,
+      "accuracy": 0.8619999999999999,
+      "quality": 0.82575,
+      "response_time": 1.0,
+      "overall": 0.8499166666666665
+    }
+  },
+  {
+    "feature": "chat",
+    "date": "2025-06-02 17:24",
+    "url": "comparison_report_chat_window_20250602_172427.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8619999999999999,
+      "accuracy": 0.8619999999999999,
+      "quality": 0.82575,
+      "response_time": 1.0,
+      "overall": 0.8499166666666665
+    }
+  }
+]

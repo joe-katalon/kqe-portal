@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalon LLM Comparison Framework - Test Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .katalon-gradient {
+            background: linear-gradient(135deg, #00C4CC 0%, #7B68EE 100%);
+        }
+        .metric-card {
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .phase-indicator {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .compact-chart {
+            height: 60px !important;
+            width: 60px !important;
+            max-height: 60px;
+            max-width: 60px;
+        }
+        .feature-chart {
+            height: 100px !important;
+            width: 100px !important;
+            max-height: 100px;
+            max-width: 100px;
+        }
+        .medium-chart {
+            height: 120px !important;
+            max-height: 120px;
+        }
+        .dashboard-section {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        /* Ensure crisp chart rendering */
+        .chart-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Compact Header -->
+        <header class="text-center mb-8">
+            <div class="katalon-gradient rounded-2xl p-6 text-white mb-6">
+                <div class="flex justify-center items-center mb-3">
+                    <img src="https://katalon.com/hubfs/katalon_logo%20(1).svg" alt="Katalon Logo" class="h-10 mr-3 filter brightness-0 invert">
+                    <h1 class="text-3xl font-bold">LLM Comparison Framework</h1>
+                </div>
+                <p class="text-lg opacity-90">Advanced AI Model Evaluation & Analysis Dashboard</p>
+                <div class="mt-3 text-sm opacity-80">
+                    🔬 3-Phase Evaluation • 🧠 LLM3 Independent Judge • 📊 Comprehensive Analytics
+                </div>
+            </div>
+        </header>
+
+        <!-- Compact System Overview -->
+        <div class="bg-white rounded-xl shadow-lg p-4 mb-6">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <span class="text-xl mr-2">🎯</span>
+                Framework Overview
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <!-- Test Objectives -->
+                <div class="text-center p-3 bg-blue-50 rounded-lg">
+                    <div class="text-2xl mb-1">🔍</div>
+                    <h3 class="font-semibold text-blue-800 text-sm">Evaluation Methodology</h3>
+                    <p class="text-xs text-blue-600 mt-1">Independent Judge Approach</p>
+                </div>
+                <div class="text-center p-3 bg-green-50 rounded-lg">
+                    <div class="text-2xl mb-1">📊</div>
+                    <h3 class="font-semibold text-green-800 text-sm">Multi-Dimensional Analysis</h3>
+                    <p class="text-xs text-green-600 mt-1">Comprehensive Coverage</p>
+                </div>
+                <div class="text-center p-3 bg-purple-50 rounded-lg">
+                    <div class="text-2xl mb-1">🎯</div>
+                    <h3 class="font-semibold text-purple-800 text-sm">Comparative Insights</h3>
+                    <p class="text-xs text-purple-600 mt-1">Direct Model Comparison</p>
+                </div>
+                <div class="text-center p-3 bg-orange-50 rounded-lg">
+                    <div class="text-2xl mb-1">🚀</div>
+                    <h3 class="font-semibold text-orange-800 text-sm">Scalable Framework</h3>
+                    <p class="text-xs text-orange-600 mt-1">Enhanced Business Growth</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Dashboard Summary -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+            <!-- Latest Report Overview -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <h2 class="text-lg font-semibold mb-3 flex items-center">
+                    <span class="text-lg mr-2">📈</span>
+                    Latest Performance
+                </h2>
+                <div class="grid grid-cols-3 gap-2 mb-3">
+                    <div class="text-center">
+                        <div class="chart-container">
+                            <canvas id="consistencyChart" class="compact-chart" width="60" height="60"></canvas>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">Consistency</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="chart-container">
+                            <canvas id="accuracyChart" class="compact-chart" width="60" height="60"></canvas>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">Accuracy</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="chart-container">
+                            <canvas id="overallChart" class="compact-chart" width="60" height="60"></canvas>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">Overall</p>
+                    </div>
+                </div>
+                <div id="latestReportInfo" class="mt-3 p-2 bg-gray-50 rounded-lg text-xs">
+                    <div class="font-medium text-gray-800" id="latestFeature">Loading...</div>
+                    <div class="text-gray-600" id="latestDate">Loading...</div>
+                    <div class="text-gray-600" id="latestLLM3">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Compact Trend Analysis -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <h2 class="text-lg font-semibold mb-3 flex items-center">
+                    <span class="text-lg mr-2">📊</span>
+                    Performance Trends
+                </h2>
+                <div class="chart-container">
+                    <canvas id="trendChart" class="medium-chart w-full"></canvas>
+                </div>
+            </div>
+
+            <!-- Compact LLM3 & System Info -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <h2 class="text-lg font-semibold mb-3 flex items-center">
+                    <span class="text-lg mr-2">🧠</span>
+                    LLM3 Judge System
+                </h2>
+                <div id="llm3Info" class="space-y-3">
+                    <div class="p-2 bg-blue-50 rounded-lg">
+                        <div class="font-medium text-blue-800 text-sm">Current LLM3 Judge</div>
+                        <div class="text-xs text-blue-600" id="currentLLM3">Loading...</div>
+                    </div>
+                    
+                    <!-- Statistics and Chart Side by Side -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- Left: Statistics -->
+                        <div class="space-y-2">
+                            <div class="text-center p-2 bg-green-50 rounded">
+                                <div class="text-lg font-bold text-green-800" id="totalReports">-</div>
+                                <div class="text-xs text-green-600">Total Reports</div>
+                            </div>
+                            <div class="text-center p-2 bg-purple-50 rounded">
+                                <div class="text-lg font-bold text-purple-800" id="totalFeatures">-</div>
+                                <div class="text-xs text-purple-600">Features Tested</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right: Feature Chart -->
+                        <div class="flex items-center justify-center">
+                            <div class="chart-container">
+                                <canvas id="featureChart" class="feature-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Reports List -->
+        <div class="bg-white rounded-xl shadow-lg">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold flex items-center">
+                        <span class="text-2xl mr-3">📋</span>
+                        Detailed Comparison Reports
+                    </h2>
+                    <div class="text-sm text-gray-500">
+                        Click any report to view comprehensive analysis
+                    </div>
+                </div>
+                
+                <!-- Enhanced Search and Filter -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <input type="text" 
+                           id="searchInput" 
+                           placeholder="Search reports..." 
+                           class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <select id="featureFilter" 
+                            class="p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">All Features</option>
+                        <option value="generate">Generate Code</option>
+                        <option value="explain">Explain Code</option>
+                        <option value="chat">Chat Window</option>
+                    </select>
+                    <select id="performanceFilter" 
+                            class="p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">All Performance</option>
+                        <option value="high">High Performance (>0.8)</option>
+                        <option value="medium">Medium Performance (0.6-0.8)</option>
+                        <option value="low">Low Performance (<0.6)</option>
+                    </select>
+                </div>
+
+                <!-- Enhanced Reports Table -->
+                <div class="overflow-x-auto dashboard-section">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50 sticky top-0">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature & Models</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & LLM3 Judge</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Performance Metrics</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportsTable" class="bg-white divide-y divide-gray-200">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Footer with System Info -->
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            <div class="bg-white rounded-lg shadow p-3">
+                <p class="mb-1">
+                    <strong>Katalon LLM Comparison Framework</strong> - Advanced AI Model Evaluation System
+                </p>
+                <p class="text-xs">
+                    🔬 3-Phase Testing • 🧠 Independent LLM3 Judge • 📊 Multi-Dimensional Analysis • 🎯 Data-Driven Decisions
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let reportsData = [];
+
+        // Load and display reports
+        async function loadReports() {
+            try {
+                const response = await fetch('reports_data.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to load reports_data.json. Status: ${response.status}`);
+                }
+                reportsData = await response.json();
+                
+                displayReports(reportsData);
+                updateCharts(reportsData);
+                updateSystemInfo(reportsData);
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                document.getElementById('reportsTable').innerHTML = `
+                    <tr>
+                        <td colspan="4" class="px-6 py-8 text-center text-red-500">
+                            <div class="text-lg mb-2">⚠️ Error loading reports</div>
+                            <div class="text-sm text-gray-500">Details: ${error.message}</div>
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        // Update system information
+        function updateSystemInfo(reports) {
+            if (!reports.length) return;
+
+            const latestReport = reports[0];
+            
+            // Update latest report info with actual data
+            document.getElementById('latestFeature').textContent = `${getFeatureDisplayName(latestReport.feature)} Feature`;
+            document.getElementById('latestDate').textContent = new Date(latestReport.date).toLocaleString();
+            
+            // Extract LLM3 info from the actual report data
+            const llm3Info = latestReport.llm3 || { provider: 'unknown', model: 'unknown' };
+            const llm3Display = llm3Info.provider !== 'unknown' 
+                ? `${llm3Info.provider.charAt(0).toUpperCase() + llm3Info.provider.slice(1)} ${llm3Info.model}`
+                : 'See detailed report';
+            document.getElementById('latestLLM3').textContent = `LLM3 Judge: ${llm3Display}`;
+            
+            // Update current LLM3 with most common judge from recent reports
+            const recentReports = reports.slice(0, 5);
+            const llm3Usage = {};
+            recentReports.forEach(report => {
+                if (report.llm3 && report.llm3.provider !== 'unknown') {
+                    const key = `${report.llm3.provider} ${report.llm3.model}`;
+                    llm3Usage[key] = (llm3Usage[key] || 0) + 1;
+                }
+            });
+            
+            // Find most used LLM3
+            let mostUsedLLM3 = 'Multiple Judges in Use';
+            let maxUsage = 0;
+            for (const [llm3, count] of Object.entries(llm3Usage)) {
+                if (count > maxUsage) {
+                    maxUsage = count;
+                    mostUsedLLM3 = llm3.charAt(0).toUpperCase() + llm3.slice(1);
+                }
+            }
+            document.getElementById('currentLLM3').textContent = mostUsedLLM3;
+
+            // Update counts
+            document.getElementById('totalReports').textContent = reports.length;
+            const uniqueFeatures = [...new Set(reports.map(r => r.feature))];
+            document.getElementById('totalFeatures').textContent = uniqueFeatures.length;
+        }
+
+        // Get display name for feature
+        function getFeatureDisplayName(feature) {
+            const names = {
+                'generate': 'Generate Code',
+                'explain': 'Explain Code', 
+                'chat': 'Chat Window'
+            };
+            return names[feature] || feature.charAt(0).toUpperCase() + feature.slice(1);
+        }
+
+        // Get performance level
+        function getPerformanceLevel(score) {
+            if (score >= 0.8) return 'high';
+            if (score >= 0.6) return 'medium';
+            return 'low';
+        }
+
+        // Get performance color
+        function getPerformanceColor(score) {
+            if (score >= 0.8) return 'text-green-600 bg-green-100';
+            if (score >= 0.6) return 'text-yellow-600 bg-yellow-100';
+            return 'text-red-600 bg-red-100';
+        }
+
+        // Display reports in enhanced table
+        function displayReports(reports) {
+            const tableBody = document.getElementById('reportsTable');
+            tableBody.innerHTML = reports.map(report => {
+                const consistencyColor = getPerformanceColor(report.metrics.consistency || 0);
+                const accuracyColor = getPerformanceColor(report.metrics.accuracy || 0);
+                const overallColor = getPerformanceColor(report.metrics.overall || 0);
+                
+                // Get LLM3 display info
+                const llm3Info = report.llm3 || { provider: 'unknown', model: 'unknown' };
+                const llm3Display = llm3Info.provider !== 'unknown' 
+                    ? `${llm3Info.provider.charAt(0).toUpperCase() + llm3Info.provider.slice(1)} ${llm3Info.model.split('-')[0]}`
+                    : 'Unknown Judge';
+                
+                return `
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="flex flex-col">
+                                <div class="text-sm font-medium text-gray-900 mb-1">
+                                    ${getFeatureDisplayName(report.feature)}
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    <div>LL1: ${report.models?.ll1?.type || 'Unknown'} (${report.models?.ll1?.model || 'Unknown'})</div>
+                                    <div>LL2: ${report.models?.ll2?.type || 'Unknown'} (${report.models?.ll2?.model || 'Unknown'})</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex flex-col">
+                                <div class="text-sm text-gray-900">
+                                    ${new Date(report.date).toLocaleDateString()}
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    ${new Date(report.date).toLocaleTimeString()}
+                                </div>
+                                <div class="text-xs text-blue-600 mt-1">
+                                    🧠 ${llm3Display}
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="space-y-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-600">Consistency:</span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${consistencyColor}">
+                                        ${(report.metrics.consistency || 0).toFixed(2)}
+                                    </span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-600">Accuracy:</span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${accuracyColor}">
+                                        ${(report.metrics.accuracy || 0).toFixed(2)}
+                                    </span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-600 font-semibold">Overall:</span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${overallColor}">
+                                        ${(report.metrics.overall || 0).toFixed(2)}
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-sm">
+                            <a href="${report.url}" 
+                               class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                                📊 View Report
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Update dashboard charts
+        function updateCharts(reports) {
+            if (!reports.length) return;
+
+            const latestReport = reports[0];
+            const consistency = latestReport.metrics?.consistency || 0;
+            const accuracy = latestReport.metrics?.accuracy || 0;
+            const overall = latestReport.metrics?.overall || 0;
+
+            // Create mini gauge charts for latest metrics
+            createGaugeChart('consistencyChart', consistency, '#3B82F6');
+            createGaugeChart('accuracyChart', accuracy, '#10B981');
+            createGaugeChart('overallChart', overall, '#8B5CF6');
+
+            // Compact Trend Line Chart
+            if (document.getElementById('trendChart')) {
+                const trendCanvas = document.getElementById('trendChart');
+                const ratio = window.devicePixelRatio || 1;
+                
+                // Set proper dimensions
+                trendCanvas.style.height = '120px';
+                trendCanvas.height = 120 * ratio;
+                trendCanvas.width = trendCanvas.offsetWidth * ratio;
+                
+                const ctx = trendCanvas.getContext('2d');
+                ctx.scale(ratio, ratio);
+                
+                new Chart(trendCanvas, {
+                    type: 'line',
+                    data: {
+                        labels: reports.slice(0, 10).map(r => new Date(r.date).toLocaleDateString()).reverse(),
+                        datasets: [
+                            {
+                                label: 'Overall',
+                                data: reports.slice(0, 10).map(r => r.metrics?.overall || 0).reverse(),
+                                borderColor: '#8B5CF6',
+                                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                                tension: 0.3,
+                                fill: true,
+                                pointRadius: 2,
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'Consistency',
+                                data: reports.slice(0, 10).map(r => r.metrics?.consistency || 0).reverse(),
+                                borderColor: '#3B82F6',
+                                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                tension: 0.3,
+                                pointRadius: 2,
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'Accuracy',
+                                data: reports.slice(0, 10).map(r => r.metrics?.accuracy || 0).reverse(),
+                                borderColor: '#10B981',
+                                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                tension: 0.3,
+                                pointRadius: 2,
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: false,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 1,
+                                ticks: {
+                                    font: { size: 8 }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: { size: 8 },
+                                    maxRotation: 45
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    font: { size: 8 },
+                                    padding: 5
+                                }
+                            }
+                        },
+                        animation: {
+                            duration: 500
+                        }
+                    }
+                });
+            }
+
+            // Compact Feature Distribution Chart
+            const features = [...new Set(reports.map(r => r.feature))];
+            if (document.getElementById('featureChart')) {
+                const featureCanvas = document.getElementById('featureChart');
+                const ratio = window.devicePixelRatio || 1;
+                
+                // Set proper dimensions - increased size for better balance
+                const chartSize = 100;
+                featureCanvas.width = chartSize * ratio;
+                featureCanvas.height = chartSize * ratio;
+                featureCanvas.style.width = chartSize + 'px';
+                featureCanvas.style.height = chartSize + 'px';
+                
+                const ctx = featureCanvas.getContext('2d');
+                ctx.scale(ratio, ratio);
+                
+                new Chart(featureCanvas, {
+                    type: 'doughnut',
+                    data: {
+                        labels: features.map(f => getFeatureDisplayName(f)),
+                        datasets: [{
+                            data: features.map(f => reports.filter(r => r.feature === f).length),
+                            backgroundColor: [
+                                '#3B82F6',
+                                '#10B981', 
+                                '#F59E0B',
+                                '#EF4444',
+                                '#8B5CF6'
+                            ],
+                            borderWidth: 1,
+                            borderColor: '#FFFFFF'
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                        maintainAspectRatio: true,
+                        cutout: '50%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    font: { size: 9 },
+                                    padding: 4
+                                }
+                            }
+                        },
+                        animation: {
+                            duration: 500
+                        }
+                    }
+                });
+            }
+        }
+
+        // Create compact gauge chart
+        function createGaugeChart(canvasId, value, color) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            // Set proper dimensions for crisp rendering
+            const size = 60;
+            const ratio = window.devicePixelRatio || 1;
+            
+            canvas.width = size * ratio;
+            canvas.height = size * ratio;
+            canvas.style.width = size + 'px';
+            canvas.style.height = size + 'px';
+            
+            const ctx = canvas.getContext('2d');
+            ctx.scale(ratio, ratio);
+
+            new Chart(canvas, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [value, 1 - value],
+                        backgroundColor: [color, '#E5E7EB'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: true,
+                    cutout: '65%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                },
+                plugins: [{
+                    beforeDraw: function(chart) {
+                        const width = chart.width;
+                        const height = chart.height;
+                        const ctx = chart.ctx;
+                        
+                        ctx.restore();
+                        const fontSize = size / 5;
+                        ctx.font = fontSize + "px Arial";
+                        ctx.textBaseline = "middle";
+                        ctx.textAlign = "center";
+                        ctx.fillStyle = color;
+                        
+                        const text = (value * 100).toFixed(0) + '%';
+                        ctx.fillText(text, width / 2 / ratio, height / 2 / ratio);
+                        ctx.save();
+                    }
+                }]
+            });
+        }
+
+        // Enhanced filtering
+        function filterReports() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const featureFilter = document.getElementById('featureFilter').value;
+            const performanceFilter = document.getElementById('performanceFilter').value;
+
+            let filteredReports = reportsData;
+
+            // Apply search filter
+            if (searchTerm) {
+                filteredReports = filteredReports.filter(report => 
+                    getFeatureDisplayName(report.feature).toLowerCase().includes(searchTerm) ||
+                    report.date.toLowerCase().includes(searchTerm) ||
+                    (report.models?.ll1?.type || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.ll1?.model || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.ll2?.type || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.ll2?.model || '').toLowerCase().includes(searchTerm) ||
+                    (report.llm3?.provider || '').toLowerCase().includes(searchTerm) ||
+                    (report.llm3?.model || '').toLowerCase().includes(searchTerm)
+                );
+            }
+
+            // Apply feature filter
+            if (featureFilter) {
+                filteredReports = filteredReports.filter(report => report.feature === featureFilter);
+            }
+
+            // Apply performance filter
+            if (performanceFilter) {
+                filteredReports = filteredReports.filter(report => {
+                    const overall = report.metrics?.overall || 0;
+                    switch (performanceFilter) {
+                        case 'high': return overall >= 0.8;
+                        case 'medium': return overall >= 0.6 && overall < 0.8;
+                        case 'low': return overall < 0.6;
+                        default: return true;
+                    }
+                });
+            }
+
+            displayReports(filteredReports);
+        }
+
+        // Event listeners
+        document.getElementById('searchInput')?.addEventListener('input', filterReports);
+        document.getElementById('featureFilter')?.addEventListener('change', filterReports);
+        document.getElementById('performanceFilter')?.addEventListener('change', filterReports);
+
+        // Initial load
+        loadReports();
+    </script>
+</body>
+</html> 
