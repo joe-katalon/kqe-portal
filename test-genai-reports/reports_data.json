@@ -1,6 +1,64 @@
 [
   {
     "feature": "explain",
+    "date": "2025-06-02 21:34",
+    "url": "comparison_report_explain_code_20250602_213411.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-05-20",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8475000000000001,
+      "accuracy": 0.8574999999999999,
+      "quality": 0.61125,
+      "response_time": 1.0,
+      "overall": 0.7720833333333333
+    }
+  },
+  {
+    "feature": "explain",
+    "date": "2025-06-02 21:30",
+    "url": "comparison_report_explain_code_20250602_213019.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-05-20",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8399999999999999,
+      "accuracy": 0.8575000000000002,
+      "quality": 0.60625,
+      "response_time": 1.0,
+      "overall": 0.7679166666666667
+    }
+  },
+  {
+    "feature": "explain",
     "date": "2025-06-02 17:41",
     "url": "comparison_report_explain_code_20250602_174114.html",
     "models": {
