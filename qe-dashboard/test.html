@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QE Dashboard - Period: 2025-05-06 to 2025-06-05</title>
+    <title>QE Dashboard - Period: 2025-06-01 to 2026-06-04</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; margin: 0; /* overflow-y: hidden; REMOVED */ }
@@ -303,10 +303,10 @@
                     <div class="katalon-logo">
                         <img src="https://d1h3p5fzmizjvp.cloudfront.net/themes/katalon_4/images/header/katalon_logo.svg" alt="Katalon Logo">
                     </div>
-                    <h1>Quality Engineering Dashboard</h1>
+                    <h1>QE Performance Dashboard</h1>
                 </div>
             </div>
-            <div class="period-info">Period: 2025-05-06 to 2025-06-05</div>
+            <div class="period-info">Period: 2025-06-01 to 2026-06-04</div>
         </div> <!-- WRAPPER ENDS HERE -->
 
         <div class="tabs">
@@ -327,11 +327,11 @@
                     <span class="stat-label">Bugs Reported (JIRA)</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">52</span>
+                    <span class="stat-number">0</span>
                     <span class="stat-label">PRs Merged (GitHub)</span>
                 </div>
                  <div class="stat-card">
-                    <span class="stat-number">102</span>
+                    <span class="stat-number">0</span>
                     <span class="stat-label">Direct Commits (GitHub)</span>
                 </div>
                 <div class="stat-card">
@@ -339,11 +339,11 @@
                     <span class="stat-label">JIRA Backlogs Completed</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">203</span>
+                    <span class="stat-number">0</span>
                     <span class="stat-label">Manual Cases Run (TestOps)</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">17370</span>
+                    <span class="stat-number">11673</span>
                     <span class="stat-label">Auto Cases Run (TestOps)</span>
                 </div>
             </div>
@@ -360,7 +360,7 @@
                             <th class="score-cell sortable" onclick="sortTable(5, 'leaderboardTable')">GH Automation</th>
                             <th class="score-cell sortable" onclick="sortTable(6, 'leaderboardTable')">Run Manual</th>
                             <th class="score-cell sortable" onclick="sortTable(7, 'leaderboardTable')">Run Auto</th>
-                            <th class="sortable" onclick="sortTable(8, 'leaderboardTable')">JIRA Backlogs</th>
+                            <th class="sortable" onclick="sortTable(8, 'leaderboardTable')">JIRA Backlogs (Story Points) 🛠️</th>
                             <th class="score-cell sortable" onclick="sortTable(9, 'leaderboardTable')">Docs</th>
                         </tr>
                     </thead>
@@ -371,35 +371,42 @@
                         <tr class="member-row rank-1">
                             <td class="rank-cell rank-1">🥇</td>
                             <td class="member-info">
-                                <span class="member-name">Huy (Henrik) Dao</span>
-                                <span class="member-role">huy.dao@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Nhi Ly</span>
+                                <span class="member-role">nhi.ly@katalon.com / Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestOps / Report &amp; Analytics</td>
-                            <td class="score-cell total-score">242</td>
+                            <td class="team-cell">TestOps / Core</td>
+                            <td class="score-cell total-score">50</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10413%22%2C%20%22TO-10404%22%2C%20%22TO-10403%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        7.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                227
+                                8
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                324
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 
                                 
                                 
                                 
-                                    -
+                                
+                                    
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10284%22%2C%20%22KSR-7727%22%2C%20%22TO-9887%22%2C%20%22TO-9857%22%2C%20%22TO-9856%22%2C%20%22TO-9855%22%2C%20%22TO-9304%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (7 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10284%22%2C%20%22KSR-7727%22%2C%20%22TO-9887%22%2C%20%22TO-9857%22%2C%20%22TO-9856%22%2C%20%22TO-9855%22%2C%20%22TO-9304%22%29
+                                        
+                                    ">
+                                        42
+                                    </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -415,41 +422,42 @@
                         <tr class="member-row rank-2">
                             <td class="rank-cell rank-2">🥈</td>
                             <td class="member-info">
-                                <span class="member-name">Nhi Ly</span>
-                                <span class="member-role">nhi.ly@katalon.com / Quality Engineer</span>
+                                <span class="member-name">Viet Nguyen</span>
+                                <span class="member-role">viet.dnguyen@katalon.com / Lead Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestOps / Core</td>
-                            <td class="score-cell total-score">167</td>
+                            <td class="team-cell">TrueTest / TrueTest</td>
+                            <td class="score-cell total-score">36</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10440%22%2C%20%22TO-10421%22%2C%20%22TO-10402%22%2C%20%22TO-10335%22%2C%20%22TO-10332%22%2C%20%22TO-10329%22%2C%20%22TO-10320%22%2C%20%22TO-10285%22%2C%20%22TO-10283%22%2C%20%22TO-10265%22%2C%20%22TO-10212%22%2C%20%22TO-10174%22%2C%20%22TO-10164%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        30
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                95
+                                -
                             </td>
                             <td class="score-cell dimension-score">
-                                28
+                                -
                             </td>
                             <td class="score-cell dimension-score">
-                                189
+                                -
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
                                 
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10284%22%2C%20%22KSR-7727%22%2C%20%22TO-9887%22%2C%20%22TO-9857%22%2C%20%22TO-9856%22%2C%20%22TO-9855%22%2C%20%22TO-9783%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (7 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10284%22%2C%20%22KSR-7727%22%2C%20%22TO-9887%22%2C%20%22TO-9857%22%2C%20%22TO-9856%22%2C%20%22TO-9855%22%2C%20%22TO-9783%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5340%22%2C%20%22KIP-5332%22%2C%20%22KIP-5298%22%2C%20%22KIP-5186%22%2C%20%22KIP-5175%22%2C%20%22KIP-5157%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (6 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5340%22%2C%20%22KIP-5332%22%2C%20%22KIP-5298%22%2C%20%22KIP-5186%22%2C%20%22KIP-5175%22%2C%20%22KIP-5157%22%29
+                                        
                                     ">
-                                        42
+                                        36
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -465,41 +473,42 @@
                         <tr class="member-row rank-3">
                             <td class="rank-cell rank-3">🥉</td>
                             <td class="member-info">
-                                <span class="member-name">Phu Vuong</span>
-                                <span class="member-role">phu.vuong@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Lai Pham</span>
+                                <span class="member-role">lai.pham@katalon.com / Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestCloud / TestCloud</td>
-                            <td class="score-cell total-score">134</td>
+                            <td class="team-cell">TrueTest / TrueTest</td>
+                            <td class="score-cell total-score">30</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KTC-3849%22%2C%20%22KTC-3847%22%2C%20%22KTC-3846%22%2C%20%22KTC-3845%22%2C%20%22KTC-3844%22%2C%20%22KTC-3843%22%2C%20%22KTC-3842%22%2C%20%22KTC-3838%22%2C%20%22KTC-3835%22%2C%20%22KTC-3833%22%2C%20%22KTC-3828%22%2C%20%22KTC-3821%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        27.5
-                                    </a>
+                                    -
                                 
-                            </td>
-                            <td class="score-cell dimension-score">
-                                61
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                32
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 
                                 
                                 
                                 
+                                
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KTC-3840%22%2C%20%22KSR-7694%22%2C%20%22KTC-3810%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (3 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KTC-3840%22%2C%20%22KSR-7694%22%2C%20%22KTC-3810%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5296%22%2C%20%22KIP-5295%22%2C%20%22KIP-5267%22%2C%20%22KIP-5144%22%2C%20%22KIP-5064%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (5 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5296%22%2C%20%22KIP-5295%22%2C%20%22KIP-5267%22%2C%20%22KIP-5144%22%2C%20%22KIP-5064%22%29
+                                        
                                     ">
-                                        18
+                                        30
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -515,35 +524,42 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#4</td>
                             <td class="member-info">
-                                <span class="member-name">Linh Phan</span>
-                                <span class="member-role">linh.phan@katalon.com / Quality Engineer</span>
+                                <span class="member-name">Vuong (David) Cap</span>
+                                <span class="member-role">vuong.cap@katalon.com / Senior Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestOps / Admin</td>
-                            <td class="score-cell total-score">120</td>
+                            <td class="team-cell">TestOps / Manual Test</td>
+                            <td class="score-cell total-score">18</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10451%22%2C%20%22TO-10450%22%2C%20%22TO-10437%22%2C%20%22TO-10399%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        10
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                100
+                                8
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                802
+                                9
                             </td>
                             <td class="score-cell dimension-score">
                                 
                                 
                                 
                                 
-                                    -
+                                
+                                    
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10323%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (1 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10323%22%29
+                                        
+                                    ">
+                                        6
+                                    </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -559,41 +575,42 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#5</td>
                             <td class="member-info">
-                                <span class="member-name">Vuong (David) Cap</span>
-                                <span class="member-role">vuong.cap@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Chi Nguyen</span>
+                                <span class="member-role">chi.nguyen@katalon.com / Senior Quality Engineer</span>
                             </td>
                             <td class="team-cell">TestOps / Manual Test</td>
-                            <td class="score-cell total-score">114</td>
+                            <td class="score-cell total-score">18</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10455%22%2C%20%22TO-10454%22%2C%20%22TO-10339%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        7.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                54
+                                8
                             </td>
                             <td class="score-cell dimension-score">
-                                43
+                                -
                             </td>
                             <td class="score-cell dimension-score">
-                                91
+                                534
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
                                 
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10323%22%2C%20%22TO-10047%22%2C%20%22TO-9774%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (3 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10323%22%2C%20%22TO-10047%22%2C%20%22TO-9774%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10204%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (1 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10204%22%29
+                                        
                                     ">
-                                        18
+                                        6
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -609,25 +626,22 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#6</td>
                             <td class="member-info">
-                                <span class="member-name">Lieu Huynh</span>
-                                <span class="member-role">lieu.huynh@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Phu Vuong</span>
+                                <span class="member-role">phu.vuong@katalon.com / Senior Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestOps / Core</td>
-                            <td class="score-cell total-score">106.5</td>
+                            <td class="team-cell">TestCloud / TestCloud</td>
+                            <td class="score-cell total-score">18</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10469%22%2C%20%22TO-10456%22%2C%20%22TO-10444%22%2C%20%22TO-10423%22%2C%20%22TO-10422%22%2C%20%22TO-10419%22%2C%20%22TO-10417%22%2C%20%22TO-10333%22%2C%20%22TO-10330%22%2C%20%22TO-10327%22%2C%20%22TO-10324%22%2C%20%22TO-10307%22%2C%20%22TO-10207%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        32.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                32
+                                -
                             </td>
                             <td class="score-cell dimension-score">
-                                62
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 -
@@ -637,13 +651,17 @@
                                 
                                 
                                 
+                                
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10257%22%2C%20%22KSR-7681%22%2C%20%22TO-10082%22%2C%20%22TO-9964%22%2C%20%22TO-9936%22%2C%20%22TO-9849%22%2C%20%22TO-9784%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (7 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10257%22%2C%20%22KSR-7681%22%2C%20%22TO-10082%22%2C%20%22TO-9964%22%2C%20%22TO-9936%22%2C%20%22TO-9849%22%2C%20%22TO-9784%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KTC-3840%22%2C%20%22KSR-7694%22%2C%20%22KTC-3810%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (3 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KTC-3840%22%2C%20%22KSR-7694%22%2C%20%22KTC-3810%22%29
+                                        
                                     ">
-                                        42
+                                        18
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -659,41 +677,33 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#7</td>
                             <td class="member-info">
-                                <span class="member-name">Chi Nguyen</span>
-                                <span class="member-role">chi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Huy (Henrik) Dao</span>
+                                <span class="member-role">huy.dao@katalon.com / Senior Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestOps / Manual Test</td>
-                            <td class="score-cell total-score">75</td>
+                            <td class="team-cell">TestOps / Report &amp; Analytics</td>
+                            <td class="score-cell total-score">15</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10337%22%2C%20%22TO-10199%22%2C%20%22TO-10192%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        7.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                32
+                                15
                             </td>
                             <td class="score-cell dimension-score">
-                                7
+                                -
                             </td>
                             <td class="score-cell dimension-score">
-                                3647
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 
                                 
                                 
                                 
-                                    
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10204%22%2C%20%22TO-10125%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (2 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10204%22%2C%20%22TO-10125%22%29
-                                    ">
-                                        12
-                                    </a>
+                                
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -709,41 +719,42 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#8</td>
                             <td class="member-info">
-                                <span class="member-name">Truc Tran</span>
-                                <span class="member-role">truc.tran@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Thiep Truong</span>
+                                <span class="member-role">thiep.truong@katalon.com / Principle Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TestOps / Admin</td>
-                            <td class="score-cell total-score">73</td>
+                            <td class="team-cell">Katalon Studio / Studio</td>
+                            <td class="score-cell total-score">12</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10458%22%2C%20%22TO-10414%22%2C%20%22TO-10334%22%2C%20%22TO-10319%22%2C%20%22TO-10316%22%2C%20%22TO-10308%22%2C%20%22TO-10274%22%2C%20%22TO-10261%22%2C%20%22TO-10210%22%2C%20%22TO-10206%22%2C%20%22TO-10200%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        27.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                6
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
                                 
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10256%22%2C%20%22TO-10145%22%2C%20%22KSR-7463%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (3 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10256%22%2C%20%22TO-10145%22%2C%20%22KSR-7463%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7780%22%2C%20%22KSR-7747%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (2 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7780%22%2C%20%22KSR-7747%22%29
+                                        
                                     ">
-                                        18
+                                        12
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -759,41 +770,42 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#9</td>
                             <td class="member-info">
-                                <span class="member-name">Phong Nguyen</span>
-                                <span class="member-role">phong.nguyen@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Lieu Huynh</span>
+                                <span class="member-role">lieu.huynh@katalon.com / Senior Quality Engineer</span>
                             </td>
-                            <td class="team-cell">Katalon Studio / Studio</td>
-                            <td class="score-cell total-score">67</td>
+                            <td class="team-cell">TestOps / Core</td>
+                            <td class="score-cell total-score">12</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22STUDIO-7714%22%2C%20%22STUDIO-7709%22%2C%20%22STUDIO-7693%22%2C%20%22STUDIO-7690%22%2C%20%22STUDIO-7684%22%2C%20%22STUDIO-7680%22%2C%20%22STUDIO-7679%22%2C%20%22STUDIO-7678%22%2C%20%22STUDIO-7660%22%2C%20%22STUDIO-7654%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        25
-                                    </a>
+                                    -
                                 
-                            </td>
-                            <td class="score-cell dimension-score">
-                                36
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                4
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 
                                 
                                 
                                 
+                                
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22STUDIO-7538%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (1 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22STUDIO-7538%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7681%22%2C%20%22TO-9784%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (2 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7681%22%2C%20%22TO-9784%22%29
+                                        
                                     ">
-                                        6
+                                        12
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -809,41 +821,42 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#10</td>
                             <td class="member-info">
-                                <span class="member-name">Viet Nguyen</span>
-                                <span class="member-role">viet.dnguyen@katalon.com / Lead Quality Engineer</span>
+                                <span class="member-name">Anh Le</span>
+                                <span class="member-role">anh.mle@katalon.com / Quality Engineer</span>
                             </td>
-                            <td class="team-cell">TrueTest / TrueTest</td>
-                            <td class="score-cell total-score">65</td>
+                            <td class="team-cell">TestCloud / TestCloud</td>
+                            <td class="score-cell total-score">12</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5330%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        2.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                3
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
                                 
                                     
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5340%22%2C%20%22KIP-5332%22%2C%20%22KIP-5298%22%2C%20%22KIP-5251%22%2C%20%22KIP-5200%22%2C%20%22KIP-5198%22%2C%20%22KIP-5191%22%2C%20%22KIP-5186%22%2C%20%22KIP-5185%22%2C%20%22KIP-5175%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (10 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5340%22%2C%20%22KIP-5332%22%2C%20%22KIP-5298%22%2C%20%22KIP-5251%22%2C%20%22KIP-5200%22%2C%20%22KIP-5198%22%2C%20%22KIP-5191%22%2C%20%22KIP-5186%22%2C%20%22KIP-5185%22%2C%20%22KIP-5175%22%29
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7729%22%2C%20%22KSR-7604%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (2 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7729%22%2C%20%22KSR-7604%22%29
+                                        
                                     ">
-                                        60
+                                        12
                                     </a>
+                                    (-)
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -858,294 +871,6 @@
                         
                         <tr class="member-row ">
                             <td class="rank-cell ">#11</td>
-                            <td class="member-info">
-                                <span class="member-name">Anh Le</span>
-                                <span class="member-role">anh.mle@katalon.com / Quality Engineer</span>
-                            </td>
-                            <td class="team-cell">TestCloud / TestCloud</td>
-                            <td class="score-cell total-score">63</td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KTC-3857%22%2C%20%22KTC-3848%22%2C%20%22KTC-3822%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        7.5
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                36
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                
-                                
-                                    
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7729%22%2C%20%22KSR-7604%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (2 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7729%22%2C%20%22KSR-7604%22%29
-                                    ">
-                                        12
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    -
-                                
-                            </td>
-                        </tr>
-                    
-                        
-                        
-                        <tr class="member-row ">
-                            <td class="rank-cell ">#12</td>
-                            <td class="member-info">
-                                <span class="member-name">Lai Pham</span>
-                                <span class="member-role">lai.pham@katalon.com / Quality Engineer</span>
-                            </td>
-                            <td class="team-cell">TrueTest / TrueTest</td>
-                            <td class="score-cell total-score">58</td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5333%22%2C%20%22KIP-5291%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        5
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                10
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                
-                                
-                                    
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5296%22%2C%20%22KIP-5295%22%2C%20%22KIP-5267%22%2C%20%22KIP-5245%22%2C%20%22KIP-5226%22%2C%20%22KIP-5222%22%2C%20%22KIP-5182%22%2C%20%22KIP-5178%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (8 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KIP-5296%22%2C%20%22KIP-5295%22%2C%20%22KIP-5267%22%2C%20%22KIP-5245%22%2C%20%22KIP-5226%22%2C%20%22KIP-5222%22%2C%20%22KIP-5182%22%2C%20%22KIP-5178%22%29
-                                    ">
-                                        48
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    -
-                                
-                            </td>
-                        </tr>
-                    
-                        
-                        
-                        <tr class="member-row ">
-                            <td class="rank-cell ">#13</td>
-                            <td class="member-info">
-                                <span class="member-name">Man Hua</span>
-                                <span class="member-role">man.hua@katalon.com / Fresher Quality Engineer</span>
-                            </td>
-                            <td class="team-cell">TestOps / Core</td>
-                            <td class="score-cell total-score">51.5</td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10322%22%2C%20%22TO-10211%22%2C%20%22TO-10184%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        7.5
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                32
-                            </td>
-                            <td class="score-cell dimension-score">
-                                44
-                            </td>
-                            <td class="score-cell dimension-score">
-                                1029
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                
-                                
-                                    
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10134%22%2C%20%22TO-9965%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (2 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10134%22%2C%20%22TO-9965%22%29
-                                    ">
-                                        12
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    -
-                                
-                            </td>
-                        </tr>
-                    
-                        
-                        
-                        <tr class="member-row ">
-                            <td class="rank-cell ">#14</td>
-                            <td class="member-info">
-                                <span class="member-name">Vi Dinh</span>
-                                <span class="member-role">vi.dinh@katalon.com / Quality Engineer</span>
-                            </td>
-                            <td class="team-cell">e-Commerce / Commerce Engine</td>
-                            <td class="score-cell total-score">35</td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22CE-1634%22%2C%20%22CE-1633%22%2C%20%22CE-1632%22%2C%20%22CE-1628%22%2C%20%22CE-1622%22%2C%20%22CE-1621%22%2C%20%22CE-1618%22%2C%20%22CE-1617%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        17.5
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                
-                                
-                                    -
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    -
-                                
-                            </td>
-                        </tr>
-                    
-                        
-                        
-                        <tr class="member-row ">
-                            <td class="rank-cell ">#15</td>
-                            <td class="member-info">
-                                <span class="member-name">Thiep Truong</span>
-                                <span class="member-role">thiep.truong@katalon.com / Principle Quality Engineer</span>
-                            </td>
-                            <td class="team-cell">Katalon Studio / Studio</td>
-                            <td class="score-cell total-score">34</td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22STUDIO-7699%22%2C%20%22STUDIO-7688%22%2C%20%22STUDIO-7685%22%2C%20%22STUDIO-7672%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        10
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                
-                                
-                                    
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7780%22%2C%20%22KSR-7747%22%2C%20%22STUDIO-7655%22%2C%20%22STUDIO-7539%22%29" target="_blank" title="
-                                        JIRA Sprint/Backlog Tasks (4 tasks completed).
-                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22KSR-7780%22%2C%20%22KSR-7747%22%2C%20%22STUDIO-7655%22%2C%20%22STUDIO-7539%22%29
-                                    ">
-                                        24
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    -
-                                
-                            </td>
-                        </tr>
-                    
-                        
-                        
-                        <tr class="member-row ">
-                            <td class="rank-cell ">#16</td>
-                            <td class="member-info">
-                                <span class="member-name">Thuong Le</span>
-                                <span class="member-role">thuong.le@katalon.com / Quality Engineer</span>
-                            </td>
-                            <td class="team-cell">Katalon Studio / Studio</td>
-                            <td class="score-cell total-score">12.5</td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22STUDIO-7713%22%2C%20%22STUDIO-7708%22%2C%20%22STUDIO-7702%22%2C%20%22STUDIO-7671%22%2C%20%22STUDIO-7668%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        12.5
-                                    </a>
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                -
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                
-                                
-                                    -
-                                
-                            </td>
-                            <td class="score-cell dimension-score">
-                                
-                                
-                                    -
-                                
-                            </td>
-                        </tr>
-                    
-                        
-                        
-                        <tr class="member-row ">
-                            <td class="rank-cell ">#17</td>
                             <td class="member-info">
                                 <span class="member-name">Nhu (Kara) Nguyen</span>
                                 <span class="member-role">nhu.nguyen@katalon.com / Lead Quality Engineer</span>
@@ -1172,6 +897,277 @@
                                 
                                 
                                 
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                        </tr>
+                    
+                        
+                        
+                        <tr class="member-row ">
+                            <td class="rank-cell ">#12</td>
+                            <td class="member-info">
+                                <span class="member-name">Linh Phan</span>
+                                <span class="member-role">linh.phan@katalon.com / Quality Engineer</span>
+                            </td>
+                            <td class="team-cell">TestOps / Admin</td>
+                            <td class="score-cell total-score">8</td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                8
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                        </tr>
+                    
+                        
+                        
+                        <tr class="member-row ">
+                            <td class="rank-cell ">#13</td>
+                            <td class="member-info">
+                                <span class="member-name">Man Hua</span>
+                                <span class="member-role">man.hua@katalon.com / Fresher Quality Engineer</span>
+                            </td>
+                            <td class="team-cell">TestOps / Core</td>
+                            <td class="score-cell total-score">6</td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                
+                                
+                                
+                                    
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-9965%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (1 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-9965%22%29
+                                        
+                                    ">
+                                        6
+                                    </a>
+                                    (-)
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                        </tr>
+                    
+                        
+                        
+                        <tr class="member-row ">
+                            <td class="rank-cell ">#14</td>
+                            <td class="member-info">
+                                <span class="member-name">Truc Tran</span>
+                                <span class="member-role">truc.tran@katalon.com / Senior Quality Engineer</span>
+                            </td>
+                            <td class="team-cell">TestOps / Admin</td>
+                            <td class="score-cell total-score">6</td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                
+                                
+                                
+                                    
+                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10145%22%29" target="_blank" title="
+                                        JIRA Sprint/Backlog Tasks (1 tasks, 0.0 SP counted for score):
+                                        Score Formula: (Completed Tasks * Points) * Story Point Multiplier
+                                        Tasks considered: https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22TO-10145%22%29
+                                        
+                                    ">
+                                        6
+                                    </a>
+                                    (-)
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                        </tr>
+                    
+                        
+                        
+                        <tr class="member-row ">
+                            <td class="rank-cell ">#15</td>
+                            <td class="member-info">
+                                <span class="member-name">Phong Nguyen</span>
+                                <span class="member-role">phong.nguyen@katalon.com / Senior Quality Engineer</span>
+                            </td>
+                            <td class="team-cell">Katalon Studio / Studio</td>
+                            <td class="score-cell total-score">3</td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                3
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                4
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                        </tr>
+                    
+                        
+                        
+                        <tr class="member-row ">
+                            <td class="rank-cell ">#16</td>
+                            <td class="member-info">
+                                <span class="member-name">An Tran</span>
+                                <span class="member-role">an.vtran@katalon.com / Lead Quality Engineer</span>
+                            </td>
+                            <td class="team-cell">Katalon Studio / Studio</td>
+                            <td class="score-cell total-score">-</td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                11126
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                        </tr>
+                    
+                        
+                        
+                        <tr class="member-row ">
+                            <td class="rank-cell ">#17</td>
+                            <td class="member-info">
+                                <span class="member-name">Khanh Tran</span>
+                                <span class="member-role">khanh.qmtran@katalon.com / Senior Quality Engineer</span>
+                            </td>
+                            <td class="team-cell">Katalon Studio / Studio</td>
+                            <td class="score-cell total-score">-</td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                    -
+                                
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                -
+                            </td>
+                            <td class="score-cell dimension-score">
+                                
+                                
+                                
+                                
+                                
                                     -
                                 
                             </td>
@@ -1188,11 +1184,11 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#18</td>
                             <td class="member-info">
-                                <span class="member-name">An Tran</span>
-                                <span class="member-role">an.vtran@katalon.com / Lead Quality Engineer</span>
+                                <span class="member-name">Thuong Le</span>
+                                <span class="member-role">thuong.le@katalon.com / Quality Engineer</span>
                             </td>
                             <td class="team-cell">Katalon Studio / Studio</td>
-                            <td class="score-cell total-score">9</td>
+                            <td class="score-cell total-score">-</td>
                             <td class="score-cell dimension-score">
                                 
                                 
@@ -1200,15 +1196,16 @@
                                 
                             </td>
                             <td class="score-cell dimension-score">
-                                9
+                                -
                             </td>
                             <td class="score-cell dimension-score">
                                 -
                             </td>
                             <td class="score-cell dimension-score">
-                                11252
+                                -
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
@@ -1233,14 +1230,11 @@
                                 <span class="member-role">hoa.truong@katalon.com / Quality Engineer</span>
                             </td>
                             <td class="team-cell">e-Commerce / Commerce Engine</td>
-                            <td class="score-cell total-score">5</td>
+                            <td class="score-cell total-score">-</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22CE-1635%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        2.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -1253,6 +1247,7 @@
                                 -
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
@@ -1273,18 +1268,15 @@
                         <tr class="member-row ">
                             <td class="rank-cell ">#20</td>
                             <td class="member-info">
-                                <span class="member-name">Khanh Tran</span>
-                                <span class="member-role">khanh.qmtran@katalon.com / Senior Quality Engineer</span>
+                                <span class="member-name">Vi Dinh</span>
+                                <span class="member-role">vi.dinh@katalon.com / Quality Engineer</span>
                             </td>
-                            <td class="team-cell">Katalon Studio / Studio</td>
-                            <td class="score-cell total-score">2.5</td>
+                            <td class="team-cell">e-Commerce / Commerce Engine</td>
+                            <td class="score-cell total-score">-</td>
                             <td class="score-cell dimension-score">
                                 
                                 
-                                    <a href="https://katalon.atlassian.net/issues/?jql=key%20in%20%28%22STUDIO-7651%22%29" target="_blank" 
-                                       title="0 bugs. Click to view in JIRA. Details: N/A">
-                                        2.5
-                                    </a>
+                                    -
                                 
                             </td>
                             <td class="score-cell dimension-score">
@@ -1297,6 +1289,7 @@
                                 -
                             </td>
                             <td class="score-cell dimension-score">
+                                
                                 
                                 
                                 
@@ -1401,6 +1394,11 @@ Final Score = (Confluence Score × 0.10) +
                         <canvas id="chart-jira_backlog"></canvas>
                         <div class="ai-analysis" id="ai-jira_backlog">Loading AI analysis...</div>
                     </div>
+                    <div class="dimension-card" id="card-team_total_story_points">
+                        <h3>Team Story Points Completion</h3>
+                        <canvas id="chart-team_total_story_points"></canvas>
+                        <div class="ai-analysis" id="ai-team_total_story_points">Loading AI analysis...</div>
+                    </div>
                 </div>
 
                 <div id="analytics-row-3" class="analytics-row">
@@ -1428,12 +1426,12 @@ Final Score = (Confluence Score × 0.10) +
         </div>
 
         <div class="footer">
-            Generated on 2025-06-05 14:44:37 UTC by the QE Leaderboard System.
+            Generated on 2025-06-05 11:48:33 UTC by the QE Leaderboard System.
         </div>
     </div>
 
     <script id="analyticsRawData" type="application/json">
-        {"dimension_insights": {"automation": {"analysis": "Report \u0026 Analytics demonstrates a strong lead in automation contributions (227.0), significantly outpacing all other teams. A notable area of focus is the minimal to zero automation scores from TrueTest, Commerce Engine, Studio, and Testleads, suggesting potential gaps in their automation efforts or score reporting for this period. Further investigation into these lower-contributing teams is recommended.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-05-06 to 2025-06-05. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Automation\nTeam Scores: Report \u0026 Analytics: 227.0; Core: 159.0; TestCloud: 97.0; Admin: 100.0; Manual Test: 86.0; Studio: 45.0; TrueTest: 0.0; Commerce Engine: 0.0; Testleads: 8.0\n\nFocus your analysis specifically on the Automation dimension based on these team totals. What does this data suggest?"}, "bug": {"analysis": "The Core team exhibits significantly higher contributions in the Bug dimension (70.0), outperforming all other teams. Conversely, Testleads (0.0), Report \u0026 Analytics (7.5), and TrueTest (7.5) show very low scores, indicating minimal bug-related activity. This broad disparity suggests a need to understand the factors driving Core\u0027s high performance and investigate the low contributions from the latter teams.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-05-06 to 2025-06-05. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Bug\nTeam Scores: Report \u0026 Analytics: 7.5; Core: 70.0; TestCloud: 35.0; Admin: 37.5; Manual Test: 15.0; Studio: 50.0; TrueTest: 7.5; Commerce Engine: 20.0; Testleads: 0.0\n\nFocus your analysis specifically on the Bug dimension based on these team totals. What does this data suggest?"}, "confluence": {"analysis": "No data available for this dimension to analyze.", "prompt": "No data available for analysis."}, "jira_backlog": {"analysis": "TrueTest (108.0) and Core (96.0) show strong contributions to the Jira Backlog dimension, significantly outperforming other teams. Conversely, Report \u0026 Analytics, Commerce Engine, and Testleads recorded 0.0, indicating no weighted contributions for this period, which warrants investigation into their backlog engagement or data capture. The remaining teams have minimal to moderate contributions (18.0-30.0).", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-05-06 to 2025-06-05. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Jira Backlog\nTeam Scores: Report \u0026 Analytics: 0.0; Core: 96.0; TestCloud: 30.0; Admin: 18.0; Manual Test: 30.0; Studio: 30.0; TrueTest: 108.0; Commerce Engine: 0.0; Testleads: 0.0\n\nFocus your analysis specifically on the Jira Backlog dimension based on these team totals. What does this data suggest?"}, "run_automation": {"analysis": "The Studio team demonstrates exceptional \u0027Run Automation\u0027 performance (11256.0), significantly outperforming all other teams. In stark contrast, TrueTest, Commerce Engine, and Testleads teams report no automation runs (0.0), indicating a critical area for review regarding their automation execution or scope. The Manual Test team\u0027s substantial contribution (3738.0) is also noteworthy for this dimension.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-05-06 to 2025-06-05. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Run Automation\nTeam Scores: Report \u0026 Analytics: 324.0; Core: 1218.0; TestCloud: 32.0; Admin: 802.0; Manual Test: 3738.0; Studio: 11256.0; TrueTest: 0.0; Commerce Engine: 0.0; Testleads: 0.0\n\nFocus your analysis specifically on the Run Automation dimension based on these team totals. What does this data suggest?"}, "run_manual": {"analysis": "For the \u0027Run Manual\u0027 dimension, manual execution efforts are highly concentrated, with the Core team (134.0) and Manual Test team (50.0) contributing the vast majority of points. Six teams (Report \u0026 Analytics, TestCloud, Studio, Commerce Engine, Testleads) recorded zero contributions, highlighting a significant disparity and suggesting a potential need to investigate the manual testing workload distribution or engagement across teams.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-05-06 to 2025-06-05. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Run Manual\nTeam Scores: Report \u0026 Analytics: 0.0; Core: 134.0; TestCloud: 0.0; Admin: 6.0; Manual Test: 50.0; Studio: 0.0; TrueTest: 13.0; Commerce Engine: 0.0; Testleads: 0.0\n\nFocus your analysis specifically on the Run Manual dimension based on these team totals. What does this data suggest?"}, "team_total_story_points": {"analysis": "No data available for this dimension to analyze.", "prompt": "No data available for analysis."}}, "team_comparison_scores": {"automation": {"Admin": 100.0, "Commerce Engine": 0.0, "Core": 159.0, "Manual Test": 86.0, "Report \u0026 Analytics": 227.0, "Studio": 45.0, "TestCloud": 97.0, "Testleads": 8.0, "TrueTest": 0.0}, "bug": {"Admin": 37.5, "Commerce Engine": 20.0, "Core": 70.0, "Manual Test": 15.0, "Report \u0026 Analytics": 7.5, "Studio": 50.0, "TestCloud": 35.0, "Testleads": 0.0, "TrueTest": 7.5}, "confluence": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 0.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}, "jira_backlog": {"Admin": 18.0, "Commerce Engine": 0.0, "Core": 96.0, "Manual Test": 30.0, "Report \u0026 Analytics": 0.0, "Studio": 30.0, "TestCloud": 30.0, "Testleads": 0.0, "TrueTest": 108.0}, "run_automation": {"Admin": 802.0, "Commerce Engine": 0.0, "Core": 1218.0, "Manual Test": 3738.0, "Report \u0026 Analytics": 324.0, "Studio": 11256.0, "TestCloud": 32.0, "Testleads": 0.0, "TrueTest": 0.0}, "run_manual": {"Admin": 6.0, "Commerce Engine": 0.0, "Core": 134.0, "Manual Test": 50.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 13.0}, "team_total_story_points": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 0.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}}}
+        {"dimension_insights": {"automation": {"analysis": "The Manual Test (16.0) and Report \u0026 Analytics (15.0) teams show the highest contributions to Automation, with the former being an interesting highlight given its name. Conversely, TrueTest, TestCloud, and Commerce Engine teams report zero automation contributions, indicating a significant area of concern or potential scope limitations. Focus should be placed on understanding the nature of contributions from high-scoring teams and investigating the complete lack of automation output from the zero-scoring teams.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-06-01 to 2026-06-04. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Automation\nTeam Scores: Core: 8.0; TrueTest: 0.0; Manual Test: 16.0; TestCloud: 0.0; Report \u0026 Analytics: 15.0; Studio: 3.0; Testleads: 8.0; Admin: 8.0; Commerce Engine: 0.0\n\nFocus your analysis specifically on the Automation dimension based on these team totals. What does this data suggest?"}, "bug": {"analysis": "No data available for this dimension to analyze.", "prompt": "No data available for analysis."}, "confluence": {"analysis": "No data available for this dimension to analyze.", "prompt": "No data available for analysis."}, "jira_backlog": {"analysis": "TrueTest (66.0) and Core (60.0) are the primary contributors to the Jira Backlog dimension. Manual Test, Studio, and Admin teams show significantly lower contributions (12.0-6.0), while Report \u0026 Analytics, Testleads, and Commerce Engine have no measurable contribution (0.0). Focus should be on understanding the underlying reasons for these disparities, particularly the zero scores, to determine if they represent a gap in backlog management or an expected operational scope.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-06-01 to 2026-06-04. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Jira Backlog\nTeam Scores: Core: 60.0; TrueTest: 66.0; Manual Test: 12.0; TestCloud: 30.0; Report \u0026 Analytics: 0.0; Studio: 12.0; Testleads: 0.0; Admin: 6.0; Commerce Engine: 0.0\n\nFocus your analysis specifically on the Jira Backlog dimension based on these team totals. What does this data suggest?"}, "run_automation": {"analysis": "The Studio team is the overwhelming primary contributor to \u0027Run Automation,\u0027 with an exceptionally high score of 11130.0. The Manual Test team shows a minor contribution (543.0), but all other teams recorded zero contributions for this dimension. This data suggests a highly concentrated automation execution effort, predominantly centralized within the Studio team, indicating potential areas for cross-team collaboration or expansion of automation ownership if applicable.", "prompt": "As a performance analyst for a Quality Engineering department, analyze the following team scores for the period 2025-06-01 to 2026-06-04. The scores represent the sum of weighted contributions from team members. Higher scores are better. Provide a brief analysis (2-3 sentences) highlighting any significant observations, trends, or potential areas of focus. Be concise and data-driven. Avoid generic statements. If data is insufficient for a meaningful analysis (e.g., all zeros or very few teams), state that.\n\nDimension: Run Automation\nTeam Scores: Core: 0.0; TrueTest: 0.0; Manual Test: 543.0; TestCloud: 0.0; Report \u0026 Analytics: 0.0; Studio: 11130.0; Testleads: 0.0; Admin: 0.0; Commerce Engine: 0.0\n\nFocus your analysis specifically on the Run Automation dimension based on these team totals. What does this data suggest?"}, "run_manual": {"analysis": "No data available for this dimension to analyze.", "prompt": "No data available for analysis."}, "team_total_story_points": {"analysis": "No data available for this dimension to analyze.", "prompt": "No data available for analysis."}}, "team_comparison_scores": {"automation": {"Admin": 8.0, "Commerce Engine": 0.0, "Core": 8.0, "Manual Test": 16.0, "Report \u0026 Analytics": 15.0, "Studio": 3.0, "TestCloud": 0.0, "Testleads": 8.0, "TrueTest": 0.0}, "bug": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 0.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}, "confluence": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 0.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}, "jira_backlog": {"Admin": 6.0, "Commerce Engine": 0.0, "Core": 60.0, "Manual Test": 12.0, "Report \u0026 Analytics": 0.0, "Studio": 12.0, "TestCloud": 30.0, "Testleads": 0.0, "TrueTest": 66.0}, "run_automation": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 543.0, "Report \u0026 Analytics": 0.0, "Studio": 11130.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}, "run_manual": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 0.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}, "team_total_story_points": {"Admin": 0.0, "Commerce Engine": 0.0, "Core": 0.0, "Manual Test": 0.0, "Report \u0026 Analytics": 0.0, "Studio": 0.0, "TestCloud": 0.0, "Testleads": 0.0, "TrueTest": 0.0}}}
     </script>
     <script>
         function switchTab(tabName) {
@@ -1517,6 +1515,7 @@ Final Score = (Confluence Score × 0.10) +
                 'bug_score': { title: 'Bug Score Contribution', type: 'pie', targetCard: 'card-bug_score' },
                 'automation_score': { title: 'GitHub Automation Score', type: 'pie', targetCard: 'card-automation_score' },
                 'jira_backlog': { title: 'JIRA Backlog Score', type: 'bar', targetCard: 'card-jira_backlog' },
+                'team_total_story_points': { title: 'Team Story Points Completion', type: 'bar', targetCard: 'card-team_total_story_points' },
                 'run_automation': { title: 'Running Automation Score', type: 'bar', targetCard: 'card-run_automation' },
                 'run_manual': { title: 'Running Manual Score', type: 'bar', targetCard: 'card-run_manual' },
                 'confluence_score': { title: 'Confluence Score', type: 'pie', targetCard: 'card-confluence_score' }
