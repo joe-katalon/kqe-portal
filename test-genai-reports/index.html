@@ -50,7 +50,6 @@
             max-height: 400px;
             overflow-y: auto;
         }
-        /* Ensure crisp chart rendering */
         .chart-container {
             position: relative;
             display: flex;
@@ -251,6 +250,7 @@
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature & Models</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & LLM3 Judge</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Performance Metrics</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jira Backlogs (Story Points)</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
@@ -259,6 +259,17 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+
+        <!-- Team Story Point Analytics -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mt-6">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="text-2xl mr-3">📊</span>
+                Team Story Point Analysis
+            </h2>
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="teamStoryPointsChart"></canvas>
             </div>
         </div>
 
@@ -294,7 +305,7 @@
                 console.error('Error loading reports:', error);
                 document.getElementById('reportsTable').innerHTML = `
                     <tr>
-                        <td colspan="4" class="px-6 py-8 text-center text-red-500">
+                        <td colspan="5" class="px-6 py-8 text-center text-red-500">
                             <div class="text-lg mb-2">⚠️ Error loading reports</div>
                             <div class="text-sm text-gray-500">Details: ${error.message}</div>
                         </td>
@@ -406,7 +417,12 @@
                 const llm3Display = llm3Info.provider !== 'unknown' 
                     ? `${llm3Info.provider.charAt(0).toUpperCase() + llm3Info.provider.slice(1)} ${llm3Info.model.split('-')[0]}`
                     : 'Unknown Judge';
-                
+
+                // Get Jira backlog score and story points
+                const jiraScore = report.metrics?.jira_backlog_score;
+                const jiraStoryPoints = report.metrics?.jira_story_points_sum || 0;
+                const jiraLink = report.url || '#'; // Use report.url or a specific Jira URL if available
+
                 return `
                     <tr class="hover:bg-gray-50 transition-colors">
                         <td class="px-6 py-4">
@@ -455,6 +471,11 @@
                                 </div>
                             </div>
                         </td>
+                        <td class="px-6 py-4">
+                            ${jiraScore !== undefined ? 
+                                `<a href="${jiraLink}" target="_blank" class="text-blue-600 hover:underline" title="View Jira item related to score ${jiraScore}">${jiraScore}</a> (${jiraStoryPoints.toFixed(1)})` : 
+                                'N/A'}
+                        </td>
                         <td class="px-6 py-4 text-sm">
                             <a href="${report.url}" 
                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
@@ -485,7 +506,6 @@
                 const trendCanvas = document.getElementById('trendChart');
                 const ratio = window.devicePixelRatio || 1;
                 
-                // Set proper dimensions
                 trendCanvas.style.height = '120px';
                 trendCanvas.height = 120 * ratio;
                 trendCanvas.width = trendCanvas.offsetWidth * ratio;
@@ -562,65 +582,11 @@
                 });
             }
 
-            // Compact Feature Distribution Chart
-            const features = [...new Set(reports.map(r => r.feature))];
-            if (document.getElementById('featureChart')) {
-                const featureCanvas = document.getElementById('featureChart');
-                const ratio = window.devicePixelRatio || 1;
-                
-                // Set proper dimensions - increased size for better balance
-                const chartSize = 100;
-                featureCanvas.width = chartSize * ratio;
-                featureCanvas.height = chartSize * ratio;
-                featureCanvas.style.width = chartSize + 'px';
-                featureCanvas.style.height = chartSize + 'px';
-                
-                const ctx = featureCanvas.getContext('2d');
-                ctx.scale(ratio, ratio);
-                
-                new Chart(featureCanvas, {
-                    type: 'doughnut',
-                    data: {
-                        labels: features.map(f => getFeatureDisplayName(f)),
-                        datasets: [{
-                            data: features.map(f => reports.filter(r => r.feature === f).length),
-                            backgroundColor: [
-                                '#3B82F6',
-                                '#10B981', 
-                                '#F59E0B',
-                                '#EF4444',
-                                '#8B5CF6'
-                            ],
-                            borderWidth: 1,
-                            borderColor: '#FFFFFF'
-                        }]
-                    },
-                    options: {
-                        responsive: false,
-                        maintainAspectRatio: true,
-                        cutout: '50%',
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    font: { size: 9 },
-                                    padding: 4
-                                }
-                            }
-                        },
-                        animation: {
-                            duration: 500
-                        }
-                    }
-                });
-            }
-
             // Judge Distribution Chart
             if (document.getElementById('judgeDistributionChart')) {
                 const judgeCanvas = document.getElementById('judgeDistributionChart');
                 const ratio = window.devicePixelRatio || 1;
                 
-                // Calculate judge usage from reports
                 const judgeUsage = {};
                 reports.forEach(report => {
                     if (report.llm3 && report.llm3.provider !== 'unknown') {
@@ -629,7 +595,6 @@
                     }
                 });
 
-                // If no judge data, show default distribution
                 if (Object.keys(judgeUsage).length === 0) {
                     judgeUsage['Claude 3.5'] = reports.length || 1;
                 }
@@ -665,9 +630,7 @@
                         maintainAspectRatio: true,
                         cutout: '50%',
                         plugins: {
-                            legend: {
-                                display: false // Hide legend for compact view
-                            },
+                            legend: { display: false },
                             tooltip: {
                                 callbacks: {
                                     label: function(context) {
@@ -680,6 +643,83 @@
                         },
                         animation: {
                             duration: 500
+                        }
+                    }
+                });
+            }
+
+            // Team Story Points Chart
+            if (document.getElementById('teamStoryPointsChart')) {
+                const teamStoryCanvas = document.getElementById('teamStoryPointsChart');
+                const teamStoryCtx = teamStoryCanvas.getContext('2d');
+
+                const storyPointsByTeam = reports.reduce((acc, report) => {
+                    const teamName = report.team_name || 'Unknown Team';
+                    const storyPoints = report.metrics?.jira_story_points_sum || 0;
+                    acc[teamName] = (acc[teamName] || 0) + storyPoints;
+                    return acc;
+                }, {});
+
+                const teamLabels = Object.keys(storyPointsByTeam);
+                const teamData = Object.values(storyPointsByTeam);
+                const backgroundColors = [
+                    'rgba(54, 162, 235, 0.6)', 
+                    'rgba(255, 99, 132, 0.6)', 
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)'
+                ];
+                const borderColors = [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ];
+
+                new Chart(teamStoryCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: teamLabels,
+                        datasets: [{
+                            label: 'Total Story Points by Team',
+                            data: teamData,
+                            backgroundColor: backgroundColors.slice(0, teamLabels.length),
+                            borderColor: borderColors.slice(0, teamLabels.length),
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Total Story Points'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Team'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `Story Points: ${context.parsed.y.toFixed(1)}`;
+                                    }
+                                }
+                            }
                         }
                     }
                 });
