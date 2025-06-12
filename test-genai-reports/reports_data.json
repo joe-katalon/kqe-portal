@@ -1,6 +1,35 @@
 [
   {
     "feature": "generate",
+    "date": "2025-06-12 11:33",
+    "url": "comparison_report_generate_code_20250612_113302.html",
+    "models": {
+      "ll1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "ll2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-05-20",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8099999999999999,
+      "accuracy": 0.6925000000000001,
+      "quality": 0.9125,
+      "response_time": 1.0,
+      "overall": 0.805
+    }
+  },
+  {
+    "feature": "generate",
     "date": "2025-06-10 17:21",
     "url": "comparison_report_generate_code_20250610_172133.html",
     "models": {

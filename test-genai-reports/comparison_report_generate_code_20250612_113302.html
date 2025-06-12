@@ -1,0 +1,2518 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="referrer" content="origin">
+            <title>Test Generative AI Comparison Report - generate_code</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://unpkg.com/@popperjs/core@2"></script>
+            <script src="https://unpkg.com/tippy.js@6"></script>
+            <style>
+                /* Force consistent font across ALL elements */
+                * {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                }
+                
+                body, html, div, p, h1, h2, h3, h4, h5, h6, span, td, th, li, ul, ol, pre, code {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                }
+                
+                body {
+                    margin: 0;
+                    padding: 20px;
+                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                    color: #2c3e50;
+                    line-height: 1.6;
+                    min-height: 100vh;
+                }
+
+                .container {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    background: white;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                    overflow: hidden;
+                }
+
+                .header {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 40px;
+                    text-align: center;
+                    position: relative;
+                }
+
+                .header::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+                    opacity: 0.3;
+                    pointer-events: none;
+                }
+
+                .header-content {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .header h1 {
+                    margin: 0 0 10px 0;
+                    font-size: 2.5em;
+                    font-weight: 300;
+                    letter-spacing: -1px;
+                }
+
+                .header .subtitle {
+                    font-size: 1.2em;
+                    opacity: 0.9;
+                    font-weight: 300;
+                }
+
+                .content {
+                    padding: 40px;
+                }
+
+                .report-section {
+                    margin-bottom: 40px;
+                    background: #f8f9fa;
+                    border-radius: 12px;
+                    padding: 30px;
+                    border-left: 5px solid #667eea;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                }
+
+                .report-section h2 {
+                    color: #2c3e50;
+                    margin: 0 0 25px 0;
+                    font-size: 1.8em;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .summary-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 25px;
+                    margin-bottom: 30px;
+                }
+
+                .summary-card {
+                    background: white;
+                    padding: 25px;
+                    border-radius: 12px;
+                    border: 1px solid #e1e8ed;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                    transition: transform 0.2s, box-shadow 0.2s;
+                }
+
+                .summary-card:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                }
+
+                .summary-card h3 {
+                    margin: 0 0 15px 0;
+                    color: #667eea;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                }
+
+                .summary-card p {
+                    margin: 0;
+                    color: #5a6c7d;
+                    line-height: 1.6;
+                }
+
+                .config-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    background: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                }
+
+                .config-table th,
+                .config-table td {
+                    padding: 15px;
+                    text-align: left;
+                    border-bottom: 1px solid #e1e8ed;
+                }
+
+                .config-table th {
+                    background: #667eea;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 0.95em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .config-table tr:last-child td {
+                    border-bottom: none;
+                }
+
+                .config-table tr:nth-child(even) {
+                    background: #f8f9fa;
+                }
+
+                .chart-container {
+                    width: 100%;
+                    height: 300px !important;
+                    position: relative;
+                    margin: 20px 0;
+                    background: white;
+                    border-radius: 8px;
+                    padding: 20px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                }
+
+                .difference {
+                    font-weight: bold;
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    font-size: 0.9em;
+                }
+
+                .difference.positive {
+                    background: #d4edda;
+                    color: #155724;
+                }
+
+                .difference.negative {
+                    background: #f8d7da;
+                    color: #721c24;
+                }
+
+                .difference.neutral {
+                    background: #f1f3f4;
+                    color: #5f6368;
+                }
+
+                .chart-container canvas {
+                    max-height: 300px !important;
+                    width: 100% !important;
+                    height: 300px !important;
+                }
+
+                .chart-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 30px;
+                    margin: 30px 0;
+                }
+
+                .json-comparison {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                    margin: 20px 0;
+                }
+
+                .dataset-column {
+                    background: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                }
+
+                .dataset-header {
+                    background: #667eea;
+                    color: white;
+                    padding: 15px 20px;
+                }
+
+                .dataset-header h3 {
+                    margin: 0;
+                    font-size: 1.1em;
+                    font-weight: 600;
+                }
+
+                .json-container {
+                    max-height: 500px;
+                    overflow-y: auto;
+                    padding: 0;
+                    background: #ffffff;
+                    border: 1px solid #e1e8ed;
+                }
+
+                /* JSON Viewer Styles - Browser Dev Tools Look */
+                .json-viewer {
+                    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace !important;
+                    font-size: 13px;
+                    line-height: 1.4;
+                    color: #333;
+                    background: #ffffff;
+                    padding: 15px;
+                    border-radius: 4px;
+                    overflow: auto;
+                }
+
+                .json-viewer .json-key {
+                    color: #881391;
+                    font-weight: bold;
+                }
+
+                .json-viewer .json-string {
+                    color: #c41a16;
+                }
+
+                .json-viewer .json-number {
+                    color: #1c00cf;
+                }
+
+                .json-viewer .json-boolean {
+                    color: #1c00cf;
+                    font-weight: bold;
+                }
+
+                .json-viewer .json-null {
+                    color: #808080;
+                    font-weight: bold;
+                }
+
+                .json-viewer .json-toggle {
+                    cursor: pointer;
+                    user-select: none;
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 5px;
+                    font-size: 10px;
+                    line-height: 12px;
+                    text-align: center;
+                    background: #f0f0f0;
+                    border: 1px solid #ccc;
+                    border-radius: 2px;
+                    color: #666;
+                    transition: all 0.2s;
+                }
+
+                .json-viewer .json-toggle:hover {
+                    background: #e0e0e0;
+                    border-color: #999;
+                }
+
+                .json-viewer .json-toggle.collapsed::before {
+                    content: '+';
+                }
+
+                .json-viewer .json-toggle.expanded::before {
+                    content: '−';
+                }
+
+                .json-viewer .json-item {
+                    display: block;
+                    margin-left: 0;
+                }
+
+                .json-viewer .json-item.collapsed {
+                    display: none;
+                }
+
+                .json-viewer .json-bracket {
+                    color: #666;
+                    font-weight: bold;
+                }
+
+                .json-viewer .json-indent {
+                    display: inline-block;
+                    width: 20px;
+                }
+
+                .json-viewer .json-property {
+                    margin: 2px 0;
+                }
+
+                .json-viewer .json-object,
+                .json-viewer .json-array {
+                    margin-left: 15px;
+                }
+
+                .json-viewer .json-ellipsis {
+                    color: #999;
+                    font-style: italic;
+                    cursor: pointer;
+                }
+
+                .json-viewer .json-ellipsis:hover {
+                    color: #666;
+                    text-decoration: underline;
+                }
+
+                .qualitative-analysis {
+                    background: white;
+                    border-radius: 8px;
+                    padding: 25px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                }
+
+                .qualitative-analysis h3 {
+                    color: #2c3e50;
+                    margin: 0 0 20px 0;
+                    font-size: 1.3em;
+                    font-weight: 600;
+                }
+
+                .analysis-section {
+                    margin-bottom: 25px;
+                }
+
+                .analysis-section h4 {
+                    color: #667eea;
+                    margin: 0 0 12px 0;
+                    font-size: 1.1em;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .analysis-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .analysis-list li {
+                    background: #f8f9fa;
+                    margin: 8px 0;
+                    padding: 12px 16px;
+                    border-radius: 6px;
+                    border-left: 4px solid #667eea;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+
+                .analysis-list.positive li {
+                    border-left-color: #28a745;
+                    background: #d4edda;
+                }
+
+                .analysis-list.negative li {
+                    border-left-color: #dc3545;
+                    background: #f8d7da;
+                }
+
+                .analysis-list.concern li {
+                    border-left-color: #ffc107;
+                    background: #fff3cd;
+                }
+
+                .tooltip-trigger {
+                    border-bottom: 1px dotted #667eea;
+                    cursor: help;
+                }
+
+                .footer {
+                    background: #2c3e50;
+                    color: white;
+                    padding: 30px 40px;
+                    text-align: center;
+                }
+
+                .footer p {
+                    margin: 0;
+                    opacity: 0.8;
+                }
+
+                @media (max-width: 768px) {
+                    .json-comparison {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .chart-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .summary-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    /* Mobile layout for methodology - stack vertically */
+                    .content div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                    
+                    /* Mobile layout for 3 charts - stack vertically */
+                    .charts-grid {
+                        grid-template-columns: 1fr !important;
+                    }
+                    
+                    /* Mobile layout for appendix grids - stack vertically */
+                    .content div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                    
+                    /* Reduce padding on mobile for content sections */
+                    .content {
+                        padding: 20px;
+                    }
+                    
+                    .report-section {
+                        padding: 20px;
+                        margin-bottom: 25px;
+                    }
+                    
+                    /* Make headers smaller on mobile */
+                    .header h1 {
+                        font-size: 1.8em;
+                    }
+                    
+                    .header .subtitle {
+                        font-size: 1em;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <div class="header-content">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px;">
+                            <img src="https://katalon.com/hubfs/katalon_logo%20(1).svg" alt="Katalon Logo" style="height: 45px; filter: brightness(0) invert(1);">
+                            <h1 style="margin: 0;">Test Katalon Generative AI Features Report</h1>
+                        </div>
+                        <div class="subtitle">Feature: Generate_Code | Generated: 2025-06-12 11:33:02</div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <!-- Executive Summary -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="High-level overview of the comparison results including final assessment and dataset information.">📊 Executive Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>Final Assessment</h3>
+                                <p>❓ Decision: FURTHER_INVESTIGATION_REQUIRED
+💪 Confidence Level: High</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Dataset Summary</h3>
+                                <p><strong>Baseline (LL1):</strong> 5 test cases<br>
+                                <strong>Target (LL2):</strong> 5 test cases<br>
+                                <strong>Evaluation Model:</strong> gemini-2.5-flash-preview-05-20</p>
+                            </div>
+                        </div>
+
+                        <!-- Test Configuration -->
+                        <table class="config-table">
+                            <thead>
+                                <tr>
+                                    <th>Configuration</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Feature</strong></td>
+                                    <td>generate_code</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Test Mode</strong></td>
+                                    <td>consistency</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Baseline Model (LL1)</strong></td>
+                                    <td>katalon_ai - gpt-4o-mini</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Target Model (LL2)</strong></td>
+                                    <td>personal_openai - gpt-4o-mini</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Evaluator Model (LLM3)</strong></td>
+                                    <td>gemini - gemini-2.5-flash-preview-05-20</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Comparisons</strong></td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Test Objective -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Purpose and goals of this generative AI evaluation test.">🎯 Test Objective</h2>
+                        
+                        <div class="summary-card">
+                            <h3>Primary Goal</h3>
+                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LL1 vs LL2) for the <strong>Generate Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
+                        </div>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🔍 Evaluation Methodology</h3>
+                                <p><strong>Independent Judge Approach:</strong> LLM3 serves as an impartial evaluator, analyzing outputs from both models without bias. This approach ensures consistent scoring criteria and reduces subjective variation in assessments.</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>📊 Multi-Dimensional Analysis</h3>
+                                <p><strong>Comprehensive Coverage:</strong> Each model is evaluated across Consistency, Quality, and Accuracy metrics, with detailed dimensional breakdowns (e.g., Readability, Functionality, Completeness) to identify specific strengths and weaknesses.</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>🎯 Comparative Insights</h3>
+                                <p><strong>Direct Model Comparison:</strong> Side-by-side analysis reveals performance differences, improvement trends, and regression risks, providing actionable insights for model selection and deployment strategies.</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>🚀 Scalable Framework</h3>
+                                <p><strong>Future-Ready Design:</strong> The evaluation framework is designed to accommodate additional LLM judges (LLM4, LLM5) and expand beyond Katalon AI features to support any product AI capabilities. This scalable approach aims to transform into a Katalon built-in feature, driving business growth and delivering enhanced testing solutions that add measurable value for end-customers.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Brief of Steps -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Overview of the 3-phase testing methodology and evaluation process.">📋 Methodology Overview</h2>
+                        
+                        <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 25px;">
+                                <div style="padding: 20px; border-left: 4px solid #667eea; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
+                                    <h4 style="color: #667eea; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px;">
+                                        <span style="background: #667eea; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">1</span>
+                                        Phase 1: Baseline Creation
+                                    </h4>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL1 Dataset Generation:</strong> Generate baseline outputs using LL1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
+                                </div>
+                                
+                                <div style="padding: 20px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
+                                    <h4 style="color: #28a745; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px;">
+                                        <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">2</span>
+                                        Phase 2: Target Creation
+                                    </h4>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL2 Dataset Generation:</strong> Generate target outputs using LL2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
+                                </div>
+
+                                <div style="padding: 20px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
+                                    <h4 style="color: #e68900; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px;">
+                                        <span style="background: #ffc107; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">3</span>
+                                        Phase 3: Comparative Analysis
+                                    </h4>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>Meta-Evaluation:</strong> LLM3 performs comparative analysis of evaluation patterns from Phase 1 & 2, identifying trends, improvements, regressions, and providing recommendation with confidence levels for deployment decisions.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 8px;">
+                                <h4 style="color: #2c3e50; margin: 0 0 15px 0; display: flex; align-items: center; gap: 8px;">
+                                    <span>🧠</span> LLM3 Judge Approach
+                                </h4>
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                                    <div>
+                                        <h5 style="color: #667eea; margin: 0 0 8px 0;">Single LLM Evaluation (Phases 1 & 2)</h5>
+                                        <p style="margin: 0; color: #5a6c7d; line-height: 1.4; font-size: 0.85em;">LLM3 evaluates each model's outputs independently, scoring across consistency, quality, and accuracy dimensions without knowledge of other models.</p>
+                                    </div>
+                                    <div>
+                                        <h5 style="color: #28a745; margin: 0 0 8px 0;">Comparative Evaluation (Phase 3)</h5>
+                                        <p style="margin: 0; color: #5a6c7d; line-height: 1.4; font-size: 0.85em;">LLM3 performs meta-analysis of evaluation patterns, comparing score distributions and trends to provide actionable comparative insights.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 4-Tier Evaluation Metrics -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Structured evaluation using 4-tier metrics framework for comprehensive LLM comparison.">📊 4-Tier Evaluation Metrics</h2>
+                        
+                        <!-- Tier Overview -->
+                        <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 8px;">
+                            <h3 style="color: #2c3e50; margin: 0 0 15px 0; text-align: center;">📈 Evaluation Framework Structure</h3>
+                            <p style="margin: 0; line-height: 1.6; color: #5a6c7d; text-align: center;">
+                                Comprehensive assessment using structured tiers: <strong>Tier 1 (Consistency)</strong> • <strong>Tier 2 (Quality)</strong> • <strong>Tier 3 (Accuracy)</strong> • <strong>Tier 4 (Performance)</strong>
+                            </p>
+                        </div>
+
+                        <!-- Tier Charts Grid -->
+                        <div class="charts-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 30px 0;">
+                            
+                            <!-- Tier 1: Consistency Metrics -->
+                            <div class="chart-container">
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                    <span style="background: #667eea; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em; margin-right: 10px;">TIER 1</span>
+                                    <h3 style="margin: 0; color: #667eea;">🎯 Consistency Metrics</h3>
+                                </div>
+                                <canvas id="consistencyChart"></canvas>
+                                <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #667eea;">
+                                    <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
+                                        <strong>Focus:</strong> Evaluates reliability and predictability across similar inputs. Measures how consistently the model performs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Tier 2: Quality Metrics -->
+                            <div class="chart-container">
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                    <span style="background: #28a745; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em; margin-right: 10px;">TIER 2</span>
+                                    <h3 style="margin: 0; color: #28a745;">🌟 Quality Metrics</h3>
+                                </div>
+                                <canvas id="qualityChart"></canvas>
+                                <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #28a745;">
+                                    <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
+                                        <strong>Focus:</strong> Assesses overall excellence and usefulness. Determines if outputs meet professional standards for production use.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Tier 3: Accuracy Metrics -->
+                            <div class="chart-container">
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                    <span style="background: #ffc107; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em; margin-right: 10px;">TIER 3</span>
+                                    <h3 style="margin: 0; color: #e68900;">⚡ Accuracy Metrics</h3>
+                                </div>
+                                <canvas id="accuracyChart"></canvas>
+                                <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #ffc107;">
+                                    <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
+                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world scenarios.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Tier 4: Performance Metrics -->
+                            <div class="chart-container">
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                    <span style="background: #6f42c1; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em; margin-right: 10px;">TIER 4</span>
+                                    <h3 style="margin: 0; color: #6f42c1;">📈 Performance Metrics</h3>
+                                </div>
+                                <canvas id="responseTimeChart"></canvas>
+                                <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #6f42c1;">
+                                    <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
+                                        <strong>Focus:</strong> Evaluates operational efficiency and reliability. Measures speed, timing consistency, and resource utilization.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- Qualitative Analysis -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Qualitative insights extracted from LLM3 evaluation including key differences, improvements, and concerns.">🔍 Qualitative Analysis</h2>
+                        
+                        <div class="qualitative-analysis">
+                            <div class="analysis-section">
+                                <h4>✅ Key Differences</h4>
+                                <ul class="analysis-list">
+                                    
+                                    <li><span>•</span> LL2 exhibits a significant trade-off: a notable improvement in 'completeness' is overshadowed by substantial regressions across critical metrics such as 'correctness', 'readability', and 'functionality'.</li>
+                                    
+                                    <li><span>•</span> The overall trend for LL2 is a decline in consistency, accuracy, and performance, despite its ability to generate more complete code.</li>
+                                    
+                                </ul>
+                            </div>
+
+                            <div class="analysis-section">
+                                <h4>✅ Improvements in LL2</h4>
+                                <ul class="analysis-list positive">
+                                    
+                                    <li><span>✅</span> **Completeness (Tier 2):** LL2 shows a strong improvement (+1.0) in generating more complete code, indicating it might be more verbose or thorough in its output.</li>
+                                    
+                                </ul>
+                            </div>
+
+                            <div class="analysis-section">
+                                <h4>❌ Regressions in LL2</h4>
+                                <ul class="analysis-list negative">
+                                    
+                                    <li><span>❌</span> **Correctness (Tier 1):** A severe decline of -2.4 points, indicating LL2's generated code is significantly less accurate or functional than LL1's.</li>
+                                    
+                                    <li><span>❌</span> **Readability (Tier 1):** A noticeable drop of -0.6 points, suggesting LL2's code is harder to understand or maintain.</li>
+                                    
+                                    <li><span>❌</span> **Functionality (Tier 3):** A significant regression of -1.4 points, implying LL2's code is less likely to work as intended.</li>
+                                    
+                                    <li><span>❌</span> **Functional Correctness (Tier 3):** A substantial decline of -1.0 points, reinforcing the functionality concerns.</li>
+                                    
+                                    <li><span>❌</span> **Technical Precision (Tier 3):** A drop of -0.7 points, indicating less precise or optimized code.</li>
+                                    
+                                    <li><span>❌</span> **Clarity, Relevance, Guideline Adherence (Tier 2):** Minor to moderate declines, suggesting a general dip in overall code quality beyond just completeness.</li>
+                                    
+                                    <li><span>❌</span> **Response Time (Tier 4):** A 1.0 second increase, indicating slower generation. **Response Time Consistency (Tier 4):** A decline of -0.2, suggesting less predictable response times.</li>
+                                    
+                                </ul>
+                            </div>
+
+                            <div class="analysis-section">
+                                <h4>⚠️ Areas of Concern</h4>
+                                <ul class="analysis-list concern">
+                                    
+                                    <li><span>⚠️</span> The substantial regressions in 'correctness' and 'functionality' are critical, as these directly impact the usability and reliability of generated code.</li>
+                                    
+                                    <li><span>⚠️</span> The trade-off where completeness increases but correctness and functionality decrease suggests LL2 might be generating more code, but of lower quality, potentially introducing more errors or boilerplate.</li>
+                                    
+                                    <li><span>⚠️</span> The decline across multiple tiers (Consistency, Accuracy, Performance) points to a general degradation in LL2's code generation capabilities compared to LL1, making it a high-risk candidate for deployment.</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Raw Dataset Comparison -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Complete JSON datasets from both LL1 (baseline) and LL2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
+                        <div class="json-comparison">
+                            <div class="dataset-column">
+                                <div class="dataset-header"><h3>Baseline Dataset (LL1)</h3></div>
+                                <div class="json-container">
+                                    <div id="baseline-json" class="json-viewer"></div>
+                                </div>
+                            </div>
+                            <div class="dataset-column">
+                                <div class="dataset-header"><h3>Target Dataset (LL2)</h3></div>
+                                <div class="json-container">
+                                    <div id="target-json" class="json-viewer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Comprehensive Analysis -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Advanced statistical analysis comparing LL1 and LL2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
+                        
+                        <!-- Diversity Analysis -->
+                        <div style="margin-bottom: 40px;">
+                            <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.5em; text-align: center;">🎨 Pattern Diversity Analysis</h3>
+                            <p style="text-align: center; color: #5a6c7d; margin-bottom: 30px; font-size: 1.1em;">
+                                Analysis of output pattern categories and structural diversity between LL1 (Baseline) and LL2 (Target) models.
+                            </p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
+                                <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Pattern Distribution</h4>
+                                    <div class="chart-container" style="height: 300px;">
+                                        <canvas id="ll1DiversityChart"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
+                                            <strong>Dominant Patterns:</strong> Standard implementations (42%), Advanced features (28%), Error handling (18%), Edge cases (12%)
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Pattern Distribution</h4>
+                                    <div class="chart-container" style="height: 300px;">
+                                        <canvas id="ll2DiversityChart"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
+                                            <strong>Dominant Patterns:</strong> Standard implementations (38%), Advanced features (32%), Error handling (20%), Edge cases (10%)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px; margin-top: 20px;">
+                                <h4 style="color: #1976d2; margin: 0 0 10px 0;">📈 Key Insights</h4>
+                                <ul style="margin: 0; color: #0d47a1; line-height: 1.6;">
+                                    <li>LL2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
+                                    <li>Slight reduction in edge case coverage (-2%) may require attention</li>
+                                    <li>Overall pattern diversity remains consistent between models</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Quality Analysis -->
+                        <div style="margin-bottom: 40px;">
+                            <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.5em; text-align: center;">💎 Quality Characteristics Analysis</h3>
+                            <p style="text-align: center; color: #5a6c7d; margin-bottom: 30px; font-size: 1.1em;">
+                                Keyword usage patterns and quality indicators reflecting coding style and best practices adherence.
+                            </p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
+                                <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Quality Keywords</h4>
+                                    <div class="chart-container" style="height: 300px;">
+                                        <canvas id="ll1QualityChart"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
+                                            <strong>Top Keywords:</strong> "test" (35%), "assert" (25%), "verify" (20%), "validate" (15%), "check" (5%)
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Quality Keywords</h4>
+                                    <div class="chart-container" style="height: 300px;">
+                                        <canvas id="ll2QualityChart"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
+                                            <strong>Top Keywords:</strong> "test" (32%), "assert" (28%), "verify" (22%), "validate" (13%), "check" (5%)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 20px; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border-radius: 8px; margin-top: 20px;">
+                                <h4 style="color: #2e7d32; margin: 0 0 10px 0;">✨ Quality Improvements</h4>
+                                <ul style="margin: 0; color: #1b5e20; line-height: 1.6;">
+                                    <li>LL2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
+                                    <li>Enhanced verification patterns (+2%) suggest better validation coverage</li>
+                                    <li>Consistent keyword diversity maintains code readability standards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                
+                    <!-- Dynamic Appendix -->
+                    <section class="report-section">
+                        <h2 data-tippy-content="Detailed explanations of evaluation metrics used in this specific report.">📚 Appendix: Active Metrics Reference</h2>
+                        
+                        <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <!-- Overview -->
+                            <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 8px;">
+                                <h3 style="color: #2c3e50; margin: 0 0 15px 0;">📊 Report-Specific Metrics Overview</h3>
+                                <p style="margin: 0; line-height: 1.6; color: #5a6c7d;">
+                                    This report evaluates <strong>4 active metric tiers</strong> specifically relevant to the <strong>Generate Code</strong> feature. 
+                    Each tier represents a different dimension of model capability, with LLM3 serving as an independent judge for objective evaluation.
+                    The metrics shown below are those actually measured and analyzed in this comparison.
+                                </p>
+                            </div>
+        
+                            <!-- 🎯 Consistency Metrics -->
+                            <div style="margin-bottom: 30px;">
+                                <h3 style="color: #667eea; margin: 0 0 20px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span style="background: #667eea; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em;">TIER 1</span>
+                                    🎯 Consistency Metrics
+                                </h3>
+                                <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
+                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and scenarios.
+                                </p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            
+                                    <div style="padding: 15px; border-left: 4px solid #667eea; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #667eea; margin: 0 0 10px 0;">📖 Readability</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Clarity of code structure, naming conventions, comments, and documentation quality.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Exceptionally clear and well-documented)<br>
+                                            <strong>Impact:</strong> Affects maintainability and team productivity.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #667eea; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #667eea; margin: 0 0 10px 0;">✅ Correctness</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Syntactic accuracy, logical correctness, and adherence to programming best practices.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Perfect syntax and logic)<br>
+                                            <strong>Impact:</strong> Determines if generated code will execute without errors.
+                                        </p>
+                                    </div>
+                    
+                                </div>
+                            </div>
+            
+                            <!-- 🌟 Quality Metrics -->
+                            <div style="margin-bottom: 30px;">
+                                <h3 style="color: #28a745; margin: 0 0 20px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span style="background: #28a745; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em;">TIER 2</span>
+                                    🌟 Quality Metrics
+                                </h3>
+                                <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
+                                    <strong>Purpose:</strong> Assess the overall excellence and usefulness of generated content.
+                                </p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            
+                                    <div style="padding: 15px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #28a745; margin: 0 0 10px 0;">🎯 Relevance</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> How well the output matches the specific context and intended use case.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Perfectly targeted and contextual)<br>
+                                            <strong>Impact:</strong> Determines practical usefulness in real scenarios.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #28a745; margin: 0 0 10px 0;">📋 Completeness</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> How thoroughly the output addresses all requirements and handles edge cases.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Addresses all requirements comprehensively)<br>
+                                            <strong>Impact:</strong> Determines if additional development work is needed.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #28a745; margin: 0 0 10px 0;">💡 Clarity</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> How easily understandable and well-explained the output is for target users.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Crystal clear and intuitive)<br>
+                                            <strong>Impact:</strong> Affects user adoption and learning curve.
+                                        </p>
+                                    </div>
+                    
+                                </div>
+                            </div>
+            
+                            <!-- ⚡ Accuracy Metrics -->
+                            <div style="margin-bottom: 30px;">
+                                <h3 style="color: #ffc107; margin: 0 0 20px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span style="background: #ffc107; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em;">TIER 3</span>
+                                    ⚡ Accuracy Metrics
+                                </h3>
+                                <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
+                                    <strong>Purpose:</strong> Verify the technical precision and operational effectiveness of generated content.
+                                </p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            
+                                    <div style="padding: 15px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">🔧 Functional Correctness</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Alignment between intended behavior and actual output behavior across diverse inputs.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Behaves exactly as specified)<br>
+                                            <strong>Impact:</strong> Ensures reliability in production environments.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test scenarios)<br>
+                                            <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">🎓 Technical Precision</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Correct use of APIs, frameworks, libraries, and technical implementation details.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Expert-level technical accuracy)<br>
+                                            <strong>Impact:</strong> Affects performance, security, and maintainability.
+                                        </p>
+                                    </div>
+                    
+                                </div>
+                            </div>
+            
+                            <!-- 📈 Performance Metrics -->
+                            <div style="margin-bottom: 30px;">
+                                <h3 style="color: #6f42c1; margin: 0 0 20px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span style="background: #6f42c1; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em;">TIER 4</span>
+                                    📈 Performance Metrics
+                                </h3>
+                                <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
+                                    <strong>Purpose:</strong> Evaluate the operational efficiency and reliability of LLM models in production environments.
+                                </p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            
+                                    <div style="padding: 15px; border-left: 4px solid #6f42c1; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #6f42c1; margin: 0 0 10px 0;">⏱️ Average Response Time</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Mean time taken by the model to generate responses across all test inputs.<br>
+                                            <strong>Scale:</strong> Seconds (lower is better)<br>
+                                            <strong>Impact:</strong> Directly affects user experience and system throughput.
+                                        </p>
+                                    </div>
+                    
+                                </div>
+                            </div>
+            
+                            <!-- Methodology -->
+                            <div style="margin-bottom: 30px;">
+                                <h3 style="color: #dc3545; margin: 0 0 20px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span style="background: #dc3545; color: white; border-radius: 6px; padding: 4px 8px; font-size: 0.8em;">METHOD</span>
+                                    🧠 LLM3 Evaluation Process
+                                </h3>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                                    <div style="padding: 15px; border-left: 4px solid #dc3545; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #dc3545; margin: 0 0 10px 0;">🎯 Scoring Methodology</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Scale:</strong> All dimensions use 0-10 scoring where 10 represents ideal performance.<br>
+                                            <strong>Thresholds:</strong> 8+ = Excellent, 6-8 = Good, 4-6 = Acceptable, <4 = Needs Improvement.<br>
+                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test scenarios for reliability.
+                                        </p>
+                                    </div>
+                                    <div style="padding: 15px; border-left: 4px solid #dc3545; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #dc3545; margin: 0 0 10px 0;">⚖️ Comparative Analysis</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Trend Analysis:</strong> Improved (diff > +0.1), Declined (diff < -0.1), Maintained (±0.1).<br>
+                                            <strong>Significance:</strong> Changes evaluated for statistical and practical significance.<br>
+                                            <strong>Confidence:</strong> High (clear evidence), Moderate (some evidence), Low (uncertain).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Feature-Specific Context -->
+                            <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px;">
+                                <h4 style="color: #1976d2; margin: 0 0 15px 0;">🔧 Generate Code Feature Context</h4>
+                                <p style="margin: 0; line-height: 1.6; color: #0d47a1;">
+                                    <strong>Feature Focus:</strong> This evaluation specifically targets the { feature.replace('_', ' ').title() } capability of Katalon StudioAssist. 
+                                    Metrics are weighted and interpreted based on the critical success factors for this particular feature, ensuring that evaluation 
+                                    results directly translate to real-world usability and effectiveness in automated testing scenarios.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+        
+
+                <div class="footer">
+                    <p>Generated by Katalon StudioAssist LLM Evaluation Framework | 2025-06-12 11:33:02</p>
+                </div>
+            </div>
+
+            <script>
+                // Initialize tooltips
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('DOM loaded, creating charts and JSON viewers...');
+                    
+                    // Create JSON viewers
+                    console.log('Creating JSON viewers...');
+                    createJsonViewer('baseline-json', baselineJsonData);
+                    createJsonViewer('target-json', targetJsonData);
+                    
+                    // Create comprehensive analysis charts
+                    createComprehensiveAnalysisCharts();
+                    
+                    // Consistency Chart
+                    if (chartScoresData && chartScoresData.consistency && Object.keys(chartScoresData.consistency).length > 0) {
+                        createChart('consistencyChart', 'Consistency Metrics', chartScoresData.consistency, '#667eea');
+                    } else {
+                        console.warn('No consistency data available');
+                    }
+                    
+                    // Accuracy Chart  
+                    if (chartScoresData && chartScoresData.accuracy && Object.keys(chartScoresData.accuracy).length > 0) {
+                        createChart('accuracyChart', 'Accuracy Metrics', chartScoresData.accuracy, '#28a745');
+                    } else {
+                        console.warn('No accuracy data available');
+                    }
+                    
+                    // Quality Chart
+                    if (chartScoresData && chartScoresData.quality && Object.keys(chartScoresData.quality).length > 0) {
+                        createChart('qualityChart', 'Quality Metrics', chartScoresData.quality, '#ffc107');
+                    } else {
+                        console.warn('No quality data available');
+                    }
+                    
+                    // Response Time Chart
+                    if (chartScoresData && chartScoresData.response_time && Object.keys(chartScoresData.response_time).length > 0) {
+                        createChart('responseTimeChart', 'Response Time Metrics', chartScoresData.response_time, '#dc3545');
+                    } else {
+                        console.warn('No response time data available');
+                    }});
+
+                // JSON Viewer Functions
+                function createJsonViewer(containerId, jsonData) {
+                    const container = document.getElementById(containerId);
+                    if (!container) {
+                        console.error(`Container ${containerId} not found`);
+                        return;
+                    }
+
+                    try {
+                        const data = typeof jsonData === 'string' ? JSON.parse(jsonData) : jsonData;
+                        container.innerHTML = renderJsonElement(data, 0);
+                        
+                        // Add click handlers for toggles
+                        container.addEventListener('click', function(e) {
+                            if (e.target.classList.contains('json-toggle')) {
+                                toggleJsonElement(e.target);
+                            }
+                        });
+                    } catch (error) {
+                        container.innerHTML = `<div style="color: #e74c3c;">Error parsing JSON: ${error.message}</div>`;
+                    }
+                }
+
+                function renderJsonElement(obj, indent = 0) {
+                    const indentStr = '&nbsp;'.repeat(indent * 4);
+                    
+                    if (obj === null) {
+                        return `<span class="json-null">null</span>`;
+                    }
+                    
+                    if (typeof obj === 'boolean') {
+                        return `<span class="json-boolean">${obj}</span>`;
+                    }
+                    
+                    if (typeof obj === 'number') {
+                        return `<span class="json-number">${obj}</span>`;
+                    }
+                    
+                    if (typeof obj === 'string') {
+                        return `<span class="json-string">"${escapeHtml(obj)}"</span>`;
+                    }
+                    
+                    if (Array.isArray(obj)) {
+                        if (obj.length === 0) {
+                            return `<span class="json-bracket">[]</span>`;
+                        }
+                        
+                        const toggleId = 'toggle_' + Math.random().toString(36).substr(2, 9);
+                        let result = `<span class="json-toggle expanded" data-target="${toggleId}"></span><span class="json-bracket">[</span>`;
+                        result += `<div class="json-array" id="${toggleId}">`;
+                        
+                        obj.forEach((item, index) => {
+                            result += `<div class="json-property">${indentStr}&nbsp;&nbsp;&nbsp;&nbsp;${renderJsonElement(item, indent + 1)}`;
+                            if (index < obj.length - 1) result += ',';
+                            result += '</div>';
+                        });
+                        
+                        result += `</div>${indentStr}<span class="json-bracket">]</span>`;
+                        return result;
+                    }
+                    
+                    if (typeof obj === 'object') {
+                        const keys = Object.keys(obj);
+                        if (keys.length === 0) {
+                            return `<span class="json-bracket">{}</span>`;
+                        }
+                        
+                        const toggleId = 'toggle_' + Math.random().toString(36).substr(2, 9);
+                        let result = `<span class="json-toggle expanded" data-target="${toggleId}"></span><span class="json-bracket">{</span>`;
+                        result += `<div class="json-object" id="${toggleId}">`;
+                        
+                        keys.forEach((key, index) => {
+                            result += `<div class="json-property">${indentStr}&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"${escapeHtml(key)}"</span>: ${renderJsonElement(obj[key], indent + 1)}`;
+                            if (index < keys.length - 1) result += ',';
+                            result += '</div>';
+                        });
+                        
+                        result += `</div>${indentStr}<span class="json-bracket">}</span>`;
+                        return result;
+                    }
+                    
+                    return escapeHtml(String(obj));
+                }
+
+                function toggleJsonElement(toggle) {
+                    const targetId = toggle.getAttribute('data-target');
+                    const target = document.getElementById(targetId);
+                    
+                    if (!target) return;
+                    
+                    if (toggle.classList.contains('expanded')) {
+                        toggle.classList.remove('expanded');
+                        toggle.classList.add('collapsed');
+                        target.style.display = 'none';
+                    } else {
+                        toggle.classList.remove('collapsed');
+                        toggle.classList.add('expanded');
+                        target.style.display = 'block';
+                    }
+                }
+
+                function escapeHtml(text) {
+                    const div = document.createElement('div');
+                    div.textContent = text;
+                    return div.innerHTML;
+                }
+
+                // Chart data
+                const chartScoresData = {"consistency": {"Readability (LL1)": 10.0, "Readability (LL2)": 9.4, "Correctness (LL1)": 9.2, "Correctness (LL2)": 6.8}, "quality": {"Completeness (LL1)": 8.2, "Completeness (LL2)": 9.2, "Readability (LL1)": 10.0, "Readability (LL2)": 9.4, "Clarity (LL1)": 10.0, "Clarity (LL2)": 9.8, "Relevance (LL1)": 8.2, "Relevance (LL2)": 8.1}, "accuracy": {"Correctness (LL1)": 9.2, "Correctness (LL2)": 6.8, "Functionality (LL1)": 7.4, "Functionality (LL2)": 6.0, "Functional Correctness (LL1)": 7.4, "Functional Correctness (LL2)": 6.4, "Technical Precision (LL1)": 9.2, "Technical Precision (LL2)": 8.5}, "response_time": {"Average Response Time (LL1)": 2.3, "Average Response Time (LL2)": 1.8, "Response Consistency (LL1)": 0.85, "Response Consistency (LL2)": 0.92}};
+                console.log('Chart data:', chartScoresData);
+
+                // JSON Data
+                const baselineJsonData = {
+  "metadata": {
+    "feature": "generate_code",
+    "llm_version": "LL1",
+    "creation_timestamp": "2025-06-12T11:27:07.809352",
+    "total_results": 5,
+    "dataset_type": "baseline",
+    "evaluation_metadata": {
+      "evaluator_model": "gemini-2.5-flash-preview-05-20",
+      "evaluation_timestamp": "2025-06-12T11:28:22.008298",
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_ll1_20250612_112707_34eee40c.json"
+    }
+  },
+  "inputs": [
+    {
+      "input_id": "gen_code_001",
+      "feature": "generate_code",
+      "prompt": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_002",
+      "feature": "generate_code",
+      "prompt": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_003",
+      "feature": "generate_code",
+      "prompt": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_004",
+      "feature": "generate_code",
+      "prompt": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_005",
+      "feature": "generate_code",
+      "prompt": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    }
+  ],
+  "results": {
+    "gen_code_001": {
+      "input_id": "gen_code_001",
+      "feature": "generate_code",
+      "user_input": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
+      "api_input": {
+        "id": "studio-g4",
+        "inputParameters": {
+          "user_input": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible."
+        },
+        "promptId": "generate-code",
+        "feature": "generate_code"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Open browser and navigate to the specified URL\nWebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')\n\n// Enter 'John Doe' into the username field\nWebUI.setText(findTestObject('Test Objects/LoginPage/txt_Username'), 'John Doe')\n\n// Enter 'ThisIsNotAPassword' into the password field\nWebUI.setText(findTestObject('Test Objects/LoginPage/txt_Password'), 'ThisIsNotAPassword')\n\n// Click the login button\nWebUI.click(findTestObject('Test Objects/LoginPage/btn_Login'))\n\n// Verify that the Make Appointment text is visible on the home page\nWebUI.verifyElementVisible(findTestObject('Test Objects/HomePage/txt_MakeAppointment'))",
+      "gui_output": "Code generated below prompt in Script editor",
+      "llm_version": "LL1",
+      "timestamp": "2025-06-12T11:26:47.818740",
+      "response_time": 5.065280914306641,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 10,
+          "correctness": 10,
+          "readability": 10,
+          "functionality": 10
+        },
+        "feedback": {
+          "completeness": "The generated code addresses all requirements specified in the user input. Every action requested (open browser, navigate, enter text, click, verify visibility) is present and correctly implemented.",
+          "correctness": "The syntax is perfectly valid for Katalon Studio. It uses the correct `WebUI` keywords (`openBrowser`, `setText`, `click`, `verifyElementVisible`) and the `findTestObject()` method to correctly reference test objects. There are no syntax errors or incorrect keyword usages.",
+          "readability": "The code is exceptionally well-structured. Each line represents a distinct action, and the comments are clear, concise, and accurately describe the purpose of each step, directly mapping to the user's intent. Indentation is clean and consistent.",
+          "functionality": "This code would execute successfully in Katalon Studio, assuming the referenced test objects (`Test Objects/LoginPage/txt_Username`, `Test Objects/LoginPage/txt_Password`, `Test Objects/LoginPage/btn_Login`, `Test Objects/HomePage/txt_MakeAppointment`) exist and are correctly defined within the project. The flow is logical and follows standard web automation practices."
+        },
+        "overall_assessment": "The StudioAssist output is outstanding. It flawlessly translates the natural language prompt into highly functional, correct, complete, and readable Katalon Studio automation code. It demonstrates a strong understanding of common web automation actions and Katalon's API. This is an excellent example of effective code generation.",
+        "overall_score": 10,
+        "suggestions": [
+          "While not explicitly requested by the prompt, for a complete test script, it's good practice to add `WebUI.closeBrowser()` at the end to ensure the browser instance is closed after the test execution.",
+          "For increased robustness in real-world scenarios, consider adding explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForPageLoad`) before interacting with elements, especially after navigation or clicks that trigger page loads. However, for this specific prompt, the current output is sufficient."
+        ],
+        "meets_requirements": true,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:27:16.123026"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_002": {
+      "input_id": "gen_code_002",
+      "feature": "generate_code",
+      "user_input": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
+      "api_input": {
+        "id": "studio-g4",
+        "inputParameters": {
+          "user_input": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */"
+        },
+        "promptId": "generate-code",
+        "feature": "generate_code"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Tap on the login button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Login'), 0)\n// Enter email into the email text field\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Email'), 'user@example.com', 0)\n// Enter password into the password text field\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Password'), 'password123', 0)\n// Swipe up on the scroll view to find the submit button\nMobile.swipe(0, 800, 0, 200)\n// Tap on the submit button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Submit'), 0)",
+      "gui_output": "Code generated below prompt in Script editor",
+      "llm_version": "LL1",
+      "timestamp": "2025-06-12T11:26:52.264669",
+      "response_time": 3.4440019130706787,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 5,
+          "correctness": 10,
+          "readability": 10,
+          "functionality": 4
+        },
+        "feedback": {
+          "completeness": "The code is missing the crucial first step: `Start 'Test Objects/Mobile/Application'`. This is a fundamental omission that prevents the script from running as a standalone test. Additionally, the 'swipe to find' part is implemented as a generic swipe, not a robust method that actively searches for the element during the swipe (e.g., `Mobile.swipeToElement`), which means it doesn't fully address the 'find' aspect of the requirement.",
+          "correctness": "All Katalon Studio keywords (`Mobile.tap`, `Mobile.setText`, `Mobile.swipe`, `findTestObject`) are used correctly with valid syntax and parameters. The `0` for timeout is a valid parameter.",
+          "readability": "The code is very readable. It includes clear, concise comments for each step, and the structure is straightforward and easy to understand.",
+          "functionality": "The code would not execute successfully as a standalone script because it omits the `Mobile.startApplication` step. Without the application being launched, subsequent actions like tapping or setting text will fail. While the individual `Mobile.tap`, `Mobile.setText`, and `Mobile.swipe` commands are syntactically correct, their successful execution is dependent on the application being in the correct state, which is not ensured by the generated code. The `Mobile.swipe` uses fixed coordinates, which might not reliably reveal the `btn_Submit` across different devices or screen sizes, making the 'find' aspect unreliable."
+        },
+        "overall_assessment": "The StudioAssist output demonstrates good understanding of individual Katalon Mobile keywords and produces highly readable code with appropriate comments. However, it critically fails on completeness by omitting the initial application launch step, which is explicitly stated in the user's prompt. Furthermore, the implementation of the 'swipe to find' action is not robust, relying on a fixed coordinate swipe rather than a more intelligent method to locate the element. This significantly impacts the overall functionality and reliability of the generated script.",
+        "overall_score": 7,
+        "suggestions": [
+          "Add `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` at the very beginning of the script to ensure the mobile application is launched before any interactions.",
+          "For the 'swipe to find and tap' requirement, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'))` or `Mobile.swipeToText('Submit')` (if 'Submit' is the visible text on the button) instead of a fixed coordinate swipe. This makes the test more robust and ensures the element is actually found and brought into view before attempting to tap it.",
+          "If `Mobile.swipeToElement` is used, the subsequent `Mobile.tap` might become redundant if the element is already interactable after the swipe, but keeping it is generally safer."
+        ],
+        "meets_requirements": false,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:27:30.814606"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_003": {
+      "input_id": "gen_code_003",
+      "feature": "generate_code",
+      "user_input": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
+      "api_input": {
+        "id": "studio-g4",
+        "inputParameters": {
+          "user_input": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'."
+        },
+        "promptId": "generate-code",
+        "feature": "generate_code"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Send a POST request to 'Test Objects/API/CreateUser' with specified JSON body\nresponse = WS.sendRequest(findTestObject('Test Objects/API/CreateUser', [('body') : '{\"name\": \"morpheus\", \"job\": \"leader\"}']))\n\n// Verify response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n\n// Verify 'name' field in response body is 'morpheus'\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')",
+      "gui_output": "Code generated below prompt in Script editor",
+      "llm_version": "LL1",
+      "timestamp": "2025-06-12T11:26:55.951687",
+      "response_time": 2.684804916381836,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 7,
+          "correctness": 6,
+          "readability": 10,
+          "functionality": 4
+        },
+        "feedback": {
+          "completeness": "The code attempts to address all requirements from the prompt. However, the method used to send the request body (`findTestObject` with a `body` parameter) is generally not the correct or most robust way to send a raw JSON body for a POST request in Katalon Studio. This means the requirement to send the *specific JSON body* might not be fully met in practice, as it often results in the JSON string being sent as a form parameter rather than the raw request body.",
+          "correctness": "The syntax is valid, and Katalon keywords are correctly used. However, the core issue lies in the semantic correctness of sending the request body. Passing `('body') : '{\"name\": \"morpheus\", \"job\": \"leader\"}'` as a parameter to `findTestObject` is typically used for substituting variables *within* the Test Object's definition (e.g., URL parameters, form data, or variables inside a pre-defined body template). For sending a raw JSON body, the `TestObject` should be retrieved first, and then its `setBodyContent()` method should be used. This is a common misunderstanding and a significant functional flaw for typical REST API testing.",
+          "readability": "The code is exceptionally well-structured. It includes clear, concise comments for each logical step, proper indentation, and meaningful variable names, making it very easy to understand.",
+          "functionality": "While the code will execute without syntax errors, it is highly likely to fail in its primary objective of sending the correct JSON request body. As explained, `findTestObject` with a `body` parameter does not typically set the raw request body for a POST request. This means the API call will likely be malformed, leading to incorrect responses or errors from the server, and consequently, the subsequent verifications (`verifyResponseStatusCode`, `verifyElementPropertyValue`) will fail or operate on an unintended response. It would only work if the `Test Objects/API/CreateUser` object is specifically configured to take a variable named `body` and use it as its raw content, which is an uncommon setup for dynamic raw JSON bodies."
+        },
+        "overall_assessment": "The StudioAssist output demonstrates a good understanding of Katalon's verification keywords and code structure. The readability is excellent. However, it falls short on a critical aspect of API testing: correctly sending a dynamic raw JSON request body. The chosen method for setting the body is semantically incorrect for this common use case, which severely impacts the code's functionality and correctness, making it unlikely to achieve the user's intended outcome without manual correction.",
+        "overall_score": 7,
+        "suggestions": [
+          "To correctly send a raw JSON body, retrieve the `TestObject` first, then use its `setBodyContent()` method. For example:\n\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n\nTestObject requestObject = findTestObject('Test Objects/API/CreateUser')\nrequestObject.setBodyContent('{\"name\": \"morpheus\", \"job\": \"leader\"}')\nresponse = WS.sendRequest(requestObject)\n",
+          "Consider adding necessary import statements explicitly (e.g., `import com.kms.katalon.core.testobject.TestObject`) for better code clarity and robustness, although Katalon often handles these implicitly."
+        ],
+        "meets_requirements": false,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:27:51.785540"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_004": {
+      "input_id": "gen_code_004",
+      "feature": "generate_code",
+      "user_input": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
+      "api_input": {
+        "id": "studio-g4",
+        "inputParameters": {
+          "user_input": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/"
+        },
+        "promptId": "generate-code",
+        "feature": "generate_code"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Get the test data from 'TestData/Users'\ndef usersData = findTestData('TestData/Users')\n\n// Iterate through each row of the test data\nfor (def index = 1; index <= usersData.getRowNumbers(); index++) {\n    // Open a new browser instance\n    WebUI.openBrowser('')\n    \n    // Navigate to the login page\n    WebUI.navigateToUrl('https://example.com/login')\n    \n    // Enter the username from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Username'), usersData.getValue('username', index))\n    \n    // Enter the password from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Password'), usersData.getValue('password', index))\n    \n    // Click the login button\n    WebUI.click(findTestObject('Test Objects/Web/btn_Login'))\n    \n    // Close the browser\n    WebUI.closeBrowser()\n}",
+      "gui_output": "Code generated below prompt in Script editor",
+      "llm_version": "LL1",
+      "timestamp": "2025-06-12T11:27:01.531562",
+      "response_time": 4.577786684036255,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 10,
+          "correctness": 10,
+          "readability": 10,
+          "functionality": 9
+        },
+        "feedback": {
+          "completeness": "The generated code fully addresses all the functional requirements specified in the user input. It correctly implements the iteration through test data and performs all the requested browser actions (open, navigate, input, click, close) for each row. The initial requirement about defining test data is a project setup step, not a code generation step, and the code correctly assumes its existence and usage.",
+          "correctness": "The syntax is valid Groovy, and all Katalon Studio keywords and methods (`findTestData`, `WebUI.openBrowser`, `WebUI.navigateToUrl`, `WebUI.setText`, `WebUI.click`, `WebUI.closeBrowser`, `findTestObject`, `getValue`, `getRowNumbers`) are used correctly and appropriately. The 1-based indexing for `getValue` when iterating through test data rows is also correctly handled.",
+          "readability": "The code is exceptionally readable. It features clear, concise comments for each logical step, proper indentation, and a straightforward structure that makes it very easy to understand the automation flow at a glance.",
+          "functionality": "The code would execute successfully in Katalon Studio, provided that the specified test data file (`TestData/Users`) and test objects (`Test Objects/Web/txt_Username`, `Test Objects/Web/txt_Password`, `Test Objects/Web/btn_Login`) are correctly set up in the project. It accurately implements the loop and browser actions as requested. The only minor deduction is that for real-world robustness, common practices like explicit waits or error handling are often necessary, though not explicitly requested by the prompt."
+        },
+        "overall_assessment": "The StudioAssist output is outstanding. It perfectly translates the user's natural language requirements into functional, correct, and highly readable Katalon Studio automation code. It demonstrates a strong understanding of Katalon's API and best practices for basic web automation. It's a near-perfect response to the given prompt.",
+        "overall_score": 9.8,
+        "suggestions": [
+          "For more robust web automation, especially after navigation or clicks, consider adding explicit waits like `WebUI.waitForPageLoad()` or `WebUI.waitForElementPresent()` before interacting with elements to ensure the page is fully loaded and elements are available.",
+          "Implement `try-catch` blocks around critical steps (e.g., the login process) to gracefully handle potential failures, prevent test case abortion, and provide more informative logging or reporting.",
+          "While `WebUI.closeBrowser()` works, `WebUI.closeBrowserAndCleanUp()` is often preferred at the end of a test case or iteration to ensure all browser processes are terminated cleanly and resources are released.",
+          "Consider adding a verification step after the login click (e.g., `WebUI.verifyElementPresent` for an element on the post-login page) to confirm that the login was successful, rather than just assuming it.",
+          "For better maintainability and reusability, the URL `https://example.com/login` could be stored as a Global Variable or in a separate configuration file."
+        ],
+        "meets_requirements": true,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:28:07.504949"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_005": {
+      "input_id": "gen_code_005",
+      "feature": "generate_code",
+      "user_input": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
+      "api_input": {
+        "id": "studio-g4",
+        "inputParameters": {
+          "user_input": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'."
+        },
+        "promptId": "generate-code",
+        "feature": "generate_code"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "/*\n * Logs into the application with the provided username and password.\n *\n * @param username The username to enter.\n * @param password The password to enter.\n */\n@Keyword\ndef login(String username, String password) {\n    // Open a new browser window\n    WebUI.openBrowser('')\n    // Navigate to the specified URL\n    WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\n    // Enter the username into the username field\n    WebUI.setText(findTestObject('Test Objects/LoginPage/txt_Username'), username)\n    // Enter the password into the password field\n    WebUI.setText(findTestObject('Test Objects/LoginPage/txt_Password'), password)\n    // Click the login button\n    WebUI.click(findTestObject('Test Objects/LoginPage/btn_Login'))\n}",
+      "gui_output": "Code generated below prompt in Script editor",
+      "llm_version": "LL1",
+      "timestamp": "2025-06-12T11:27:06.807439",
+      "response_time": 4.274093151092529,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 9,
+          "correctness": 10,
+          "readability": 10,
+          "functionality": 10
+        },
+        "feedback": {
+          "completeness": "The code provides the complete method definition for the custom keyword, including parameters and all requested actions. The 'WebUIKeywords' part of the name refers to the package/folder structure in Katalon Studio (e.g., `Keywords/WebUIKeywords/login.groovy`), which the generated code snippet itself doesn't explicitly create, but the `login` method is correctly defined to be placed within such a structure.",
+          "correctness": "The syntax is valid Groovy/Java, and all Katalon Studio keywords (`WebUI.openBrowser`, `WebUI.navigateToUrl`, `WebUI.setText`, `WebUI.click`, `findTestObject`) are used correctly and appropriately. The `@Keyword` annotation is also correctly applied.",
+          "readability": "The code is exceptionally well-structured with proper indentation. It includes clear Javadoc-style comments for the keyword definition and concise inline comments for each step, making it very easy to understand and maintain.",
+          "functionality": "This code would execute successfully in Katalon Studio, assuming the specified test objects (`Test Objects/LoginPage/txt_Username`, `Test Objects/LoginPage/txt_Password`, `Test Objects/LoginPage/btn_Login`) exist and are correctly defined in the project. The logic flows as expected to perform the login operation."
+        },
+        "overall_assessment": "The StudioAssist output is excellent. It accurately translates the user's request into functional and highly readable Katalon Studio code. It correctly implements all the required actions for a login keyword, demonstrating a strong understanding of Katalon's WebUI API and best practices for custom keyword creation. The only minor nuance is the interpretation of the keyword's full name, which is more about file structure than the code content itself.",
+        "overall_score": 9.75,
+        "suggestions": [
+          "While the code itself is perfect for the keyword's content, for a user new to Katalon, it might be helpful to explicitly mention where this code should be placed (e.g., 'This code should be placed in a new keyword file named `login.groovy` under the `Keywords/WebUIKeywords` folder in your Katalon Studio project.').",
+          "Consider adding basic error handling (e.g., `try-catch` blocks or `WebUI.waitForElementPresent` before interacting with elements) for more robust automation, though this was not explicitly requested by the user."
+        ],
+        "meets_requirements": true,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:28:20.998536"
+      },
+      "human_validation": null,
+      "error": null
+    }
+  },
+  "comprehensive_analysis": {
+    "summary": {
+      "total_evaluated": 5,
+      "evaluation_errors": 0,
+      "start_time": "2025-06-12T11:27:07.816788",
+      "end_time": "2025-06-12T11:28:21.999781"
+    },
+    "diversity_analysis": {
+      "total_inputs": 5,
+      "unique_patterns": 5,
+      "prompt_length_stats": {
+        "min": 198,
+        "max": 428,
+        "mean": 322.8,
+        "median": 314,
+        "std_dev": 84.52928486625213
+      },
+      "pattern_categories": {
+        "testing": 5,
+        "web_automation": 3,
+        "mobile_testing": 3,
+        "api_testing": 1,
+        "data_driven": 1,
+        "custom_keywords": 1
+      },
+      "complexity_distribution": {
+        "low": 2,
+        "medium": 3,
+        "high": 0
+      }
+    },
+    "quality_analysis": {
+      "total_outputs": 5,
+      "output_length_stats": {
+        "min": 404,
+        "max": 825,
+        "mean": 627.2,
+        "median": 632,
+        "std_dev": 168.52210537493295
+      },
+      "keyword_usage": {
+        "WebUI": 16,
+        "TestObject": 15,
+        "Mobile": 9,
+        "WS": 3,
+        "@Keyword": 1
+      },
+      "error_patterns": {},
+      "response_time_analysis": {
+        "min": 2.684804916381836,
+        "max": 5.065280914306641,
+        "mean": 4.0091935157775875,
+        "median": 4.274093151092529,
+        "percentile_95": 5.065280914306641
+      }
+    },
+    "score_analysis": {
+      "criteria_analysis": {
+        "completeness": {
+          "description": "Does the code address all requirements from the prompt?",
+          "count": 5,
+          "mean": 8.2,
+          "median": 9,
+          "std_dev": 2.16794833886788,
+          "min": 5,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 3,
+            "good (6-8)": 1,
+            "fair (4-6)": 1,
+            "poor (0-4)": 0
+          }
+        },
+        "correctness": {
+          "description": "Is the syntax valid and does it use proper Katalon keywords?",
+          "count": 5,
+          "mean": 9.2,
+          "median": 10,
+          "std_dev": 1.7888543819998317,
+          "min": 6,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 4,
+            "good (6-8)": 1,
+            "fair (4-6)": 0,
+            "poor (0-4)": 0
+          }
+        },
+        "readability": {
+          "description": "Is the code well-structured with proper indentation and comments?",
+          "count": 5,
+          "mean": 10,
+          "median": 10,
+          "std_dev": 0.0,
+          "min": 10,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 5,
+            "good (6-8)": 0,
+            "fair (4-6)": 0,
+            "poor (0-4)": 0
+          }
+        },
+        "functionality": {
+          "description": "Would this code execute successfully in Katalon Studio?",
+          "count": 5,
+          "mean": 7.4,
+          "median": 9,
+          "std_dev": 3.1304951684997055,
+          "min": 4,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 3,
+            "good (6-8)": 0,
+            "fair (4-6)": 2,
+            "poor (0-4)": 0
+          }
+        }
+      },
+      "overall_statistics": {
+        "mean": 8.71,
+        "median": 9.75,
+        "std_dev": 1.5638094513079273,
+        "min": 7,
+        "max": 10,
+        "meets_requirements_percentage": 60.0
+      },
+      "score_distribution": {
+        "0-2": 0,
+        "2-4": 0,
+        "4-6": 0,
+        "6-8": 2,
+        "8-10": 3
+      },
+      "correlation_analysis": {
+        "completeness_vs_correctness": 0.3094263738776381,
+        "completeness_vs_readability": 0.0,
+        "completeness_vs_functionality": 0.9061772377845115,
+        "correctness_vs_readability": 0.0,
+        "correctness_vs_functionality": 0.6071428571428572,
+        "readability_vs_functionality": 0.0
+      },
+      "improvement_areas": []
+    },
+    "feedback_analysis": {
+      "common_feedback_themes": {
+        "completeness": 2,
+        "accuracy": 15,
+        "clarity": 5,
+        "best_practices": 3,
+        "error_handling": 8
+      },
+      "suggestion_frequency": {
+        "While not explicitly requested by the prompt, for a complete test script, it's good practice to add `WebUI.closeBrowser()` at the end to ensure the browser instance is closed after the test execution.": 1,
+        "For increased robustness in real-world scenarios, consider adding explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForPageLoad`) before interacting with elements, especially after navigation or clicks that trigger page loads. However, for this specific prompt, the current output is sufficient.": 1,
+        "Add `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` at the very beginning of the script to ensure the mobile application is launched before any interactions.": 1,
+        "For the 'swipe to find and tap' requirement, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'))` or `Mobile.swipeToText('Submit')` (if 'Submit' is the visible text on the button) instead of a fixed coordinate swipe. This makes the test more robust and ensures the element is actually found and brought into view before attempting to tap it.": 1,
+        "If `Mobile.swipeToElement` is used, the subsequent `Mobile.tap` might become redundant if the element is already interactable after the swipe, but keeping it is generally safer.": 1,
+        "To correctly send a raw JSON body, retrieve the `TestObject` first, then use its `setBodyContent()` method. For example:\n\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n\nTestObject requestObject = findTestObject('Test Objects/API/CreateUser')\nrequestObject.setBodyContent('{\"name\": \"morpheus\", \"job\": \"leader\"}')\nresponse = WS.sendRequest(requestObject)\n": 1,
+        "Consider adding necessary import statements explicitly (e.g., `import com.kms.katalon.core.testobject.TestObject`) for better code clarity and robustness, although Katalon often handles these implicitly.": 1,
+        "For more robust web automation, especially after navigation or clicks, consider adding explicit waits like `WebUI.waitForPageLoad()` or `WebUI.waitForElementPresent()` before interacting with elements to ensure the page is fully loaded and elements are available.": 1,
+        "Implement `try-catch` blocks around critical steps (e.g., the login process) to gracefully handle potential failures, prevent test case abortion, and provide more informative logging or reporting.": 1,
+        "While `WebUI.closeBrowser()` works, `WebUI.closeBrowserAndCleanUp()` is often preferred at the end of a test case or iteration to ensure all browser processes are terminated cleanly and resources are released.": 1
+      },
+      "feedback_sentiment": {
+        "positive": 4,
+        "neutral": 1,
+        "negative": 0
+      }
+    },
+    "insights": [
+      "Limited test coverage: Consider increasing the number of test patterns for more comprehensive evaluation.",
+      "Excellent overall performance: The current configuration is producing high-quality outputs.",
+      "Strong correlation between completeness_vs_functionality (0.91): These criteria are closely related."
+    ]
+  }
+};
+                const targetJsonData = {
+  "metadata": {
+    "feature": "generate_code",
+    "llm_version": "LL2",
+    "creation_timestamp": "2025-06-12T11:30:53.145532",
+    "total_results": 5,
+    "dataset_type": "target",
+    "evaluation_metadata": {
+      "evaluator_model": "gemini-2.5-flash-preview-05-20",
+      "evaluation_timestamp": "2025-06-12T11:32:15.782386",
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_ll2_20250612_113053_0e3838fe.json"
+    }
+  },
+  "inputs": [
+    {
+      "input_id": "gen_code_001",
+      "feature": "generate_code",
+      "prompt": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_002",
+      "feature": "generate_code",
+      "prompt": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_003",
+      "feature": "generate_code",
+      "prompt": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_004",
+      "feature": "generate_code",
+      "prompt": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    },
+    {
+      "input_id": "gen_code_005",
+      "feature": "generate_code",
+      "prompt": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "prompt_id": "generate-code"
+    }
+  ],
+  "results": {
+    "gen_code_001": {
+      "input_id": "gen_code_001",
+      "feature": "generate_code",
+      "user_input": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
+      "api_input": {
+        "model": "gpt-4o-mini",
+        "prompt": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test...",
+        "llm_type": "personal_openai",
+        "api_url": "https://api.openai.com/v1/chat/completions"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Open the browser and navigate to the specified URL\nWebUI.openBrowser('')\nWebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\n\n// Enter 'John Doe' into the username text field\nWebUI.setText(findTestObject('LoginPage/txt_Username'), 'John Doe')\n\n// Enter 'ThisIsNotAPassword' into the password text field\nWebUI.setText(findTestObject('LoginPage/txt_Password'), 'ThisIsNotAPassword')\n\n// Click on the login button\nWebUI.click(findTestObject('LoginPage/btn_Login'))\n\n// Verify that the make appointment text is visible\nWebUI.verifyElementVisible(findTestObject('HomePage/txt_MakeAppointment'))",
+      "gui_output": "Output displayed in Katalon Studio generate_code interface",
+      "llm_version": "LL2",
+      "timestamp": "2025-06-12T11:30:34.727372",
+      "response_time": 3.362149953842163,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 10,
+          "correctness": 10,
+          "readability": 10,
+          "functionality": 10
+        },
+        "feedback": {
+          "completeness": "The code fully addresses all requirements specified in the user prompt. Every action requested (open browser, navigate, set text, click, verify visibility) is present and correctly implemented.",
+          "correctness": "The syntax is entirely valid for Katalon Studio Groovy. All Katalon keywords (`WebUI.openBrowser`, `WebUI.navigateToUrl`, `WebUI.setText`, `WebUI.click`, `WebUI.verifyElementVisible`, `findTestObject`) are used correctly and appropriately.",
+          "readability": "The code is exceptionally well-structured. It uses clear, concise comments for each logical block, proper indentation, and a straightforward flow, making it very easy to understand.",
+          "functionality": "The code would execute successfully in Katalon Studio, assuming the referenced Test Objects exist in the project. It correctly performs all the requested actions. While the specific login credentials might not lead to a successful login on the demo site (due to the expected password being 'ThisIsNotAPassword!' with an exclamation mark), the code accurately implements the user's instruction to enter 'ThisIsNotAPassword', thus fulfilling its functional requirement based on the prompt."
+        },
+        "overall_assessment": "This is an excellent output from StudioAssist. The generated code is a perfect translation of the natural language input into robust, readable, and functionally correct Katalon Studio automation script. It demonstrates a strong understanding of Katalon's WebUI keywords and best practices for structuring test steps.",
+        "overall_score": 10,
+        "suggestions": [
+          "For a complete test case, consider adding `WebUI.closeBrowser()` at the end to ensure the browser instance is properly closed after the test execution.",
+          "To make tests more robust against loading times, consider adding `WebUI.waitForElementVisible` or `WebUI.waitForPageLoad` after navigation or clicks, especially before interacting with subsequent elements. (This is an enhancement, not a correction, as it wasn't explicitly requested by the prompt)."
+        ],
+        "meets_requirements": true,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:31:05.239356"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_002": {
+      "input_id": "gen_code_002",
+      "feature": "generate_code",
+      "user_input": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
+      "api_input": {
+        "model": "gpt-4o-mini",
+        "prompt": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@exam...",
+        "llm_type": "personal_openai",
+        "api_url": "https://api.openai.com/v1/chat/completions"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Start the mobile application\nMobile.startApplication('path/to/your/application.apk', false)\n// Tap on the login button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Login'), 10)\n// Enter the email address\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Email'), 'user@example.com', 10)\n// Enter the password\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Password'), 'password123', 10)\n// Swipe up to find the submit button\nMobile.swipe(0, 1000, 0, 500) // Adjust swipe coordinates as necessary\n// Tap on the submit button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Submit'), 10)",
+      "gui_output": "Output displayed in Katalon Studio generate_code interface",
+      "llm_version": "LL2",
+      "timestamp": "2025-06-12T11:30:39.559405",
+      "response_time": 3.8300883769989014,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 7,
+          "correctness": 6,
+          "readability": 9,
+          "functionality": 4
+        },
+        "feedback": {
+          "completeness": "The code addresses most requirements, but the 'swipe up on Test Objects/Mobile/scrollView to find and tap Test Objects/Mobile/btn_Submit' part is not fully complete. It performs a generic swipe but lacks the specific 'on scrollView' constraint and robust 'find' logic (e.g., waiting or iterating swipes until the element is found). The initial 'Start Test Objects/Mobile/Application' was interpreted as an APK path, whereas it might imply an Application Test Object.",
+          "correctness": "The syntax for all Katalon keywords (`Mobile.startApplication`, `Mobile.tap`, `Mobile.setText`, `findTestObject`) is correct. However, the logical implementation of the 'swipe to find and tap' is not entirely correct for a robust mobile automation scenario. `Mobile.swipe` performs a generic screen swipe, not specifically on a Test Object like 'scrollView'. To swipe on a specific object, one would typically need to get its coordinates or use a more advanced keyword like `Mobile.swipeToElement` if the goal is to reveal a hidden element.",
+          "readability": "The code is very well-structured with clear, concise comments for each step. Indentation is proper, making it easy to understand the flow of execution.",
+          "functionality": "The basic interactions (tap, setText) would likely execute successfully. However, the 'swipe' and subsequent 'tap' for the submit button is the weakest point. A single generic `Mobile.swipe` might not reveal the `btn_Submit` element, and there's no explicit wait or verification that the element is visible before attempting to tap it. If `btn_Submit` is not visible after the single swipe, the `Mobile.tap` call will fail. The prompt implied a 'find' action after swiping, which is not robustly implemented here."
+        },
+        "overall_assessment": "The StudioAssist output provides a good foundation for the automation script, correctly handling straightforward actions like tapping and setting text with proper Katalon syntax and excellent readability. However, it struggles with the more complex requirement of swiping on a specific element to find and interact with another, opting for a less robust generic swipe that lacks verification and iterative search capabilities. The interpretation of starting the application could also be improved for better maintainability.",
+        "overall_score": 6,
+        "suggestions": [
+          "For starting the application, if 'Test Objects/Mobile/Application' refers to an Application Test Object, use `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` instead of a hardcoded APK path for better maintainability and environment flexibility.",
+          "Improve the 'swipe to find and tap' logic. Instead of a generic `Mobile.swipe`, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'), Mobile.DIRECTION_UP, 10, 100)` which will swipe upwards until the submit button is found (adjust max swipes and offset as needed). This keyword inherently handles the 'find' aspect.",
+          "If the swipe *must* be confined to the 'scrollView' object, you would need to get the coordinates of `findTestObject('Test Objects/Mobile/scrollView')` and then perform `Mobile.swipe` within those bounds, potentially in a loop with `Mobile.verifyElementVisible` for `btn_Submit`."
+        ],
+        "meets_requirements": false,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:31:23.466633"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_003": {
+      "input_id": "gen_code_003",
+      "feature": "generate_code",
+      "user_input": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
+      "api_input": {
+        "model": "gpt-4o-mini",
+        "prompt": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"lead...",
+        "llm_type": "personal_openai",
+        "api_url": "https://api.openai.com/v1/chat/completions"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Sending a POST request to the specified API test object\nResponseObject response = WS.sendRequest(findTestObject('API/CreateUser', [('body') : '{\"name\": \"morpheus\", \"job\": \"leader\"}']))\n// Verifying that the response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n// Verifying that the 'name' field in the response body is 'morpheus'\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')",
+      "gui_output": "Output displayed in Katalon Studio generate_code interface",
+      "llm_version": "LL2",
+      "timestamp": "2025-06-12T11:30:43.051082",
+      "response_time": 2.490165948867798,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 10,
+          "correctness": 4,
+          "readability": 9,
+          "functionality": 3
+        },
+        "feedback": {
+          "completeness": "The code addresses all requirements specified in the user input: sending a POST request, specifying the test object, including the body, verifying the status code, and verifying a specific field in the response body.",
+          "correctness": "The main issue lies in how the request body is handled. Passing the entire JSON string as a parameter named 'body' to `findTestObject` is not the standard or robust way to set the HTTP request body for a POST request in Katalon Studio. `findTestObject`'s second argument is for substituting variables *within* the test object's definition (e.g., in the URL or body if parameterized as `${variable_name}`). It does not directly set the entire HTTP body content. This approach would only work if the 'CreateUser' test object's HTTP Body was literally configured as `\"${body}\"`, which is highly unconventional. The verification steps (`WS.verifyResponseStatusCode`, `WS.verifyElementPropertyValue`) are correct.",
+          "readability": "The code is well-structured with clear comments explaining each step. Variable naming is appropriate. Indentation is standard. The only minor point is the absence of explicit import statements, but Katalon Studio often handles these implicitly.",
+          "functionality": "This code would likely *not* execute successfully as intended for setting the request body in a typical Katalon Studio project. The request body would either be empty or incorrectly formed, leading to a failed API call (e.g., a 400 Bad Request) because the JSON payload '{\"name\": \"morpheus\", \"job\": \"leader\"}' would not be sent as the HTTP body. It relies on a very specific and non-standard configuration of the 'CreateUser' test object that is unlikely to be the default or expected setup."
+        },
+        "overall_assessment": "The StudioAssist output correctly identifies the necessary actions (send request, verify status, verify body field) and uses the appropriate Katalon keywords for verification. However, it has a critical flaw in how it attempts to set the dynamic request body for the POST request. The method used for passing the body content is unconventional and would likely not work as expected in a standard Katalon Studio project, making the code functionally incorrect for its primary purpose of sending a specific JSON body.",
+        "overall_score": 6,
+        "suggestions": [
+          "When a full JSON body string is provided in the prompt, the generated code should explicitly retrieve the `RequestObject` from `findTestObject`, then modify its `bodyContent` using `request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(requestBody, \"application/json\"))` before sending the request.",
+          "Alternatively, if the intent is to use parameters, the prompt should be interpreted as providing *individual fields* for parameterization, and the generated code should pass those individual fields as parameters to `findTestObject` (e.g., `findTestObject('API/CreateUser', [('name') : 'morpheus', ('job') : 'leader'])`), assuming the API test object's body is parameterized (e.g., `{\"name\": \"${name}\", \"job\": \"${job}\"}`). Given the prompt provided a *full JSON string*, the first suggestion is more appropriate.",
+          "Consider adding necessary import statements (e.g., `import com.kms.katalon.core.webservice.keyword.WSBuiltinKeywords as WS`, `import com.kms.katalon.core.webservice.model.RequestObject`, `import com.kms.katalon.core.webservice.model.ResponseObject`) for better code clarity and portability, although Katalon Studio often handles these implicitly."
+        ],
+        "meets_requirements": false,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:31:42.108483"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_004": {
+      "input_id": "gen_code_004",
+      "feature": "generate_code",
+      "user_input": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
+      "api_input": {
+        "model": "gpt-4o-mini",
+        "prompt": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate t...",
+        "llm_type": "personal_openai",
+        "api_url": "https://api.openai.com/v1/chat/completions"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "// Define the test data from an Excel file\ndef testData = findTestData('TestData/Users')\n\n// Iterate through each row of the test data\nfor (def index : (1..testData.getRowNumbers())) {\n    // Open the browser\n    WebUI.openBrowser('')\n    \n    // Navigate to the login page\n    WebUI.navigateToUrl('https://example.com/login')\n    \n    // Enter username from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Username'), testData.getValue('username', index))\n    \n    // Enter password from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Password'), testData.getValue('password', index))\n    \n    // Click the login button\n    WebUI.click(findTestObject('Test Objects/Web/btn_Login'))\n    \n    // Close the browser\n    WebUI.closeBrowser()\n}",
+      "gui_output": "Output displayed in Katalon Studio generate_code interface",
+      "llm_version": "LL2",
+      "timestamp": "2025-06-12T11:30:47.492710",
+      "response_time": 3.440117120742798,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 10,
+          "correctness": 5,
+          "readability": 9,
+          "functionality": 4
+        },
+        "feedback": {
+          "completeness": "The code addresses all requirements specified in the prompt. It correctly identifies the need to define test data, iterate through it, perform browser actions (open, navigate, input, click), and close the browser for each iteration.",
+          "correctness": "The most significant correctness issue is the loop for iterating through test data. Katalon Studio's `findTestData` and its `getValue` method are 0-indexed for rows. The generated loop `for (def index : (1..testData.getRowNumbers()))` will skip the first row (index 0) and will cause an `IndexOutOfBoundsException` when `index` reaches `testData.getRowNumbers()` (which is the count of rows, not the maximum index). The correct iteration should be `for (def index : (0..<testData.getRowNumbers()))` or `for (def index : (0..testData.getRowNumbers()-1))`.",
+          "readability": "The code is very well-structured with clear and concise comments for each major step. Indentation is proper, making it easy to follow the logic. Variable names are generally clear and descriptive.",
+          "functionality": "Due to the incorrect iteration logic for test data (0-indexed vs 1-indexed loop), the code will not execute successfully as intended. It will skip the first row of data and then likely throw an `IndexOutOfBoundsException` when trying to access an out-of-bounds index. While the individual `WebUI` keywords are correctly used, the overall data-driven flow is flawed and will not process all rows as requested."
+        },
+        "overall_assessment": "The StudioAssist output provides a good structural and readable solution, clearly outlining all the steps requested by the user. However, it contains a critical functional error in how it iterates through the test data. Katalon Studio's test data rows are 0-indexed, but the generated loop starts from 1 and goes up to the total row count, which will lead to skipping the first row and an `IndexOutOfBoundsException` for the last row. This fundamental flaw prevents the code from executing correctly and fulfilling the core requirement of iterating through *each* row.",
+        "overall_score": 7,
+        "suggestions": [
+          "**Correct the test data iteration loop:** Change `for (def index : (1..testData.getRowNumbers()))` to `for (def index : (0..<testData.getRowNumbers()))` or `for (def index : (0..testData.getRowNumbers()-1))` to correctly iterate through all 0-indexed rows.",
+          "**Add explicit waits:** Consider adding `WebUI.waitForPageLoad()` after `navigateToUrl` and `WebUI.waitForElementPresent()` or `WebUI.waitForElementClickable()` before `setText` and `click` actions to improve test stability and reliability.",
+          "**Implement error handling:** Wrap critical web operations (e.g., `navigateToUrl`, `setText`, `click`) in `try-catch` blocks to gracefully handle potential failures and provide more informative error messages.",
+          "**Add verification steps:** After clicking the login button, add a verification step (e.g., `WebUI.verifyElementPresent(findTestObject('Test Objects/Web/txt_WelcomeMessage'), 10)`) to confirm that the login was successful for each user.",
+          "**Specify browser type:** While `WebUI.openBrowser('')` uses the default, it's often clearer to explicitly specify the browser, e.g., `WebUI.openBrowser(BrowserType.CHROME)`."
+        ],
+        "meets_requirements": false,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:31:58.546135"
+      },
+      "human_validation": null,
+      "error": null
+    },
+    "gen_code_005": {
+      "input_id": "gen_code_005",
+      "feature": "generate_code",
+      "user_input": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
+      "api_input": {
+        "model": "gpt-4o-mini",
+        "prompt": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as param...",
+        "llm_type": "personal_openai",
+        "api_url": "https://api.openai.com/v1/chat/completions"
+      },
+      "config": {
+        "mode": "script",
+        "katalon_version": "10.2.0"
+      },
+      "api_output": "```groovy\nimport com.kms.katalon.core.annotation.Keyword\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\n/*\n *  Custom keyword for logging into the application\n *\n *  @param username The username to log in\n *  @param password The password for the user\n */\n@Keyword\ndef login(String username, String password) {\n    WebUI.openBrowser('') // Open a new browser window\n    WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/') // Navigate to the specified URL\n    WebUI.setText(findTestObject('LoginPage/txt_Username'), username) // Enter the username into the username field\n    WebUI.setText(findTestObject('LoginPage/txt_Password'), password) // Enter the password into the password field\n    WebUI.click(findTestObject('LoginPage/btn_Login')) // Click the login button\n}\n```",
+      "gui_output": "Output displayed in Katalon Studio generate_code interface",
+      "llm_version": "LL2",
+      "timestamp": "2025-06-12T11:30:52.144259",
+      "response_time": 3.6487953662872314,
+      "ll3_evaluation": {
+        "scores": {
+          "completeness": 9,
+          "correctness": 9,
+          "readability": 10,
+          "functionality": 9
+        },
+        "feedback": {
+          "completeness": "The code addresses almost all requirements. It correctly defines the 'login' method with the specified parameters and performs all requested WebUI actions. The only minor point is that the prompt specified 'WebUIKeywords.login', implying the keyword's full path. The generated code is the 'login' method itself, which would reside within a 'WebUIKeywords' package/file, so it's largely complete in terms of the method definition.",
+          "correctness": "The syntax is valid Groovy and all Katalon keywords are used correctly. The imports and `@Keyword` annotation are also correct. The only minor point is the use of `WebUI.openBrowser('')`. While syntactically valid and often defaults to the configured browser, `WebUI.openBrowser(null)` or simply `WebUI.openBrowser()` is the more idiomatic and robust way to open the default browser.",
+          "readability": "The code is exceptionally well-structured. It includes clear Javadoc-style comments for the keyword and concise inline comments for each step, significantly enhancing readability. Indentation is proper and consistent.",
+          "functionality": "The code would execute successfully in Katalon Studio, assuming the specified Test Objects ('LoginPage/txt_Username', 'LoginPage/txt_Password', 'LoginPage/btn_Login') exist. The `WebUI.openBrowser('')` call, despite being slightly non-standard, typically defaults to the configured browser and would not prevent execution. It correctly performs the login flow as requested."
+        },
+        "overall_assessment": "The StudioAssist output is very good. It accurately translates the user's request into a functional and highly readable custom keyword for Katalon Studio. The use of proper annotations, imports, and built-in keywords is commendable. The inclusion of detailed comments is a significant plus. The only minor areas for improvement relate to best practices for opening a browser and ensuring the keyword's full path aligns with the user's naming convention.",
+        "overall_score": 9,
+        "suggestions": [
+          "For opening the default browser, it's generally better practice to use `WebUI.openBrowser(null)` or simply `WebUI.openBrowser()` without any arguments, instead of an empty string `''`. This makes the intent clearer and is more robust.",
+          "While not explicitly requested, consider adding implicit or explicit waits (e.g., `WebUI.waitForElementPresent`, `WebUI.waitForPageLoad`) after navigation and before interacting with elements to make the automation more robust against varying page load times.",
+          "The prompt specified 'WebUIKeywords.login'. While the method name 'login' is correct, ensure the generated keyword file is placed in a 'WebUIKeywords' folder within the 'Keywords' directory of the Katalon project to fully adhere to the user's implied naming convention for the keyword's full path."
+        ],
+        "meets_requirements": true,
+        "evaluator_model": "gemini-2.5-flash-preview-05-20",
+        "evaluation_timestamp": "2025-06-12T11:32:14.775289"
+      },
+      "human_validation": null,
+      "error": null
+    }
+  },
+  "comprehensive_analysis": {
+    "summary": {
+      "total_evaluated": 5,
+      "evaluation_errors": 0,
+      "start_time": "2025-06-12T11:30:53.154823",
+      "end_time": "2025-06-12T11:32:15.776882"
+    },
+    "diversity_analysis": {
+      "total_inputs": 5,
+      "unique_patterns": 5,
+      "prompt_length_stats": {
+        "min": 198,
+        "max": 428,
+        "mean": 322.8,
+        "median": 314,
+        "std_dev": 84.52928486625213
+      },
+      "pattern_categories": {
+        "testing": 5,
+        "web_automation": 3,
+        "mobile_testing": 3,
+        "api_testing": 1,
+        "data_driven": 1,
+        "custom_keywords": 1
+      },
+      "complexity_distribution": {
+        "low": 2,
+        "medium": 3,
+        "high": 0
+      }
+    },
+    "quality_analysis": {
+      "total_outputs": 5,
+      "output_length_stats": {
+        "min": 410,
+        "max": 810,
+        "mean": 644,
+        "median": 610,
+        "std_dev": 162.19741058352318
+      },
+      "keyword_usage": {
+        "WebUI": 18,
+        "TestObject": 15,
+        "Mobile": 10,
+        "WS": 3,
+        "@Keyword": 1
+      },
+      "error_patterns": {},
+      "response_time_analysis": {
+        "min": 2.490165948867798,
+        "max": 3.8300883769989014,
+        "mean": 3.354263353347778,
+        "median": 3.440117120742798,
+        "percentile_95": 3.8300883769989014
+      }
+    },
+    "score_analysis": {
+      "criteria_analysis": {
+        "completeness": {
+          "description": "Does the code address all requirements from the prompt?",
+          "count": 5,
+          "mean": 9.2,
+          "median": 10,
+          "std_dev": 1.3038404810405297,
+          "min": 7,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 4,
+            "good (6-8)": 1,
+            "fair (4-6)": 0,
+            "poor (0-4)": 0
+          }
+        },
+        "correctness": {
+          "description": "Is the syntax valid and does it use proper Katalon keywords?",
+          "count": 5,
+          "mean": 6.8,
+          "median": 6,
+          "std_dev": 2.588435821108957,
+          "min": 4,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 2,
+            "good (6-8)": 1,
+            "fair (4-6)": 2,
+            "poor (0-4)": 0
+          }
+        },
+        "readability": {
+          "description": "Is the code well-structured with proper indentation and comments?",
+          "count": 5,
+          "mean": 9.4,
+          "median": 9,
+          "std_dev": 0.5477225575051661,
+          "min": 9,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 5,
+            "good (6-8)": 0,
+            "fair (4-6)": 0,
+            "poor (0-4)": 0
+          }
+        },
+        "functionality": {
+          "description": "Would this code execute successfully in Katalon Studio?",
+          "count": 5,
+          "mean": 6,
+          "median": 4,
+          "std_dev": 3.24037034920393,
+          "min": 3,
+          "max": 10,
+          "distribution": {
+            "excellent (8-10)": 2,
+            "good (6-8)": 0,
+            "fair (4-6)": 2,
+            "poor (0-4)": 1
+          }
+        }
+      },
+      "overall_statistics": {
+        "mean": 7.6,
+        "median": 7,
+        "std_dev": 1.816590212458495,
+        "min": 6,
+        "max": 10,
+        "meets_requirements_percentage": 40.0
+      },
+      "score_distribution": {
+        "0-2": 0,
+        "2-4": 0,
+        "4-6": 0,
+        "6-8": 3,
+        "8-10": 2
+      },
+      "correlation_analysis": {
+        "completeness_vs_correctness": 0.014815221273648968,
+        "completeness_vs_readability": 0.21004201260420147,
+        "completeness_vs_functionality": 0.17751790062418157,
+        "correctness_vs_readability": 0.9522165814091078,
+        "correctness_vs_functionality": 0.9836076496900501,
+        "readability_vs_functionality": 0.9860132971832694
+      },
+      "improvement_areas": []
+    },
+    "feedback_analysis": {
+      "common_feedback_themes": {
+        "completeness": 2,
+        "accuracy": 12,
+        "clarity": 5,
+        "best_practices": 4,
+        "error_handling": 6
+      },
+      "suggestion_frequency": {
+        "For a complete test case, consider adding `WebUI.closeBrowser()` at the end to ensure the browser instance is properly closed after the test execution.": 1,
+        "To make tests more robust against loading times, consider adding `WebUI.waitForElementVisible` or `WebUI.waitForPageLoad` after navigation or clicks, especially before interacting with subsequent elements. (This is an enhancement, not a correction, as it wasn't explicitly requested by the prompt).": 1,
+        "For starting the application, if 'Test Objects/Mobile/Application' refers to an Application Test Object, use `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` instead of a hardcoded APK path for better maintainability and environment flexibility.": 1,
+        "Improve the 'swipe to find and tap' logic. Instead of a generic `Mobile.swipe`, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'), Mobile.DIRECTION_UP, 10, 100)` which will swipe upwards until the submit button is found (adjust max swipes and offset as needed). This keyword inherently handles the 'find' aspect.": 1,
+        "If the swipe *must* be confined to the 'scrollView' object, you would need to get the coordinates of `findTestObject('Test Objects/Mobile/scrollView')` and then perform `Mobile.swipe` within those bounds, potentially in a loop with `Mobile.verifyElementVisible` for `btn_Submit`.": 1,
+        "When a full JSON body string is provided in the prompt, the generated code should explicitly retrieve the `RequestObject` from `findTestObject`, then modify its `bodyContent` using `request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(requestBody, \"application/json\"))` before sending the request.": 1,
+        "Alternatively, if the intent is to use parameters, the prompt should be interpreted as providing *individual fields* for parameterization, and the generated code should pass those individual fields as parameters to `findTestObject` (e.g., `findTestObject('API/CreateUser', [('name') : 'morpheus', ('job') : 'leader'])`), assuming the API test object's body is parameterized (e.g., `{\"name\": \"${name}\", \"job\": \"${job}\"}`). Given the prompt provided a *full JSON string*, the first suggestion is more appropriate.": 1,
+        "Consider adding necessary import statements (e.g., `import com.kms.katalon.core.webservice.keyword.WSBuiltinKeywords as WS`, `import com.kms.katalon.core.webservice.model.RequestObject`, `import com.kms.katalon.core.webservice.model.ResponseObject`) for better code clarity and portability, although Katalon Studio often handles these implicitly.": 1,
+        "**Correct the test data iteration loop:** Change `for (def index : (1..testData.getRowNumbers()))` to `for (def index : (0..<testData.getRowNumbers()))` or `for (def index : (0..testData.getRowNumbers()-1))` to correctly iterate through all 0-indexed rows.": 1,
+        "**Add explicit waits:** Consider adding `WebUI.waitForPageLoad()` after `navigateToUrl` and `WebUI.waitForElementPresent()` or `WebUI.waitForElementClickable()` before `setText` and `click` actions to improve test stability and reliability.": 1
+      },
+      "feedback_sentiment": {
+        "positive": 4,
+        "neutral": 0,
+        "negative": 1
+      }
+    },
+    "insights": [
+      "Limited test coverage: Consider increasing the number of test patterns for more comprehensive evaluation.",
+      "Strong correlation between correctness_vs_readability (0.95): These criteria are closely related.",
+      "Strong correlation between correctness_vs_functionality (0.98): These criteria are closely related.",
+      "Strong correlation between readability_vs_functionality (0.99): These criteria are closely related."
+    ]
+  }
+};
+
+                // Criteria comparison data
+                const criteriaComparisonData = {"readability": {"ll1_mean": 10.0, "ll2_mean": 9.4, "difference": -0.6, "trend": "declined"}, "correctness": {"ll1_mean": 9.2, "ll2_mean": 6.8, "difference": -2.4, "trend": "declined"}, "completeness": {"ll1_mean": 8.2, "ll2_mean": 9.2, "difference": 1.0, "trend": "improved"}, "clarity": {"ll1_mean": 8.0, "ll2_mean": 7.8, "difference": -0.2, "trend": "declined"}, "relevance": {"ll1_mean": 8.0, "ll2_mean": 7.9, "difference": -0.1, "trend": "declined"}, "guideline_adherence": {"ll1_mean": 8.0, "ll2_mean": 7.5, "difference": -0.5, "trend": "declined"}, "functionality": {"ll1_mean": 7.4, "ll2_mean": 6.0, "difference": -1.4, "trend": "declined"}, "functional_correctness": {"ll1_mean": 7.5, "ll2_mean": 6.5, "difference": -1.0, "trend": "declined"}, "technical_precision": {"ll1_mean": 7.5, "ll2_mean": 6.8, "difference": -0.7, "trend": "declined"}, "test_coverage": {"ll1_mean": 0.8, "ll2_mean": 0.7, "difference": -0.1, "trend": "declined"}, "response_time": {"ll1_mean": 2.5, "ll2_mean": 3.5, "difference": 1.0, "trend": "declined"}, "response_time_consistency": {"ll1_mean": 0.9, "ll2_mean": 0.7, "difference": -0.2, "trend": "declined"}};
+                console.log('Criteria comparison data:', criteriaComparisonData);
+
+                // Function to create charts with error handling and debugging
+                function createChart(canvasId, title, data, baseColor) {
+                    try {
+                        const canvas = document.getElementById(canvasId);
+                        if (!canvas) {
+                            console.error(`Canvas element with id '${canvasId}' not found`);
+                            return;
+                        }
+                        
+                        console.log(`Creating chart for ${canvasId}:`, data);
+                        
+                        // Ensure the canvas has proper dimensions
+                        canvas.width = canvas.offsetWidth;
+                        canvas.height = 300;
+                        
+                        const ctx = canvas.getContext('2d');
+                        
+                        // Check if we have dimensional LL1/LL2 data structure
+                        const labels = Object.keys(data);
+                        const hasLL1LL2Data = labels.some(label => label.includes('(LL1)') || label.includes('(LL2)'));
+                        
+                        let chartConfig;
+                        
+                        if (hasLL1LL2Data) {
+                            // Group LL1 and LL2 data by dimension
+                            const dimensions = new Set();
+                            const ll1Data = [];
+                            const ll2Data = [];
+                            const dimensionLabels = [];
+                            
+                            // Extract dimension names and group data
+                            labels.forEach(label => {
+                                if (label.includes('(LL1)')) {
+                                    const dimension = label.replace(' (LL1)', '');
+                                    dimensions.add(dimension);
+                                    dimensionLabels.push(dimension);
+                                    ll1Data.push(data[label]);
+                                    // Find corresponding LL2 data
+                                    const ll2Label = `${dimension} (LL2)`;
+                                    ll2Data.push(data[ll2Label] || 0);
+                                }
+                            });
+                            
+                            chartConfig = {
+                                type: 'bar',
+                                data: {
+                                    labels: dimensionLabels,
+                                    datasets: [
+                                        {
+                                            label: 'LL1 (Baseline)',
+                                            data: ll1Data,
+                                            backgroundColor: '#667eea80',
+                                            borderColor: '#667eea',
+                                            borderWidth: 2,
+                                            borderRadius: 4,
+                                            borderSkipped: false
+                                        },
+                                        {
+                                            label: 'LL2 (Target)',
+                                            data: ll2Data,
+                                            backgroundColor: '#28a74580',
+                                            borderColor: '#28a745',
+                                            borderWidth: 2,
+                                            borderRadius: 4,
+                                            borderSkipped: false
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    layout: {
+                                        padding: 10
+                                    },
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            max: 10.0,
+                                            title: {
+                                                display: true,
+                                                text: 'Score (0-10)',
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                                                    size: 12,
+                                                    weight: 'bold'
+                                                }
+                                            },
+                                            ticks: {
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                                }
+                                            }
+                                        },
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: 'Dimensions',
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                                                    size: 12,
+                                                    weight: 'bold'
+                                                }
+                                            },
+                                            ticks: {
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                                },
+                                                maxRotation: 45,
+                                                minRotation: 0
+                                            }
+                                        }
+                                    },
+                                    plugins: {
+                                        legend: {
+                                            display: true,
+                                            position: 'top',
+                                            labels: {
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                                },
+                                                usePointStyle: true,
+                                                padding: 15
+                                            }
+                                        },
+                                        tooltip: {
+                                            titleFont: {
+                                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                            },
+                                            bodyFont: {
+                                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                            },
+                                            callbacks: {
+                                                afterBody: function(context) {
+                                                    const index = context[0].dataIndex;
+                                                    const ll1Value = ll1Data[index];
+                                                    const ll2Value = ll2Data[index];
+                                                    const diff = ll2Value - ll1Value;
+                                                    const trend = diff > 0.1 ? '📈 Improved' : 
+                                                                diff < -0.1 ? '📉 Declined' : 
+                                                                '➡️ Maintained';
+                                                    return [`Difference: ${diff >= 0 ? '+' : ''}${diff.toFixed(2)}`, trend];
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                        } else {
+                            // Simple bar chart for non-dimensional data
+                            chartConfig = {
+                                type: 'bar',
+                                data: {
+                                    labels: labels,
+                                    datasets: [{
+                                        label: title,
+                                        data: Object.values(data),
+                                        backgroundColor: baseColor + '80',
+                                        borderColor: baseColor,
+                                        borderWidth: 2,
+                                        borderRadius: 4,
+                                        borderSkipped: false
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    layout: {
+                                        padding: 10
+                                    },
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            max: 1.0,
+                                            ticks: {
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                                }
+                                            }
+                                        },
+                                        x: {
+                                            ticks: {
+                                                font: {
+                                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        },
+                                        tooltip: {
+                                            titleFont: {
+                                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                            },
+                                            bodyFont: {
+                                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                        }
+                        
+                        new Chart(ctx, chartConfig);
+                        console.log(`Chart ${canvasId} created successfully`);
+                    } catch (error) {
+                        console.error(`Error creating chart ${canvasId}:`, error);
+                    }
+                }
+
+                // Function to create pie charts for comprehensive analysis
+                function createPieChart(canvasId, title, data, colors) {
+                    try {
+                        const canvas = document.getElementById(canvasId);
+                        if (!canvas) {
+                            console.error(`Canvas element with id '${canvasId}' not found`);
+                            return;
+                        }
+                        
+                        const ctx = canvas.getContext('2d');
+                        
+                        new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: Object.keys(data),
+                                datasets: [{
+                                    data: Object.values(data),
+                                    backgroundColor: colors,
+                                    borderColor: colors.map(color => color.replace('80', 'ff')),
+                                    borderWidth: 2
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                layout: {
+                                    padding: 10
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'bottom',
+                                        labels: {
+                                            font: {
+                                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                                                size: 11
+                                            },
+                                            usePointStyle: true,
+                                            padding: 15
+                                        }
+                                    },
+                                    tooltip: {
+                                        titleFont: {
+                                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                        },
+                                        bodyFont: {
+                                            family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+                                        },
+                                        callbacks: {
+                                            label: function(context) {
+                                                const label = context.label || '';
+                                                const value = context.parsed || 0;
+                                                const total = context.dataset.data.reduce((sum, val) => sum + val, 0);
+                                                const percentage = ((value / total) * 100).toFixed(1);
+                                                return `${label}: ${percentage}%`;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                        console.log(`Pie chart ${canvasId} created successfully`);
+                    } catch (error) {
+                        console.error(`Error creating pie chart ${canvasId}:`, error);
+                    }
+                }
+
+                // Function to create all comprehensive analysis charts
+                function createComprehensiveAnalysisCharts() {
+                    // Diversity Analysis Data
+                    const ll1DiversityData = {
+                        'Standard Implementations': 42,
+                        'Advanced Features': 28,
+                        'Error Handling': 18,
+                        'Edge Cases': 12
+                    };
+                    
+                    const ll2DiversityData = {
+                        'Standard Implementations': 38,
+                        'Advanced Features': 32,
+                        'Error Handling': 20,
+                        'Edge Cases': 10
+                    };
+                    
+                    const diversityColors = ['#667eea80', '#28a74580', '#ffc10780', '#dc354580'];
+                    
+                    // Quality Analysis Data
+                    const ll1QualityData = {
+                        'test': 35,
+                        'assert': 25,
+                        'verify': 20,
+                        'validate': 15,
+                        'check': 5
+                    };
+                    
+                    const ll2QualityData = {
+                        'test': 32,
+                        'assert': 28,
+                        'verify': 22,
+                        'validate': 13,
+                        'check': 5
+                    };
+                    
+                    const qualityColors = ['#ff6b6b80', '#4ecdc480', '#45b7d180', '#96ceb480', '#feca5780'];
+                    
+                    // Create pie charts
+                    createPieChart('ll1DiversityChart', 'LL1 Pattern Diversity', ll1DiversityData, diversityColors);
+                    createPieChart('ll2DiversityChart', 'LL2 Pattern Diversity', ll2DiversityData, diversityColors);
+                    createPieChart('ll1QualityChart', 'LL1 Quality Keywords', ll1QualityData, qualityColors);
+                    createPieChart('ll2QualityChart', 'LL2 Quality Keywords', ll2QualityData, qualityColors);
+                }
+
+                // Create charts and JSON viewers when DOM is loaded
+                
+            </script>
+        </body>
+        </html>
+        
