@@ -184,13 +184,32 @@
             font-weight: bold;
             color: #2a5298;
         }
+        .stats-grid-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 30px;
+            margin-bottom: 15px;
+        }
+        .top-performers {
+            margin-top: 10px;
+        }
+        .performer-card {
+            display: flex;
+            justify-content: space-between;
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 6px 10px;
+            margin-bottom: 4px;
+        }
+        .performer-name { font-weight: 500; color: #1e3c72; }
+        .performer-score { font-weight: bold; color: #2a5298; }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
         <div class="header">
             <h1>Quality Engineering Dashboard</h1>
-            <div class="last-updated">Last updated: 2025-06-17 14:34:53 ICT</div>
+            <div class="last-updated">Last updated: 2025-06-17 14:48:39 ICT</div>
         </div>
         <div class="content-wrapper">
             <!-- Only the right panel: Tabs and content -->
@@ -214,22 +233,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - June 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 14:34:53 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 14:48:39 ICT</div>
                                         
-                                            <div class="stat-number">20</div>
-                                            <div class="stat-label">Active Members</div>
-                                            <div class="stat-number">100</div>
-                                            <div class="stat-label">Bugs Reported (JIRA)</div>
-                                            <div class="stat-number">91</div>
-                                            <div class="stat-label">PRs Merged (GitHub)</div>
-                                            <div class="stat-number">40</div>
-                                            <div class="stat-label">Direct Commits (GitHub)</div>
-                                            <div class="stat-number">94</div>
-                                            <div class="stat-label">JIRA Backlogs Completed</div>
-                                            <div class="stat-number">299</div>
-                                            <div class="stat-label">Manual Cases Run (TestOps)</div>
-                                            <div class="stat-number">15610</div>
-                                            <div class="stat-label">Auto Cases Run (TestOps)</div>
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">91</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">40</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">94</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">299</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">15610</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
+                                            </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">60.7</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Truc Trantruc.tran@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">55</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
+                                                            <span class="performer-score">50</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202506.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
