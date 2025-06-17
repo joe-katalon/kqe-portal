@@ -79,12 +79,16 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
             margin-bottom: 30px;
+            align-items: center;
         }
         .stat-card {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
             background: white;
             padding: 15px;
             border-radius: 8px;
@@ -211,13 +215,18 @@
         }
         .performer-name { font-weight: 500; color: #1e3c72; }
         .performer-score { font-weight: bold; color: #2a5298; }
+        /* Top members trophy icons */
+        .performer-card .trophy {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
         <div class="header">
             <h1>Quality Engineering Dashboard</h1>
-            <div class="last-updated">Last updated: 2025-06-17 16:56:48 ICT</div>
+            <div class="last-updated">Last updated: 2025-06-17 17:02:08 ICT</div>
         </div>
         <div class="content-wrapper">
             <!-- Only the right panel: Tabs and content -->
@@ -241,14 +250,14 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - June 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 16:56:48 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 17:02:08 ICT</div>
                                         
                                             <div class="stats-grid-inner">
                                                 <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
                                                 <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
                                                 <div><div class="stat-number">92</div><div class="stat-label">PRs Merged (GitHub)</div></div>
                                                 <div><div class="stat-number">40</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">98</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">99</div><div class="stat-label">JIRA Backlogs Completed</div></div>
                                                 <div><div class="stat-number">299</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
                                                 <div><div class="stat-number">15610</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
@@ -257,16 +266,25 @@
                                                     <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥇
+                                                            </span>
                                                             <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">60.7</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥈
+                                                            </span>
                                                             <span class="performer-name">Truc Trantruc.tran@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">55</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥉
+                                                            </span>
                                                             <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
                                                             <span class="performer-score">50</span>
                                                         </div>
@@ -280,7 +298,7 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - May 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 16:56:48 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 17:02:08 ICT</div>
                                         
                                             <div class="stats-grid-inner">
                                                 <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
@@ -296,16 +314,25 @@
                                                     <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥇
+                                                            </span>
                                                             <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">108.57</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥈
+                                                            </span>
                                                             <span class="performer-name">Man Huaman.hua@katalon.com / Quality Engineer</span>
                                                             <span class="performer-score">86.97</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥉
+                                                            </span>
                                                             <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">83.7</span>
                                                         </div>
@@ -319,7 +346,7 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - April 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 16:56:48 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 17:02:08 ICT</div>
                                         
                                             <div class="stats-grid-inner">
                                                 <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
@@ -335,16 +362,25 @@
                                                     <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥇
+                                                            </span>
                                                             <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
                                                             <span class="performer-score">150.25</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥈
+                                                            </span>
                                                             <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">119.17</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥉
+                                                            </span>
                                                             <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">106.4</span>
                                                         </div>
@@ -358,7 +394,7 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - March 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 16:56:48 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 17:02:08 ICT</div>
                                         
                                             <div class="stats-grid-inner">
                                                 <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
@@ -374,16 +410,25 @@
                                                     <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥇
+                                                            </span>
                                                             <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
                                                             <span class="performer-score">174.65</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥈
+                                                            </span>
                                                             <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">148.6</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥉
+                                                            </span>
                                                             <span class="performer-name">Lieu Huynhlieu.huynh@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">133.38</span>
                                                         </div>
@@ -397,7 +442,7 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - February 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 16:56:48 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 17:02:08 ICT</div>
                                         
                                             <div class="stats-grid-inner">
                                                 <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
@@ -413,16 +458,25 @@
                                                     <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥇
+                                                            </span>
                                                             <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
                                                             <span class="performer-score">182.25</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥈
+                                                            </span>
                                                             <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">153.2</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥉
+                                                            </span>
                                                             <span class="performer-name">Lieu Huynhlieu.huynh@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">133.38</span>
                                                         </div>
@@ -436,7 +490,7 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - January 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 16:56:48 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 17:02:08 ICT</div>
                                         
                                             <div class="stats-grid-inner">
                                                 <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
@@ -452,16 +506,25 @@
                                                     <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥇
+                                                            </span>
                                                             <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">191.05</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥈
+                                                            </span>
                                                             <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
                                                             <span class="performer-score">182.25</span>
                                                         </div>
                                                     
                                                         <div class="performer-card">
+                                                            <span class="trophy">
+                                                                🥉
+                                                            </span>
                                                             <span class="performer-name">Lieu Huynhlieu.huynh@katalon.com / Senior Quality Engineer</span>
                                                             <span class="performer-score">133.38</span>
                                                         </div>
@@ -532,7 +595,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Parse trend data from backend
-        const trendData = {"active_members": [20, 20, 20, 20, 20, 20], "auto_cases": [25344, 24971, 24341, 23623, 20534, 15610], "bugs_reported": [100, 100, 100, 100, 100, 100], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01"], "direct_commits": [218, 203, 186, 146, 128, 40], "jira_backlogs": [100, 100, 100, 100, 100, 98], "manual_cases": [1458, 1357, 1287, 891, 569, 299], "prs_merged": [403, 376, 355, 301, 256, 92]};
+        const trendData = {"active_members": [20, 20, 20, 20, 20, 20], "auto_cases": [25344, 24971, 24341, 23623, 20534, 15610], "bugs_reported": [100, 100, 100, 100, 100, 100], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01"], "direct_commits": [218, 203, 186, 146, 128, 40], "jira_backlogs": [100, 100, 100, 100, 100, 99], "manual_cases": [1458, 1357, 1287, 891, 569, 299], "prs_merged": [403, 376, 355, 301, 256, 92]};
         // Common chart options
         const commonOptions = {
             responsive: true,
