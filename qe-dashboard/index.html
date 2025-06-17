@@ -59,8 +59,6 @@
         }
         .year-section {
             margin-bottom: 2rem;
-            max-height: 300px;
-            overflow-y: auto;
         }
         .year-header {
             border-bottom: 2px solid #0d6efd;
@@ -184,288 +182,109 @@
             font-weight: bold;
             color: #2a5298;
         }
-        .stats-grid-inner {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px 30px;
-            margin-bottom: 15px;
-        }
-        .top-performers {
-            margin-top: 10px;
-        }
-        .performer-card {
-            display: flex;
-            justify-content: space-between;
-            background: #f8f9fa;
-            border-radius: 6px;
-            padding: 6px 10px;
-            margin-bottom: 4px;
-        }
-        .performer-name { font-weight: 500; color: #1e3c72; }
-        .performer-score { font-weight: bold; color: #2a5298; }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
         <div class="header">
             <h1>Quality Engineering Dashboard</h1>
-            <div class="last-updated">Last updated: 2025-06-17 15:07:37 ICT</div>
+            <div class="last-updated">Last updated: 2025-06-17 09:17:45 UTC</div>
         </div>
+        
         <div class="content-wrapper">
-            <!-- Only the right panel: Tabs and content -->
-            <div class="stats-panel" style="width:100%;">
+            <!-- Left Panel: Reports -->
+            <div class="reports-panel">
+                
+                <div class="year-section">
+                    <h2 class="year-header">2025</h2>
+                    
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QE Report - June 2025</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Generated on 2025-06-01</small>
+                            </p>
+                            <a href="qe_leaderboard_202506.html" class="btn btn-primary">View Report</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QE Report - May 2025</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Generated on 2025-05-01</small>
+                            </p>
+                            <a href="qe_leaderboard_202505.html" class="btn btn-primary">View Report</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QE Report - April 2025</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Generated on 2025-04-01</small>
+                            </p>
+                            <a href="qe_leaderboard_202504.html" class="btn btn-primary">View Report</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QE Report - March 2025</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Generated on 2025-03-01</small>
+                            </p>
+                            <a href="qe_leaderboard_202503.html" class="btn btn-primary">View Report</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QE Report - February 2025</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Generated on 2025-02-01</small>
+                            </p>
+                            <a href="qe_leaderboard_202502.html" class="btn btn-primary">View Report</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <h5 class="card-title">QE Report - January 2025</h5>
+                            <p class="card-text">
+                                <small class="text-muted">Generated on 2025-01-01</small>
+                            </p>
+                            <a href="qe_leaderboard_202501.html" class="btn btn-primary">View Report</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+            
+            <!-- Right Panel: Stats and Trends -->
+            <div class="stats-panel">
                 <!-- Tabs -->
                 <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="available-tab" data-bs-toggle="tab" data-bs-target="#available" type="button" role="tab">Available Reports</button>
+                        <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#current" type="button" role="tab">Current Month</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="trends-tab" data-bs-toggle="tab" data-bs-target="#trends" type="button" role="tab">Trending Data</button>
                     </li>
                 </ul>
+                
                 <!-- Tab Content -->
                 <div class="tab-content" id="dashboardTabsContent">
-                    <!-- Available Reports Tab -->
-                    <div class="tab-pane fade show active" id="available" role="tabpanel">
-                        <div class="stats-grid">
-                            
-                                
-                                    
-                                    <div class="stat-card">
-                                        <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - June 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 15:07:37 ICT</div>
-                                        
-                                            <div class="stats-grid-inner">
-                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                <div><div class="stat-number">91</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                <div><div class="stat-number">40</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">94</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                <div><div class="stat-number">299</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                <div><div class="stat-number">15610</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                            </div>
-                                            
-                                                <div class="top-performers">
-                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">60.7</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Truc Trantruc.tran@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">55</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
-                                                            <span class="performer-score">50</span>
-                                                        </div>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        <a href="qe_leaderboard_202506.html" class="btn btn-primary btn-sm mt-2">View Report</a>
-                                    </div>
-                                
-                                    
-                                    <div class="stat-card">
-                                        <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - May 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 15:07:37 ICT</div>
-                                        
-                                            <div class="stats-grid-inner">
-                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                <div><div class="stat-number">256</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                <div><div class="stat-number">128</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                <div><div class="stat-number">569</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                <div><div class="stat-number">20534</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                            </div>
-                                            
-                                                <div class="top-performers">
-                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">108.57</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Man Huaman.hua@katalon.com / Quality Engineer</span>
-                                                            <span class="performer-score">86.97</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">83.7</span>
-                                                        </div>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        <a href="qe_leaderboard_202505.html" class="btn btn-primary btn-sm mt-2">View Report</a>
-                                    </div>
-                                
-                                    
-                                    <div class="stat-card">
-                                        <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - April 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 15:07:37 ICT</div>
-                                        
-                                            <div class="stats-grid-inner">
-                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                <div><div class="stat-number">301</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                <div><div class="stat-number">146</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                <div><div class="stat-number">891</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                <div><div class="stat-number">23623</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                            </div>
-                                            
-                                                <div class="top-performers">
-                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
-                                                            <span class="performer-score">150.25</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">119.17</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">106.4</span>
-                                                        </div>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        <a href="qe_leaderboard_202504.html" class="btn btn-primary btn-sm mt-2">View Report</a>
-                                    </div>
-                                
-                                    
-                                    <div class="stat-card">
-                                        <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - March 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 15:07:37 ICT</div>
-                                        
-                                            <div class="stats-grid-inner">
-                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                <div><div class="stat-number">355</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                <div><div class="stat-number">186</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                <div><div class="stat-number">1287</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                <div><div class="stat-number">24341</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                            </div>
-                                            
-                                                <div class="top-performers">
-                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
-                                                            <span class="performer-score">174.65</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">148.6</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Lieu Huynhlieu.huynh@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">133.38</span>
-                                                        </div>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        <a href="qe_leaderboard_202503.html" class="btn btn-primary btn-sm mt-2">View Report</a>
-                                    </div>
-                                
-                                    
-                                    <div class="stat-card">
-                                        <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - February 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 15:07:37 ICT</div>
-                                        
-                                            <div class="stats-grid-inner">
-                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                <div><div class="stat-number">376</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                <div><div class="stat-number">203</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                <div><div class="stat-number">1357</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                <div><div class="stat-number">24971</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                            </div>
-                                            
-                                                <div class="top-performers">
-                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
-                                                            <span class="performer-score">182.25</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">153.2</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Lieu Huynhlieu.huynh@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">133.38</span>
-                                                        </div>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        <a href="qe_leaderboard_202502.html" class="btn btn-primary btn-sm mt-2">View Report</a>
-                                    </div>
-                                
-                                    
-                                    <div class="stat-card">
-                                        <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - January 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-17 15:07:37 ICT</div>
-                                        
-                                            <div class="stats-grid-inner">
-                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                <div><div class="stat-number">403</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                <div><div class="stat-number">218</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                <div><div class="stat-number">100</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                <div><div class="stat-number">1458</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                <div><div class="stat-number">25344</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                            </div>
-                                            
-                                                <div class="top-performers">
-                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">191.05</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
-                                                            <span class="performer-score">182.25</span>
-                                                        </div>
-                                                    
-                                                        <div class="performer-card">
-                                                            <span class="performer-name">Lieu Huynhlieu.huynh@katalon.com / Senior Quality Engineer</span>
-                                                            <span class="performer-score">133.38</span>
-                                                        </div>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        <a href="qe_leaderboard_202501.html" class="btn btn-primary btn-sm mt-2">View Report</a>
-                                    </div>
-                                
-                            
+                    <!-- Current Month Tab -->
+                    <div class="tab-pane fade show active" id="current" role="tabpanel">
+                        
+                        <div class="alert alert-info">
+                            No data available for the current month.
                         </div>
+                        
                     </div>
                     
                     <!-- Trends Tab -->
@@ -524,7 +343,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Parse trend data from backend
-        const trendData = {"active_members": [20, 20, 20, 20, 20, 20], "auto_cases": [25344, 24971, 24341, 23623, 20534, 15610], "bugs_reported": [100, 100, 100, 100, 100, 100], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01"], "direct_commits": [218, 203, 186, 146, 128, 40], "jira_backlogs": [100, 100, 100, 100, 100, 94], "manual_cases": [1458, 1357, 1287, 891, 569, 299], "prs_merged": [403, 376, 355, 301, 256, 91]};
+        const trendData = {"active_members": [20, 20, 20, 20, 20, 20], "auto_cases": [25344, 24971, 24341, 23623, 20534, 15610], "bugs_reported": [100, 100, 100, 100, 100, 100], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01"], "direct_commits": [218, 203, 186, 146, 128, 40], "jira_backlogs": [100, 100, 100, 100, 100, 95], "manual_cases": [1458, 1357, 1287, 891, 569, 299], "prs_merged": [403, 376, 355, 301, 256, 92]};
         // Common chart options
         const commonOptions = {
             responsive: true,
