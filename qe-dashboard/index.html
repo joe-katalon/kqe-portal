@@ -107,8 +107,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             margin-bottom: 20px;
-            height: 300px; /* Fixed height for chart containers */
-            position: relative; /* For proper canvas positioning */
+            height: 300px;
+            position: relative;
         }
         .chart-title {
             color: #1e3c72;
@@ -118,8 +118,69 @@
         }
         .chart-container {
             position: relative;
-            height: calc(100% - 40px); /* Subtract title height */
+            height: calc(100% - 40px);
             width: 100%;
+        }
+        .metric-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .metric-title {
+            color: #1e3c72;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .nav-tabs {
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+        .nav-tabs .nav-link {
+            color: #6c757d;
+            border: none;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        .nav-tabs .nav-link.active {
+            color: #1e3c72;
+            border-bottom: 2px solid #1e3c72;
+            background: none;
+        }
+        .tab-content {
+            padding: 20px 0;
+        }
+        .top-performers {
+            margin-bottom: 20px;
+        }
+        .top-performers h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .performer-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .performer-name {
+            font-weight: 500;
+            color: #1e3c72;
+        }
+        .performer-score {
+            font-weight: bold;
+            color: #2a5298;
         }
     </style>
 </head>
@@ -127,7 +188,7 @@
     <div class="dashboard-container">
         <div class="header">
             <h1>Quality Engineering Dashboard</h1>
-            <div class="last-updated">Last updated: 2025-06-16 13:54:36 UTC</div>
+            <div class="last-updated">Last updated: 2025-06-17 04:39:52 UTC</div>
         </div>
         
         <div class="content-wrapper">
@@ -139,9 +200,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">December 2025</h5>
+                            <h5 class="card-title">QE Report - December 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on December 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-12-01</small>
                             </p>
                             <a href="qe_leaderboard_202512.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -149,9 +210,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">November 2025</h5>
+                            <h5 class="card-title">QE Report - November 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on November 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-11-01</small>
                             </p>
                             <a href="qe_leaderboard_202511.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -159,9 +220,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">October 2025</h5>
+                            <h5 class="card-title">QE Report - October 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on October 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-10-01</small>
                             </p>
                             <a href="qe_leaderboard_202510.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -169,9 +230,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">September 2025</h5>
+                            <h5 class="card-title">QE Report - September 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on September 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-09-01</small>
                             </p>
                             <a href="qe_leaderboard_202509.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -179,9 +240,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">August 2025</h5>
+                            <h5 class="card-title">QE Report - August 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on August 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-08-01</small>
                             </p>
                             <a href="qe_leaderboard_202508.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -189,9 +250,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">July 2025</h5>
+                            <h5 class="card-title">QE Report - July 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on July 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-07-01</small>
                             </p>
                             <a href="qe_leaderboard_202507.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -199,9 +260,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">June 2025</h5>
+                            <h5 class="card-title">QE Report - June 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on June 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-06-01</small>
                             </p>
                             <a href="qe_leaderboard_202506.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -209,9 +270,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">May 2025</h5>
+                            <h5 class="card-title">QE Report - May 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on May 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-05-01</small>
                             </p>
                             <a href="qe_leaderboard_202505.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -219,9 +280,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">April 2025</h5>
+                            <h5 class="card-title">QE Report - April 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on April 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-04-01</small>
                             </p>
                             <a href="qe_leaderboard_202504.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -229,9 +290,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">March 2025</h5>
+                            <h5 class="card-title">QE Report - March 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on March 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-03-01</small>
                             </p>
                             <a href="qe_leaderboard_202503.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -239,9 +300,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">February 2025</h5>
+                            <h5 class="card-title">QE Report - February 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on February 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-02-01</small>
                             </p>
                             <a href="qe_leaderboard_202502.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -249,9 +310,9 @@
                     
                     <div class="card report-card">
                         <div class="card-body">
-                            <h5 class="card-title">January 2025</h5>
+                            <h5 class="card-title">QE Report - January 2025</h5>
                             <p class="card-text">
-                                <small class="text-muted">Generated on January 01, 2025</small>
+                                <small class="text-muted">Generated on 2025-01-01</small>
                             </p>
                             <a href="qe_leaderboard_202501.html" class="btn btn-primary">View Report</a>
                         </div>
@@ -265,45 +326,74 @@
             
             <!-- Right Panel: Stats and Trends -->
             <div class="stats-panel">
-                <!-- Summary Stats -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Total Reports</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Team Members</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Total PRs</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Test Runs</span>
-                    </div>
-                </div>
+                <!-- Tabs -->
+                <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#current" type="button" role="tab">Current Month</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="trends-tab" data-bs-toggle="tab" data-bs-target="#trends" type="button" role="tab">Trending Data</button>
+                    </li>
+                </ul>
                 
-                <!-- Trend Charts -->
-                <div class="trend-chart">
-                    <h3 class="chart-title">Monthly PR Trends</h3>
-                    <div class="chart-container">
-                        <canvas id="prTrendChart"></canvas>
+                <!-- Tab Content -->
+                <div class="tab-content" id="dashboardTabsContent">
+                    <!-- Current Month Tab -->
+                    <div class="tab-pane fade show active" id="current" role="tabpanel">
+                        
+                        <div class="alert alert-info">
+                            No data available for the current month.
+                        </div>
+                        
                     </div>
-                </div>
-                
-                <div class="trend-chart">
-                    <h3 class="chart-title">Test Run Success Rate</h3>
-                    <div class="chart-container">
-                        <canvas id="testRunChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="trend-chart">
-                    <h3 class="chart-title">Team Performance Trends</h3>
-                    <div class="chart-container">
-                        <canvas id="teamTrendChart"></canvas>
+                    
+                    <!-- Trends Tab -->
+                    <div class="tab-pane fade" id="trends" role="tabpanel">
+                        <!-- Team Activity Chart -->
+                        <div class="trend-chart">
+                            <h3 class="chart-title">Team Activity Trends</h3>
+                            <div class="chart-container">
+                                <canvas id="teamActivityChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- GitHub Activity Chart -->
+                        <div class="trend-chart">
+                            <h3 class="chart-title">GitHub Activity Trends</h3>
+                            <div class="chart-container">
+                                <canvas id="githubActivityChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Test Execution Chart -->
+                        <div class="trend-chart">
+                            <h3 class="chart-title">Test Execution Trends</h3>
+                            <div class="chart-container">
+                                <canvas id="testExecutionChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Individual Performance Charts -->
+                        <div class="trend-chart">
+                            <h3 class="chart-title">Bug Scores Trend</h3>
+                            <div class="chart-container">
+                                <canvas id="bugScoresChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="trend-chart">
+                            <h3 class="chart-title">GitHub Automation Trend</h3>
+                            <div class="chart-container">
+                                <canvas id="ghAutomationChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="trend-chart">
+                            <h3 class="chart-title">Code Reviews Trend</h3>
+                            <div class="chart-container">
+                                <canvas id="reviewsChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -312,11 +402,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize charts with data from the backend
-        const prTrendData = {"labels": ["Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"], "values": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]};
-        const testRunData = {"labels": ["Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"], "values": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]};
-        const teamTrendData = {"datasets": [{"borderColor": "#1e3c72", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "label": "Team Members", "tension": 0.1}, {"borderColor": "#28a745", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "label": "Test Runs", "tension": 0.1}], "labels": ["Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"]};
-
+        // Parse trend data from backend
+        const trendData = {"active_members": [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20], "auto_cases": [145, 544, 17545, 14075, 19351, 14456, 0, 0, 0, 0, 0, 0], "bugs_reported": [100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01"], "direct_commits": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "jira_backlogs": [100, 100, 100, 100, 100, 87, 0, 0, 0, 0, 0, 0], "manual_cases": [115, 115, 471, 243, 226, 228, 0, 0, 0, 0, 0, 0], "prs_merged": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]};
         // Common chart options
         const commonOptions = {
             responsive: true,
@@ -325,59 +412,107 @@
                 legend: {
                     position: 'top',
                 }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         };
 
-        // PR Trend Chart
-        new Chart(document.getElementById('prTrendChart'), {
+        // Team Activity Chart
+        new Chart(document.getElementById('teamActivityChart'), {
             type: 'line',
             data: {
-                labels: prTrendData.labels,
-                datasets: [{
-                    label: 'Merged PRs',
-                    data: prTrendData.values,
-                    borderColor: '#1e3c72',
-                    tension: 0.1
-                }]
+                labels: trendData.dates,
+                datasets: [
+                    {
+                        label: 'Active Members',
+                        data: trendData.active_members,
+                        borderColor: '#1e3c72',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Bugs Reported',
+                        data: trendData.bugs_reported,
+                        borderColor: '#dc3545',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'JIRA Backlogs',
+                        data: trendData.jira_backlogs,
+                        borderColor: '#28a745',
+                        tension: 0.1
+                    }
+                ]
             },
             options: commonOptions
         });
 
-        // Test Run Chart
-        new Chart(document.getElementById('testRunChart'), {
+        // GitHub Activity Chart
+        new Chart(document.getElementById('githubActivityChart'), {
             type: 'line',
             data: {
-                labels: testRunData.labels,
-                datasets: [{
-                    label: 'Success Rate',
-                    data: testRunData.values,
-                    borderColor: '#28a745',
-                    tension: 0.1
-                }]
-            },
-            options: {
-                ...commonOptions,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            }
-                        }
+                labels: trendData.dates,
+                datasets: [
+                    {
+                        label: 'PRs Merged',
+                        data: trendData.prs_merged,
+                        borderColor: '#1e3c72',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Direct Commits',
+                        data: trendData.direct_commits,
+                        borderColor: '#2a5298',
+                        tension: 0.1
                     }
-                }
-            }
+                ]
+            },
+            options: commonOptions
         });
 
-        // Team Performance Chart
-        new Chart(document.getElementById('teamTrendChart'), {
+        // Test Execution Chart
+        new Chart(document.getElementById('testExecutionChart'), {
             type: 'line',
             data: {
-                labels: teamTrendData.labels,
-                datasets: teamTrendData.datasets
+                labels: trendData.dates,
+                datasets: [
+                    {
+                        label: 'Manual Cases',
+                        data: trendData.manual_cases,
+                        borderColor: '#28a745',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Auto Cases',
+                        data: trendData.auto_cases,
+                        borderColor: '#17a2b8',
+                        tension: 0.1
+                    }
+                ]
             },
+            options: commonOptions
+        });
+
+        // Bug Scores Chart
+        new Chart(document.getElementById('bugScoresChart'), {
+            type: 'line',
+            data: {},
+            options: commonOptions
+        });
+
+        // GH Automation Chart
+        new Chart(document.getElementById('ghAutomationChart'), {
+            type: 'line',
+            data: {},
+            options: commonOptions
+        });
+
+        // Reviews Chart
+        new Chart(document.getElementById('reviewsChart'), {
+            type: 'line',
+            data: {},
             options: commonOptions
         });
     </script>
