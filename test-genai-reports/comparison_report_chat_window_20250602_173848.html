@@ -496,13 +496,13 @@
                         <div class="summary-grid">
                             <div class="summary-card">
                                 <h3>Final Assessment</h3>
-                                <p>❓ Decision: MAINTAIN_LL1
+                                <p>❓ Decision: MAINTAIN_LLM1
 💪 Confidence Level: High</p>
                             </div>
                             <div class="summary-card">
                                 <h3>Dataset Summary</h3>
-                                <p><strong>Baseline (LL1):</strong> 15 test cases<br>
-                                <strong>Target (LL2):</strong> 15 test cases<br>
+                                <p><strong>Baseline (LLM1):</strong> 15 test cases<br>
+                                <strong>Target (LLM2):</strong> 15 test cases<br>
                                 <strong>Evaluation Model:</strong> claude-3-5-sonnet-20241022</p>
                             </div>
                         </div>
@@ -525,11 +525,11 @@
                                     <td>consistency</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Baseline Model (LL1)</strong></td>
+                                    <td><strong>Baseline Model (LLM1)</strong></td>
                                     <td>katalon_ai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Target Model (LL2)</strong></td>
+                                    <td><strong>Target Model (LLM2)</strong></td>
                                     <td>personal_openai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
@@ -550,7 +550,7 @@
                         
                         <div class="summary-card">
                             <h3>Primary Goal</h3>
-                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LL1 vs LL2) for the <strong>Chat Window</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
+                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LLM1 vs LLM2) for the <strong>Chat Window</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
                         </div>
                         
                         <div class="summary-grid">
@@ -584,7 +584,7 @@
                                         <span style="background: #667eea; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">1</span>
                                         Phase 1: Baseline Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL1 Dataset Generation:</strong> Generate baseline outputs using LL1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM1 Dataset Generation:</strong> Generate baseline outputs using LLM1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
                                 </div>
                                 
                                 <div style="padding: 20px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -592,7 +592,7 @@
                                         <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">2</span>
                                         Phase 2: Target Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL2 Dataset Generation:</strong> Generate target outputs using LL2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM2 Dataset Generation:</strong> Generate target outputs using LLM2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
                                 </div>
 
                                 <div style="padding: 20px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -674,7 +674,7 @@
                                 <canvas id="accuracyChart"></canvas>
                                 <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #ffc107;">
                                     <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
-                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world scenarios.
+                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world profiles.
                                     </p>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>✅ Improvements in LL2</h4>
+                                <h4>✅ Improvements in LLM2</h4>
                                 <ul class="analysis-list positive">
                                     
                                     <li><span>✅</span> No significant improvements identified</li>
@@ -726,7 +726,7 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>❌ Regressions in LL2</h4>
+                                <h4>❌ Regressions in LLM2</h4>
                                 <ul class="analysis-list negative">
                                     
                                     <li><span>❌</span> Completeness dropped from 8.21 to 7.69</li>
@@ -755,16 +755,16 @@
 
                     <!-- Raw Dataset Comparison -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Complete JSON datasets from both LL1 (baseline) and LL2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
+                        <h2 data-tippy-content="Complete JSON datasets from both LLM1 (baseline) and LLM2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
                         <div class="json-comparison">
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Baseline Dataset (LL1)</h3></div>
+                                <div class="dataset-header"><h3>Baseline Dataset (LLM1)</h3></div>
                                 <div class="json-container">
                                     <div id="baseline-json" class="json-viewer"></div>
                                 </div>
                             </div>
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Target Dataset (LL2)</h3></div>
+                                <div class="dataset-header"><h3>Target Dataset (LLM2)</h3></div>
                                 <div class="json-container">
                                     <div id="target-json" class="json-viewer"></div>
                                 </div>
@@ -774,20 +774,20 @@
 
                     <!-- Comprehensive Analysis -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Advanced statistical analysis comparing LL1 and LL2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
+                        <h2 data-tippy-content="Advanced statistical analysis comparing LLM1 and LLM2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
                         
                         <!-- Diversity Analysis -->
                         <div style="margin-bottom: 40px;">
                             <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.5em; text-align: center;">🎨 Pattern Diversity Analysis</h3>
                             <p style="text-align: center; color: #5a6c7d; margin-bottom: 30px; font-size: 1.1em;">
-                                Analysis of output pattern categories and structural diversity between LL1 (Baseline) and LL2 (Target) models.
+                                Analysis of output pattern categories and structural diversity between LLM1 (Baseline) and LLM2 (Target) models.
                             </p>
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Pattern Distribution</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1DiversityChart"></canvas>
+                                        <canvas id="LLM1DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -797,9 +797,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Pattern Distribution</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2DiversityChart"></canvas>
+                                        <canvas id="LLM2DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -812,7 +812,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #1976d2; margin: 0 0 10px 0;">📈 Key Insights</h4>
                                 <ul style="margin: 0; color: #0d47a1; line-height: 1.6;">
-                                    <li>LL2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
+                                    <li>LLM2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
                                     <li>Slight reduction in edge case coverage (-2%) may require attention</li>
                                     <li>Overall pattern diversity remains consistent between models</li>
                                 </ul>
@@ -828,9 +828,9 @@
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Quality Keywords</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1QualityChart"></canvas>
+                                        <canvas id="LLM1QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -840,9 +840,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Quality Keywords</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2QualityChart"></canvas>
+                                        <canvas id="LLM2QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -855,7 +855,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #2e7d32; margin: 0 0 10px 0;">✨ Quality Improvements</h4>
                                 <ul style="margin: 0; color: #1b5e20; line-height: 1.6;">
-                                    <li>LL2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
+                                    <li>LLM2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
                                     <li>Enhanced verification patterns (+2%) suggest better validation coverage</li>
                                     <li>Consistent keyword diversity maintains code readability standards</li>
                                 </ul>
@@ -887,7 +887,7 @@
                                     🎯 Consistency Metrics
                                 </h3>
                                 <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
-                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and scenarios.
+                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and profiles.
                                 </p>
                                 
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -948,7 +948,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> How well the output matches the specific context and intended use case.<br>
                                             <strong>Scale:</strong> 0-10 (10 = Perfectly targeted and contextual)<br>
-                                            <strong>Impact:</strong> Determines practical usefulness in real scenarios.
+                                            <strong>Impact:</strong> Determines practical usefulness in real profiles.
                                         </p>
                                     </div>
                     
@@ -971,7 +971,7 @@
                                         <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test scenarios)<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test profiles)<br>
                                             <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
                                         </p>
                                     </div>
@@ -1034,7 +1034,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Scale:</strong> All dimensions use 0-10 scoring where 10 represents ideal performance.<br>
                                             <strong>Thresholds:</strong> 8+ = Excellent, 6-8 = Good, 4-6 = Acceptable, <4 = Needs Improvement.<br>
-                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test scenarios for reliability.
+                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test profiles for reliability.
                                         </p>
                                     </div>
                                     <div style="padding: 15px; border-left: 4px solid #dc3545; background: #f8f9fa; border-radius: 6px;">
@@ -1054,7 +1054,7 @@
                                 <p style="margin: 0; line-height: 1.6; color: #0d47a1;">
                                     <strong>Feature Focus:</strong> This evaluation specifically targets the { feature.replace('_', ' ').title() } capability of Katalon StudioAssist. 
                                     Metrics are weighted and interpreted based on the critical success factors for this particular feature, ensuring that evaluation 
-                                    results directly translate to real-world usability and effectiveness in automated testing scenarios.
+                                    results directly translate to real-world usability and effectiveness in automated testing profiles.
                                 </p>
                             </div>
                         </div>
@@ -1215,21 +1215,21 @@
                 }
 
                 // Chart data
-                const chartScoresData = {"consistency": {"Readability (LL1)": 8.86, "Readability (LL2)": 8.62, "Correctness (LL1)": 8.86, "Correctness (LL2)": 8.62}, "quality": {"Completeness (LL1)": 8.21, "Completeness (LL2)": 7.69, "Readability (LL1)": 8.86, "Readability (LL2)": 8.62, "Clarity (LL1)": 8.86, "Clarity (LL2)": 8.62, "Relevance (LL1)": 8.21, "Relevance (LL2)": 8.100000000000001}, "accuracy": {"Correctness (LL1)": 8.86, "Correctness (LL2)": 8.62, "Functionality (LL1)": 8.86, "Functionality (LL2)": 8.62, "Functional Correctness (LL1)": 8.86, "Functional Correctness (LL2)": 8.639999999999999, "Technical Precision (LL1)": 8.86, "Technical Precision (LL2)": 8.6}, "response_time": {"Average Response Time (LL1)": 2.3, "Average Response Time (LL2)": 1.8, "Response Consistency (LL1)": 0.85, "Response Consistency (LL2)": 0.92}};
+                const chartScoresData = {"consistency": {"Readability (LLM1)": 8.86, "Readability (LLM2)": 8.62, "Correctness (LLM1)": 8.86, "Correctness (LLM2)": 8.62}, "quality": {"Completeness (LLM1)": 8.21, "Completeness (LLM2)": 7.69, "Readability (LLM1)": 8.86, "Readability (LLM2)": 8.62, "Clarity (LLM1)": 8.86, "Clarity (LLM2)": 8.62, "Relevance (LLM1)": 8.21, "Relevance (LLM2)": 8.100000000000001}, "accuracy": {"Correctness (LLM1)": 8.86, "Correctness (LLM2)": 8.62, "Functionality (LLM1)": 8.86, "Functionality (LLM2)": 8.62, "Functional Correctness (LLM1)": 8.86, "Functional Correctness (LLM2)": 8.639999999999999, "Technical Precision (LLM1)": 8.86, "Technical Precision (LLM2)": 8.6}, "response_time": {"Average Response Time (LLM1)": 2.3, "Average Response Time (LLM2)": 1.8, "Response Consistency (LLM1)": 0.85, "Response Consistency (LLM2)": 0.92}};
                 console.log('Chart data:', chartScoresData);
 
                 // JSON Data
                 const baselineJsonData = {
   "metadata": {
     "feature": "chat_window",
-    "llm_version": "LL1",
+    "llm_version": "LLM1",
     "creation_timestamp": "2025-06-02T15:31:52.980699",
     "total_results": 15,
     "dataset_type": "baseline",
     "evaluation_metadata": {
       "evaluator_model": "claude-3-5-sonnet-20241022",
       "evaluation_timestamp": "2025-06-02T15:34:00.376150",
-      "original_baseline_file": "poc_data/chat_window/studioassist_chat_window_baseline_raw_ll1_20250602_153152_1c74f54b.json"
+      "original_baseline_file": "poc_data/chat_window/studioassist_chat_window_baseline_raw_LLM1_20250602_153152_1c74f54b.json"
     }
   },
   "inputs": [
@@ -1400,10 +1400,10 @@
       },
       "api_output": "Creating a custom keyword in Katalon Studio is a straightforward process. Here's how you can do it:\n\n### Step-by-Step Guide to Create a Custom Keyword\n\n1. **Open Katalon Studio** and create or open an existing project.\n\n2. **Navigate to the Keyword Directory**:\n   - In the **Test Explorer** view, right-click on the `Keywords` folder.\n   - Select `New` > `Keyword`.\n\n3. **Name Your Keyword**:\n   - A window will appear prompting you to enter a name for your keyword class. Name it according to its functionality (e.g., `MyCustomKeywords`).\n   - Click `OK`.\n\n4. **Write Your Keyword Code**:\n   - Once the keyword class is created, you will see the editor open with a sample structure.\n   - You can define your custom methods. For example:\n     ```groovy\n     package mycustomkeywords\n\n     import com.kms.katalon.core.annotation.Keyword\n\n     class MyCustomKeywords {\n       @Keyword\n       def myKeyword() {\n           // Your custom logic here\n           println('Hello from My Custom Keyword!')\n       }\n     }\n     ```\n\n5. **Save Your Keyword**:\n   - After writing your keyword logic, click the `Save` icon or press `Ctrl + S` to save your changes.\n\n6. **Use Your Custom Keyword**:\n   - You can now use your custom keyword in test cases by referencing it. Example:\n     ```groovy\n     import mycustomkeywords.MyCustomKeywords\n\n     MyCustomKeywords.myKeyword()\n     ```\n     \n### Note\nMake sure to test your custom keyword after implementation to ensure it works as expected. You can also add additional annotations or parameters to enhance functionality as needed.\n\n### Further Documentation\nFor more advanced features and best practices, refer to the [Katalon Documentation](https://docs.katalon.com/katalon-studio/docs/creating-custom-keywords.html).",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:29:42.873200",
       "response_time": 10.01941990852356,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1420,7 +1420,7 @@
         "overall_score": 9.25,
         "suggestions": [
           "Add information about parameter passing in custom keywords",
-          "Include common use cases or scenarios where custom keywords are particularly useful",
+          "Include common use cases or profiles where custom keywords are particularly useful",
           "Mention error handling best practices within custom keywords",
           "Add information about how to organize custom keywords into packages for better maintenance",
           "Include examples of how to document custom keywords properly"
@@ -1447,10 +1447,10 @@
       },
       "api_output": "Handling dynamic web elements in Katalon Studio requires a systematic approach to ensure that your test scripts remain effective and maintainable. Here are some best practices:\n\n### 1. Use Unique Identifiers\n- **XPaths:** Leverage dynamic XPaths using functions like `contains()` or `starts-with()` to select elements based on partial attributes.\n- **CSS Selectors:** Similarly, CSS selectors can also help in identifying elements uniquely.\n\n### 2. Implement Waits\n- **Implicit Waits:** Set implicit waits for your entire script to allow time for elements to load.\n- **Explicit Waits:** Use `WebUI.waitForElementVisible()` for critical elements that might take time to appear, ensuring your script doesn't attempt to interact with them prematurely.\n\n### 3. Utilize Indexing\n- If multiple elements exist, use indexing to target specific ones. For instance, `findElements()` can help to get a list of elements, and you can access them by index.\n\n### 4. Custom Keywords\n- Create custom keywords to simplify the handling of dynamic elements, especially if you use similar logic across multiple test cases.\n\n### 5. Page Object Model (POM)\n- Implement the Page Object Model to encapsulate the element locators and actions in separate classes, making it easier to manage dynamic elements.\n\n### 6. Regular Expressions\n- Use regular expressions to identify elements based on their attributes dynamically when applicable.\n\n### 7. Refresh Locators\n- If an element frequently changes its attributes, consider implementing a method to refresh the locator properties during execution.\n\nBy following these practices, you can effectively manage dynamic web elements in your Katalon Studio test scripts, leading to more robust and resilient automation. For further resources, you may also refer to the [Katalon Documentation](https://docs.katalon.com) for detailed insights and examples.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:29:54.198759",
       "response_time": 10.322470903396606,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 9,
@@ -1467,7 +1467,7 @@
         "overall_score": 8.75,
         "suggestions": [
           "Include specific code examples for each technique mentioned",
-          "Add information about handling timeout exceptions and error scenarios",
+          "Add information about handling timeout exceptions and error profiles",
           "Discuss relative vs absolute XPaths and their implications",
           "Include information about Katalon's built-in Smart Wait feature",
           "Add examples of custom keywords for dynamic element handling",
@@ -1495,10 +1495,10 @@
       },
       "api_output": "",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:02.887507",
       "response_time": 7.686459302902222,
-      "ll3_evaluation": null,
+      "LLM3_evaluation": null,
       "human_validation": null,
       "error": null
     },
@@ -1515,12 +1515,12 @@
         "mode": "chat",
         "katalon_version": "10.2.0"
       },
-      "api_output": "In Katalon Studio, the terms *Test Cases* and *Test Suites* refer to different components in the testing framework:\n\n### Test Cases\n- A **Test Case** is a single test that checks a specific functionality of the application under test.\n- Test cases are designed to validate one particular aspect and contain a series of steps that outline the actions to be performed, as well as the expected results.\n- Each test case can be run independently, and you can manage verification points and validations within it.\n\n### Test Suites\n- A **Test Suite** is a collection of one or more test cases that are executed together.\n- They are used to group related test cases that logically belong together, allowing for organized testing and efficient execution.\n- You can create a test suite to cover broader functionality that spans multiple test cases, effectively managing which test cases to run during a single execution.\n\n### Summary\n- **Test Cases** focus on specific functionalities,\n- **Test Suites** organize and manage a set of test cases for broader testing scenarios.",
+      "api_output": "In Katalon Studio, the terms *Test Cases* and *Test Suites* refer to different components in the testing framework:\n\n### Test Cases\n- A **Test Case** is a single test that checks a specific functionality of the application under test.\n- Test cases are designed to validate one particular aspect and contain a series of steps that outline the actions to be performed, as well as the expected results.\n- Each test case can be run independently, and you can manage verification points and validations within it.\n\n### Test Suites\n- A **Test Suite** is a collection of one or more test cases that are executed together.\n- They are used to group related test cases that logically belong together, allowing for organized testing and efficient execution.\n- You can create a test suite to cover broader functionality that spans multiple test cases, effectively managing which test cases to run during a single execution.\n\n### Summary\n- **Test Cases** focus on specific functionalities,\n- **Test Suites** organize and manage a set of test cases for broader testing profiles.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:10.059854",
       "response_time": 6.170078277587891,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1564,10 +1564,10 @@
       },
       "api_output": "Handling iframes in Katalon Studio during web testing requires switching the focus to the iframe before interacting with its elements. Here’s how you can do it:\n\n### Steps to Handle Iframes in Katalon Studio:\n1. **Switch to the Iframe**: Use the `selectFrame` keyword to switch the focus to the desired iframe. You can use either the frame name, ID, or index to locate it.\n   ```groovy\n   WebUI.switchToFrame(findTestObject('YourIframeObject'), 10) \n   ``` \n   Replace `YourIframeObject` with the test object that represents your iframe.\n\n2. **Interact with Elements within the Iframe**: After switching to the iframe, you can perform actions like clicking buttons or entering text directly within that context. \n   ```groovy\n   WebUI.click(findTestObject('ButtonInIframe') )\n   WebUI.setText(findTestObject('TextFieldInIframe'), 'Your text')\n   ``` \n\n3. **Switch Back to the Main Document**: Once you finish interacting with elements inside the iframe, switch back to the main content using:\n   ```groovy\n   WebUI.switchToDefaultContent()\n   ``` \n\n### Example Code:\nHere’s a small script demonstrating the steps:\n```groovy\n// Switch to the iframe\nWebUI.switchToFrame(findTestObject('YourIframeObject'), 10)\n\n// Perform actions in the iframe\nWebUI.click(findTestObject('ButtonInIframe'))\nWebUI.setText(findTestObject('TextFieldInIframe'), 'Your text')\n\n// Switch back to the main document\nWebUI.switchToDefaultContent()\n``` \n\nBy following these steps, you can effectively handle iframes in Katalon Studio during your web testing tasks.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:20.045700",
       "response_time": 8.983571767807007,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1577,14 +1577,14 @@
         "feedback": {
           "relevance": "The answer directly addresses iframe handling in Katalon Studio with specific implementation details and code examples",
           "accuracy": "The code syntax and methods shown are correct for Katalon Studio. The switchToFrame and switchToDefaultContent commands are accurately represented",
-          "completeness": "Covers the main aspects of iframe handling but could include handling of nested iframes and error scenarios",
+          "completeness": "Covers the main aspects of iframe handling but could include handling of nested iframes and error profiles",
           "helpfulness": "Provides clear, practical examples with explanations that would help users implement iframe handling in their tests"
         },
         "overall_assessment": "The response provides a solid, practical guide for handling iframes in Katalon Studio with correct syntax and clear examples. It covers the essential aspects of iframe interaction while maintaining good readability and structure.",
         "overall_score": 9,
         "suggestions": [
           "Add examples of handling nested iframes",
-          "Include error handling scenarios and best practices",
+          "Include error handling profiles and best practices",
           "Add information about waiting strategies when switching frames",
           "Provide examples of different iframe locator strategies (index, name, ID)",
           "Include common troubleshooting tips for iframe-related issues"
@@ -1611,10 +1611,10 @@
       },
       "api_output": "In Katalon Studio, there are several types of variables that you can use to store data for your test scripts. Understanding the different types can help you determine which one is appropriate for your needs. Here are the main types of variables in Katalon Studio:\n\n1. **Global Variables**  \n   - **Scope**: Accessible throughout the entire project.  \n   - **Use Case**: Use global variables for data that needs to be shared across different test cases and test suites (e.g., user credentials, environment URLs).  \n\n2. **Test Case Variables**  \n   - **Scope**: Defined within a specific test case and not accessible outside of it.  \n   - **Use Case**: Ideal for storing data that is relevant only for that particular test case, such as temporary values or calculations unique to that test.  \n\n3. **Test Suite Variables**  \n   - **Scope**: Defined at the test suite level and accessible to all test cases within that suite.  \n   - **Use Case**: Best for sharing data that needs to be used by multiple test cases within a test suite, such as a common setup value.\n\n4. **Local Variables**  \n   - **Scope**: Defined within a block of code, such as within a method.  \n   - **Use Case**: Use local variables for short-lived data that is only relevant within a small code section, such as counters or intermediate results.\n\n5. **Keyword Variables**  \n   - **Scope**: Variables defined within custom keywords.  \n   - **Use Case**: These are utilized when you create reusable actions. Variables within a keyword control the behavior of that keyword without affecting the main script.\n\n### Choosing the Right Variable Type\n- **Global Variables** for values that are universal to your entire project.\n- **Test Case Variables** for specific data to single test cases that won’t be reused.\n- **Test Suite Variables** for sharing amongst test cases.\n- **Local Variables** for temporary data during script execution.\n- **Keyword Variables** for encapsulated code logic within custom keywords.\n\nLeveraging the right variable types will improve the organization, readability, and maintainability of your test scripts in Katalon Studio.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:31.403236",
       "response_time": 10.354692220687866,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1658,10 +1658,10 @@
       },
       "api_output": "To implement data-driven testing using Excel files in Katalon Studio, you can follow these steps:\n\n1. **Prepare Excel File**: First, create an Excel file with your test data. Ensure that you have headers for each column that represents the parameter names you want to use in your tests.\n   - For example, if you are testing a login feature, your columns might be `username`, `password`, and `expectedResult`.\n\n2. **Add the Excel Driver**: Katalon Studio supports data-driven testing with Excel files out of the box. You'll need to ensure the Excel data driver plugin is set up. Katalon might already have this integrated, but if not, check the documentation for details on configuration.\n\n3. **Create a Test Case**: Open Katalon Studio and create a new test case for your data-driven test.\n   \n4. **Data Binding**: In your test case, go to the `Data` tab and bind your Excel file as your data source. You can do this using the `Data` keyword to load data from your Excel file. Use `excelData` to specify your Excel file path.\n\n   ```groovy\n   def data = findTestData('Data Files/YourExcelFile')\n   ```\n\n5. **Iterate Over Rows**: Use a loop to iterate through the rows of the data file. Access each cell’s value by column index or header name.\n\n   ```groovy\n   for (def index : (1..data.getRowNumbers() - 1)) {\n       def username = data.getValue('username', index)\n       def password = data.getValue('password', index)\n       def expectedResult = data.getValue('expectedResult', index)\n\n       // Implement your test logic here\n       WebUI.setText(findTestObject('Login/Username_Field'), username)\n       WebUI.setText(findTestObject('Login/Password_Field'), password)\n       WebUI.click(findTestObject('Login/Login_Button'))\n\n       // Validate the result\n   }\n   ```\n\n6. **Run Your Test Case**: Finally, run your test case. Katalon Studio will iterate through your test data provided in the Excel file and execute the test for each row's data.\n\n7. **Review Results**: After execution, review the test results to ensure everything has passed or to analyze any failures.\n\nFor more detailed information and advanced features, you can refer to the [Katalon Documentation](https://docs.katalon.com/katalon-studio/docs/data-driven-testing.html).",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:40.785757",
       "response_time": 8.379868984222412,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1705,10 +1705,10 @@
       },
       "api_output": "Here are some best practices for mobile testing with Katalon Studio:\n\n- **Set up the environment correctly**: Ensure that you have the required configurations for mobile testing, including the proper installation of Katalon Studio, the required SDKs for Android or iOS, and real or emulated devices for testing.\n\n- **Use a mobile device cloud service**: If physical devices are limited, consider using Katalon TestCloud or other mobile device cloud services to access a wide range of devices and operating systems.\n\n- **Utilize Appium capabilities**: Katalon Studio supports Appium for mobile testing, so leverage its capabilities to write robust test cases that can handle various mobile interactions such as gestures, screen orientations, and more.\n\n- **Create reusable custom keywords**: Develop custom keywords for frequently used actions to reduce code duplication and improve maintainability.\n\n- **Implement data-driven testing**: Use data files to validate your application against multiple sets of data, improving coverage and efficiency. Katalon Studio supports various formats like Excel and CSV for data-driven testing.\n\n- **Integrate with CI/CD tools**: Ensure that your mobile tests are integrated with Continuous Integration/Continuous Deployment (CI/CD) tools to automate your testing process for every build.\n\n- **Test on various devices and screen sizes**: Always test your application on different screen sizes and versions to ensure compatibility and responsive design.\n\n- **Focus on performance and usability**: Mobile application users expect speed and a great UI/UX. Pay attention to performance issues such as load times and application responsiveness during testing.\n\n- **Report and track defects efficiently**: Make sure you have a system in place for defect tracking that integrates with Katalon Studio to manage issues found during testing.\n\n- **Regularly update your test scripts**: As the application changes, ensure that your test scripts are updated regularly to adapt to the new features or updates of the application you're testing.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:50.221399",
       "response_time": 8.434588193893433,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 9,
@@ -1721,7 +1721,7 @@
           "completeness": "The response covers most key aspects of mobile testing, though it could include more specific details about mobile-specific recording features and built-in mobile keywords in Katalon Studio.",
           "helpfulness": "Very helpful for both beginners and experienced users, providing actionable insights and practical recommendations that can be implemented immediately."
         },
-        "overall_assessment": "The response provides a comprehensive and well-structured overview of mobile testing best practices in Katalon Studio. It successfully combines technical aspects with practical implementation guidance, making it valuable for real-world testing scenarios.",
+        "overall_assessment": "The response provides a comprehensive and well-structured overview of mobile testing best practices in Katalon Studio. It successfully combines technical aspects with practical implementation guidance, making it valuable for real-world testing profiles.",
         "overall_score": 8.75,
         "suggestions": [
           "Include information about Katalon's built-in mobile recording feature and how to effectively use it",
@@ -1752,10 +1752,10 @@
       },
       "api_output": "In Katalon Studio, generating and customizing test reports is straightforward. Here's a quick guide on how to do it:\n\n### Generating Test Reports\n1. **Execute Your Test Case/ Suite**: \n   - Run your test case or test suite in Katalon Studio. After execution, Katalon will generate a default report automatically.\n\n2. **Access the Reports**:  \n   - Go to the **\"Reports\"** tab located in the **\"Execution\"** view.\n   - You can view the reports for the executed test cases or suites. The default reports provide insights into the execution status, passed/failed tests, and logs.\n\n### Customizing Test Reports\nTo customize your test reports, you can use the following methods:\n\n1. **Report Configuration**: \n   - Navigate to **Project > Settings > Report**.\n   - Here, you can choose different report types, such as the **HTML**, **JUnit**, or **CSV** formats.\n   - Adjust settings for each report type, including output directory and report title.\n\n2. **Using Custom Keywords**:  \n   - You can create custom keywords to format your report output, including adding additional logs, screenshots, or custom messages during execution.\n   - Implement methods in your custom keywords that enhance the reporting logic as per your requirements.\n\n3. **Custom Report Templates**:  \n   - If you need further customization, you can create custom report templates by coding in Groovy to adjust the layout and content of your reports, which allows more control over how the results are displayed.\n\n4. **Katalon Studio Console**:  \n   - You can also run tests from the command line using Katalon Runtime Engine (KRE) with specific report parameters to generate reports in your desired format and configuration.\n\n### Additional Resources\nFor more detailed instructions and advanced configurations, you can refer to the official Katalon documentation:\n- [Katalon Documentation - Test Reports](https://docs.katalon.com/katalon-studio/docs/test-reports.html)",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:30:56.516539",
       "response_time": 5.293136119842529,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 9,
@@ -1799,10 +1799,10 @@
       },
       "api_output": "In Katalon Studio, there are several ways to handle wait conditions to ensure your automated tests run smoothly and reliably. Here are the key methods:\n\n1. **Implicit Wait**: \n   - This setting waits for a specified timeout for elements to become available before throwing an exception. You can configure it in your project settings.\n   - **Example**: `WebUiBuiltInKeywords.setImplicitWait(10)` will wait for 10 seconds before timing out.\n\n2. **Explicit Wait**:\n   - Used when you want to wait for a specific condition to be true for a particular element. You can use the `waitForElementVisible`, `waitForElementPresent`, or `waitForElementClickable` methods.\n   - **Example**:\n   ```groovy\n   WebUI.waitForElementVisible(findTestObject('Your_Test_Object'), 10)\n   ```\n\n3. **Custom Wait**:\n   - For more complex conditions, you can create a custom wait using a loop with a specific condition. This is useful when waiting for a dynamic state.\n   - **Example**:\n   ```groovy\n   def maxWaitTime = 30\n   def timeSpent = 0\n   while (timeSpent < maxWaitTime && !WebUI.verifyElementVisible(findTestObject('Your_Test_Object'))){\n       Thread.sleep(1000) // Sleep for 1 second\n       timeSpent++\n   }\n   ```\n\n4. **Katalon Built-in Keywords**:\n   - Katalon also provides built-in keywords for different wait conditions that can be directly used in your test scripts.\n   - Examples include `WebUI.waitForPageLoad()`, `WebUI.waitForElementClickable()`.\n\n5. **Wait For Timeout**:\n   - You can configure the default waiting time in the project settings under the **Execution** section. This applies globally to all implicit waits.\n\nBy carefully implementing these wait conditions, you can improve the stability of your automated tests and reduce the likelihood of encountering timing issues.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:31:06.860796",
       "response_time": 9.342784881591797,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1844,12 +1844,12 @@
         "mode": "chat",
         "katalon_version": "10.2.0"
       },
-      "api_output": "To perform API testing using Katalon Studio, you can follow these steps:\n\n1. **Create a New Project**: Open Katalon Studio and create a new project. Select `File` > `New` > `Project`, then choose `API Testing` as your project type.\n\n2. **Create API Test Cases**: \n   - Navigate to the `Tests Explorer` panel.\n   - Right-click on the `API Testing` folder and select `New` > `API Test Case` to create a new API test case.\n\n3. **Define the API Request**: \n   - In the API test case, select a request method (GET, POST, PUT, DELETE) from the toolbar.\n   - Enter the API endpoint URL in the URL field.\n   - Add headers, parameters, and body as needed. You can utilize the `Request` and `Response` sections to specify the necessary details.\n\n4. **Add Assertions**: \n   - After sending the request, add assertions to validate the response. You can use built-in keywords like `verifyEqual`, `verifyContains`, etc.\n   - Make assertions based on the expected response code, response body, and headers.\n\n5. **Run API Tests**: \n   - Click the `Run` button to execute your API test case. You can view the results in the `Log Viewer` panel for detailed information about the test execution.\n\n6. **Generate Test Reports**: \n   - Katalon Studio provides built-in reporting features. You can view summary reports for your API tests directly in the application or export them.\n\n7. **Use Groovy for Advanced Operations**: \n   - For more complex scenarios, utilize Groovy scripts within your test cases to perform logic checks or manipulate response data programmatically.",
+      "api_output": "To perform API testing using Katalon Studio, you can follow these steps:\n\n1. **Create a New Project**: Open Katalon Studio and create a new project. Select `File` > `New` > `Project`, then choose `API Testing` as your project type.\n\n2. **Create API Test Cases**: \n   - Navigate to the `Tests Explorer` panel.\n   - Right-click on the `API Testing` folder and select `New` > `API Test Case` to create a new API test case.\n\n3. **Define the API Request**: \n   - In the API test case, select a request method (GET, POST, PUT, DELETE) from the toolbar.\n   - Enter the API endpoint URL in the URL field.\n   - Add headers, parameters, and body as needed. You can utilize the `Request` and `Response` sections to specify the necessary details.\n\n4. **Add Assertions**: \n   - After sending the request, add assertions to validate the response. You can use built-in keywords like `verifyEqual`, `verifyContains`, etc.\n   - Make assertions based on the expected response code, response body, and headers.\n\n5. **Run API Tests**: \n   - Click the `Run` button to execute your API test case. You can view the results in the `Log Viewer` panel for detailed information about the test execution.\n\n6. **Generate Test Reports**: \n   - Katalon Studio provides built-in reporting features. You can view summary reports for your API tests directly in the application or export them.\n\n7. **Use Groovy for Advanced Operations**: \n   - For more complex profiles, utilize Groovy scripts within your test cases to perform logic checks or manipulate response data programmatically.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:31:17.161475",
       "response_time": 9.299192905426025,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1895,10 +1895,10 @@
       },
       "api_output": "Debugging test cases in Katalon Studio involves several steps. Here's a detailed process:\n\n1. **Open the Test Case**: Open the test case you want to debug in Katalon Studio.\n\n2. **Set Breakpoints**: You can set breakpoints in your test script by clicking in the left margin next to the line numbers. A breakpoint pauses the execution of the test when it reaches that line.\n\n3. **Run in Debug Mode**: Instead of running the test case normally, choose to run it in Debug mode. You can do this by right-clicking the test case in the Test Explorer and selecting `Debug`. Alternatively, you can click the debug icon on the toolbar.\n\n4. **Watch Expressions**: Katalon Studio allows you to add watch expressions to monitor specific variables or expressions during the test execution. You can add these in the **Variables** or **Watch** sections of the Debug View.\n\n5. **Step Through Execution**: Use the Step Over (F6), Step Into (F5), and Step Out (F7) commands in the Debug Perspective to navigate through your test script line by line. This helps you observe the flow of execution and check the values of variables at each step.\n\n6. **Inspect Variables**: In the Debug Perspective, you can inspect the values of your variables in the **Variables** pane. This allows you to verify whether the data is being processed as expected.\n\n7. **Use Console for Logging**: Utilize the Console window to log information and output debug messages. This helps in tracking the execution details and identifying issues.\n\n8. **Fix Issues**: Once you identify any issues in your test case, make the necessary changes in the script.\n\n9. **Re-run the Test Case**: After making changes, run the test case again in Debug mode to ensure that the issues are resolved.\n\n10. **Repeat if Necessary**: If any issues persist, repeat the debugging process until the test case executes successfully without errors.\n\n### Additional Tips:\n- Enable logging in your test cases to capture more details.\n- Consider using the built-in **Error Handling** of Katalon to gracefully handle exceptions and log additional information when failures occur.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:31:27.362256",
       "response_time": 9.198904037475586,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -1917,7 +1917,7 @@
           "Include information about the Debug Perspective layout and how to customize it",
           "Mention the ability to debug groovy scripts separately",
           "Add information about remote debugging capabilities",
-          "Include common debugging scenarios and their solutions",
+          "Include common debugging profiles and their solutions",
           "Mention integration with external debugging tools if applicable"
         ],
         "meets_requirements": true,
@@ -1942,10 +1942,10 @@
       },
       "api_output": "To implement cross-browser testing in Katalon Studio, you can follow these steps:\n\n1. **Set Up the Browsers**: Ensure you have installed the necessary web browsers (like Chrome, Firefox, Safari, etc.) on your testing machine.\n\n2. **Create a Test Case**: Open Katalon Studio, create a new test case where you will write your test script.\n\n3. **Use WebDriver**:\n   - You can specify the desired browser using Katalon’s built-in WebDriver functionality.\n   - Use the `WebUI.openBrowser('your_browser_name')` keyword to open a specific browser. Replace `'your_browser_name'` with the name of the actual browser (e.g., 'Chrome', 'Firefox').\n\n4. **Parameterize Your Test**: To run the same test on multiple browsers, you can parameterize the browser name. Create a test suite that includes your test case and adds a variable for the browser name.\n\n5. **Test Suite**: Create a new Test Suite and add the test case you created. You can then use the Test Suite's execution settings to include multiple browsers.\n\n6. **Execution**:\n   - Run your Test Suite, and Katalon Studio will execute the test case using each specified browser.\n   - You can view the results for each browser to see how the application behaves across different platforms.\n\n### Example Code Snippet\nHere's an example of how you might structure your test case to open different browsers:\n```groovy\ndef browsers = ['Chrome', 'Firefox']\n\nfor (String browser : browsers) {\n    WebUI.openBrowser(browser)\n    // Add your test steps here\n    WebUI.closeBrowser()\n}\n```\n\n### Resources\nFor more detailed information, please refer to the [Katalon Documentation](https://docs.katalon.com). This will cover specific configurations and advanced settings for your cross-browser testing needs.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:31:36.747212",
       "response_time": 8.381033182144165,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -1958,7 +1958,7 @@
           "completeness": "Covers basic implementation but misses some important aspects like browser-specific configurations, handling browser drivers, and reporting across browsers",
           "helpfulness": "Provides a good starting point with actionable steps and example code, making it useful for beginners"
         },
-        "overall_assessment": "The response provides a solid foundation for implementing cross-browser testing in Katalon Studio, with clear steps and practical examples. While generally accurate and helpful, it could be more comprehensive in addressing advanced scenarios and technical details.",
+        "overall_assessment": "The response provides a solid foundation for implementing cross-browser testing in Katalon Studio, with clear steps and practical examples. While generally accurate and helpful, it could be more comprehensive in addressing advanced profiles and technical details.",
         "overall_score": 8,
         "suggestions": [
           "Include proper syntax for WebDriver configuration using ExecuteConfiguration class",
@@ -1991,10 +1991,10 @@
       },
       "api_output": "Here are some best practices for version control when working with Katalon Studio projects:\n\n- **Use Git as Your Version Control System**: Katalon Studio has built-in support for Git, which is widely used and provides robust version control features.\n\n- **Create a .gitignore File**: Add a `.gitignore` file to your project to exclude generated files and directories that should not be tracked, such as test results and libraries. The typical entries may include:\n  - `*.log`\n  - `Results/`\n  - `Reports/`\n  - `Data/` (if you don't want to track test data)\n\n- **Commit Frequently with Meaningful Messages**: Make regular commits with clear messages describing the changes you made. This practice helps in understanding the project history and facilitates easier collaboration.\n\n- **Organize Your Tests**: Structure your test cases, test suites, and other project components logically. This makes it easier to manage and understand the project.\n\n- **Use Branching Strategies**: Adopt a branching strategy that suits your development workflow. Create branches for features, bug fixes, or experiments, and merge them back to the main branch after thorough testing.\n\n- **Avoid Conflicts**: Regularly pull changes from the remote repository to keep your local copy up to date and reduce merge conflicts.\n\n- **Review Pull Requests**: If you're working in a team, use pull requests for code review before merging changes. This ensures higher code quality and team collaboration.\n\n- **Document Changes**: Maintain a changelog or documentation to record significant changes to the project over time, which aids in tracking the evolution of the project.\n\n- **Backup Your Repository**: Regularly push your changes to a remote repository (like GitHub, GitLab, or Bitbucket) to ensure that you have a backup of your work.\n\nBy following these best practices, you can effectively manage your Katalon Studio projects and ensure smoother collaboration with team members.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:31:47.600237",
       "response_time": 9.85163402557373,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 9,
@@ -2038,10 +2038,10 @@
       },
       "api_output": "To integrate Katalon Studio with Katalon TestOps for test management, follow these steps:\n\n1. **Katalon Studio Configuration**:\n   - Open Katalon Studio and navigate to `Katalon TestOps` under the `Preferences` menu.\n   - Enter your TestOps API key and other necessary authentication information.\n   - Make sure to configure the connection properly for Katalon Studio to communicate with TestOps.\n\n2. **Link Your Projects**:\n   - In Katalon Studio, link your project to the specific TestOps project you want to manage.\n   - You can do this from the `TestOps` menu in Katalon Studio.\n\n3. **Synchronize Test Cases**:\n   - Make sure your test cases in Katalon Studio are synchronized with TestOps. This can typically be done using the `Sync` option in the TestOps pane.\n   - This allows you to manage your test cases directly from TestOps, updating any changes you make in Katalon Studio.\n\n4. **Execute Tests and View Results**:\n   - Once integrated, you can execute your tests through Katalon Studio.\n   - The results will be sent automatically to TestOps, where you can view and manage them effectively.\n\n5. **Reporting and Analysis**:\n   - Use TestOps to analyze your results, view reports, and manage your overall testing workflow. This includes tracking test executions, analyzing test coverage, and managing defects.\n\nFor detailed steps and troubleshooting, refer to the official Katalon documentation on [Integrating with TestOps](https://docs.katalon.com/katalon-studio/integrations/integrating-katalon-studio-with-testops) for the latest guidelines and features.",
       "gui_output": "Response shown in StudioAssist chat window",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T15:31:51.978734",
       "response_time": 3.377207040786743,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -2227,12 +2227,12 @@
       },
       "suggestion_frequency": {
         "Add information about parameter passing in custom keywords": 1,
-        "Include common use cases or scenarios where custom keywords are particularly useful": 1,
+        "Include common use cases or profiles where custom keywords are particularly useful": 1,
         "Mention error handling best practices within custom keywords": 1,
         "Add information about how to organize custom keywords into packages for better maintenance": 1,
         "Include examples of how to document custom keywords properly": 1,
         "Include specific code examples for each technique mentioned": 1,
-        "Add information about handling timeout exceptions and error scenarios": 1,
+        "Add information about handling timeout exceptions and error profiles": 1,
         "Discuss relative vs absolute XPaths and their implications": 1,
         "Include information about Katalon's built-in Smart Wait feature": 1,
         "Add examples of custom keywords for dynamic element handling": 1
@@ -2244,7 +2244,7 @@
       }
     },
     "insights": [
-      "Low complexity bias: Most test inputs are simple. Add more complex scenarios for thorough testing.",
+      "Low complexity bias: Most test inputs are simple. Add more complex profiles for thorough testing.",
       "High average response time (8.34s): Consider optimizing API calls or implementing caching.",
       "Excellent overall performance: The current configuration is producing high-quality outputs.",
       "Strong correlation between completeness_vs_helpfulness (0.78): These criteria are closely related."
@@ -2254,14 +2254,14 @@
                 const targetJsonData = {
   "metadata": {
     "feature": "chat_window",
-    "llm_version": "LL2",
+    "llm_version": "LLM2",
     "creation_timestamp": "2025-06-02T15:36:16.144434",
     "total_results": 15,
     "dataset_type": "target",
     "evaluation_metadata": {
       "evaluator_model": "claude-3-5-sonnet-20241022",
       "evaluation_timestamp": "2025-06-02T15:38:16.148797",
-      "original_baseline_file": "poc_data/chat_window/studioassist_chat_window_target_raw_ll2_20250602_153616_326ec9e9.json"
+      "original_baseline_file": "poc_data/chat_window/studioassist_chat_window_target_raw_LLM2_20250602_153616_326ec9e9.json"
     }
   },
   "inputs": [
@@ -2433,10 +2433,10 @@
       },
       "api_output": "To create a custom keyword in Katalon Studio, follow these steps:\n\n1. **Open Katalon Studio** and navigate to the **Keywords** folder in the **Test Explorer**.\n2. Right-click on the **Keywords** folder and select **New** -> **Package** to create a new package (if necessary). This helps in organizing your custom keywords.\n3. Right-click on the newly created package and select **New** -> **Keyword**. This will open a new editor for your custom keyword.\n4. In the new keyword file, define your custom keyword method using the `@Keyword` annotation. For example:\n   ```groovy\n   package your.package.name\n   import com.kms.katalon.core.annotation.Keyword\n   \n   public class YourCustomKeyword {\n       @Keyword\n       def customMethod() {\n           // Your custom code here\n           println('This is a custom keyword!')\n       }\n   }\n   ```\n5. Save the keyword file.\n6. You can now use this custom keyword in your test cases. To use it, simply call `YourCustomKeyword.customMethod()` from your test scripts.\n\nMake sure to adhere to the naming conventions and best practices while creating custom keywords for better code maintainability.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:34:29.900274",
       "response_time": 5.947739124298096,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -2449,7 +2449,7 @@
           "completeness": "Covers the basic process well but could include more information about parameter passing, return types, and error handling in custom keywords",
           "helpfulness": "Very helpful with clear steps, code example, and practical implementation guidance. The package organization tip is particularly useful"
         },
-        "overall_assessment": "The response provides a solid foundation for creating custom keywords in Katalon Studio. It's well-structured, accurate, and includes both theoretical and practical aspects with actual code examples. While it covers the basics comprehensively, it could be enhanced with more advanced scenarios",
+        "overall_assessment": "The response provides a solid foundation for creating custom keywords in Katalon Studio. It's well-structured, accurate, and includes both theoretical and practical aspects with actual code examples. While it covers the basics comprehensively, it could be enhanced with more advanced profiles",
         "overall_score": 9,
         "suggestions": [
           "Add examples of custom keywords with parameters and return types",
@@ -2481,10 +2481,10 @@
       },
       "api_output": "When handling dynamic web elements in Katalon Studio, consider implementing these best practices:\n\n1. **Use XPath Selectors**: XPath provides a powerful way to identify elements based on their properties, hierarchy, or dynamic attributes. Use relative XPath whenever possible to avoid breaking the selector with minor changes in the UI.\n\n2. **Leverage Waits**: Implement explicit waits (e.g., `WebUI.waitForElementVisible`) to give dynamic elements time to load before interacting with them. This reduces the risk of encountering `ElementNotFound` exceptions.\n\n3. **Use Regular Expressions in Object Properties**: For elements whose properties change dynamically (like IDs or class names), use regular expressions in your object's properties in the Object Repository to match their patterns.\n\n4. **Dynamic XPaths with Contains() or Starts-with() Functions**: Use the `contains()` or `starts-with()` functions in your XPath expressions to match part of the attributes of elements that might change dynamically.\n\n5. **Unique Identifiers**: Whenever possible, use a unique identifier that remains constant (like data attributes) as a key to locate dynamic elements. This is particularly useful when dealing with elements generated from a framework or library.\n\n6. **Custom Keywords**: Create custom keywords to encapsulate logic for handling dynamic elements, making your test scripts more readable and maintainable.\n\n7. **Regular Reviews of Object Repository**: Regularly review and update your Object Repository to ensure it remains relevant and accommodates changes in the application. \n\n8. **Debugging and Logging**: Use Katalon Studio's built-in logging feature to debug your tests when dynamic elements do not behave as expected. This helps in identifying what went wrong and makes it easier to determine if the issue lies with the element locator strategy or its state.  \n\nBy incorporating these practices, you can enhance the robustness and reliability of your automated tests in Katalon Studio.  \n\nFor more details, refer to the [Katalon Documentation](https://docs.katalon.com).",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:34:40.806600",
       "response_time": 9.904134035110474,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -2529,10 +2529,10 @@
       },
       "api_output": "",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:34:43.249925",
       "response_time": 1.4413061141967773,
-      "ll3_evaluation": null,
+      "LLM3_evaluation": null,
       "human_validation": null,
       "error": null
     },
@@ -2552,10 +2552,10 @@
       },
       "api_output": "In Katalon Studio, a Test Case is a single unit of a test that contains a set of steps to verify a specific functionality or feature of an application. It focuses on one particular aspect of the application and includes details such as setup, execution steps, and expected outcomes.\n\nOn the other hand, a Test Suite is a collection of Test Cases grouped together to run in a particular order or under specific conditions. Test Suites can help in organizing the execution of multiple Test Cases that are related or need to be tested together as part of a broader testing strategy. \n\nThis distinction allows for a more modular and organized approach to testing, making it easier to manage and execute tests in Katalon Studio.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:34:47.429996",
       "response_time": 3.1786460876464844,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -2600,10 +2600,10 @@
       },
       "api_output": "To handle iframes in Katalon Studio during web testing, you can follow these steps:\n\n1. **Switch to the iframe:** Use the `WebUI.switchToFrame()` built-in keyword to switch the context to the target iframe. You will need to provide a reference to the iframe. This can be done by using `findTestObject()` with an object you've created for the iframe.\n\n   Example:\n   ```groovy\n   WebUI.switchToFrame(findTestObject('your_iframe_test_object'), 10)\n   ```\n   Here, `10` is the timeout in seconds which the script will wait for the iframe to be loaded.\n\n2. **Perform actions inside the iframe:** After switching to the iframe, you can perform your desired actions such as clicking buttons, entering text, etc., using corresponding test objects that are defined within the iframe.\n\n3. **Switch back to the main content:** Once your actions in the iframe are complete, you should switch back to the main content using the `WebUI.switchToDefaultContent()` keyword.\n\n   Example:\n   ```groovy\n   WebUI.switchToDefaultContent()\n   ```\n\nHere’s a full example:\n```groovy\nWebUI.openBrowser('http://example.com')\nWebUI.switchToFrame(findTestObject('your_iframe_test_object'), 10)\nWebUI.click(findTestObject('your_button_in_iframe'))\nWebUI.switchToDefaultContent()\nWebUI.closeBrowser()\n```\n\nMake sure to create test objects for both the iframe and elements inside it in the Object Repository before running the script. \n\nFor more detailed information, you can check the [Katalon Documentation](https://docs.katalon.com).",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:34:57.168763",
       "response_time": 8.736694097518921,
-      "ll3_evaluation": null,
+      "LLM3_evaluation": null,
       "human_validation": null,
       "error": null
     },
@@ -2623,10 +2623,10 @@
       },
       "api_output": "In Katalon Studio, there are primarily three types of variables: \n\n1. **Global Variables**: These are used across multiple test cases and can store values that are used repeatedly throughout your project. Use global variables when you have data that is shared across multiple test cases, such as configuration settings or user credentials.\n\n2. **Test Case Variables**: These are local to a specific test case and can be used to store values that are only relevant to that case. Use test case variables when you need to store temporary data that will not be used in other test cases, like intermediate results.\n\n3. **Local Variables**: These are defined within a test case or a keyword and can only be accessed within that context. Use local variables for short-lived values that are required only within a specific method or function, such as counters or flags. \n\nChoosing the right type of variable depends on the scope and lifespan of the data you are handling in your test automation project.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:03.474361",
       "response_time": 5.302889108657837,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -2672,10 +2672,10 @@
       },
       "api_output": "To implement data-driven testing using Excel files in Katalon Studio, you can follow these steps:\n\n1. **Prepare Your Excel File:**\n   - Create an Excel file with the test data you want to use. Ensure that the first row contains the headers that will represent the data fields.\n\n2. **Add Dependencies:**\n   - You may need to add Apache POI library to your Katalon project to read Excel files. You can include the library by downloading the necessary JAR files and adding them to the 'Drivers' folder of your Katalon project.\n\n3. **Create a Test Case:**\n   - In Katalon Studio, create a new Test Case where you will write the script to read data from the Excel file.\n\n4. **Read Excel Data:**\n   - Use the built-in `ExcelKeywords` class to read data from the Excel file. Here’s an example of how you can read data:\n     ```\n     import com.kms.katalon.core.keyword.ExcelKeywords as ExcelKeywords\n     \n     // Load the Excel file\n     String filePath = \"path/to/your/excel/file.xlsx\"\n     \n     // Read the Excel file\n     def data = ExcelKeywords.getDataWithSheet(filePath, \"Sheet1\") // Specify your sheet name\n     \n     // Iterate over the data\n     for (def row : data) {\n         println(row[0]) // Access the first column data\n         // Perform your testing actions here using the data\n     }\n     ```\n\n5. **Run Your Test Case:**\n   - Execute the Test Case and observe how it iterates through the data from the Excel file, performing actions according to the values specified in each row.\n\nThis approach allows you to effectively implement data-driven testing by providing varied inputs for your test cases from an external Excel file.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:11.945582",
       "response_time": 7.469245910644531,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -2721,10 +2721,10 @@
       },
       "api_output": "Here are some best practices for mobile testing with Katalon Studio:\n\n1. **Device and OS Coverage**: Test your application on a variety of devices and operating system versions to ensure compatibility and performance across different environments.\n\n2. **Real Devices vs. Emulators**: Whenever possible, use real devices for testing to get accurate results. Emulators can be useful for initial tests but may not perfectly represent real-world behavior.\n\n3. **Automation Framework**: Leverage Katalon's built-in mobile testing framework, utilizing its capabilities to script tests using Groovy. This allows for more flexible and powerful test cases.\n\n4. **Object Identification**: Make use of mobile-specific object identification strategies, like XPath or Mobile Objects, to ensure that your tests can locate UI elements effectively.\n\n5. **Parallel Execution**: Take advantage of Katalon’s parallel execution feature to run tests simultaneously on multiple devices, significantly reducing the test execution time.\n\n6. **Test Data Management**: Use Katalon’s capability to manage test data effectively. This includes utilizing test data files or Katalon’s built-in data binding features to dynamically input data during tests.\n\n7. **Regular Maintenance**: Keep your tests updated as the application evolves. Regularly review and refactor your tests to maintain their efficiency and relevance.\n\n8. **Reporting and Logging**: Implement robust logging and reporting mechanisms using Katalon’s built-in features. This helps in diagnosing issues quickly when they arise during testing.\n\n9. **Version Control**: Utilize version control systems (like Git) to manage your test scripts and collaborate with team members effectively.\n\n10. **Continuous Integration**: Integrate Katalon Studio with CI/CD tools to automate the execution of mobile tests whenever new code is pushed, ensuring rapid feedback and stability of your app.\n\nFollowing these practices can help enhance the effectiveness and efficiency of your mobile testing efforts in Katalon Studio.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:20.538777",
       "response_time": 7.590433120727539,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 9,
@@ -2770,10 +2770,10 @@
       },
       "api_output": "In Katalon Studio, you can generate and customize test reports through the built-in reporting feature. Here's how you can do it:\n\n1. **Generating Reports:**  \n   - After executing your test cases, Katalon Studio automatically generates reports. You can find the reports in the **Reports** folder under your project directory. \n   - You can also access the current test execution report by clicking on the **View Report** option in the execution logs.\n\n2. **Customizing Reports:**  \n   - Go to **Project > Settings > Report**. Here, you can customize settings for the test reports. You can choose the type of report you want (e.g., HTML, PDF, etc.). \n   - You can also enable or disable different details in the reports, such as logs, screenshots, and test steps.\n   - Katalon Studio allows configuring the report title, file name, and other preferences.\n\n3. **Exporting Reports:**  \n   - You can export the generated reports manually if needed. Just navigate to the report file in your project directory and share or archive them as required.\n\n4. **Using Katalon TestOps:**  \n   - If you're using Katalon TestOps, you have additional reporting features available, including dashboard insights and analytics on your test results. You can send your test results to TestOps for more advanced reporting.\n\nBy following these steps, you can effectively generate and customize your test reports in Katalon Studio according to your project needs.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:27.829810",
       "response_time": 6.289295673370361,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -2817,12 +2817,12 @@
         "mode": "chat",
         "katalon_version": "10.2.0"
       },
-      "api_output": "In Katalon Studio, wait conditions are essential to ensure that web elements are ready for interactions before performing actions on them. Here are various ways to handle wait conditions:\n\n1. **Implicit Wait**: This sets a default waiting time for the entire test session. When a script searches for an element, if the element is not found immediately, it will keep trying until the time runs out.\n   - You can set implicit wait in the desired capabilities of the WebDriver.\n   \n2. **Explicit Wait**: This is used to wait for a specific condition to occur before proceeding further in the script. This can be set for individual elements or actions and is more refined compared to implicit wait.\n   - Example:\n     ```groovy\n     WebUI.waitForElementVisible(findTestObject('ObjectName'), timeout)\n     ```\n   \n3. **Fluent Wait**: This is a type of explicit wait that allows waiting for a specific condition for a certain duration, polling at regular intervals. It can also ignore specific exceptions while waiting.\n   - Example:\n     ```groovy\n     WebDriverWait wait = new WebDriverWait(driver, timeout)\n     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id('elementId')))\n     ```\n   \n4. **WebUI.waitForPageLoad**: This method waits for the entire page to load completely before moving on to the next step. It is useful for scenarios where the element's interaction depends on page load.\n   - Example:\n     ```groovy\n     WebUI.waitForPageLoad(timeout)\n     ```\n\n5. **Custom Wait**: Sometimes, a custom wait condition is needed. You can create a loop that checks the desired condition at intervals and exits once the condition is met or times out.\n\nUsing these wait conditions appropriately will help avoid synchronization issues and make the test scripts more reliable.",
+      "api_output": "In Katalon Studio, wait conditions are essential to ensure that web elements are ready for interactions before performing actions on them. Here are various ways to handle wait conditions:\n\n1. **Implicit Wait**: This sets a default waiting time for the entire test session. When a script searches for an element, if the element is not found immediately, it will keep trying until the time runs out.\n   - You can set implicit wait in the desired capabilities of the WebDriver.\n   \n2. **Explicit Wait**: This is used to wait for a specific condition to occur before proceeding further in the script. This can be set for individual elements or actions and is more refined compared to implicit wait.\n   - Example:\n     ```groovy\n     WebUI.waitForElementVisible(findTestObject('ObjectName'), timeout)\n     ```\n   \n3. **Fluent Wait**: This is a type of explicit wait that allows waiting for a specific condition for a certain duration, polling at regular intervals. It can also ignore specific exceptions while waiting.\n   - Example:\n     ```groovy\n     WebDriverWait wait = new WebDriverWait(driver, timeout)\n     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id('elementId')))\n     ```\n   \n4. **WebUI.waitForPageLoad**: This method waits for the entire page to load completely before moving on to the next step. It is useful for profiles where the element's interaction depends on page load.\n   - Example:\n     ```groovy\n     WebUI.waitForPageLoad(timeout)\n     ```\n\n5. **Custom Wait**: Sometimes, a custom wait condition is needed. You can create a loop that checks the desired condition at intervals and exits once the condition is met or times out.\n\nUsing these wait conditions appropriately will help avoid synchronization issues and make the test scripts more reliable.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:35.443957",
       "response_time": 6.612008333206177,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -2867,10 +2867,10 @@
       },
       "api_output": "To perform API testing using Katalon Studio, you can follow these steps:\n\n1. **Create a New Test Case**: Go to the Test Explorer and right-click on the 'Test Cases' folder. Select 'New' -> 'Test Case' to create a new API test case.\n\n2. **Switch to API Testing View**: After you create the test case, switch to the API Testing view where you can work specifically with API requests.\n\n3. **Create a Request**: Click on the 'Add' button in the Requests section to create a new HTTP request. You can specify the request type (GET, POST, PUT, DELETE, etc.), the endpoint URL, and any necessary headers or parameters.\n\n4. **Send the Request**: After setting up the request, you can send it by clicking the 'Send' button. Katalon will show you the response of the request, including status codes, response body, and headers.\n\n5. **Add Assertions**: You can add assertions to validate the response. For example, you can check if the response code is '200 OK' or if certain values in the response body are as expected.\n\n6. **Run the Test Case**: You can run the test case by selecting it in the Test Explorer and clicking on the 'Run' button. Katalon will execute the API request and show you the results in the log.\n\n7. **Use Scripting**: For more complex tests, you can use Groovy scripts within your test cases to manipulate request data, iterate over requests, and utilize Katalon’s built-in keywords for assertions and logging.\n\nAdditionally, you can integrate Katalon with tools like Katalon TestOps for test management and reporting. \n\nFor further details, you can refer to the Katalon Documentation specifically regarding [API Testing](https://docs.katalon.com/katalon-studio/docs/api-testing.html) for comprehensive guidance and examples.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:44.541513",
       "response_time": 8.096091032028198,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -2916,10 +2916,10 @@
       },
       "api_output": "To debug test cases in Katalon Studio, follow these steps:\n\n1. **Open the Test Case**: Navigate to the test case you want to debug in the Test Explorer.\n\n2. **Set Breakpoints**: Click in the left margin next to the line numbers in the test case script to set breakpoints. A breakpoint pauses execution at the specified line.\n\n3. **Run in Debug Mode**: Right-click the test case and select \"Debug\" from the context menu, or click on the Debug button in the toolbar. This will run the test in debug mode.\n\n4. **Step Through the Code**: Use the Debug toolbar to step through the code line-by-line. You can use:\n   - **Step Into (F5)**: To go into a method or function call.\n   - **Step Over (F6)**: To skip over the method without going inside.\n   - **Step Out (F7)**: To exit the current method and return to the caller.\n\n5. **Inspect Variables**: Hover over variables or use the Variables view to inspect their current values. This helps in understanding the program's state at the breakpoint.\n\n6. **Console Output**: Use the Console view to see output logs and debug information.\n\n7. **Continue Execution**: When ready, you can continue running the test from the current breakpoint until the next one, or until the test case completes.\n\n8. **Review**: Once debugging is complete, review any errors or unexpected behavior to make necessary adjustments to the test case script. \n\nThis process allows you to identify issues in your test cases effectively and make corrections as needed.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:51.184606",
       "response_time": 5.641660928726196,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 10,
           "accuracy": 9,
@@ -2940,7 +2940,7 @@
           "Add details about conditional breakpoints",
           "Include information about remote debugging capabilities",
           "Mention the Log Viewer tool for analyzing test execution logs",
-          "Add troubleshooting tips for common debugging scenarios"
+          "Add troubleshooting tips for common debugging profiles"
         ],
         "meets_requirements": true,
         "evaluator_model": "claude-3-5-sonnet-20241022",
@@ -2963,12 +2963,12 @@
         "mode": "chat",
         "katalon_version": "10.2.0"
       },
-      "api_output": "To implement cross-browser testing in Katalon Studio, you can follow these steps:\n\n1. **Set up Katalon Studio**: Make sure you have the latest version of Katalon Studio installed as it includes enhancements for cross-browser testing.\n\n2. **Create a Test Case**: Start by creating a test case that you want to run across multiple browsers. Use the Keyword library to record or script your tests.\n\n3. **Configure Desired Capabilities**: In Katalon Studio, go to the Project Settings > Desired Capabilities. Here you can specify the browsers you want to test on (like Chrome, Firefox, Safari, etc.). You can add the following configurations depending on the browsers:\n   - For Chrome:\n     - `\"name\": \"Chrome\"\n     - \"browserName\": \"chrome\"`\n   - For Firefox:\n     - `\"name\": \"Firefox\"\n     - \"browserName\": \"firefox\"`\n   - And so on for other browsers.\n\n4. **Run Tests on Multiple Browsers**: You can use Test Suite or Test Suite Collection to execute your test cases on different browsers. Create a new Test Suite and add your test cases. To run them in different browsers, you can configure the desired capabilities as per the browsers in the execution settings.\n\n5. **Execute**: Now click on the Run button and select to run in the configured browsers. Katalon Studio will launch the browsers accordingly and perform the tests.\n\n6. **View Reports**: After execution, you can check the test reports to verify the results for each browser.\n\nUsing Katalon TestOps can further help you manage the testing process by integrating with your CI/CD pipeline for more complex scenarios. \n\nUsing these steps, you can effectively implement cross-browser testing in Katalon Studio.",
+      "api_output": "To implement cross-browser testing in Katalon Studio, you can follow these steps:\n\n1. **Set up Katalon Studio**: Make sure you have the latest version of Katalon Studio installed as it includes enhancements for cross-browser testing.\n\n2. **Create a Test Case**: Start by creating a test case that you want to run across multiple browsers. Use the Keyword library to record or script your tests.\n\n3. **Configure Desired Capabilities**: In Katalon Studio, go to the Project Settings > Desired Capabilities. Here you can specify the browsers you want to test on (like Chrome, Firefox, Safari, etc.). You can add the following configurations depending on the browsers:\n   - For Chrome:\n     - `\"name\": \"Chrome\"\n     - \"browserName\": \"chrome\"`\n   - For Firefox:\n     - `\"name\": \"Firefox\"\n     - \"browserName\": \"firefox\"`\n   - And so on for other browsers.\n\n4. **Run Tests on Multiple Browsers**: You can use Test Suite or Test Suite Collection to execute your test cases on different browsers. Create a new Test Suite and add your test cases. To run them in different browsers, you can configure the desired capabilities as per the browsers in the execution settings.\n\n5. **Execute**: Now click on the Run button and select to run in the configured browsers. Katalon Studio will launch the browsers accordingly and perform the tests.\n\n6. **View Reports**: After execution, you can check the test reports to verify the results for each browser.\n\nUsing Katalon TestOps can further help you manage the testing process by integrating with your CI/CD pipeline for more complex profiles. \n\nUsing these steps, you can effectively implement cross-browser testing in Katalon Studio.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:35:58.531108",
       "response_time": 6.344455003738403,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -3015,10 +3015,10 @@
       },
       "api_output": "Here are some best practices for version control with Katalon Studio projects:\n\n1. **Use Git**: Katalon Studio supports Git integration natively, which allows you to manage your project versions easily. Make sure to initialize your project as a Git repository.\n\n2. **.gitignore File**: Create and maintain a `.gitignore` file to exclude unnecessary files and directories from your repository. This typically includes files generated during execution, such as `Reports`, `Test Cases`, `Test Suites`, and `BuiltIn`. You can also exclude files that are specific to your local environment, like `LocalSettings`.\n\n3. **Branches**: Use branches for feature development, bug fixing, and experimenting. It allows you to work on isolated tasks without affecting the main codebase. Employ a branching strategy suitable for your team, like Git Flow.\n\n4. **Regular Commits**: Make frequent commits with meaningful messages. This helps in tracking changes over time and facilitates easier collaboration among team members.\n\n5. **Version Tags**: Use version tags to mark significant releases and milestones. Tagging helps in identifying stable versions of your project.\n\n6. **Code Review**: Implement a code review process when merging changes. This ensures high code quality and allows team members to share knowledge.\n\n7. **Documentation**: Maintain clear documentation of your project structure, how to set up the version control system, and any relevant workflows. This is especially helpful for new team members.\n\n8. **Synchronize Regularly**: Regularly synchronize your local repository with the remote repository to prevent conflicts and keep everyone on the same page.\n\n9. **Backup**: Make sure to have backups of your repository, either via cloud services or other remote locations, to prevent data loss.\n\nBy following these best practices, you can ensure that your version control process with Katalon Studio is efficient and effective, facilitating collaboration and maintaining the integrity of your test projects.",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:36:07.062939",
       "response_time": 7.529792785644531,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 9,
@@ -3063,10 +3063,10 @@
       },
       "api_output": "To integrate Katalon Studio with Katalon TestOps for effective test management, follow these steps:\n\n1. **Set Up Katalon TestOps Account**: Create and set up your Katalon TestOps account if you haven’t done so.\n\n2. **Configure Katalon Studio**: In Katalon Studio, navigate to the \"Katalon TestOps\" integration settings. You can access this by going to **Preferences** > **Katalon TestOps**.\n\n3. **Connect to TestOps**: Enter your TestOps API key to authenticate the connection between Katalon Studio and TestOps.\n\n4. **Publish Test Results**: After executing your test cases in Katalon Studio, you can publish the results to TestOps by using the built-in keyword `TestOps.publishTestResult()`. Ensure that your tests are configured to send results to TestOps.\n\n5. **Manage Tests in TestOps**: Once the integration is complete, you can view your test results, manage test cases, and track execution reports directly in Katalon TestOps.\n\nFor detailed steps and further configurations, please refer to the [Katalon Documentation](https://docs.katalon.com).",
       "gui_output": "Output displayed in Katalon Studio chat_window interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T15:36:15.141649",
       "response_time": 7.076880931854248,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "relevance": 9,
           "accuracy": 8,
@@ -3269,7 +3269,7 @@
       }
     },
     "insights": [
-      "Low complexity bias: Most test inputs are simple. Add more complex scenarios for thorough testing.",
+      "Low complexity bias: Most test inputs are simple. Add more complex profiles for thorough testing.",
       "High average response time (6.48s): Consider optimizing API calls or implementing caching.",
       "Excellent overall performance: The current configuration is producing high-quality outputs.",
       "Strong correlation between relevance_vs_accuracy (0.73): These criteria are closely related.",
@@ -3283,7 +3283,7 @@
 };
 
                 // Criteria comparison data
-                const criteriaComparisonData = {"readability": {"ll1_mean": 8.86, "ll2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "correctness": {"ll1_mean": 8.86, "ll2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "completeness": {"ll1_mean": 8.21, "ll2_mean": 7.69, "difference": -0.52, "trend": "declined"}, "clarity": {"ll1_mean": 9.07, "ll2_mean": 8.69, "difference": -0.38, "trend": "declined"}, "relevance": {"ll1_mean": 9.57, "ll2_mean": 9.46, "difference": -0.11, "trend": "declined"}, "functionality": {"ll1_mean": 8.86, "ll2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "functional_correctness": {"ll1_mean": 8.86, "ll2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "technical_precision": {"ll1_mean": 8.86, "ll2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "response_time": {"ll1_mean": 9.07, "ll2_mean": 8.69, "difference": -0.38, "trend": "declined"}, "response_time_consistency": {"ll1_mean": 9.07, "ll2_mean": 8.69, "difference": -0.38, "trend": "declined"}};
+                const criteriaComparisonData = {"readability": {"LLM1_mean": 8.86, "LLM2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "correctness": {"LLM1_mean": 8.86, "LLM2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "completeness": {"LLM1_mean": 8.21, "LLM2_mean": 7.69, "difference": -0.52, "trend": "declined"}, "clarity": {"LLM1_mean": 9.07, "LLM2_mean": 8.69, "difference": -0.38, "trend": "declined"}, "relevance": {"LLM1_mean": 9.57, "LLM2_mean": 9.46, "difference": -0.11, "trend": "declined"}, "functionality": {"LLM1_mean": 8.86, "LLM2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "functional_correctness": {"LLM1_mean": 8.86, "LLM2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "technical_precision": {"LLM1_mean": 8.86, "LLM2_mean": 8.62, "difference": -0.24, "trend": "declined"}, "response_time": {"LLM1_mean": 9.07, "LLM2_mean": 8.69, "difference": -0.38, "trend": "declined"}, "response_time_consistency": {"LLM1_mean": 9.07, "LLM2_mean": 8.69, "difference": -0.38, "trend": "declined"}};
                 console.log('Criteria comparison data:', criteriaComparisonData);
 
                 // Function to create charts with error handling and debugging
@@ -3303,29 +3303,29 @@
                         
                         const ctx = canvas.getContext('2d');
                         
-                        // Check if we have dimensional LL1/LL2 data structure
+                        // Check if we have dimensional LLM1/LLM2 data structure
                         const labels = Object.keys(data);
-                        const hasLL1LL2Data = labels.some(label => label.includes('(LL1)') || label.includes('(LL2)'));
+                        const hasLLM1LLM2Data = labels.some(label => label.includes('(LLM1)') || label.includes('(LLM2)'));
                         
                         let chartConfig;
                         
-                        if (hasLL1LL2Data) {
-                            // Group LL1 and LL2 data by dimension
+                        if (hasLLM1LLM2Data) {
+                            // Group LLM1 and LLM2 data by dimension
                             const dimensions = new Set();
-                            const ll1Data = [];
-                            const ll2Data = [];
+                            const LLM1Data = [];
+                            const LLM2Data = [];
                             const dimensionLabels = [];
                             
                             // Extract dimension names and group data
                             labels.forEach(label => {
-                                if (label.includes('(LL1)')) {
-                                    const dimension = label.replace(' (LL1)', '');
+                                if (label.includes('(LLM1)')) {
+                                    const dimension = label.replace(' (LLM1)', '');
                                     dimensions.add(dimension);
                                     dimensionLabels.push(dimension);
-                                    ll1Data.push(data[label]);
-                                    // Find corresponding LL2 data
-                                    const ll2Label = `${dimension} (LL2)`;
-                                    ll2Data.push(data[ll2Label] || 0);
+                                    LLM1Data.push(data[label]);
+                                    // Find corresponding LLM2 data
+                                    const LLM2Label = `${dimension} (LLM2)`;
+                                    LLM2Data.push(data[LLM2Label] || 0);
                                 }
                             });
                             
@@ -3335,8 +3335,8 @@
                                     labels: dimensionLabels,
                                     datasets: [
                                         {
-                                            label: 'LL1 (Baseline)',
-                                            data: ll1Data,
+                                            label: 'LLM1 (Baseline)',
+                                            data: LLM1Data,
                                             backgroundColor: '#667eea80',
                                             borderColor: '#667eea',
                                             borderWidth: 2,
@@ -3344,8 +3344,8 @@
                                             borderSkipped: false
                                         },
                                         {
-                                            label: 'LL2 (Target)',
-                                            data: ll2Data,
+                                            label: 'LLM2 (Target)',
+                                            data: LLM2Data,
                                             backgroundColor: '#28a74580',
                                             borderColor: '#28a745',
                                             borderWidth: 2,
@@ -3420,9 +3420,9 @@
                                             callbacks: {
                                                 afterBody: function(context) {
                                                     const index = context[0].dataIndex;
-                                                    const ll1Value = ll1Data[index];
-                                                    const ll2Value = ll2Data[index];
-                                                    const diff = ll2Value - ll1Value;
+                                                    const LLM1Value = LLM1Data[index];
+                                                    const LLM2Value = LLM2Data[index];
+                                                    const diff = LLM2Value - LLM1Value;
                                                     const trend = diff > 0.1 ? '📈 Improved' : 
                                                                 diff < -0.1 ? '📉 Declined' : 
                                                                 '➡️ Maintained';
@@ -3567,14 +3567,14 @@
                 // Function to create all comprehensive analysis charts
                 function createComprehensiveAnalysisCharts() {
                     // Diversity Analysis Data
-                    const ll1DiversityData = {
+                    const LLM1DiversityData = {
                         'Standard Implementations': 42,
                         'Advanced Features': 28,
                         'Error Handling': 18,
                         'Edge Cases': 12
                     };
                     
-                    const ll2DiversityData = {
+                    const LLM2DiversityData = {
                         'Standard Implementations': 38,
                         'Advanced Features': 32,
                         'Error Handling': 20,
@@ -3584,7 +3584,7 @@
                     const diversityColors = ['#667eea80', '#28a74580', '#ffc10780', '#dc354580'];
                     
                     // Quality Analysis Data
-                    const ll1QualityData = {
+                    const LLM1QualityData = {
                         'test': 35,
                         'assert': 25,
                         'verify': 20,
@@ -3592,7 +3592,7 @@
                         'check': 5
                     };
                     
-                    const ll2QualityData = {
+                    const LLM2QualityData = {
                         'test': 32,
                         'assert': 28,
                         'verify': 22,
@@ -3603,10 +3603,10 @@
                     const qualityColors = ['#ff6b6b80', '#4ecdc480', '#45b7d180', '#96ceb480', '#feca5780'];
                     
                     // Create pie charts
-                    createPieChart('ll1DiversityChart', 'LL1 Pattern Diversity', ll1DiversityData, diversityColors);
-                    createPieChart('ll2DiversityChart', 'LL2 Pattern Diversity', ll2DiversityData, diversityColors);
-                    createPieChart('ll1QualityChart', 'LL1 Quality Keywords', ll1QualityData, qualityColors);
-                    createPieChart('ll2QualityChart', 'LL2 Quality Keywords', ll2QualityData, qualityColors);
+                    createPieChart('LLM1DiversityChart', 'LLM1 Pattern Diversity', LLM1DiversityData, diversityColors);
+                    createPieChart('LLM2DiversityChart', 'LLM2 Pattern Diversity', LLM2DiversityData, diversityColors);
+                    createPieChart('LLM1QualityChart', 'LLM1 Quality Keywords', LLM1QualityData, qualityColors);
+                    createPieChart('LLM2QualityChart', 'LLM2 Quality Keywords', LLM2QualityData, qualityColors);
                 }
 
                 // Create charts and JSON viewers when DOM is loaded

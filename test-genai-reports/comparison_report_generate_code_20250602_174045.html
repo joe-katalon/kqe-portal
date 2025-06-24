@@ -496,13 +496,13 @@
                         <div class="summary-grid">
                             <div class="summary-card">
                                 <h3>Final Assessment</h3>
-                                <p>❓ Decision: HOLD_LL2
+                                <p>❓ Decision: HOLD_LLM2
 💪 Confidence Level: High</p>
                             </div>
                             <div class="summary-card">
                                 <h3>Dataset Summary</h3>
-                                <p><strong>Baseline (LL1):</strong> 12 test cases<br>
-                                <strong>Target (LL2):</strong> 12 test cases<br>
+                                <p><strong>Baseline (LLM1):</strong> 12 test cases<br>
+                                <strong>Target (LLM2):</strong> 12 test cases<br>
                                 <strong>Evaluation Model:</strong> claude-3-5-sonnet-20241022</p>
                             </div>
                         </div>
@@ -525,11 +525,11 @@
                                     <td>consistency</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Baseline Model (LL1)</strong></td>
+                                    <td><strong>Baseline Model (LLM1)</strong></td>
                                     <td>katalon_ai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Target Model (LL2)</strong></td>
+                                    <td><strong>Target Model (LLM2)</strong></td>
                                     <td>personal_openai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
@@ -550,7 +550,7 @@
                         
                         <div class="summary-card">
                             <h3>Primary Goal</h3>
-                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LL1 vs LL2) for the <strong>Generate Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
+                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LLM1 vs LLM2) for the <strong>Generate Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
                         </div>
                         
                         <div class="summary-grid">
@@ -584,7 +584,7 @@
                                         <span style="background: #667eea; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">1</span>
                                         Phase 1: Baseline Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL1 Dataset Generation:</strong> Generate baseline outputs using LL1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM1 Dataset Generation:</strong> Generate baseline outputs using LLM1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
                                 </div>
                                 
                                 <div style="padding: 20px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -592,7 +592,7 @@
                                         <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">2</span>
                                         Phase 2: Target Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL2 Dataset Generation:</strong> Generate target outputs using LL2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM2 Dataset Generation:</strong> Generate target outputs using LLM2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
                                 </div>
 
                                 <div style="padding: 20px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -674,7 +674,7 @@
                                 <canvas id="accuracyChart"></canvas>
                                 <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #ffc107;">
                                     <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
-                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world scenarios.
+                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world profiles.
                                     </p>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>✅ Improvements in LL2</h4>
+                                <h4>✅ Improvements in LLM2</h4>
                                 <ul class="analysis-list positive">
                                     
                                     <li><span>✅</span> Readability maintained high performance at 9.0</li>
@@ -726,7 +726,7 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>❌ Regressions in LL2</h4>
+                                <h4>❌ Regressions in LLM2</h4>
                                 <ul class="analysis-list negative">
                                     
                                     <li><span>❌</span> Functionality declined from 7.08 to 6.42</li>
@@ -755,16 +755,16 @@
 
                     <!-- Raw Dataset Comparison -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Complete JSON datasets from both LL1 (baseline) and LL2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
+                        <h2 data-tippy-content="Complete JSON datasets from both LLM1 (baseline) and LLM2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
                         <div class="json-comparison">
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Baseline Dataset (LL1)</h3></div>
+                                <div class="dataset-header"><h3>Baseline Dataset (LLM1)</h3></div>
                                 <div class="json-container">
                                     <div id="baseline-json" class="json-viewer"></div>
                                 </div>
                             </div>
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Target Dataset (LL2)</h3></div>
+                                <div class="dataset-header"><h3>Target Dataset (LLM2)</h3></div>
                                 <div class="json-container">
                                     <div id="target-json" class="json-viewer"></div>
                                 </div>
@@ -774,20 +774,20 @@
 
                     <!-- Comprehensive Analysis -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Advanced statistical analysis comparing LL1 and LL2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
+                        <h2 data-tippy-content="Advanced statistical analysis comparing LLM1 and LLM2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
                         
                         <!-- Diversity Analysis -->
                         <div style="margin-bottom: 40px;">
                             <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.5em; text-align: center;">🎨 Pattern Diversity Analysis</h3>
                             <p style="text-align: center; color: #5a6c7d; margin-bottom: 30px; font-size: 1.1em;">
-                                Analysis of output pattern categories and structural diversity between LL1 (Baseline) and LL2 (Target) models.
+                                Analysis of output pattern categories and structural diversity between LLM1 (Baseline) and LLM2 (Target) models.
                             </p>
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Pattern Distribution</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1DiversityChart"></canvas>
+                                        <canvas id="LLM1DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -797,9 +797,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Pattern Distribution</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2DiversityChart"></canvas>
+                                        <canvas id="LLM2DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -812,7 +812,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #1976d2; margin: 0 0 10px 0;">📈 Key Insights</h4>
                                 <ul style="margin: 0; color: #0d47a1; line-height: 1.6;">
-                                    <li>LL2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
+                                    <li>LLM2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
                                     <li>Slight reduction in edge case coverage (-2%) may require attention</li>
                                     <li>Overall pattern diversity remains consistent between models</li>
                                 </ul>
@@ -828,9 +828,9 @@
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Quality Keywords</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1QualityChart"></canvas>
+                                        <canvas id="LLM1QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -840,9 +840,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Quality Keywords</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2QualityChart"></canvas>
+                                        <canvas id="LLM2QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -855,7 +855,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #2e7d32; margin: 0 0 10px 0;">✨ Quality Improvements</h4>
                                 <ul style="margin: 0; color: #1b5e20; line-height: 1.6;">
-                                    <li>LL2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
+                                    <li>LLM2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
                                     <li>Enhanced verification patterns (+2%) suggest better validation coverage</li>
                                     <li>Consistent keyword diversity maintains code readability standards</li>
                                 </ul>
@@ -887,7 +887,7 @@
                                     🎯 Consistency Metrics
                                 </h3>
                                 <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
-                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and scenarios.
+                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and profiles.
                                 </p>
                                 
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -948,7 +948,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> How well the output matches the specific context and intended use case.<br>
                                             <strong>Scale:</strong> 0-10 (10 = Perfectly targeted and contextual)<br>
-                                            <strong>Impact:</strong> Determines practical usefulness in real scenarios.
+                                            <strong>Impact:</strong> Determines practical usefulness in real profiles.
                                         </p>
                                     </div>
                     
@@ -989,7 +989,7 @@
                                         <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test scenarios)<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test profiles)<br>
                                             <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
                                         </p>
                                     </div>
@@ -1034,7 +1034,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Scale:</strong> All dimensions use 0-10 scoring where 10 represents ideal performance.<br>
                                             <strong>Thresholds:</strong> 8+ = Excellent, 6-8 = Good, 4-6 = Acceptable, <4 = Needs Improvement.<br>
-                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test scenarios for reliability.
+                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test profiles for reliability.
                                         </p>
                                     </div>
                                     <div style="padding: 15px; border-left: 4px solid #dc3545; background: #f8f9fa; border-radius: 6px;">
@@ -1054,7 +1054,7 @@
                                 <p style="margin: 0; line-height: 1.6; color: #0d47a1;">
                                     <strong>Feature Focus:</strong> This evaluation specifically targets the { feature.replace('_', ' ').title() } capability of Katalon StudioAssist. 
                                     Metrics are weighted and interpreted based on the critical success factors for this particular feature, ensuring that evaluation 
-                                    results directly translate to real-world usability and effectiveness in automated testing scenarios.
+                                    results directly translate to real-world usability and effectiveness in automated testing profiles.
                                 </p>
                             </div>
                         </div>
@@ -1215,21 +1215,21 @@
                 }
 
                 // Chart data
-                const chartScoresData = {"consistency": {"Readability (LL1)": 9.0, "Readability (LL2)": 9.0, "Correctness (LL1)": 7.75, "Correctness (LL2)": 7.42}, "quality": {"Completeness (LL1)": 8.08, "Completeness (LL2)": 8.0, "Readability (LL1)": 9.0, "Readability (LL2)": 9.0, "Clarity (LL1)": 9.0, "Clarity (LL2)": 9.0, "Relevance (LL1)": 8.08, "Relevance (LL2)": 8.08}, "accuracy": {"Correctness (LL1)": 7.75, "Correctness (LL2)": 7.42, "Functionality (LL1)": 7.08, "Functionality (LL2)": 6.42, "Functional Correctness (LL1)": 7.08, "Functional Correctness (LL2)": 6.41, "Technical Precision (LL1)": 7.75, "Technical Precision (LL2)": 7.08}, "response_time": {"Average Response Time (LL1)": 2.3, "Average Response Time (LL2)": 1.8, "Response Consistency (LL1)": 0.85, "Response Consistency (LL2)": 0.92}};
+                const chartScoresData = {"consistency": {"Readability (LLM1)": 9.0, "Readability (LLM2)": 9.0, "Correctness (LLM1)": 7.75, "Correctness (LLM2)": 7.42}, "quality": {"Completeness (LLM1)": 8.08, "Completeness (LLM2)": 8.0, "Readability (LLM1)": 9.0, "Readability (LLM2)": 9.0, "Clarity (LLM1)": 9.0, "Clarity (LLM2)": 9.0, "Relevance (LLM1)": 8.08, "Relevance (LLM2)": 8.08}, "accuracy": {"Correctness (LLM1)": 7.75, "Correctness (LLM2)": 7.42, "Functionality (LLM1)": 7.08, "Functionality (LLM2)": 6.42, "Functional Correctness (LLM1)": 7.08, "Functional Correctness (LLM2)": 6.41, "Technical Precision (LLM1)": 7.75, "Technical Precision (LLM2)": 7.08}, "response_time": {"Average Response Time (LLM1)": 2.3, "Average Response Time (LLM2)": 1.8, "Response Consistency (LLM1)": 0.85, "Response Consistency (LLM2)": 0.92}};
                 console.log('Chart data:', chartScoresData);
 
                 // JSON Data
                 const baselineJsonData = {
   "metadata": {
     "feature": "generate_code",
-    "llm_version": "LL1",
+    "llm_version": "LLM1",
     "creation_timestamp": "2025-06-02T14:09:26.215141",
     "total_results": 12,
     "dataset_type": "baseline",
     "evaluation_metadata": {
       "evaluator_model": "claude-3-5-sonnet-20241022",
       "evaluation_timestamp": "2025-06-02T14:11:25.578628",
-      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_ll1_20250602_140926_dba9e6ce.json"
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_LLM1_20250602_140926_dba9e6ce.json"
     }
   },
   "inputs": [
@@ -1373,10 +1373,10 @@
       },
       "api_output": "// Open Chrome browser\nWebUI.openBrowser('')\n\n// Navigate to login page\nWebUI.navigateToUrl('https://example.com/login')\n\n// Input username\nWebUI.setText(findTestObject('Object Repository/Page_Login/input_username'), 'username')\n\n// Input password\nWebUI.setEncryptedText(findTestObject('Object Repository/Page_Login/input_password'), 'encryptedPassword')\n\n// Click login button\nWebUI.click(findTestObject('Object Repository/Page_Login/button_login'))\n\n// Verify dashboard is displayed\nWebUI.verifyElementPresent(findTestObject('Object Repository/Page_Dashboard/div_dashboard'), 10)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:23.147205",
       "response_time": 5.384825229644775,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 9,
           "correctness": 8,
@@ -1426,10 +1426,10 @@
       },
       "api_output": "/*\n * Validate dynamic table data by checking if a cell identified by row and column TestObjects contains expected text\n *\n * @param tableTestObject TestObject representing the table element\n * @param rowTestObject TestObject representing the row element within the table\n * @param cellTestObject TestObject representing the cell element within the row\n * @param expectedText String expected text to validate in the cell\n * @return boolean true if the cell text matches expectedText, false otherwise\n */\n@Keyword\ndef validateTableCellData(TestObject tableTestObject, TestObject rowTestObject, TestObject cellTestObject, String expectedText) {\n    // Import necessary built-in keywords\n    import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\n    // Verify the table is present\n    if (!WebUI.verifyElementPresent(tableTestObject, 5, FailureHandling.OPTIONAL)) {\n        return false\n    }\n    // Verify the row is present within the table\n    if (!WebUI.verifyElementPresent(rowTestObject, 5, FailureHandling.OPTIONAL)) {\n        return false\n    }\n    // Verify the cell is present within the row\n    if (!WebUI.verifyElementPresent(cellTestObject, 5, FailureHandling.OPTIONAL)) {\n        return false\n    }\n    // Get the text from the cell\n    String actualText = WebUI.getText(cellTestObject)\n    // Return true if actual text matches expected text, else false\n    return actualText == expectedText\n}",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:32.097957",
       "response_time": 7.947129011154175,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 9,
@@ -1437,7 +1437,7 @@
           "functionality": 8
         },
         "feedback": {
-          "completeness": "The code creates a custom keyword that handles dynamic table validation using TestObjects as requested. It includes basic error handling and verification steps. However, it could be more comprehensive in handling different table scenarios.",
+          "completeness": "The code creates a custom keyword that handles dynamic table validation using TestObjects as requested. It includes basic error handling and verification steps. However, it could be more comprehensive in handling different table profiles.",
           "correctness": "The syntax is valid and properly uses Katalon's WebUI keywords. The method signature and annotations are correct. The import statement and FailureHandling options are appropriately used.",
           "readability": "Code is well-structured with clear indentation, comprehensive JavaDoc comments, and helpful inline comments explaining each step. The naming conventions are clear and descriptive.",
           "functionality": "The code should execute successfully in Katalon Studio. However, it might be too rigid in its current form as it requires exact TestObjects for each table component."
@@ -1478,10 +1478,10 @@
       },
       "api_output": "// Launch the Android app\nMobile.startApplication('path/to/your/app.apk', false)\n\n// Swipe to product category\nMobile.swipe(500, 1500, 500, 500)\n\n// Tap on product\nMobile.tap(findTestObject('Object Repository/productCategory/productItem'), 10)\n\n// Verify product details\nMobile.verifyElementVisible(findTestObject('Object Repository/productDetails/productTitle'), 10)\nMobile.verifyElementVisible(findTestObject('Object Repository/productDetails/productPrice'), 10)\nMobile.verifyElementVisible(findTestObject('Object Repository/productDetails/productDescription'), 10)\n\n// Add to cart\nMobile.tap(findTestObject('Object Repository/productDetails/addToCartButton'), 10)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:37.185197",
       "response_time": 4.084933042526245,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1494,7 +1494,7 @@
           "readability": "Code is well-structured with clear comments for each section and consistent indentation. Test object references are clearly named and organized by feature.",
           "functionality": "While the basic structure is correct, the code may fail in production due to missing error handling, hardcoded values, and lack of wait conditions between actions. The app path is also not specified."
         },
-        "overall_assessment": "The code provides a good basic framework for the mobile test scenario but needs additional robustness for production use. While it covers the core requirements, it requires enhancement in error handling, dynamic element handling, and verification steps.",
+        "overall_assessment": "The code provides a good basic framework for the mobile test profile but needs additional robustness for production use. While it covers the core requirements, it requires enhancement in error handling, dynamic element handling, and verification steps.",
         "overall_score": 7.5,
         "suggestions": [
           "Add try-catch blocks for error handling",
@@ -1532,10 +1532,10 @@
       },
       "api_output": "// Send POST request with JSON body\nresponse = WS.sendRequest(findTestObject('Object Repository/API/PostRequest', [('body') : '{\"key\":\"value\"}']))\n\n// Verify response status code is 200\nWS.verifyResponseStatusCode(response, 200)\n\n// Verify response JSON contains expected data\nWS.verifyElementPropertyValue(response, 'key', 'value')",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:40.870857",
       "response_time": 2.683619260787964,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1584,10 +1584,10 @@
       },
       "api_output": "// Open the Excel file containing test data\ndef testData = findTestData('Data Files/RegistrationData')\n\n// Iterate through each row in the test data\nfor (def index = 1; index <= testData.getRowNumbers(); index++) {\n    // Open browser and navigate to registration page\n    WebUI.openBrowser('')\n    WebUI.navigateToUrl('https://example.com/registration')\n\n    // Fill in the registration form fields with data from Excel\n    WebUI.setText(findTestObject('Object Repository/RegistrationPage/input_FirstName'), testData.getValue('FirstName', index))\n    WebUI.setText(findTestObject('Object Repository/RegistrationPage/input_LastName'), testData.getValue('LastName', index))\n    WebUI.setText(findTestObject('Object Repository/RegistrationPage/input_Email'), testData.getValue('Email', index))\n    WebUI.setText(findTestObject('Object Repository/RegistrationPage/input_Password'), testData.getValue('Password', index))\n    WebUI.setText(findTestObject('Object Repository/RegistrationPage/input_ConfirmPassword'), testData.getValue('ConfirmPassword', index))\n\n    // Submit the registration form\n    WebUI.click(findTestObject('Object Repository/RegistrationPage/button_Register'))\n\n    // Verify the success message is displayed\n    WebUI.verifyElementText(findTestObject('Object Repository/RegistrationPage/label_SuccessMessage'), 'Registration successful')\n\n    // Close the browser after each iteration\n    WebUI.closeBrowser()\n}",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:49.665538",
       "response_time": 7.792517900466919,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1598,7 +1598,7 @@
           "completeness": "The code implements all main requirements: Excel data reading, iteration through rows, form filling, and verification. However, it lacks error handling and validation checks.",
           "correctness": "The basic Katalon syntax is correct, but missing recommended practices like WebUI.waitForElementPresent() before interactions and try-catch blocks for error handling.",
           "readability": "Code is well-structured with clear comments, consistent indentation, and logical flow. Variable names are descriptive and easy to understand.",
-          "functionality": "While the code would execute, it might be fragile in real-world scenarios due to missing waits, error handling, and timeout configurations."
+          "functionality": "While the code would execute, it might be fragile in real-world profiles due to missing waits, error handling, and timeout configurations."
         },
         "overall_assessment": "The code provides a solid foundation for data-driven testing in Katalon Studio with good structure and readability. However, it needs additional robustness features for production use.",
         "overall_score": 7.75,
@@ -1639,10 +1639,10 @@
       },
       "api_output": "// Wait for the iframe to be present\nWebUI.waitForElementPresent(findTestObject('Object Repository/iframe_dynamic'), 30)\n// Switch to the iframe\nWebUI.switchToFrame(findTestObject('Object Repository/iframe_dynamic'), 30)\n// Wait for the table inside iframe to be visible\nWebUI.waitForElementVisible(findTestObject('Object Repository/table_inside_iframe'), 30)\n// Get the text of the first cell in the table\nString firstCellText = WebUI.getText(findTestObject('Object Repository/table_inside_iframe/td_first_cell'))\n// Get the text of the second cell in the table\nString secondCellText = WebUI.getText(findTestObject('Object Repository/table_inside_iframe/td_second_cell'))\n// Switch back to the default content\nWebUI.switchToDefaultContent()",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:55.291373",
       "response_time": 4.623631715774536,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 9,
@@ -1650,7 +1650,7 @@
           "functionality": 8
         },
         "feedback": {
-          "completeness": "The code handles the core requirements of working with dynamic iframes and extracting table data. However, it could be more robust in handling multiple table cells and error scenarios.",
+          "completeness": "The code handles the core requirements of working with dynamic iframes and extracting table data. However, it could be more robust in handling multiple table cells and error profiles.",
           "correctness": "The syntax is valid and uses appropriate Katalon keywords. The frame switching and element handling follows correct patterns. Test object references are properly structured.",
           "readability": "Code is well-commented and properly structured with clear separation between operations. Naming conventions are clear and descriptive.",
           "functionality": "The code should execute successfully in Katalon Studio, assuming the test objects are properly defined. However, it lacks error handling mechanisms."
@@ -1690,10 +1690,10 @@
       },
       "api_output": "// Click upload button\nWebUI.click(findTestObject('Object Repository/upload/button_upload'))\n\n// Set file path\nWebUI.uploadFile(findTestObject('Object Repository/upload/input_file'), filePath)\n\n// Verify upload progress\nWebUI.verifyElementPresent(findTestObject('Object Repository/upload/progress_bar'), 30)\n\n// Validate success message\nWebUI.verifyElementText(findTestObject('Object Repository/upload/label_success_message'), 'Upload completed successfully')",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:08:59.887341",
       "response_time": 3.593971014022827,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 9,
           "correctness": 8,
@@ -1706,7 +1706,7 @@
           "readability": "Code is well-structured with clear comments matching the requirements. Consistent indentation and naming conventions make it easy to follow.",
           "functionality": "While the basic structure is sound, there are potential reliability issues: no wait conditions between steps, no error handling, and the filePath variable needs to be defined before execution."
         },
-        "overall_assessment": "The code provides a solid foundation for a file upload test case with good structure and readability. However, it needs additional error handling and wait conditions to be more robust in real-world scenarios.",
+        "overall_assessment": "The code provides a solid foundation for a file upload test case with good structure and readability. However, it needs additional error handling and wait conditions to be more robust in real-world profiles.",
         "overall_score": 8,
         "suggestions": [
           "Add WebUI.waitForElementClickable() before clicking the upload button",
@@ -1742,10 +1742,10 @@
       },
       "api_output": "/ *\n * Create a database connection and execute a query\n *\n * @param dbUrl The database connection URL\n * @param dbUser The database username\n * @param dbPassword The database password\n * @param query The SQL query to execute\n * @return The ResultSet object containing the query results\n * /\nimport java.sql.Connection\nimport java.sql.DriverManager\nimport java.sql.ResultSet\nimport java.sql.Statement\nimport com.kms.katalon.core.annotation.Keyword\n\n@Keyword\ndef executeQuery(String dbUrl, String dbUser, String dbPassword, String query) {\n    Connection connection = null\n    Statement statement = null\n    ResultSet resultSet = null\n    try {\n        // Establish the database connection\n        connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword)\n        // Create a statement object to execute the query\n        statement = connection.createStatement()\n        // Execute the query and get the result set\n        resultSet = statement.executeQuery(query)\n        return resultSet\n    } finally {\n        // Close statement and connection in finally block to avoid resource leaks\n        if (statement != null) {\n            statement.close()\n        }\n        if (connection != null) {\n            connection.close()\n        }\n    }\n}",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:09:07.437370",
       "response_time": 6.547336101531982,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1795,10 +1795,10 @@
       },
       "api_output": "// Send login request to get token\ndef loginResponse = WS.sendRequest(findTestObject('Object Repository/API/Login'))\n// Extract token from login response\ndef token = WS.getElementPropertyValue(loginResponse, 'token')\n// Send GET request with token in header\ndef getResponse = WS.sendRequest(findTestObject('Object Repository/API/GetData', [('Authorization') : 'Bearer ' + token]))\n// Parse JSON response\ndef jsonResponse = new groovy.json.JsonSlurper().parseText(getResponse.getResponseBodyContent())\n// Verify data elements in JSON response\nWS.verifyEqual(jsonResponse.data != null, true)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:09:12.617311",
       "response_time": 4.178278207778931,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1809,7 +1809,7 @@
           "completeness": "The code covers the main requirements: login, token extraction, GET request with token, JSON parsing, and basic verification. However, it lacks error handling and more detailed response validations.",
           "correctness": "The basic Katalon syntax is correct, but WS.getElementPropertyValue() might not be the most reliable way to extract the token. The code also lacks response status verification and proper assertion methods.",
           "readability": "Code is well-structured with clear comments for each step and consistent formatting. Variable names are descriptive and logical.",
-          "functionality": "While the code would likely execute, it lacks proper error handling and response validation checks that could cause issues in real-world scenarios."
+          "functionality": "While the code would likely execute, it lacks proper error handling and response validation checks that could cause issues in real-world profiles."
         },
         "overall_assessment": "The code provides a solid foundation for API chain testing but needs additional error handling and validation mechanisms to be production-ready. The structure is clear and follows good practices for readability.",
         "overall_score": 7.5,
@@ -1848,10 +1848,10 @@
       },
       "api_output": "// Scroll to element by text 'targetText'\nMobile.scrollToText('targetText')\n// Verify the element with text 'targetText' is visible\nMobile.verifyElementVisible(findTestObject('Object Repository/path/to/object_with_text_targetText'), 10)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:09:15.642682",
       "response_time": 2.023432731628418,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 9,
@@ -1899,10 +1899,10 @@
       },
       "api_output": "// Get all window handles\nSet<String> windowHandles = DriverFactory.getWebDriver().getWindowHandles()\n// Iterate through each window handle\nfor (String handle : windowHandles) {\n    // Switch to the window by handle\n    WebUI.switchToWindowIndex(new ArrayList(windowHandles).indexOf(handle))\n    // Verify content in the current window (example: verify presence of body element)\n    WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Body'), 10)\n}\n// Switch back to the first window\nWebUI.switchToWindowIndex(0)\n// Close a specific window by handle (example: close second window if exists)\nif (windowHandles.size() > 1) {\n    WebUI.switchToWindowIndex(1)\n    WebUI.closeWindowIndex(1)\n}\n// Switch back to the first window after closing\nWebUI.switchToWindowIndex(0)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:09:21.005915",
       "response_time": 4.361462831497192,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1913,7 +1913,7 @@
           "completeness": "The code addresses all main requirements including handling multiple windows, switching between tabs, verifying content, and closing specific windows. However, it could be more robust in handling error cases.",
           "correctness": "While most syntax is valid, there are potential issues with the direct use of windowHandles index mapping. Katalon's WebUI.switchToWindowTitle() or WebUI.switchToWindowUrl() might be more reliable alternatives in some cases.",
           "readability": "Code is well-structured with clear comments explaining each operation. Indentation is consistent and logical flow is easy to follow.",
-          "functionality": "The code would execute but might face reliability issues in real-world scenarios. The verification is limited to a single generic body element, and there's no error handling for failed switches or verifications."
+          "functionality": "The code would execute but might face reliability issues in real-world profiles. The verification is limited to a single generic body element, and there's no error handling for failed switches or verifications."
         },
         "overall_assessment": "The code provides a good foundation for handling multiple windows in Katalon Studio but needs additional error handling and more specific content verification logic for production use.",
         "overall_score": 7.5,
@@ -1951,10 +1951,10 @@
       },
       "api_output": "import com.kms.katalon.core.annotation.Listener\nimport com.kms.katalon.core.context.TestCaseContext\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\n@Listener\nclass ScreenshotOnFailureListener {\n\n    // Capture screenshot when test case fails\n    def afterTestCase(TestCaseContext testCaseContext) {\n        if (testCaseContext.getTestCaseStatus() == 'FAILED') {\n            WebUI.takeScreenshot()\n        }\n    }\n}",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:09:25.212669",
       "response_time": 3.204906940460205,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "correctness": 8,
@@ -1965,7 +1965,7 @@
           "completeness": "The code creates a basic test listener for screenshot capture on failure, but lacks configuration options for screenshot naming and storage location",
           "correctness": "The syntax is valid and uses proper Katalon annotations and keywords. However, it's missing error handling and the TestListener interface implementation",
           "readability": "Code is well-structured with clear indentation and basic comments. Class and method names are descriptive",
-          "functionality": "The code would execute but might have limitations in real-world scenarios without additional error handling and configuration options"
+          "functionality": "The code would execute but might have limitations in real-world profiles without additional error handling and configuration options"
         },
         "overall_assessment": "The code provides a functional basic implementation of a screenshot capture listener for failed tests. While it meets the core requirement, it could benefit from additional features and error handling for more robust production use.",
         "overall_score": 7.5,
@@ -2159,7 +2159,7 @@
       }
     },
     "insights": [
-      "Low complexity bias: Most test inputs are simple. Add more complex scenarios for thorough testing.",
+      "Low complexity bias: Most test inputs are simple. Add more complex profiles for thorough testing.",
       "Strong correlation between correctness_vs_functionality (0.82): These criteria are closely related."
     ]
   }
@@ -2167,14 +2167,14 @@
                 const targetJsonData = {
   "metadata": {
     "feature": "generate_code",
-    "llm_version": "LL2",
+    "llm_version": "LLM2",
     "creation_timestamp": "2025-06-02T14:12:44.072845",
     "total_results": 12,
     "dataset_type": "target",
     "evaluation_metadata": {
       "evaluator_model": "claude-3-5-sonnet-20241022",
       "evaluation_timestamp": "2025-06-02T14:14:43.094131",
-      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_ll2_20250602_141244_0d7827fe.json"
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_LLM2_20250602_141244_0d7827fe.json"
     }
   },
   "inputs": [
@@ -2316,10 +2316,10 @@
       },
       "api_output": "// Open Chrome browser\nWebUI.openBrowser('')\n\n// Navigate to login page\nWebUI.navigateToUrl('https://example.com/login')\n\n// Input username\nWebUI.setText(findTestObject('Page_Login/txt_Username'), 'yourUsername') \n\n// Input password\nWebUI.setText(findTestObject('Page_Login/txt_Password'), 'yourPassword')\n\n// Click login button\nWebUI.click(findTestObject('Page_Login/btn_Login'))\n\n// Verify dashboard is displayed\nWebUI.verifyElementPresent(findTestObject('Page_Dashboard/lbl_Dashboard'), 10)",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:11:40.567450",
       "response_time": 3.9735937118530273,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 9,
           "correctness": 8,
@@ -2366,10 +2366,10 @@
       },
       "api_output": "/*\n *  This keyword validates dynamic table data based on input parameters.\n *\n *  @param tableLocator The locator of the table TestObject\n *  @param rowIndex The index of the row to validate\n *  @param expectedData A map containing expected column data\n *  @return true if the data matches, false otherwise\n */\n@Keyword\ndef validateDynamicTableData(TestObject tableLocator, int rowIndex, Map<String, String> expectedData) {\n    // Get the number of columns in the table.\n    int columnCount = WebUI.getNumberOfTotalElements(findTestObject(tableLocator.getXPath() + '/tbody/tr[' + rowIndex + ']/td')) \n    // Loop through each expected data entry.\n    for (entry in expectedData) {\n        // Construct the XPath for the specific cell in the row.\n        String cellXPath = tableLocator.getXPath() + '/tbody/tr[' + rowIndex + ']/td[' + (entry.key + 1) + ']'\n        // Get the actual cell data from the table.\n        String actualData = WebUI.getText(findTestObject(cellXPath))\n        // Compare actual data with expected data.\n        if (actualData != entry.value) {\n            return false // If any data does not match, return false.\n        }\n    }\n    return true // If all data matches, return true.\n}",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:11:47.425786",
       "response_time": 5.85641884803772,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -2417,10 +2417,10 @@
       },
       "api_output": "// Launch the Android app\nMobile.startApplication('path/to/your/app.apk', false)\n\n// Swipe to product category\nMobile.swipeLeft()\n\n// Tap on product\nMobile.tap(findTestObject('Product/object_product'), 0)\n\n// Verify product details\nMobile.verifyElementVisible(findTestObject('Product/object_product_details'), 0)\n\n// Add to cart\nMobile.tap(findTestObject('Product/object_add_to_cart'), 0)",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:11:51.110533",
       "response_time": 2.6829581260681152,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -2433,7 +2433,7 @@
           "readability": "Code is well-structured with clear comments and consistent formatting",
           "functionality": "Code structure is valid but would need actual object repositories and proper wait conditions to execute successfully"
         },
-        "overall_assessment": "The generated code provides a good basic framework for the mobile test scenario but requires additional implementation details and error handling to be production-ready",
+        "overall_assessment": "The generated code provides a good basic framework for the mobile test profile but requires additional implementation details and error handling to be production-ready",
         "overall_score": 7.5,
         "suggestions": [
           "Add timeout parameters instead of using 0",
@@ -2468,10 +2468,10 @@
       },
       "api_output": "// Send a POST request with a JSON body to the specified URL\nResponseObject response = WS.sendRequest(findTestObject('API/PostRequestWithJsonBody'))\n\n// Validate the response status code to ensure it is 200 (OK)\nWS.verifyResponseStatusCode(response, 200)\n\n// Parse the response JSON to validate the data structure\ndef jsonResponse = new groovy.json.JsonSlurper().parseText(response.getResponseBodyContent())\n\n// Check if the expected value is present in the response\nassert jsonResponse.someField == 'expectedValue' // Validate the data against the expected value",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:11:55.179348",
       "response_time": 3.0670759677886963,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 9,
@@ -2518,10 +2518,10 @@
       },
       "api_output": "// Import necessary libraries for reading Excel files\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\nimport org.apache.poi.ss.usermodel.Row\nimport org.apache.poi.xssf.usermodel.XSSFWorkbook\nimport java.io.FileInputStream\n\n// Define the path to the Excel file\nString filePath = 'path/to/excel/file.xlsx'\n\n// Open the Excel file\nFileInputStream fileInputStream = new FileInputStream(filePath)\nXSSFWorkbook workbook = new XSSFWorkbook(fileInputStream)\n\n// Get the first sheet of the workbook\ndef sheet = workbook.getSheetAt(0)\n\n// Iterate through each row in the sheet\nfor (int i = 1; i <= sheet.getLastRowNum(); i++) {\n    Row row = sheet.getRow(i)\n\n    // Read the data from Excel\n    String firstName = row.getCell(0).getStringCellValue() // First column for first name\n    String lastName = row.getCell(1).getStringCellValue() // Second column for last name\n    String email = row.getCell(2).getStringCellValue() // Third column for email\n\n    // Fill the registration form\n    WebUI.setText(findTestObject('Registration Form/First Name'), firstName) // Set first name\n    WebUI.setText(findTestObject('Registration Form/Last Name'), lastName) // Set last name\n    WebUI.setText(findTestObject('Registration Form/Email'), email) // Set email\n    \n    // Submit the form\n    WebUI.click(findTestObject('Registration Form/Submit Button')) // Click submit button\n\n    // Verify success message\n    WebUI.verifyElementPresent(findTestObject('Registration Form/Success Message'), 10) // Check for success message\n}\n\n// Close the workbook and file input stream\nworkbook.close()\nfileInputStream.close()",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:05.403417",
       "response_time": 9.22232699394226,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -2569,10 +2569,10 @@
       },
       "api_output": "// Switch to the dynamic iframe to access its contents\nWebUI.switchToFrame(findTestObject('path/to/iframe/testObject'), 10) \n// The first parameter is the test object representing the iframe, and the second parameter is the timeout in seconds\n\n// Extract the data from the table within the iframe\ndef tableData = WebUI.getText(findTestObject('path/to/table/testObject')) \n// The first parameter is the test object representing the table\n\n// Assuming the table is structured in a specific way, parse the table data to get desired variables\ndef rows = tableData.split('\\n') \n// Splitting the table data by new lines to get individual rows\n\n// Loop through each row and extract specific data\nfor (def row : rows) {\n    def columns = row.split('\\t') \n    // Splitting each row by tab to get individual columns\n\n    def variable1 = columns[0] \n    // Extracting the first column data into variable1\n    def variable2 = columns[1] \n    // Extracting the second column data into variable2\n    // You can add more variables as needed\n\n    // Print or store the variables as needed\n    println(variable1)\n    println(variable2)\n}\n\n// Switch back to the default content after processing the iframe\nWebUI.switchToDefaultContent() \n// This keyword returns control back to the main document after working with the iframe.",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:11.907636",
       "response_time": 5.501982927322388,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -2620,10 +2620,10 @@
       },
       "api_output": "// Click on the upload button\nWebUI.click(findTestObject('Path/To/UploadButton'))\n\n// Set the file path for the upload\nWebUI.uploadFile(findTestObject('Path/To/FileInput'), 'C:\\\\path\\\\to\\\\your\\\\file.txt')\n\n// Verify the upload progress\nWebUI.waitForElementVisible(findTestObject('Path/To/UploadProgress'), 30)\n\n// Validate the success message after the upload\nWebUI.verifyElementText(findTestObject('Path/To/SuccessMessage'), 'Upload successful')",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:17.660636",
       "response_time": 4.750992059707642,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 9,
@@ -2670,10 +2670,10 @@
       },
       "api_output": "```groovy\nimport groovy.sql.Sql // Importing SQL library for database operations\n\n@Keyword\n/*\n *  Custom keyword to establish a database connection and execute a query\n *\n *  @param dbUrl The URL of the database to connect to\n *  @param user The username for the database\n *  @param password The password for the database\n *  @param query The SQL query to execute\n *  @return Result set of the executed query\n */\ndef executeDatabaseQuery(String dbUrl, String user, String password, String query) {\n    Sql sql = Sql.newInstance(dbUrl, user, password, 'com.mysql.jdbc.Driver') // Establishing a new SQL connection\n    def resultSet = sql.rows(query) // Executing the query and fetching the results\n    sql.close() // Closing the connection\n    return resultSet // Returning the result set from the query\n}\n```",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:22.789017",
       "response_time": 4.126600027084351,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 9,
@@ -2720,10 +2720,10 @@
       },
       "api_output": "// Log in to get the authentication token\ndef loginResponse = WS.sendRequest(findTestObject('API/Login'))\n\n// Store the token from the response\ndef token = WS.getElementPropertyValue(loginResponse, 'token')\n\n// Use the token for the GET request\ndef getResponse = WS.sendRequest(findTestObject('API/GetData', [('authToken') : token]))\n\n// Parse the JSON response to access data elements \ndef jsonResponse = new groovy.json.JsonSlurper().parseText(getResponse.getResponseBodyContent())\n\n// Verify specific data elements in the JSON response\nWS.verifyEqual(jsonResponse.dataElement1, 'expectedValue1') // Verifying first data element\nWS.verifyEqual(jsonResponse.dataElement2, 'expectedValue2') // Verifying second data element",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:28.206298",
       "response_time": 4.414945125579834,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -2770,10 +2770,10 @@
       },
       "api_output": "// Scrolls the mobile view to find an element with specific text and verifies its visibility\nMobile.scrollToElement(findTestObject('path/to/your/testObject', ['text': 'Your Text']), 10)\n// Verifies that the element is visible\nMobile.verifyElementVisible(findTestObject('path/to/your/testObject', ['text': 'Your Text']), 10)",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:31.545507",
       "response_time": 2.337111234664917,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -2820,10 +2820,10 @@
       },
       "api_output": "// Open a new browser window\nWebUI.openBrowser('')\n\n// Open a website in the main window\nWebUI.navigateToUrl('https://example.com')\n\n// Store the current window handle\ndef mainWindowHandle = WebUI.getWindowTitle()\n\n// Open a new tab\nWebUI.openWindow('https://example.com/page1')\n\n// Switch to the first tab\nWebUI.switchToWindow(mainWindowHandle)\n\n// Verify content in the main window\nWebUI.verifyTextPresent('Expected Text in Main Window', false)\n\n// Switch to the new tab\nWebUI.switchToWindow(WebUI.getWindowTitle())\n\n// Verify content in the new tab\nWebUI.verifyTextPresent('Expected Text in Page 1', false)\n\n// Close the new tab\nWebUI.closeWindow()\n\n// Switch back to the main window\nWebUI.switchToWindow(mainWindowHandle)\n\n// Verify that the main window is still open\nWebUI.verifyTextPresent('Expected Text in Main Window', false)\n\n// Close the main window\nWebUI.closeBrowser()",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:37.928211",
       "response_time": 5.381163120269775,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 6,
@@ -2870,10 +2870,10 @@
       },
       "api_output": "// This code sets up a test listener to capture screenshots automatically when a test fails. It ensures that visual evidence of failures is available for review.\n\nimport com.katalon.core.annotation.Keyword // Importing the Katalon keyword annotation\nimport com.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI // Importing Katalon WebUI keywords\nimport com.katalon.core.testng.listener.TestNGListener // Importing TestNG listener for integration\n\n@Keyword // Marks this method as a custom keyword\ndef captureScreenshotOnFailure() { // Defines the method to capture screenshot on failure\n    TestNGListener.addFailureListener(new TestNGListener() { // Adds a new failure listener to capture screenshots\n        @Override\n        void onTestFailure(ITestResult result) { // Overrides the method to handle test failure\n            String screenshotPath = WebUI.takeScreenshot() // Captures screenshot and stores the path\n            WebUI.comment(\"Screenshot saved at: \" + screenshotPath) // Logs the screenshot path\n        }\n    })\n}",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:12:43.070270",
       "response_time": 4.13967490196228,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "correctness": 6,
@@ -3076,14 +3076,14 @@
       }
     },
     "insights": [
-      "Low complexity bias: Most test inputs are simple. Add more complex scenarios for thorough testing.",
+      "Low complexity bias: Most test inputs are simple. Add more complex profiles for thorough testing.",
       "Strong correlation between correctness_vs_functionality (0.73): These criteria are closely related."
     ]
   }
 };
 
                 // Criteria comparison data
-                const criteriaComparisonData = {"readability": {"ll1_mean": 9.0, "ll2_mean": 9.0, "difference": 0.0, "trend": "maintained"}, "correctness": {"ll1_mean": 7.75, "ll2_mean": 7.42, "difference": -0.33, "trend": "declined"}, "completeness": {"ll1_mean": 8.08, "ll2_mean": 8.0, "difference": -0.08, "trend": "maintained"}, "clarity": {"ll1_mean": 8.08, "ll2_mean": 8.0, "difference": -0.08, "trend": "maintained"}, "relevance": {"ll1_mean": 8.08, "ll2_mean": 8.0, "difference": -0.08, "trend": "maintained"}, "functionality": {"ll1_mean": 7.08, "ll2_mean": 6.42, "difference": -0.67, "trend": "declined"}, "functional_correctness": {"ll1_mean": 7.75, "ll2_mean": 7.42, "difference": -0.33, "trend": "declined"}, "technical_precision": {"ll1_mean": 7.08, "ll2_mean": 6.42, "difference": -0.67, "trend": "declined"}, "response_time": {"ll1_mean": 7.08, "ll2_mean": 7.08, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"ll1_mean": 7.08, "ll2_mean": 7.08, "difference": 0.0, "trend": "maintained"}};
+                const criteriaComparisonData = {"readability": {"LLM1_mean": 9.0, "LLM2_mean": 9.0, "difference": 0.0, "trend": "maintained"}, "correctness": {"LLM1_mean": 7.75, "LLM2_mean": 7.42, "difference": -0.33, "trend": "declined"}, "completeness": {"LLM1_mean": 8.08, "LLM2_mean": 8.0, "difference": -0.08, "trend": "maintained"}, "clarity": {"LLM1_mean": 8.08, "LLM2_mean": 8.0, "difference": -0.08, "trend": "maintained"}, "relevance": {"LLM1_mean": 8.08, "LLM2_mean": 8.0, "difference": -0.08, "trend": "maintained"}, "functionality": {"LLM1_mean": 7.08, "LLM2_mean": 6.42, "difference": -0.67, "trend": "declined"}, "functional_correctness": {"LLM1_mean": 7.75, "LLM2_mean": 7.42, "difference": -0.33, "trend": "declined"}, "technical_precision": {"LLM1_mean": 7.08, "LLM2_mean": 6.42, "difference": -0.67, "trend": "declined"}, "response_time": {"LLM1_mean": 7.08, "LLM2_mean": 7.08, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"LLM1_mean": 7.08, "LLM2_mean": 7.08, "difference": 0.0, "trend": "maintained"}};
                 console.log('Criteria comparison data:', criteriaComparisonData);
 
                 // Function to create charts with error handling and debugging
@@ -3103,29 +3103,29 @@
                         
                         const ctx = canvas.getContext('2d');
                         
-                        // Check if we have dimensional LL1/LL2 data structure
+                        // Check if we have dimensional LLM1/LLM2 data structure
                         const labels = Object.keys(data);
-                        const hasLL1LL2Data = labels.some(label => label.includes('(LL1)') || label.includes('(LL2)'));
+                        const hasLLM1LLM2Data = labels.some(label => label.includes('(LLM1)') || label.includes('(LLM2)'));
                         
                         let chartConfig;
                         
-                        if (hasLL1LL2Data) {
-                            // Group LL1 and LL2 data by dimension
+                        if (hasLLM1LLM2Data) {
+                            // Group LLM1 and LLM2 data by dimension
                             const dimensions = new Set();
-                            const ll1Data = [];
-                            const ll2Data = [];
+                            const LLM1Data = [];
+                            const LLM2Data = [];
                             const dimensionLabels = [];
                             
                             // Extract dimension names and group data
                             labels.forEach(label => {
-                                if (label.includes('(LL1)')) {
-                                    const dimension = label.replace(' (LL1)', '');
+                                if (label.includes('(LLM1)')) {
+                                    const dimension = label.replace(' (LLM1)', '');
                                     dimensions.add(dimension);
                                     dimensionLabels.push(dimension);
-                                    ll1Data.push(data[label]);
-                                    // Find corresponding LL2 data
-                                    const ll2Label = `${dimension} (LL2)`;
-                                    ll2Data.push(data[ll2Label] || 0);
+                                    LLM1Data.push(data[label]);
+                                    // Find corresponding LLM2 data
+                                    const LLM2Label = `${dimension} (LLM2)`;
+                                    LLM2Data.push(data[LLM2Label] || 0);
                                 }
                             });
                             
@@ -3135,8 +3135,8 @@
                                     labels: dimensionLabels,
                                     datasets: [
                                         {
-                                            label: 'LL1 (Baseline)',
-                                            data: ll1Data,
+                                            label: 'LLM1 (Baseline)',
+                                            data: LLM1Data,
                                             backgroundColor: '#667eea80',
                                             borderColor: '#667eea',
                                             borderWidth: 2,
@@ -3144,8 +3144,8 @@
                                             borderSkipped: false
                                         },
                                         {
-                                            label: 'LL2 (Target)',
-                                            data: ll2Data,
+                                            label: 'LLM2 (Target)',
+                                            data: LLM2Data,
                                             backgroundColor: '#28a74580',
                                             borderColor: '#28a745',
                                             borderWidth: 2,
@@ -3220,9 +3220,9 @@
                                             callbacks: {
                                                 afterBody: function(context) {
                                                     const index = context[0].dataIndex;
-                                                    const ll1Value = ll1Data[index];
-                                                    const ll2Value = ll2Data[index];
-                                                    const diff = ll2Value - ll1Value;
+                                                    const LLM1Value = LLM1Data[index];
+                                                    const LLM2Value = LLM2Data[index];
+                                                    const diff = LLM2Value - LLM1Value;
                                                     const trend = diff > 0.1 ? '📈 Improved' : 
                                                                 diff < -0.1 ? '📉 Declined' : 
                                                                 '➡️ Maintained';
@@ -3367,14 +3367,14 @@
                 // Function to create all comprehensive analysis charts
                 function createComprehensiveAnalysisCharts() {
                     // Diversity Analysis Data
-                    const ll1DiversityData = {
+                    const LLM1DiversityData = {
                         'Standard Implementations': 42,
                         'Advanced Features': 28,
                         'Error Handling': 18,
                         'Edge Cases': 12
                     };
                     
-                    const ll2DiversityData = {
+                    const LLM2DiversityData = {
                         'Standard Implementations': 38,
                         'Advanced Features': 32,
                         'Error Handling': 20,
@@ -3384,7 +3384,7 @@
                     const diversityColors = ['#667eea80', '#28a74580', '#ffc10780', '#dc354580'];
                     
                     // Quality Analysis Data
-                    const ll1QualityData = {
+                    const LLM1QualityData = {
                         'test': 35,
                         'assert': 25,
                         'verify': 20,
@@ -3392,7 +3392,7 @@
                         'check': 5
                     };
                     
-                    const ll2QualityData = {
+                    const LLM2QualityData = {
                         'test': 32,
                         'assert': 28,
                         'verify': 22,
@@ -3403,10 +3403,10 @@
                     const qualityColors = ['#ff6b6b80', '#4ecdc480', '#45b7d180', '#96ceb480', '#feca5780'];
                     
                     // Create pie charts
-                    createPieChart('ll1DiversityChart', 'LL1 Pattern Diversity', ll1DiversityData, diversityColors);
-                    createPieChart('ll2DiversityChart', 'LL2 Pattern Diversity', ll2DiversityData, diversityColors);
-                    createPieChart('ll1QualityChart', 'LL1 Quality Keywords', ll1QualityData, qualityColors);
-                    createPieChart('ll2QualityChart', 'LL2 Quality Keywords', ll2QualityData, qualityColors);
+                    createPieChart('LLM1DiversityChart', 'LLM1 Pattern Diversity', LLM1DiversityData, diversityColors);
+                    createPieChart('LLM2DiversityChart', 'LLM2 Pattern Diversity', LLM2DiversityData, diversityColors);
+                    createPieChart('LLM1QualityChart', 'LLM1 Quality Keywords', LLM1QualityData, qualityColors);
+                    createPieChart('LLM2QualityChart', 'LLM2 Quality Keywords', LLM2QualityData, qualityColors);
                 }
 
                 // Create charts and JSON viewers when DOM is loaded

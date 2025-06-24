@@ -431,8 +431,8 @@
                                     ${getFeatureDisplayName(report.feature)}
                                 </div>
                                 <div class="text-xs text-gray-500">
-                                    <div>LL1: ${report.models?.ll1?.type || 'Unknown'} (${report.models?.ll1?.model || 'Unknown'})</div>
-                                    <div>LL2: ${report.models?.ll2?.type || 'Unknown'} (${report.models?.ll2?.model || 'Unknown'})</div>
+                                    <div>LLM1: ${report.models?.LLM1?.type || 'Unknown'} (${report.models?.LLM1?.model || 'Unknown'})</div>
+                                    <div>LLM2: ${report.models?.LLM2?.type || 'Unknown'} (${report.models?.LLM2?.model || 'Unknown'})</div>
                                 </div>
                             </div>
                         </td>
@@ -798,10 +798,10 @@
                 filteredReports = filteredReports.filter(report => 
                     getFeatureDisplayName(report.feature).toLowerCase().includes(searchTerm) ||
                     report.date.toLowerCase().includes(searchTerm) ||
-                    (report.models?.ll1?.type || '').toLowerCase().includes(searchTerm) ||
-                    (report.models?.ll1?.model || '').toLowerCase().includes(searchTerm) ||
-                    (report.models?.ll2?.type || '').toLowerCase().includes(searchTerm) ||
-                    (report.models?.ll2?.model || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.LLM1?.type || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.LLM1?.model || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.LLM2?.type || '').toLowerCase().includes(searchTerm) ||
+                    (report.models?.LLM2?.model || '').toLowerCase().includes(searchTerm) ||
                     (report.llm3?.provider || '').toLowerCase().includes(searchTerm) ||
                     (report.llm3?.model || '').toLowerCase().includes(searchTerm)
                 );

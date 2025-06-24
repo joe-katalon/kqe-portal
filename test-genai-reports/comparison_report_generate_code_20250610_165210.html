@@ -496,13 +496,13 @@
                         <div class="summary-grid">
                             <div class="summary-card">
                                 <h3>Final Assessment</h3>
-                                <p>❓ Decision: MAINTAIN_LL1
+                                <p>❓ Decision: MAINTAIN_LLM1
 💪 Confidence Level: High</p>
                             </div>
                             <div class="summary-card">
                                 <h3>Dataset Summary</h3>
-                                <p><strong>Baseline (LL1):</strong> 9 test cases<br>
-                                <strong>Target (LL2):</strong> 9 test cases<br>
+                                <p><strong>Baseline (LLM1):</strong> 9 test cases<br>
+                                <strong>Target (LLM2):</strong> 9 test cases<br>
                                 <strong>Evaluation Model:</strong> claude-3-5-sonnet-20241022</p>
                             </div>
                         </div>
@@ -525,11 +525,11 @@
                                     <td>consistency</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Baseline Model (LL1)</strong></td>
+                                    <td><strong>Baseline Model (LLM1)</strong></td>
                                     <td>katalon_ai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Target Model (LL2)</strong></td>
+                                    <td><strong>Target Model (LLM2)</strong></td>
                                     <td>personal_openai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
@@ -550,7 +550,7 @@
                         
                         <div class="summary-card">
                             <h3>Primary Goal</h3>
-                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LL1 vs LL2) for the <strong>Generate Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
+                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LLM1 vs LLM2) for the <strong>Generate Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
                         </div>
                         
                         <div class="summary-grid">
@@ -584,7 +584,7 @@
                                         <span style="background: #667eea; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">1</span>
                                         Phase 1: Baseline Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL1 Dataset Generation:</strong> Generate baseline outputs using LL1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM1 Dataset Generation:</strong> Generate baseline outputs using LLM1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
                                 </div>
                                 
                                 <div style="padding: 20px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -592,7 +592,7 @@
                                         <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">2</span>
                                         Phase 2: Target Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL2 Dataset Generation:</strong> Generate target outputs using LL2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM2 Dataset Generation:</strong> Generate target outputs using LLM2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
                                 </div>
 
                                 <div style="padding: 20px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -674,7 +674,7 @@
                                 <canvas id="accuracyChart"></canvas>
                                 <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #ffc107;">
                                     <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
-                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world scenarios.
+                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world profiles.
                                     </p>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>✅ Improvements in LL2</h4>
+                                <h4>✅ Improvements in LLM2</h4>
                                 <ul class="analysis-list positive">
                                     
                                     <li><span>✅</span> No significant improvements observed</li>
@@ -726,7 +726,7 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>❌ Regressions in LL2</h4>
+                                <h4>❌ Regressions in LLM2</h4>
                                 <ul class="analysis-list negative">
                                     
                                     <li><span>❌</span> Functionality dropped from 6.889 to 5.556</li>
@@ -757,16 +757,16 @@
 
                     <!-- Raw Dataset Comparison -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Complete JSON datasets from both LL1 (baseline) and LL2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
+                        <h2 data-tippy-content="Complete JSON datasets from both LLM1 (baseline) and LLM2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
                         <div class="json-comparison">
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Baseline Dataset (LL1)</h3></div>
+                                <div class="dataset-header"><h3>Baseline Dataset (LLM1)</h3></div>
                                 <div class="json-container">
                                     <div id="baseline-json" class="json-viewer"></div>
                                 </div>
                             </div>
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Target Dataset (LL2)</h3></div>
+                                <div class="dataset-header"><h3>Target Dataset (LLM2)</h3></div>
                                 <div class="json-container">
                                     <div id="target-json" class="json-viewer"></div>
                                 </div>
@@ -776,20 +776,20 @@
 
                     <!-- Comprehensive Analysis -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Advanced statistical analysis comparing LL1 and LL2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
+                        <h2 data-tippy-content="Advanced statistical analysis comparing LLM1 and LLM2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
                         
                         <!-- Diversity Analysis -->
                         <div style="margin-bottom: 40px;">
                             <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.5em; text-align: center;">🎨 Pattern Diversity Analysis</h3>
                             <p style="text-align: center; color: #5a6c7d; margin-bottom: 30px; font-size: 1.1em;">
-                                Analysis of output pattern categories and structural diversity between LL1 (Baseline) and LL2 (Target) models.
+                                Analysis of output pattern categories and structural diversity between LLM1 (Baseline) and LLM2 (Target) models.
                             </p>
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Pattern Distribution</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1DiversityChart"></canvas>
+                                        <canvas id="LLM1DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -799,9 +799,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Pattern Distribution</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2DiversityChart"></canvas>
+                                        <canvas id="LLM2DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -814,7 +814,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #1976d2; margin: 0 0 10px 0;">📈 Key Insights</h4>
                                 <ul style="margin: 0; color: #0d47a1; line-height: 1.6;">
-                                    <li>LL2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
+                                    <li>LLM2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
                                     <li>Slight reduction in edge case coverage (-2%) may require attention</li>
                                     <li>Overall pattern diversity remains consistent between models</li>
                                 </ul>
@@ -830,9 +830,9 @@
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Quality Keywords</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1QualityChart"></canvas>
+                                        <canvas id="LLM1QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -842,9 +842,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Quality Keywords</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2QualityChart"></canvas>
+                                        <canvas id="LLM2QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -857,7 +857,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #2e7d32; margin: 0 0 10px 0;">✨ Quality Improvements</h4>
                                 <ul style="margin: 0; color: #1b5e20; line-height: 1.6;">
-                                    <li>LL2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
+                                    <li>LLM2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
                                     <li>Enhanced verification patterns (+2%) suggest better validation coverage</li>
                                     <li>Consistent keyword diversity maintains code readability standards</li>
                                 </ul>
@@ -889,7 +889,7 @@
                                     🎯 Consistency Metrics
                                 </h3>
                                 <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
-                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and scenarios.
+                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and profiles.
                                 </p>
                                 
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -941,7 +941,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> How well the output matches the specific context and intended use case.<br>
                                             <strong>Scale:</strong> 0-10 (10 = Perfectly targeted and contextual)<br>
-                                            <strong>Impact:</strong> Determines practical usefulness in real scenarios.
+                                            <strong>Impact:</strong> Determines practical usefulness in real profiles.
                                         </p>
                                     </div>
                     
@@ -991,7 +991,7 @@
                                         <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test scenarios)<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test profiles)<br>
                                             <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
                                         </p>
                                     </div>
@@ -1036,7 +1036,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Scale:</strong> All dimensions use 0-10 scoring where 10 represents ideal performance.<br>
                                             <strong>Thresholds:</strong> 8+ = Excellent, 6-8 = Good, 4-6 = Acceptable, <4 = Needs Improvement.<br>
-                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test scenarios for reliability.
+                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test profiles for reliability.
                                         </p>
                                     </div>
                                     <div style="padding: 15px; border-left: 4px solid #dc3545; background: #f8f9fa; border-radius: 6px;">
@@ -1056,7 +1056,7 @@
                                 <p style="margin: 0; line-height: 1.6; color: #0d47a1;">
                                     <strong>Feature Focus:</strong> This evaluation specifically targets the { feature.replace('_', ' ').title() } capability of Katalon StudioAssist. 
                                     Metrics are weighted and interpreted based on the critical success factors for this particular feature, ensuring that evaluation 
-                                    results directly translate to real-world usability and effectiveness in automated testing scenarios.
+                                    results directly translate to real-world usability and effectiveness in automated testing profiles.
                                 </p>
                             </div>
                         </div>
@@ -1217,21 +1217,21 @@
                 }
 
                 // Chart data
-                const chartScoresData = {"consistency": {"Readability (LL1)": 9.778, "Readability (LL2)": 9.667, "Correctness (LL1)": 7.889, "Correctness (LL2)": 7.667}, "quality": {"Completeness (LL1)": 9.0, "Completeness (LL2)": 8.333, "Readability (LL1)": 9.778, "Readability (LL2)": 9.667, "Clarity (LL1)": 9.778, "Clarity (LL2)": 9.556000000000001, "Relevance (LL1)": 9.0, "Relevance (LL2)": 8.667}, "accuracy": {"Correctness (LL1)": 7.889, "Correctness (LL2)": 7.667, "Functionality (LL1)": 6.889, "Functionality (LL2)": 5.556, "Functional Correctness (LL1)": 6.889, "Functional Correctness (LL2)": 5.556, "Technical Precision (LL1)": 7.889, "Technical Precision (LL2)": 6.7780000000000005}, "response_time": {"Average Response Time (LL1)": 2.3, "Average Response Time (LL2)": 1.8, "Response Consistency (LL1)": 0.85, "Response Consistency (LL2)": 0.92}};
+                const chartScoresData = {"consistency": {"Readability (LLM1)": 9.778, "Readability (LLM2)": 9.667, "Correctness (LLM1)": 7.889, "Correctness (LLM2)": 7.667}, "quality": {"Completeness (LLM1)": 9.0, "Completeness (LLM2)": 8.333, "Readability (LLM1)": 9.778, "Readability (LLM2)": 9.667, "Clarity (LLM1)": 9.778, "Clarity (LLM2)": 9.556000000000001, "Relevance (LLM1)": 9.0, "Relevance (LLM2)": 8.667}, "accuracy": {"Correctness (LLM1)": 7.889, "Correctness (LLM2)": 7.667, "Functionality (LLM1)": 6.889, "Functionality (LLM2)": 5.556, "Functional Correctness (LLM1)": 6.889, "Functional Correctness (LLM2)": 5.556, "Technical Precision (LLM1)": 7.889, "Technical Precision (LLM2)": 6.7780000000000005}, "response_time": {"Average Response Time (LLM1)": 2.3, "Average Response Time (LLM2)": 1.8, "Response Consistency (LLM1)": 0.85, "Response Consistency (LLM2)": 0.92}};
                 console.log('Chart data:', chartScoresData);
 
                 // JSON Data
                 const baselineJsonData = {
   "metadata": {
     "feature": "generate_code",
-    "llm_version": "LL1",
+    "llm_version": "LLM1",
     "creation_timestamp": "2025-06-09T10:59:29.713762",
     "total_results": 9,
     "dataset_type": "baseline",
     "evaluation_metadata": {
       "evaluator_model": "gemini-2.5-flash-preview-05-20",
       "evaluation_timestamp": "2025-06-09T11:01:48.620849",
-      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_ll1_20250609_105929_ad94cc8e.json"
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_LLM1_20250609_105929_ad94cc8e.json"
     }
   },
   "inputs": [
@@ -1345,10 +1345,10 @@
       },
       "api_output": "// Open browser to the specified URL\nWebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')\n\n// Set the username in the username input field\nWebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/input_username'), GlobalVariable.username)\n\n// Set the password in the password input field\nWebUI.setEncryptedText(findTestObject('Object Repository/Page_CuraAppointment/input_password'), GlobalVariable.password)\n\n// Click the login button\nWebUI.click(findTestObject('Object Repository/Page_CuraAppointment/btn_Login'))\n\n// Verify the 'Make Appointment' button is visible\nWebUI.verifyElementVisible(findTestObject('Object Repository/Page_CuraAppointment/btn_MakeAppointment'))",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:58:52.769231",
       "response_time": 4.040996313095093,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 6,
           "correctness": 6,
@@ -1361,7 +1361,7 @@
           "readability": "The code is very well-structured with clear and concise comments for each step. Indentation is proper, making it easy to understand the flow of actions.",
           "functionality": "The code would not execute successfully in Katalon Studio for the specified URL. It would fail at the `WebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/input_username'), GlobalVariable.username)` step because the username input field would not be found on the initial landing page of the CURA demo site. The login form only appears after clicking the 'Make Appointment' button on the landing page."
         },
-        "overall_assessment": "The StudioAssist output demonstrates good understanding of Katalon Studio syntax and keyword usage, and it correctly interprets the explicit instructions from the prompt. The readability is excellent. However, it critically fails to account for the specific UI flow of the target application (Katalon CURA demo site), which requires an additional step to access the login form. This makes the generated code functionally incomplete and incorrect for the given scenario, leading to execution failure.",
+        "overall_assessment": "The StudioAssist output demonstrates good understanding of Katalon Studio syntax and keyword usage, and it correctly interprets the explicit instructions from the prompt. The readability is excellent. However, it critically fails to account for the specific UI flow of the target application (Katalon CURA demo site), which requires an additional step to access the login form. This makes the generated code functionally incomplete and incorrect for the given profile, leading to execution failure.",
         "overall_score": 6,
         "suggestions": [
           "Add a step to click the 'Make Appointment' button on the landing page (e.g., `WebUI.click(findTestObject('Object Repository/Page_Home/btn_MakeAppointment'))`) before attempting to input the username and password. This is essential to navigate to the login page.",
@@ -1393,10 +1393,10 @@
       },
       "api_output": "// Navigate to 'https://www.w3schools.com/html/html_tables.asp'\nWebUI.openBrowser('')\nWebUI.navigateToUrl('https://www.w3schools.com/html/html_tables.asp')\n\n// Get the text from the cell at row 2, column 3 of the table with Test Object 'Object Repository/Web/Tables/CompanyTable'\nString cellText = WebUI.getText(findTestObject('Object Repository/Web/Tables/CompanyTable/td_row2_col3'))\n\n// Verify the retrieved text is 'Maria Anders'\nWebUI.verifyMatch(cellText, 'Maria Anders', false)\n\n// Print the entire row 2 data to the console\nString rowText = WebUI.getText(findTestObject('Object Repository/Web/Tables/CompanyTable/tr_row2'))\nprintln(rowText)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:58:57.357878",
       "response_time": 3.5872960090637207,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 5,
@@ -1441,10 +1441,10 @@
       },
       "api_output": "// Select 'Option 2' from the dropdown list with Test Object 'Object Repository/Web/Dropdowns/SelectOption'\nWebUI.selectOptionByLabel(findTestObject('Object Repository/Web/Dropdowns/SelectOption'), 'Option 2', false)\n// Check the checkbox with Test Object 'Object Repository/Web/Checkboxes/RememberMeCheckbox'\nWebUI.check(findTestObject('Object Repository/Web/Checkboxes/RememberMeCheckbox'))\n// Verify the checkbox is checked\nWebUI.verifyElementChecked(findTestObject('Object Repository/Web/Checkboxes/RememberMeCheckbox'), 0)",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:00.970246",
       "response_time": 2.61099910736084,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 9,
@@ -1487,10 +1487,10 @@
       },
       "api_output": "// Start application 'com.katalon.sampleapp'\nMobile.startApplication('com.katalon.sampleapp', false)\n\n// Tap on the 'Login' button (Test Object 'Object Repository/Mobile/LoginScreen/btn_Login')\nMobile.tap(findTestObject('Object Repository/Mobile/LoginScreen/btn_Login'), 10)\n\n// Enter 'katalon' into the username field (Test Object 'Object Repository/Mobile/LoginScreen/txt_Username')\nMobile.setText(findTestObject('Object Repository/Mobile/LoginScreen/txt_Username'), 'katalon', 10)\n\n// Enter 'password' into the password field (Test Object 'Object Repository/Mobile/LoginScreen/txt_Password')\nMobile.setText(findTestObject('Object Repository/Mobile/LoginScreen/txt_Password'), 'password', 10)\n\n// Tap on the 'Sign In' button (Test Object 'Object Repository/Mobile/LoginScreen/btn_SignIn')\nMobile.tap(findTestObject('Object Repository/Mobile/LoginScreen/btn_SignIn'), 10)\n\n// Verify the text 'Welcome' is displayed on the screen (Test Object 'Object Repository/Mobile/HomeScreen/txt_Welcome')\nMobile.verifyElementText(findTestObject('Object Repository/Mobile/HomeScreen/txt_Welcome'), 'Welcome')",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:07.470908",
       "response_time": 5.499305009841919,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 10,
@@ -1535,10 +1535,10 @@
       },
       "api_output": "// Send a GET request to 'https://jsonplaceholder.typicode.com/posts/1'\ndef response = WS.sendRequest(findTestObject('Object Repository/REST Requests/Get Post 1'))\n\n// Verify the response status code is 200\nWS.verifyResponseStatusCode(response, 200)\n\n// Verify the 'title' field in the JSON response body contains 'sunt aut facere'\nWS.verifyElementPropertyValue(response, 'title', { it.contains('sunt aut facere') })\n\n// Store the 'userId' from the response into a variable named 'postUserId'\ndef postUserId = WS.getElementPropertyValue(response, 'userId')",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:11.424158",
       "response_time": 2.9516918659210205,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 10,
@@ -1582,10 +1582,10 @@
       },
       "api_output": "// Send a POST request to 'https://jsonplaceholder.typicode.com/posts' with JSON body\ndef response = WS.sendRequest(findTestObject('Object Repository/POST_jsonplaceholder_posts', [('title') : 'foo', ('body') : 'bar', ('userId') : 1]))\n// Verify the response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n// Verify the 'id' field in the JSON response body is not null\nWS.verifyElementPropertyValue(response, 'id', { it != null })",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:14.860658",
       "response_time": 2.4346251487731934,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 9,
           "correctness": 9,
@@ -1629,10 +1629,10 @@
       },
       "api_output": "// Get the total number of rows in the Excel sheet 'Sheet1' from 'Data Files/LoginData.xlsx'\nint rowCount = findTestData('Data Files/LoginData.xlsx').getRowNumbers()\n\nfor (int row = 1; row <= rowCount; row++) {\n    // Open browser to the specified URL\n    WebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')\n    \n    // Enter 'username' from data file into username field\n    WebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/txt_Username'), findTestData('Data Files/LoginData.xlsx').getValue('username', row))\n    \n    // Enter 'password' from data file into password field\n    WebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/txt_Password'), findTestData('Data Files/LoginData.xlsx').getValue('password', row))\n    \n    // Click 'Login' button\n    WebUI.click(findTestObject('Object Repository/Page_CuraAppointment/btn_Login'))\n    \n    // Verify 'Make Appointment' button is visible\n    WebUI.verifyElementVisible(findTestObject('Object Repository/Page_CuraAppointment/btn_MakeAppointment'))\n    \n    // Close browser\n    WebUI.closeBrowser()\n}",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:20.711879",
       "response_time": 4.8461151123046875,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1640,8 +1640,8 @@
           "functionality": 5
         },
         "feedback": {
-          "completeness": "The code addresses all explicit requirements from the prompt, including opening/closing browser, interacting with elements, and verifying visibility. The handling of 'Sheet1' is implicitly done by Katalon's `findTestData` which references a configured Data File. However, the interpretation of 'For each row in the data file' might be incomplete if it implies iterating only data rows (excluding a header row), which is a common scenario for Excel data files.",
-          "correctness": "The syntax is valid, and all Katalon keywords (`WebUI.openBrowser`, `WebUI.setText`, `findTestObject`, `findTestData`, `getValue`, `getRowNumbers`, `WebUI.click`, `WebUI.verifyElementVisible`, `WebUI.closeBrowser`) are used correctly. The logical correctness is questionable for typical data-driven scenarios: `getRowNumbers()` returns the total number of rows (including header), and the loop starting from `row = 1` means it will attempt to process the header row as data if one exists, which is usually not desired.",
+          "completeness": "The code addresses all explicit requirements from the prompt, including opening/closing browser, interacting with elements, and verifying visibility. The handling of 'Sheet1' is implicitly done by Katalon's `findTestData` which references a configured Data File. However, the interpretation of 'For each row in the data file' might be incomplete if it implies iterating only data rows (excluding a header row), which is a common profile for Excel data files.",
+          "correctness": "The syntax is valid, and all Katalon keywords (`WebUI.openBrowser`, `WebUI.setText`, `findTestObject`, `findTestData`, `getValue`, `getRowNumbers`, `WebUI.click`, `WebUI.verifyElementVisible`, `WebUI.closeBrowser`) are used correctly. The logical correctness is questionable for typical data-driven profiles: `getRowNumbers()` returns the total number of rows (including header), and the loop starting from `row = 1` means it will attempt to process the header row as data if one exists, which is usually not desired.",
           "readability": "The code is exceptionally readable. It is well-structured with proper indentation, and each step is clearly explained with comments that directly map to the user's input requirements. Variable names are clear and concise.",
           "functionality": "The code would execute successfully in Katalon Studio, assuming the data file and test objects exist and are correctly configured. However, it is highly likely to fail its intended purpose if the 'LoginData.xlsx' file contains a header row (e.g., 'username', 'password' in row 1). In such a case, the first iteration of the loop would attempt to log in using the header values as credentials, leading to a login failure. This is a significant functional flaw for a data-driven test."
         },
@@ -1676,10 +1676,10 @@
       },
       "api_output": "import com.kms.katalon.core.annotation.Keyword\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\n/*\n * Create a custom keyword named 'WebUIKeywords.verifyAndClickElement'.\n * The keyword should take two parameters: 'TestObject element' and 'String expectedText'.\n * Inside the keyword:\n *   Verify the 'element' is visible.\n *   Verify the text of the 'element' contains 'expectedText'.\n *   Click the 'element'.\n */\nclass WebUIKeywords {\n    @Keyword\n    def verifyAndClickElement(TestObject element, String expectedText) {\n        // Verify the element is visible\n        WebUI.verifyElementVisible(element)\n        // Verify the text of the element contains expectedText\n        WebUI.verifyElementText(element, expectedText, FailureHandling.CONTINUE_ON_FAILURE)\n        // Click the element\n        WebUI.click(element)\n    }\n}",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:25.327712",
       "response_time": 3.6144189834594727,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "correctness": 7,
@@ -1688,7 +1688,7 @@
         },
         "feedback": {
           "completeness": "The code addresses most requirements, including the keyword name, parameters, and the three main actions (verify visibility, verify text, click). However, the 'verify the text of the element *contains* expectedText' requirement is not fully met by the chosen `WebUI.verifyElementText` method without specifying regex.",
-          "correctness": "The syntax is valid Groovy/Java for Katalon Studio, and the imports are correct. Katalon's built-in keywords are used properly. However, `WebUI.verifyElementText` performs an exact match by default, not a 'contains' check. To achieve 'contains', it would require a regex pattern or a different approach (e.g., `WebUI.getText()` followed by `String.contains()`). The `FailureHandling.CONTINUE_ON_FAILURE` is syntactically correct but might not be the desired behavior for a 'verify then click' scenario, as it allows the click to proceed even if the text verification fails.",
+          "correctness": "The syntax is valid Groovy/Java for Katalon Studio, and the imports are correct. Katalon's built-in keywords are used properly. However, `WebUI.verifyElementText` performs an exact match by default, not a 'contains' check. To achieve 'contains', it would require a regex pattern or a different approach (e.g., `WebUI.getText()` followed by `String.contains()`). The `FailureHandling.CONTINUE_ON_FAILURE` is syntactically correct but might not be the desired behavior for a 'verify then click' profile, as it allows the click to proceed even if the text verification fails.",
           "readability": "The code is exceptionally well-structured. It uses proper indentation, clear comments for each step, and a good alias (`as WebUI`) for the built-in keywords, making it very easy to understand.",
           "functionality": "The code would execute successfully in Katalon Studio without syntax errors. However, the core functionality of 'verifying the text contains' would not work as intended. If the element's text is 'Hello World' and `expectedText` is 'Hello', `WebUI.verifyElementText(element, 'Hello', FailureHandling.CONTINUE_ON_FAILURE)` would fail because it's an exact match. Furthermore, due to `CONTINUE_ON_FAILURE`, the test would proceed to click the element even if the text verification failed, which is often not the desired flow for a verification step."
         },
@@ -1696,7 +1696,7 @@
         "overall_score": 8,
         "suggestions": [
           "To correctly implement 'verify the text contains': Replace `WebUI.verifyElementText(element, expectedText, FailureHandling.CONTINUE_ON_FAILURE)` with `WebUI.verifyElementText(element, \".*\" + Pattern.quote(expectedText) + \".*\", true, FailureHandling.STOP_AND_FAIL)` (using regex and `STOP_AND_FAIL` as default for verification). Alternatively, use `String actualText = WebUI.getText(element); if (!actualText.contains(expectedText)) { KeywordUtil.markFailed(\"Text does not contain expected value.\"); }`.",
-          "Re-evaluate the `FailureHandling` for verification steps. For 'verify then click' scenarios, `FailureHandling.STOP_AND_FAIL` (the default) is often more appropriate for verification steps, ensuring that subsequent actions are not performed on an incorrectly verified element. If `CONTINUE_ON_FAILURE` is desired, add conditional logic to prevent the click if the verification fails (e.g., using a boolean return from a custom verification method)."
+          "Re-evaluate the `FailureHandling` for verification steps. For 'verify then click' profiles, `FailureHandling.STOP_AND_FAIL` (the default) is often more appropriate for verification steps, ensuring that subsequent actions are not performed on an incorrectly verified element. If `CONTINUE_ON_FAILURE` is desired, add conditional logic to prevent the click if the verification fails (e.g., using a boolean return from a custom verification method)."
         ],
         "meets_requirements": false,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
@@ -1723,10 +1723,10 @@
       },
       "api_output": "// Navigate to 'https://www.google.com'\nWebUI.openBrowser('')\nWebUI.navigateToUrl('https://www.google.com')\n// Verify the page title is 'Google'\nWebUI.verifyTitle('Google')\n// Verify the 'Google Search' button is enabled\nWebUI.verifyElementEnabled(findTestObject('Object Repository/Web/Google/btn_GoogleSearch'))\n// Take a screenshot and save it as 'google_homepage.png'\nWebUI.takeScreenshot('google_homepage.png')\n// Close the browser\nWebUI.closeBrowser()",
       "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-09T10:59:28.711580",
       "response_time": 2.382507085800171,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 8,
@@ -1734,7 +1734,7 @@
           "functionality": 9
         },
         "feedback": {
-          "completeness": "The code addresses all requirements from the prompt (navigation, title verification, element enabled verification, screenshot). It also includes a good practice of closing the browser, which enhances the script's completeness for a real-world scenario.",
+          "completeness": "The code addresses all requirements from the prompt (navigation, title verification, element enabled verification, screenshot). It also includes a good practice of closing the browser, which enhances the script's completeness for a real-world profile.",
           "correctness": "The syntax is valid and uses proper Katalon keywords. However, `WebUI.openBrowser('')` is not the standard or most robust way to open a browser. While it might not cause a failure, `WebUI.openBrowser()` (without arguments) or `WebUI.openBrowser(null)` is preferred when the initial URL is handled by a subsequent `navigateToUrl` call. If the URL was intended to be passed to `openBrowser`, it should be `WebUI.openBrowser('https://www.google.com')` which would then make `navigateToUrl` redundant.",
           "readability": "The code is very well-structured with clear comments preceding each logical step. Indentation is consistent, making it easy to read and understand the flow of the test.",
           "functionality": "The code would execute successfully in Katalon Studio. The minor issue with `WebUI.openBrowser('')` would likely result in a browser opening to a blank page or default home page before `navigateToUrl` takes effect, but it would not cause the script to fail. All other steps are functionally correct and would perform as expected."
@@ -1937,14 +1937,14 @@
                 const targetJsonData = {
   "metadata": {
     "feature": "generate_code",
-    "llm_version": "LL2",
+    "llm_version": "LLM2",
     "creation_timestamp": "2025-06-09T11:02:49.458002",
     "total_results": 9,
     "dataset_type": "target",
     "evaluation_metadata": {
       "evaluator_model": "gemini-2.5-flash-preview-05-20",
       "evaluation_timestamp": "2025-06-09T11:05:23.575323",
-      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_ll2_20250609_110249_e68f0a14.json"
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_LLM2_20250609_110249_e68f0a14.json"
     }
   },
   "inputs": [
@@ -2056,10 +2056,10 @@
       },
       "api_output": "WebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/') // Open the browser and navigate to the specified URL\nWebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/txt_Username'), GlobalVariable.username) // Set the username in the username text field\nWebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/txt_Password'), GlobalVariable.password) // Set the password in the password text field\nWebUI.click(findTestObject('Object Repository/Page_CuraAppointment/btn_Login')) // Click the login button to submit the credentials\nWebUI.verifyElementVisible(findTestObject('Object Repository/Page_CuraAppointment/btn_MakeAppointment')) // Verify that the 'Make Appointment' button is visible",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:12.430336",
       "response_time": 3.2352230548858643,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 4,
           "correctness": 10,
@@ -2072,7 +2072,7 @@
           "readability": "The code is exceptionally readable. Each line performs a clear, single action and is accompanied by a concise and accurate comment. The variable names and assumed Test Object paths are descriptive, contributing to excellent clarity.",
           "functionality": "The code would not execute successfully as-is for the specified URL. The `WebUI.setText` calls for username and password would fail because the login form is not immediately present after opening the browser. The user needs to click the 'Make Appointment' button on the initial page to navigate to the login form first. This critical missing step prevents the code from functioning as intended."
         },
-        "overall_assessment": "The StudioAssist output demonstrates strong proficiency in Katalon Studio syntax, keyword usage, and code readability. It correctly interprets most of the user's high-level instructions. However, it critically fails to account for the specific application flow of the 'katalon-demo-cura.herokuapp.com' site, which requires an initial click to reveal the login form. This oversight renders the generated code non-functional for the given scenario, despite its otherwise excellent structure and correctness.",
+        "overall_assessment": "The StudioAssist output demonstrates strong proficiency in Katalon Studio syntax, keyword usage, and code readability. It correctly interprets most of the user's high-level instructions. However, it critically fails to account for the specific application flow of the 'katalon-demo-cura.herokuapp.com' site, which requires an initial click to reveal the login form. This oversight renders the generated code non-functional for the given profile, despite its otherwise excellent structure and correctness.",
         "overall_score": 6.5,
         "suggestions": [
           "Add a `WebUI.click` action for the 'Make Appointment' button on the initial landing page (e.g., `findTestObject('Object Repository/Page_Home/btn_MakeAppointment')`) immediately after `WebUI.openBrowser` and before attempting to set username/password.",
@@ -2102,10 +2102,10 @@
       },
       "api_output": "// Navigate to the specified URL\nWebUI.openBrowser('https://www.w3schools.com/html/html_tables.asp')\n\n// Get the text from the specific cell in the 2nd row and 3rd column of the specified table\ndef cellText = WebUI.getText(findTestObject('Object Repository/Web/Tables/CompanyTable', [('row') : 2, ('column') : 3]))\n\n// Verify the retrieved text matches the expected value\nWebUI.verifyEqual(cellText, 'Maria Anders')\n\n// Get the entire row 2 data from the same table\ndef rowData = WebUI.getText(findTestObject('Object Repository/Web/Tables/CompanyTable', [('row') : 2]))\n\n// Print the entire row 2 data to the console\nprintln(rowData)",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:16.473918",
       "response_time": 3.042692184448242,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 7,
@@ -2148,10 +2148,10 @@
       },
       "api_output": "// Select 'Option 2' from the dropdown list\nselectOptionByValue(findTestObject('Object Repository/Web/Dropdowns/SelectOption'), 'Option 2') \n// Check the checkbox\nclick(findTestObject('Object Repository/Web/Checkboxes/RememberMeCheckbox')) \n// Verify the checkbox is checked\nverifyElementChecked(findTestObject('Object Repository/Web/Checkboxes/RememberMeCheckbox'), 0)",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:19.442061",
       "response_time": 1.9667410850524902,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 9,
@@ -2194,10 +2194,10 @@
       },
       "api_output": "// Start the application using the specified package name\nMobile.startApplication('com.katalon.sampleapp', false)\n\n// Tap on the Login button located in the LoginScreen\nMobile.tap(findTestObject('Mobile/LoginScreen/btn_Login'), 0)\n\n// Enter 'katalon' into the username field\nMobile.setText(findTestObject('Mobile/LoginScreen/txt_Username'), 'katalon', 0)\n\n// Enter 'password' into the password field\nMobile.setText(findTestObject('Mobile/LoginScreen/txt_Password'), 'password', 0)\n\n// Tap on the Sign In button located in the LoginScreen\nMobile.tap(findTestObject('Mobile/LoginScreen/btn_SignIn'), 0)\n\n// Verify that the text 'Welcome' is displayed on the screen\nMobile.verifyElementText(findTestObject('Mobile/HomeScreen/txt_Welcome'), 'Welcome')",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:25.242176",
       "response_time": 4.798619985580444,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 9,
@@ -2206,7 +2206,7 @@
         },
         "feedback": {
           "completeness": "The generated code perfectly addresses all requirements outlined in the user input. Every action and verification step is translated into a corresponding Katalon Studio keyword.",
-          "correctness": "The syntax is valid Groovy/Java, and proper Katalon Studio Mobile keywords (`Mobile.startApplication`, `Mobile.tap`, `Mobile.setText`, `Mobile.verifyElementText`, `findTestObject`) are used correctly. The Test Object paths are also correctly referenced. The only minor point is the use of `0` for the timeout parameter in `tap` and `setText`, which, while syntactically correct, is not always the most robust practice for real-world scenarios as it implies no wait time.",
+          "correctness": "The syntax is valid Groovy/Java, and proper Katalon Studio Mobile keywords (`Mobile.startApplication`, `Mobile.tap`, `Mobile.setText`, `Mobile.verifyElementText`, `findTestObject`) are used correctly. The Test Object paths are also correctly referenced. The only minor point is the use of `0` for the timeout parameter in `tap` and `setText`, which, while syntactically correct, is not always the most robust practice for real-world profiles as it implies no wait time.",
           "readability": "The code is exceptionally well-structured with clear indentation. Each line of code is accompanied by a descriptive comment that accurately reflects the action being performed, significantly enhancing readability and understanding.",
           "functionality": "The code would execute successfully in Katalon Studio, assuming the specified application is installed and the Test Objects exist in the Object Repository with valid locators. The use of `timeout=0` for `tap` and `setText` might make the test less robust to minor UI loading delays, but it does not prevent the code from executing."
         },
@@ -2214,7 +2214,7 @@
         "overall_score": 9.5,
         "suggestions": [
           "Consider using a non-zero timeout (e.g., `5` seconds or a global variable like `GlobalVariable.G_Timeout`) for `Mobile.tap` and `Mobile.setText` methods. This would make the test more robust against minor UI loading delays and improve its reliability in different environments.",
-          "While not explicitly requested, for more complex scenarios, adding error handling (e.g., `try-catch` blocks) around critical steps could further improve the script's resilience."
+          "While not explicitly requested, for more complex profiles, adding error handling (e.g., `try-catch` blocks) around critical steps could further improve the script's resilience."
         ],
         "meets_requirements": true,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
@@ -2239,10 +2239,10 @@
       },
       "api_output": "// Send a GET request to the specified URL and store the response\nresponse = WS.sendRequest(WS.findTestObject('GET Request', [('url') : 'https://jsonplaceholder.typicode.com/posts/1']))  \n// Verify that the response status code is 200\nWS.verifyResponseStatusCode(response, 200)  \n// Parse the JSON response body\ndef jsonResponse = new groovy.json.JsonSlurper().parseText(response.getResponseBodyContent())  \n// Verify the 'title' field contains the expected text\nWS.verifyEqual(jsonResponse.title, 'sunt aut facere')  \n// Store the 'userId' from the response into a variable\npostUserId = jsonResponse.userId  ",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:30.082789",
       "response_time": 3.8395888805389404,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "correctness": 6,
@@ -2285,10 +2285,10 @@
       },
       "api_output": "// Send a POST request to the specified URL with the given JSON body\nResponseObject response = WS.sendRequest(WS.buildRequestObject(\"POST\", \"https://jsonplaceholder.typicode.com/posts\", \n    '{\"title\": \"foo\", \"body\": \"bar\", \"userId\": 1}', \n    \"application/json\"))\n\n// Verify the response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n\n// Verify the 'id' field in the JSON response body is not null\nWS.verifyElementPropertyValue(response, 'id', not(null))",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:33.354746",
       "response_time": 2.2699849605560303,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "correctness": 4,
@@ -2331,10 +2331,10 @@
       },
       "api_output": "import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\nimport com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory\n\n// Load the test data from the specified Excel file and sheet\ndef loginData = TestDataFactory.findTestData('Data Files/LoginData')\n\n// Iterate through each row of the test data\nfor (def index : (0..loginData.getRowNumbers() - 1)) {\n    // Open the specified URL in a web browser\n    WebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')\n    \n    // Enter the username from the data file into the username field\n    WebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/txt_Username'), loginData.getValue('username', index + 1))\n    \n    // Enter the password from the data file into the password field\n    WebUI.setText(findTestObject('Object Repository/Page_CuraAppointment/txt_Password'), loginData.getValue('password', index + 1))\n    \n    // Click the Login button\n    WebUI.click(findTestObject('Object Repository/Page_CuraAppointment/btn_Login'))\n    \n    // Verify that the Make Appointment button is visible\n    WebUI.verifyElementVisible(findTestObject('Object Repository/Page_CuraAppointment/btn_MakeAppointment'))\n    \n    // Close the browser\n    WebUI.closeBrowser()\n}",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:40.242087",
       "response_time": 5.885514974594116,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 10,
@@ -2375,10 +2375,10 @@
       },
       "api_output": "```groovy\nimport com.kms.katalon.core.annotation.Keyword\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\nimport com.kms.katalon.core.model.TestObject\n\n@Keyword\n/*\n *  Verify that the specified element is visible, its text contains the expected text, and then click it.\n *\n *  @param element The TestObject that needs to be verified and clicked.\n *  @param expectedText The text that is expected to be part of the element's text.\n */\ndef verifyAndClickElement(TestObject element, String expectedText) {\n    WebUI.verifyElementVisible(element) // Verify the 'element' is visible.\n    WebUI.verifyTextPresent(expectedText, false) // Verify the text of the 'element' contains 'expectedText'.\n    WebUI.click(element) // Click the 'element'.\n}\n```",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:45.319563",
       "response_time": 4.076173782348633,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "correctness": 5,
@@ -2421,10 +2421,10 @@
       },
       "api_output": "// Navigate to the Google homepage\nWebUI.openBrowser('https://www.google.com')\n\n// Verify the page title is 'Google'\nWebUI.verifyTitle('Google')\n\n// Verify the 'Google Search' button is enabled\nWebUI.verifyElementClickable(findTestObject('Object Repository/Web/Google/btn_GoogleSearch'))\n\n// Take a screenshot and save it as 'google_homepage.png'\nWebUI.takeScreenshot('google_homepage.png')",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-09T11:02:48.456060",
       "response_time": 2.1336238384246826,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 9,
@@ -2639,7 +2639,7 @@
 };
 
                 // Criteria comparison data
-                const criteriaComparisonData = {"readability": {"ll1_mean": 9.778, "ll2_mean": 9.667, "difference": -0.111, "trend": "declined"}, "correctness": {"ll1_mean": 7.889, "ll2_mean": 7.667, "difference": -0.222, "trend": "declined"}, "completeness": {"ll1_mean": 9.0, "ll2_mean": 8.333, "difference": -0.667, "trend": "declined"}, "clarity": {"ll1_mean": 8.889, "ll2_mean": 8.667, "difference": -0.222, "trend": "declined"}, "relevance": {"ll1_mean": 8.556, "ll2_mean": 8.223, "difference": -0.333, "trend": "declined"}, "functionality": {"ll1_mean": 6.889, "ll2_mean": 5.556, "difference": -1.333, "trend": "declined"}, "functional_correctness": {"ll1_mean": 7.556, "ll2_mean": 6.223, "difference": -1.333, "trend": "declined"}, "technical_precision": {"ll1_mean": 7.889, "ll2_mean": 6.778, "difference": -1.111, "trend": "declined"}, "response_time": {"ll1_mean": 8.222, "ll2_mean": 8.222, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"ll1_mean": 8.444, "ll2_mean": 8.222, "difference": -0.222, "trend": "declined"}};
+                const criteriaComparisonData = {"readability": {"LLM1_mean": 9.778, "LLM2_mean": 9.667, "difference": -0.111, "trend": "declined"}, "correctness": {"LLM1_mean": 7.889, "LLM2_mean": 7.667, "difference": -0.222, "trend": "declined"}, "completeness": {"LLM1_mean": 9.0, "LLM2_mean": 8.333, "difference": -0.667, "trend": "declined"}, "clarity": {"LLM1_mean": 8.889, "LLM2_mean": 8.667, "difference": -0.222, "trend": "declined"}, "relevance": {"LLM1_mean": 8.556, "LLM2_mean": 8.223, "difference": -0.333, "trend": "declined"}, "functionality": {"LLM1_mean": 6.889, "LLM2_mean": 5.556, "difference": -1.333, "trend": "declined"}, "functional_correctness": {"LLM1_mean": 7.556, "LLM2_mean": 6.223, "difference": -1.333, "trend": "declined"}, "technical_precision": {"LLM1_mean": 7.889, "LLM2_mean": 6.778, "difference": -1.111, "trend": "declined"}, "response_time": {"LLM1_mean": 8.222, "LLM2_mean": 8.222, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"LLM1_mean": 8.444, "LLM2_mean": 8.222, "difference": -0.222, "trend": "declined"}};
                 console.log('Criteria comparison data:', criteriaComparisonData);
 
                 // Function to create charts with error handling and debugging
@@ -2659,29 +2659,29 @@
                         
                         const ctx = canvas.getContext('2d');
                         
-                        // Check if we have dimensional LL1/LL2 data structure
+                        // Check if we have dimensional LLM1/LLM2 data structure
                         const labels = Object.keys(data);
-                        const hasLL1LL2Data = labels.some(label => label.includes('(LL1)') || label.includes('(LL2)'));
+                        const hasLLM1LLM2Data = labels.some(label => label.includes('(LLM1)') || label.includes('(LLM2)'));
                         
                         let chartConfig;
                         
-                        if (hasLL1LL2Data) {
-                            // Group LL1 and LL2 data by dimension
+                        if (hasLLM1LLM2Data) {
+                            // Group LLM1 and LLM2 data by dimension
                             const dimensions = new Set();
-                            const ll1Data = [];
-                            const ll2Data = [];
+                            const LLM1Data = [];
+                            const LLM2Data = [];
                             const dimensionLabels = [];
                             
                             // Extract dimension names and group data
                             labels.forEach(label => {
-                                if (label.includes('(LL1)')) {
-                                    const dimension = label.replace(' (LL1)', '');
+                                if (label.includes('(LLM1)')) {
+                                    const dimension = label.replace(' (LLM1)', '');
                                     dimensions.add(dimension);
                                     dimensionLabels.push(dimension);
-                                    ll1Data.push(data[label]);
-                                    // Find corresponding LL2 data
-                                    const ll2Label = `${dimension} (LL2)`;
-                                    ll2Data.push(data[ll2Label] || 0);
+                                    LLM1Data.push(data[label]);
+                                    // Find corresponding LLM2 data
+                                    const LLM2Label = `${dimension} (LLM2)`;
+                                    LLM2Data.push(data[LLM2Label] || 0);
                                 }
                             });
                             
@@ -2691,8 +2691,8 @@
                                     labels: dimensionLabels,
                                     datasets: [
                                         {
-                                            label: 'LL1 (Baseline)',
-                                            data: ll1Data,
+                                            label: 'LLM1 (Baseline)',
+                                            data: LLM1Data,
                                             backgroundColor: '#667eea80',
                                             borderColor: '#667eea',
                                             borderWidth: 2,
@@ -2700,8 +2700,8 @@
                                             borderSkipped: false
                                         },
                                         {
-                                            label: 'LL2 (Target)',
-                                            data: ll2Data,
+                                            label: 'LLM2 (Target)',
+                                            data: LLM2Data,
                                             backgroundColor: '#28a74580',
                                             borderColor: '#28a745',
                                             borderWidth: 2,
@@ -2776,9 +2776,9 @@
                                             callbacks: {
                                                 afterBody: function(context) {
                                                     const index = context[0].dataIndex;
-                                                    const ll1Value = ll1Data[index];
-                                                    const ll2Value = ll2Data[index];
-                                                    const diff = ll2Value - ll1Value;
+                                                    const LLM1Value = LLM1Data[index];
+                                                    const LLM2Value = LLM2Data[index];
+                                                    const diff = LLM2Value - LLM1Value;
                                                     const trend = diff > 0.1 ? '📈 Improved' : 
                                                                 diff < -0.1 ? '📉 Declined' : 
                                                                 '➡️ Maintained';
@@ -2923,14 +2923,14 @@
                 // Function to create all comprehensive analysis charts
                 function createComprehensiveAnalysisCharts() {
                     // Diversity Analysis Data
-                    const ll1DiversityData = {
+                    const LLM1DiversityData = {
                         'Standard Implementations': 42,
                         'Advanced Features': 28,
                         'Error Handling': 18,
                         'Edge Cases': 12
                     };
                     
-                    const ll2DiversityData = {
+                    const LLM2DiversityData = {
                         'Standard Implementations': 38,
                         'Advanced Features': 32,
                         'Error Handling': 20,
@@ -2940,7 +2940,7 @@
                     const diversityColors = ['#667eea80', '#28a74580', '#ffc10780', '#dc354580'];
                     
                     // Quality Analysis Data
-                    const ll1QualityData = {
+                    const LLM1QualityData = {
                         'test': 35,
                         'assert': 25,
                         'verify': 20,
@@ -2948,7 +2948,7 @@
                         'check': 5
                     };
                     
-                    const ll2QualityData = {
+                    const LLM2QualityData = {
                         'test': 32,
                         'assert': 28,
                         'verify': 22,
@@ -2959,10 +2959,10 @@
                     const qualityColors = ['#ff6b6b80', '#4ecdc480', '#45b7d180', '#96ceb480', '#feca5780'];
                     
                     // Create pie charts
-                    createPieChart('ll1DiversityChart', 'LL1 Pattern Diversity', ll1DiversityData, diversityColors);
-                    createPieChart('ll2DiversityChart', 'LL2 Pattern Diversity', ll2DiversityData, diversityColors);
-                    createPieChart('ll1QualityChart', 'LL1 Quality Keywords', ll1QualityData, qualityColors);
-                    createPieChart('ll2QualityChart', 'LL2 Quality Keywords', ll2QualityData, qualityColors);
+                    createPieChart('LLM1DiversityChart', 'LLM1 Pattern Diversity', LLM1DiversityData, diversityColors);
+                    createPieChart('LLM2DiversityChart', 'LLM2 Pattern Diversity', LLM2DiversityData, diversityColors);
+                    createPieChart('LLM1QualityChart', 'LLM1 Quality Keywords', LLM1QualityData, qualityColors);
+                    createPieChart('LLM2QualityChart', 'LLM2 Quality Keywords', LLM2QualityData, qualityColors);
                 }
 
                 // Create charts and JSON viewers when DOM is loaded

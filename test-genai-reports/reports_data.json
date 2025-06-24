@@ -1,15 +1,972 @@
 [
   {
-    "feature": "generate",
-    "date": "2025-06-12 11:33",
-    "url": "comparison_report_generate_code_20250612_113302.html",
+    "feature": "explain",
+    "date": "2025-06-24 21:51",
+    "url": "comparison_report_explain_code_20250624_215136.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.665,
+      "accuracy": 0.6775,
+      "quality": 0.555,
+      "response_time": 1.0,
+      "overall": 0.6325
+    }
+  },
+  {
+    "feature": "explain",
+    "date": "2025-06-24 21:44",
+    "url": "comparison_report_explain_code_20250624_214456.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.665,
+      "accuracy": 0.6775,
+      "quality": 0.555,
+      "response_time": 1.0,
+      "overall": 0.6325
+    }
+  },
+  {
+    "feature": "explain",
+    "date": "2025-06-24 21:27",
+    "url": "comparison_report_explain_code_20250624_212713.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.665,
+      "accuracy": 0.6775,
+      "quality": 0.555,
+      "response_time": 1.0,
+      "overall": 0.6325
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 21:07",
+    "url": "comparison_report_generate_code_20250624_210744.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8,
+      "accuracy": 0.66,
+      "quality": 0.85,
+      "response_time": 1.0,
+      "overall": 0.77
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 16:18",
+    "url": "comparison_report_generate_code_20250624_161809.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8,
+      "accuracy": 0.66,
+      "quality": 0.85,
+      "response_time": 1.0,
+      "overall": 0.77
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 16:17",
+    "url": "comparison_report_generate_code_20250624_161702.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8,
+      "accuracy": 0.66,
+      "quality": 0.85,
+      "response_time": 1.0,
+      "overall": 0.77
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 16:10",
+    "url": "comparison_report_generate_code_20250624_161029.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8,
+      "accuracy": 0.66,
+      "quality": 0.85,
+      "response_time": 1.0,
+      "overall": 0.77
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 15:39",
+    "url": "comparison_report_generate_code_20250624_153938.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 15:34",
+    "url": "comparison_report_generate_code_20250624_153439.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 15:21",
+    "url": "comparison_report_generate_code_20250624_152154.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 14:12",
+    "url": "comparison_report_generate_code_20250624_141234.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 14:06",
+    "url": "comparison_report_generate_code_20250624_140636.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 13:15",
+    "url": "comparison_report_generate_code_20250624_131525.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "unknown",
+      "model": "unknown",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:21",
+    "url": "comparison_report_generate_code_20250624_122103.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:20",
+    "url": "comparison_report_generate_code_20250624_122012.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:19",
+    "url": "comparison_report_generate_code_20250624_121918.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:17",
+    "url": "comparison_report_generate_code_20250624_121726.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:16",
+    "url": "comparison_report_generate_code_20250624_121644.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:13",
+    "url": "comparison_report_generate_code_20250624_121316.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:09",
+    "url": "comparison_report_generate_code_20250624_120958.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:08",
+    "url": "comparison_report_generate_code_20250624_120818.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 12:04",
+    "url": "comparison_report_generate_code_20250624_120412.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 11:35",
+    "url": "comparison_report_generate_code_20250624_113554.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.825,
+      "accuracy": 0.6875,
+      "quality": 0.875,
+      "response_time": 1.0,
+      "overall": 0.7958333333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 10:36",
+    "url": "comparison_report_generate_code_20250624_103651.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8835000000000001,
+      "accuracy": 0.75,
+      "quality": 0.9167500000000001,
+      "response_time": 1.0,
+      "overall": 0.8500833333333334
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 10:06",
+    "url": "comparison_report_generate_code_20250624_100646.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.375,
+      "quality": 0.425,
+      "response_time": 1.0,
+      "overall": 0.26666666666666666
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 09:59",
+    "url": "comparison_report_generate_code_20250624_095912.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.0,
+      "quality": 0.0,
+      "response_time": 1.0,
+      "overall": 0.65
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 09:49",
+    "url": "comparison_report_generate_code_20250624_094937.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.8,
+      "quality": 0.8,
+      "response_time": 1.0,
+      "overall": 0.5333333333333333
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 09:44",
+    "url": "comparison_report_generate_code_20250624_094415.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.8,
+      "quality": 0.8,
+      "response_time": 1.0,
+      "overall": 0.5333333333333333
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-24 09:31",
+    "url": "comparison_report_generate_code_20250624_093129.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8099999999999999,
+      "accuracy": 0.7350000000000001,
+      "quality": 0.9199999999999999,
+      "response_time": 1.0,
+      "overall": 0.8216666666666667
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-23 22:28",
+    "url": "comparison_report_generate_code_20250623_222853.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.8099999999999999,
+      "accuracy": 0.7350000000000001,
+      "quality": 0.9199999999999999,
+      "response_time": 1.0,
+      "overall": 0.8216666666666667
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-23 22:27",
+    "url": "comparison_report_generate_code_20250623_222755.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.0,
+      "quality": 0.0,
+      "response_time": 1.0,
+      "overall": 0.65
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-23 22:25",
+    "url": "comparison_report_generate_code_20250623_222519.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.0,
+      "quality": 0.0,
+      "response_time": 1.0,
+      "overall": 0.65
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-23 22:21",
+    "url": "comparison_report_generate_code_20250623_222152.html",
+    "models": {
+      "LLM1": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "unknown",
+        "model": "unknown",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.0,
+      "accuracy": 0.0,
+      "quality": 0.0,
+      "response_time": 1.0,
+      "overall": 0.65
+    }
+  },
+  {
+    "feature": "generate",
+    "date": "2025-06-12 11:33",
+    "url": "comparison_report_generate_code_20250612_113302.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -33,12 +990,12 @@
     "date": "2025-06-10 17:21",
     "url": "comparison_report_generate_code_20250610_172133.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -62,12 +1019,12 @@
     "date": "2025-06-10 16:52",
     "url": "comparison_report_generate_code_20250610_165210.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -91,12 +1048,12 @@
     "date": "2025-06-09 11:06",
     "url": "comparison_report_generate_code_20250609_110607.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -120,12 +1077,12 @@
     "date": "2025-06-02 21:34",
     "url": "comparison_report_explain_code_20250602_213411.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -149,12 +1106,12 @@
     "date": "2025-06-02 21:30",
     "url": "comparison_report_explain_code_20250602_213019.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -178,12 +1135,12 @@
     "date": "2025-06-02 17:41",
     "url": "comparison_report_explain_code_20250602_174114.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -207,12 +1164,12 @@
     "date": "2025-06-02 17:40",
     "url": "comparison_report_generate_code_20250602_174045.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -236,12 +1193,12 @@
     "date": "2025-06-02 17:38",
     "url": "comparison_report_chat_window_20250602_173848.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"
@@ -265,12 +1222,12 @@
     "date": "2025-06-02 17:24",
     "url": "comparison_report_chat_window_20250602_172427.html",
     "models": {
-      "ll1": {
+      "LLM1": {
         "type": "katalon_ai",
         "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
-      "ll2": {
+      "LLM2": {
         "type": "personal_openai",
         "model": "gpt-4o-mini",
         "description": "Target Model"

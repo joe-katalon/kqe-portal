@@ -496,13 +496,13 @@
                         <div class="summary-grid">
                             <div class="summary-card">
                                 <h3>Final Assessment</h3>
-                                <p>❓ Decision: RETAIN_LL1
+                                <p>❓ Decision: RETAIN_LLM1
 💪 Confidence Level: High</p>
                             </div>
                             <div class="summary-card">
                                 <h3>Dataset Summary</h3>
-                                <p><strong>Baseline (LL1):</strong> 9 test cases<br>
-                                <strong>Target (LL2):</strong> 9 test cases<br>
+                                <p><strong>Baseline (LLM1):</strong> 9 test cases<br>
+                                <strong>Target (LLM2):</strong> 9 test cases<br>
                                 <strong>Evaluation Model:</strong> claude-3-5-sonnet-20241022</p>
                             </div>
                         </div>
@@ -525,11 +525,11 @@
                                     <td>consistency</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Baseline Model (LL1)</strong></td>
+                                    <td><strong>Baseline Model (LLM1)</strong></td>
                                     <td>katalon_ai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Target Model (LL2)</strong></td>
+                                    <td><strong>Target Model (LLM2)</strong></td>
                                     <td>personal_openai - gpt-4o-mini</td>
                                 </tr>
                                 <tr>
@@ -550,7 +550,7 @@
                         
                         <div class="summary-card">
                             <h3>Primary Goal</h3>
-                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LL1 vs LL2) for the <strong>Explain Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
+                            <p>Conduct a comprehensive comparative evaluation of two Large Language Models (LLM1 vs LLM2) for the <strong>Explain Code</strong> feature in Katalon StudioAssist. The evaluation employs LLM3 as an independent judge to ensure objective, unbiased assessment across multiple quality dimensions, enabling data-driven decisions for model deployment and optimization.</p>
                         </div>
                         
                         <div class="summary-grid">
@@ -584,7 +584,7 @@
                                         <span style="background: #667eea; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">1</span>
                                         Phase 1: Baseline Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL1 Dataset Generation:</strong> Generate baseline outputs using LL1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM1 Dataset Generation:</strong> Generate baseline outputs using LLM1 model with standardized test inputs. LLM3 evaluates each output across quality dimensions, creating comprehensive evaluation dataset with numerical scores and qualitative analysis.</p>
                                 </div>
                                 
                                 <div style="padding: 20px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -592,7 +592,7 @@
                                         <span style="background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">2</span>
                                         Phase 2: Target Creation
                                     </h4>
-                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LL2 Dataset Generation:</strong> Generate target outputs using LL2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
+                                    <p style="margin: 0; color: #5a6c7d; line-height: 1.5; font-size: 0.9em;"><strong>LLM2 Dataset Generation:</strong> Generate target outputs using LLM2 model with identical test inputs (consistency mode) or new inputs (accuracy mode). LLM3 applies the same evaluation criteria, ensuring fair comparison conditions.</p>
                                 </div>
 
                                 <div style="padding: 20px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 8px; min-height: 140px;">
@@ -674,7 +674,7 @@
                                 <canvas id="accuracyChart"></canvas>
                                 <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #ffc107;">
                                     <p style="margin: 0; font-size: 0.85em; color: #5a6c7d;">
-                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world scenarios.
+                                        <strong>Focus:</strong> Verifies technical precision and operational effectiveness. Ensures outputs work correctly in real-world profiles.
                                     </p>
                                 </div>
                             </div>
@@ -717,14 +717,14 @@
                             </div>
 
                             <div class="analysis-section">
-                                <h4>✅ Improvements in LL2</h4>
+                                <h4>✅ Improvements in LLM2</h4>
                                 <ul class="analysis-list positive">
                                     
                                 </ul>
                             </div>
 
                             <div class="analysis-section">
-                                <h4>❌ Regressions in LL2</h4>
+                                <h4>❌ Regressions in LLM2</h4>
                                 <ul class="analysis-list negative">
                                     
                                     <li><span>❌</span> All quality metrics show significant decline</li>
@@ -755,16 +755,16 @@
 
                     <!-- Raw Dataset Comparison -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Complete JSON datasets from both LL1 (baseline) and LL2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
+                        <h2 data-tippy-content="Complete JSON datasets from both LLM1 (baseline) and LLM2 (target) showing the raw data, inputs, outputs, and evaluation scores used in this comparison.">📄 Raw Dataset Comparison</h2>
                         <div class="json-comparison">
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Baseline Dataset (LL1)</h3></div>
+                                <div class="dataset-header"><h3>Baseline Dataset (LLM1)</h3></div>
                                 <div class="json-container">
                                     <div id="baseline-json" class="json-viewer"></div>
                                 </div>
                             </div>
                             <div class="dataset-column">
-                                <div class="dataset-header"><h3>Target Dataset (LL2)</h3></div>
+                                <div class="dataset-header"><h3>Target Dataset (LLM2)</h3></div>
                                 <div class="json-container">
                                     <div id="target-json" class="json-viewer"></div>
                                 </div>
@@ -774,20 +774,20 @@
 
                     <!-- Comprehensive Analysis -->
                     <section class="report-section">
-                        <h2 data-tippy-content="Advanced statistical analysis comparing LL1 and LL2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
+                        <h2 data-tippy-content="Advanced statistical analysis comparing LLM1 and LLM2 across pattern diversity and quality characteristics.">📊 Comprehensive Analysis</h2>
                         
                         <!-- Diversity Analysis -->
                         <div style="margin-bottom: 40px;">
                             <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.5em; text-align: center;">🎨 Pattern Diversity Analysis</h3>
                             <p style="text-align: center; color: #5a6c7d; margin-bottom: 30px; font-size: 1.1em;">
-                                Analysis of output pattern categories and structural diversity between LL1 (Baseline) and LL2 (Target) models.
+                                Analysis of output pattern categories and structural diversity between LLM1 (Baseline) and LLM2 (Target) models.
                             </p>
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Pattern Distribution</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1DiversityChart"></canvas>
+                                        <canvas id="LLM1DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -797,9 +797,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Pattern Distribution</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Pattern Distribution</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2DiversityChart"></canvas>
+                                        <canvas id="LLM2DiversityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -812,7 +812,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #1976d2; margin: 0 0 10px 0;">📈 Key Insights</h4>
                                 <ul style="margin: 0; color: #0d47a1; line-height: 1.6;">
-                                    <li>LL2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
+                                    <li>LLM2 shows increased focus on advanced features (+4%) and improved error handling (+2%)</li>
                                     <li>Slight reduction in edge case coverage (-2%) may require attention</li>
                                     <li>Overall pattern diversity remains consistent between models</li>
                                 </ul>
@@ -828,9 +828,9 @@
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL1 (Baseline) - Quality Keywords</h4>
+                                    <h4 style="color: #667eea; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM1 (Baseline) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll1QualityChart"></canvas>
+                                        <canvas id="LLM1QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -840,9 +840,9 @@
                                 </div>
                                 
                                 <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LL2 (Target) - Quality Keywords</h4>
+                                    <h4 style="color: #28a745; text-align: center; margin: 0 0 20px 0; font-size: 1.2em;">LLM2 (Target) - Quality Keywords</h4>
                                     <div class="chart-container" style="height: 300px;">
-                                        <canvas id="ll2QualityChart"></canvas>
+                                        <canvas id="LLM2QualityChart"></canvas>
                                     </div>
                                     <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
                                         <p style="margin: 0; font-size: 0.9em; color: #5a6c7d;">
@@ -855,7 +855,7 @@
                             <div style="padding: 20px; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border-radius: 8px; margin-top: 20px;">
                                 <h4 style="color: #2e7d32; margin: 0 0 10px 0;">✨ Quality Improvements</h4>
                                 <ul style="margin: 0; color: #1b5e20; line-height: 1.6;">
-                                    <li>LL2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
+                                    <li>LLM2 demonstrates improved assertion usage (+3%) indicating stronger testing practices</li>
                                     <li>Enhanced verification patterns (+2%) suggest better validation coverage</li>
                                     <li>Consistent keyword diversity maintains code readability standards</li>
                                 </ul>
@@ -887,7 +887,7 @@
                                     🎯 Consistency Metrics
                                 </h3>
                                 <p style="margin: 0 0 20px 0; color: #5a6c7d; line-height: 1.6;">
-                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and scenarios.
+                                    <strong>Purpose:</strong> Evaluate how reliably and predictably the model performs across similar inputs and profiles.
                                 </p>
                                 
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -948,7 +948,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> How well the output matches the specific context and intended use case.<br>
                                             <strong>Scale:</strong> 0-10 (10 = Perfectly targeted and contextual)<br>
-                                            <strong>Impact:</strong> Determines practical usefulness in real scenarios.
+                                            <strong>Impact:</strong> Determines practical usefulness in real profiles.
                                         </p>
                                     </div>
                     
@@ -971,7 +971,7 @@
                                         <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test scenarios)<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test profiles)<br>
                                             <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
                                         </p>
                                     </div>
@@ -1034,7 +1034,7 @@
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Scale:</strong> All dimensions use 0-10 scoring where 10 represents ideal performance.<br>
                                             <strong>Thresholds:</strong> 8+ = Excellent, 6-8 = Good, 4-6 = Acceptable, <4 = Needs Improvement.<br>
-                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test scenarios for reliability.
+                                            <strong>Aggregation:</strong> Mean scores calculated across multiple test profiles for reliability.
                                         </p>
                                     </div>
                                     <div style="padding: 15px; border-left: 4px solid #dc3545; background: #f8f9fa; border-radius: 6px;">
@@ -1054,7 +1054,7 @@
                                 <p style="margin: 0; line-height: 1.6; color: #0d47a1;">
                                     <strong>Feature Focus:</strong> This evaluation specifically targets the { feature.replace('_', ' ').title() } capability of Katalon StudioAssist. 
                                     Metrics are weighted and interpreted based on the critical success factors for this particular feature, ensuring that evaluation 
-                                    results directly translate to real-world usability and effectiveness in automated testing scenarios.
+                                    results directly translate to real-world usability and effectiveness in automated testing profiles.
                                 </p>
                             </div>
                         </div>
@@ -1215,21 +1215,21 @@
                 }
 
                 // Chart data
-                const chartScoresData = {"consistency": {"Readability (LL1)": 8.78, "Readability (LL2)": 6.71, "Correctness (LL1)": 8.33, "Correctness (LL2)": 7.14}, "quality": {"Completeness (LL1)": 7.22, "Completeness (LL2)": 4.85, "Readability (LL1)": 8.78, "Readability (LL2)": 6.71, "Clarity (LL1)": 8.78, "Clarity (LL2)": 6.719999999999999, "Relevance (LL1)": 7.22, "Relevance (LL2)": 4.789999999999999}, "accuracy": {"Correctness (LL1)": 8.33, "Correctness (LL2)": 7.14, "Functionality (LL1)": 8.33, "Functionality (LL2)": 7.14, "Functional Correctness (LL1)": 8.33, "Functional Correctness (LL2)": 7.140000000000001, "Technical Precision (LL1)": 8.33, "Technical Precision (LL2)": 7.140000000000001}, "response_time": {"Average Response Time (LL1)": 2.3, "Average Response Time (LL2)": 1.8, "Response Consistency (LL1)": 0.85, "Response Consistency (LL2)": 0.92}};
+                const chartScoresData = {"consistency": {"Readability (LLM1)": 8.78, "Readability (LLM2)": 6.71, "Correctness (LLM1)": 8.33, "Correctness (LLM2)": 7.14}, "quality": {"Completeness (LLM1)": 7.22, "Completeness (LLM2)": 4.85, "Readability (LLM1)": 8.78, "Readability (LLM2)": 6.71, "Clarity (LLM1)": 8.78, "Clarity (LLM2)": 6.719999999999999, "Relevance (LLM1)": 7.22, "Relevance (LLM2)": 4.789999999999999}, "accuracy": {"Correctness (LLM1)": 8.33, "Correctness (LLM2)": 7.14, "Functionality (LLM1)": 8.33, "Functionality (LLM2)": 7.14, "Functional Correctness (LLM1)": 8.33, "Functional Correctness (LLM2)": 7.140000000000001, "Technical Precision (LLM1)": 8.33, "Technical Precision (LLM2)": 7.140000000000001}, "response_time": {"Average Response Time (LLM1)": 2.3, "Average Response Time (LLM2)": 1.8, "Response Consistency (LLM1)": 0.85, "Response Consistency (LLM2)": 0.92}};
                 console.log('Chart data:', chartScoresData);
 
                 // JSON Data
                 const baselineJsonData = {
   "metadata": {
     "feature": "explain_code",
-    "llm_version": "LL1",
+    "llm_version": "LLM1",
     "creation_timestamp": "2025-06-02T14:21:43.171724",
     "total_results": 9,
     "dataset_type": "baseline",
     "evaluation_metadata": {
       "evaluator_model": "claude-3-5-sonnet-20241022",
       "evaluation_timestamp": "2025-06-02T14:23:11.798828",
-      "original_baseline_file": "poc_data/explain_code/studioassist_explain_code_baseline_raw_ll1_20250602_142143_06e3db71.json"
+      "original_baseline_file": "poc_data/explain_code/studioassist_explain_code_baseline_raw_LLM1_20250602_142143_06e3db71.json"
     }
   },
   "inputs": [
@@ -1343,10 +1343,10 @@
       },
       "api_output": "/*\n * Automate the login process on a specified website.\n *\n * 1. Open a new browser instance.\n * 2. Navigate to the specified URL 'https://katalon.com'.\n * 3. Enter the provided username into the username input field.\n * 4. Enter the provided encrypted password into the password input field.\n * 5. Click the login button to submit the login form.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:21.488639",
       "response_time": 2.4235939979553223,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "accuracy": 8,
@@ -1354,7 +1354,7 @@
           "context": 6
         },
         "feedback": {
-          "completeness": "The explanation covers the basic flow but misses important details about test object usage, parameter handling, and potential error scenarios",
+          "completeness": "The explanation covers the basic flow but misses important details about test object usage, parameter handling, and potential error profiles",
           "accuracy": "The technical description of each step is correct, though it could be more specific about the WebUI class methods being used",
           "clarity": "The explanation is well-structured and easy to follow with clear step-by-step breakdown",
           "context": "Lacks explanation of Katalon-specific concepts like findTestObject(), encrypted text handling, and test object repository usage"
@@ -1392,12 +1392,12 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "/*\n * Automate a mobile application test scenario involving app launch, interaction, text input, and app closure.\n *\n * 1. Start the mobile application from the specified APK file with a reset state.\n * 2. Tap on a button identified by a test object in the mobile object repository.\n * 3. Set the text 'test text' into an editable text field identified by a test object.\n * 4. Close the mobile application.\n */",
+      "api_output": "/*\n * Automate a mobile application test profile involving app launch, interaction, text input, and app closure.\n *\n * 1. Start the mobile application from the specified APK file with a reset state.\n * 2. Tap on a button identified by a test object in the mobile object repository.\n * 3. Set the text 'test text' into an editable text field identified by a test object.\n * 4. Close the mobile application.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:24.013933",
       "response_time": 1.5233981609344482,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "accuracy": 8,
@@ -1445,10 +1445,10 @@
       },
       "api_output": "/*\n * Check if a web element is present within a specified timeout period.\n *\n *  - Parameters:\n *    - TestObject testObject: The web element to check for presence.\n *    - int timeout: The maximum time to wait for the element to be present, in seconds.\n *  - Steps:\n *    - Attempt to wait for the element to be present within the given timeout.\n *    - Return true if the element is found within the timeout.\n *    - Catch any exceptions if the element is not found or an error occurs.\n *    - Return false if an exception is caught.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:26.636336",
       "response_time": 1.6211090087890625,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "accuracy": 9,
@@ -1467,7 +1467,7 @@
           "Add @Keyword annotation explanation to clarify this is a custom keyword",
           "Mention the return type (boolean) in the description",
           "Explain what TestObject is in Katalon Studio context",
-          "Add example usage scenario or code snippet",
+          "Add example usage profile or code snippet",
           "Include common use cases for this keyword in test scripts",
           "Mention that WebUI is a built-in Katalon keyword class"
         ],
@@ -1496,10 +1496,10 @@
       },
       "api_output": "/*\n * Automate API testing by sending requests and verifying responses.\n *\n * 1. Send a GET request to retrieve users using a predefined test object.\n * 2. Send a POST request to create a user with specified name and job parameters, and verify the response.\n * 3. Verify that the response status code from the user creation request is 201 (Created).\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:28.944707",
       "response_time": 1.3060452938079834,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "accuracy": 8,
@@ -1547,10 +1547,10 @@
       },
       "api_output": "/*\n * Automate the process of inputting user credentials from test data into corresponding fields.\n *\n * 1. Retrieve test data named 'TestData/UserCredentials'.\n * 2. Iterate through each row of the test data.\n * 3. Extract 'Username' and 'Password' values from the current row.\n * 4. Set the extracted username into the username input field.\n * 5. Set the extracted password into the password input field.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:31.643025",
       "response_time": 1.696436882019043,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "accuracy": 8,
@@ -1598,10 +1598,10 @@
       },
       "api_output": "/*\n * Verify the presence of a submit button and click it if available; otherwise, mark the test as failed.\n *\n * 1. Verify if the submit button element is present within 10 seconds, handling failure optionally.\n * 2. Click the submit button if it is present.\n * 3. Mark the test as failed with a message if the submit button is not found.\n * 4. Introduce a delay of 2 seconds after the click or failure handling.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:34.080390",
       "response_time": 1.4360709190368652,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "accuracy": 9,
@@ -1621,7 +1621,7 @@
           "Include brief descriptions of Katalon-specific methods like findTestObject() and WebUI class functions",
           "Mention that KeywordUtil is a Katalon utility class for test execution control",
           "Consider adding a note about best practices for delay usage in Katalon",
-          "Include information about potential timeout scenarios with the 10-second wait"
+          "Include information about potential timeout profiles with the 10-second wait"
         ],
         "meets_requirements": true,
         "evaluator_model": "claude-3-5-sonnet-20241022",
@@ -1648,10 +1648,10 @@
       },
       "api_output": "/*\n * Scroll the web page to the bottom and capture a screenshot of the page.\n *\n * 1. Retrieve the current web driver instance.\n * 2. Cast the driver to a JavaScript executor.\n * 3. Execute JavaScript to scroll the window to the bottom of the page.\n * 4. Take a screenshot and save it as 'page_bottom.png'.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:37.753646",
       "response_time": 2.6712777614593506,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 8,
           "accuracy": 9,
@@ -1699,10 +1699,10 @@
       },
       "api_output": "/*\n * Perform a click action on a dynamically created button object identified by its text.\n *\n * 1. Define a new test object named 'dynamic_button'.\n * 2. Add an XPath property to the test object that matches a button containing the specified text.\n * 3. Execute a click action on the dynamically created test object.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:40.141391",
       "response_time": 1.3857061862945557,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 7,
           "accuracy": 8,
@@ -1750,10 +1750,10 @@
       },
       "api_output": "/*\n * Define setup and teardown procedures for browser-based test execution.\n *\n * 1. Open a new browser instance and maximize the window before test execution.\n * 2. Close the browser after test execution completes.\n */",
       "gui_output": "Explanation displayed below selected code",
-      "llm_version": "LL1",
+      "llm_version": "LLM1",
       "timestamp": "2025-06-02T14:21:42.169122",
       "response_time": 1.025757074356079,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 6,
           "accuracy": 8,
@@ -1963,14 +1963,14 @@
                 const targetJsonData = {
   "metadata": {
     "feature": "explain_code",
-    "llm_version": "LL2",
+    "llm_version": "LLM2",
     "creation_timestamp": "2025-06-02T14:23:56.264890",
     "total_results": 9,
     "dataset_type": "target",
     "evaluation_metadata": {
       "evaluator_model": "claude-3-5-sonnet-20241022",
       "evaluation_timestamp": "2025-06-02T14:25:32.108127",
-      "original_baseline_file": "poc_data/explain_code/studioassist_explain_code_target_raw_ll2_20250602_142356_47197f3c.json"
+      "original_baseline_file": "poc_data/explain_code/studioassist_explain_code_target_raw_LLM2_20250602_142356_47197f3c.json"
     }
   },
   "inputs": [
@@ -2082,10 +2082,10 @@
       },
       "api_output": "// Open a browser, navigate to the Katalon website, enter the username and encrypted password, and click the login button.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:36.318311",
       "response_time": 1.4102439880371094,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 6,
           "accuracy": 8,
@@ -2132,10 +2132,10 @@
       },
       "api_output": "// Start application, tap a button, set text in an edit field, and close the application.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:40.230838",
       "response_time": 2.911194086074829,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 4,
           "accuracy": 7,
@@ -2182,10 +2182,10 @@
       },
       "api_output": "// Check if an element is present within a specified timeout and return true or false based on the result.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:42.491915",
       "response_time": 1.2591872215270996,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 4,
           "accuracy": 7,
@@ -2206,7 +2206,7 @@
           "Explain the timeout parameter and its unit (seconds)",
           "Detail the exception handling behavior",
           "Mention that WebUI is a Katalon-specific class for web automation",
-          "Add examples of typical usage scenarios",
+          "Add examples of typical usage profiles",
           "Explain the return value meanings (true/false) and when each occurs"
         ],
         "meets_requirements": false,
@@ -2232,10 +2232,10 @@
       },
       "api_output": "// Send a request to get users, create a user with the name 'John' and job 'tester', and verify that the response status code is 201.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:44.555982",
       "response_time": 1.0620160102844238,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 6,
           "accuracy": 8,
@@ -2281,10 +2281,10 @@
       },
       "api_output": "// Retrieve user credentials from test data and input them into specified fields.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:46.531510",
       "response_time": 0.974027156829834,
-      "ll3_evaluation": null,
+      "LLM3_evaluation": null,
       "human_validation": null,
       "error": null
     },
@@ -2304,10 +2304,10 @@
       },
       "api_output": "// Check presence of the submit button and click it, or mark as failed if not found.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:48.595124",
       "response_time": 1.0582458972930908,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 4,
           "accuracy": 6,
@@ -2354,10 +2354,10 @@
       },
       "api_output": "// Scroll to the bottom of the page and take a screenshot.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:50.850683",
       "response_time": 1.254378080368042,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 4,
           "accuracy": 7,
@@ -2378,7 +2378,7 @@
           "Detail the JavaScript scrollTo function and its parameters",
           "Mention that WebUI is a Katalon-specific class for UI interactions",
           "Explain the screenshot naming convention and where screenshots are stored in Katalon",
-          "Add context about when this code might be useful in test automation scenarios"
+          "Add context about when this code might be useful in test automation profiles"
         ],
         "meets_requirements": false,
         "evaluator_model": "claude-3-5-sonnet-20241022",
@@ -2403,10 +2403,10 @@
       },
       "api_output": "// Create a dynamic TestObject for a button with specific text and click it.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:52.686473",
       "response_time": 0.8340630531311035,
-      "ll3_evaluation": null,
+      "LLM3_evaluation": null,
       "human_validation": null,
       "error": null
     },
@@ -2426,10 +2426,10 @@
       },
       "api_output": "// Set up and tear down browser before and after tests by opening, maximizing, and closing the browser.",
       "gui_output": "Output displayed in Katalon Studio explain_code interface",
-      "llm_version": "LL2",
+      "llm_version": "LLM2",
       "timestamp": "2025-06-02T14:23:55.262810",
       "response_time": 1.5741829872131348,
-      "ll3_evaluation": {
+      "LLM3_evaluation": {
         "scores": {
           "completeness": 6,
           "accuracy": 7,
@@ -2648,7 +2648,7 @@
 };
 
                 // Criteria comparison data
-                const criteriaComparisonData = {"readability": {"ll1_mean": 8.78, "ll2_mean": 6.71, "difference": -2.07, "trend": "declined"}, "correctness": {"ll1_mean": 8.33, "ll2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "completeness": {"ll1_mean": 7.22, "ll2_mean": 4.85, "difference": -2.37, "trend": "declined"}, "clarity": {"ll1_mean": 8.78, "ll2_mean": 6.72, "difference": -2.06, "trend": "declined"}, "relevance": {"ll1_mean": 6.0, "ll2_mean": 3.57, "difference": -2.43, "trend": "declined"}, "functionality": {"ll1_mean": 8.33, "ll2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "functional_correctness": {"ll1_mean": 8.33, "ll2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "technical_precision": {"ll1_mean": 8.33, "ll2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "response_time": {"ll1_mean": 6.0, "ll2_mean": 6.0, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"ll1_mean": 6.0, "ll2_mean": 3.57, "difference": -2.43, "trend": "declined"}};
+                const criteriaComparisonData = {"readability": {"LLM1_mean": 8.78, "LLM2_mean": 6.71, "difference": -2.07, "trend": "declined"}, "correctness": {"LLM1_mean": 8.33, "LLM2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "completeness": {"LLM1_mean": 7.22, "LLM2_mean": 4.85, "difference": -2.37, "trend": "declined"}, "clarity": {"LLM1_mean": 8.78, "LLM2_mean": 6.72, "difference": -2.06, "trend": "declined"}, "relevance": {"LLM1_mean": 6.0, "LLM2_mean": 3.57, "difference": -2.43, "trend": "declined"}, "functionality": {"LLM1_mean": 8.33, "LLM2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "functional_correctness": {"LLM1_mean": 8.33, "LLM2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "technical_precision": {"LLM1_mean": 8.33, "LLM2_mean": 7.14, "difference": -1.19, "trend": "declined"}, "response_time": {"LLM1_mean": 6.0, "LLM2_mean": 6.0, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"LLM1_mean": 6.0, "LLM2_mean": 3.57, "difference": -2.43, "trend": "declined"}};
                 console.log('Criteria comparison data:', criteriaComparisonData);
 
                 // Function to create charts with error handling and debugging
@@ -2668,29 +2668,29 @@
                         
                         const ctx = canvas.getContext('2d');
                         
-                        // Check if we have dimensional LL1/LL2 data structure
+                        // Check if we have dimensional LLM1/LLM2 data structure
                         const labels = Object.keys(data);
-                        const hasLL1LL2Data = labels.some(label => label.includes('(LL1)') || label.includes('(LL2)'));
+                        const hasLLM1LLM2Data = labels.some(label => label.includes('(LLM1)') || label.includes('(LLM2)'));
                         
                         let chartConfig;
                         
-                        if (hasLL1LL2Data) {
-                            // Group LL1 and LL2 data by dimension
+                        if (hasLLM1LLM2Data) {
+                            // Group LLM1 and LLM2 data by dimension
                             const dimensions = new Set();
-                            const ll1Data = [];
-                            const ll2Data = [];
+                            const LLM1Data = [];
+                            const LLM2Data = [];
                             const dimensionLabels = [];
                             
                             // Extract dimension names and group data
                             labels.forEach(label => {
-                                if (label.includes('(LL1)')) {
-                                    const dimension = label.replace(' (LL1)', '');
+                                if (label.includes('(LLM1)')) {
+                                    const dimension = label.replace(' (LLM1)', '');
                                     dimensions.add(dimension);
                                     dimensionLabels.push(dimension);
-                                    ll1Data.push(data[label]);
-                                    // Find corresponding LL2 data
-                                    const ll2Label = `${dimension} (LL2)`;
-                                    ll2Data.push(data[ll2Label] || 0);
+                                    LLM1Data.push(data[label]);
+                                    // Find corresponding LLM2 data
+                                    const LLM2Label = `${dimension} (LLM2)`;
+                                    LLM2Data.push(data[LLM2Label] || 0);
                                 }
                             });
                             
@@ -2700,8 +2700,8 @@
                                     labels: dimensionLabels,
                                     datasets: [
                                         {
-                                            label: 'LL1 (Baseline)',
-                                            data: ll1Data,
+                                            label: 'LLM1 (Baseline)',
+                                            data: LLM1Data,
                                             backgroundColor: '#667eea80',
                                             borderColor: '#667eea',
                                             borderWidth: 2,
@@ -2709,8 +2709,8 @@
                                             borderSkipped: false
                                         },
                                         {
-                                            label: 'LL2 (Target)',
-                                            data: ll2Data,
+                                            label: 'LLM2 (Target)',
+                                            data: LLM2Data,
                                             backgroundColor: '#28a74580',
                                             borderColor: '#28a745',
                                             borderWidth: 2,
@@ -2785,9 +2785,9 @@
                                             callbacks: {
                                                 afterBody: function(context) {
                                                     const index = context[0].dataIndex;
-                                                    const ll1Value = ll1Data[index];
-                                                    const ll2Value = ll2Data[index];
-                                                    const diff = ll2Value - ll1Value;
+                                                    const LLM1Value = LLM1Data[index];
+                                                    const LLM2Value = LLM2Data[index];
+                                                    const diff = LLM2Value - LLM1Value;
                                                     const trend = diff > 0.1 ? '📈 Improved' : 
                                                                 diff < -0.1 ? '📉 Declined' : 
                                                                 '➡️ Maintained';
@@ -2932,14 +2932,14 @@
                 // Function to create all comprehensive analysis charts
                 function createComprehensiveAnalysisCharts() {
                     // Diversity Analysis Data
-                    const ll1DiversityData = {
+                    const LLM1DiversityData = {
                         'Standard Implementations': 42,
                         'Advanced Features': 28,
                         'Error Handling': 18,
                         'Edge Cases': 12
                     };
                     
-                    const ll2DiversityData = {
+                    const LLM2DiversityData = {
                         'Standard Implementations': 38,
                         'Advanced Features': 32,
                         'Error Handling': 20,
@@ -2949,7 +2949,7 @@
                     const diversityColors = ['#667eea80', '#28a74580', '#ffc10780', '#dc354580'];
                     
                     // Quality Analysis Data
-                    const ll1QualityData = {
+                    const LLM1QualityData = {
                         'test': 35,
                         'assert': 25,
                         'verify': 20,
@@ -2957,7 +2957,7 @@
                         'check': 5
                     };
                     
-                    const ll2QualityData = {
+                    const LLM2QualityData = {
                         'test': 32,
                         'assert': 28,
                         'verify': 22,
@@ -2968,10 +2968,10 @@
                     const qualityColors = ['#ff6b6b80', '#4ecdc480', '#45b7d180', '#96ceb480', '#feca5780'];
                     
                     // Create pie charts
-                    createPieChart('ll1DiversityChart', 'LL1 Pattern Diversity', ll1DiversityData, diversityColors);
-                    createPieChart('ll2DiversityChart', 'LL2 Pattern Diversity', ll2DiversityData, diversityColors);
-                    createPieChart('ll1QualityChart', 'LL1 Quality Keywords', ll1QualityData, qualityColors);
-                    createPieChart('ll2QualityChart', 'LL2 Quality Keywords', ll2QualityData, qualityColors);
+                    createPieChart('LLM1DiversityChart', 'LLM1 Pattern Diversity', LLM1DiversityData, diversityColors);
+                    createPieChart('LLM2DiversityChart', 'LLM2 Pattern Diversity', LLM2DiversityData, diversityColors);
+                    createPieChart('LLM1QualityChart', 'LLM1 Quality Keywords', LLM1QualityData, qualityColors);
+                    createPieChart('LLM2QualityChart', 'LLM2 Quality Keywords', LLM2QualityData, qualityColors);
                 }
 
                 // Create charts and JSON viewers when DOM is loaded

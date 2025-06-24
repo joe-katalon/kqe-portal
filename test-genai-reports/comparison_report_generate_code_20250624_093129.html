@@ -484,7 +484,7 @@
                             <img src="https://katalon.com/hubfs/katalon_logo%20(1).svg" alt="Katalon Logo" style="height: 45px; filter: brightness(0) invert(1);">
                             <h1 style="margin: 0;">Test Katalon Generative AI Features Report</h1>
                         </div>
-                        <div class="subtitle">Feature: Generate_Code | Generated: 2025-06-10 17:21:33</div>
+                        <div class="subtitle">Feature: Generate_Code | Generated: 2025-06-24 09:31:29</div>
                     </div>
                 </div>
 
@@ -501,9 +501,9 @@
                             </div>
                             <div class="summary-card">
                                 <h3>Dataset Summary</h3>
-                                <p><strong>Baseline (LLM1):</strong> 8 test cases<br>
-                                <strong>Target (LLM2):</strong> 8 test cases<br>
-                                <strong>Evaluation Model:</strong> gemini-2.5-flash-preview-05-20</p>
+                                <p><strong>Baseline (LLM1):</strong> 5 test cases<br>
+                                <strong>Target (LLM2):</strong> 5 test cases<br>
+                                <strong>Evaluation Model:</strong> gemini-1.5-flash-latest</p>
                             </div>
                         </div>
 
@@ -526,19 +526,19 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Baseline Model (LLM1)</strong></td>
-                                    <td>katalon_ai - gpt-4o-mini</td>
+                                    <td>unknown - unknown</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Target Model (LLM2)</strong></td>
-                                    <td>personal_openai - gpt-4o-mini</td>
+                                    <td>unknown - unknown</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Evaluator Model (LLM3)</strong></td>
-                                    <td>gemini - gemini-2.5-flash-preview-05-20</td>
+                                    <td>gemini - gemini-1.5-flash-latest</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Total Comparisons</strong></td>
-                                    <td>8</td>
+                                    <td>5</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -705,9 +705,7 @@
                                 <h4>✅ Key Differences</h4>
                                 <ul class="analysis-list">
                                     
-                                    <li><span>•</span> LLM2 shows a significant and consistent decline across all evaluated metrics (completeness, correctness, readability, functionality) compared to LLM1.</li>
-                                    
-                                    <li><span>•</span> The average scores for LLM2 are notably lower, indicating a general degradation in output quality and functionality.</li>
+                                    <li><span>•</span> LLM2 shows significant improvement in completeness but substantial decline in correctness and functionality.</li>
                                     
                                 </ul>
                             </div>
@@ -716,7 +714,7 @@
                                 <h4>✅ Improvements in LLM2</h4>
                                 <ul class="analysis-list positive">
                                     
-                                    <li><span>✅</span> No improvements were observed in any of the provided evaluation metrics for LLM2 compared to LLM1.</li>
+                                    <li><span>✅</span> Completeness scores improved significantly in LLM2.</li>
                                     
                                 </ul>
                             </div>
@@ -725,13 +723,7 @@
                                 <h4>❌ Regressions in LLM2</h4>
                                 <ul class="analysis-list negative">
                                     
-                                    <li><span>❌</span> Significant regression in completeness (-1.77 points), indicating less comprehensive outputs.</li>
-                                    
-                                    <li><span>❌</span> Substantial regression in functionality (-1.71 points), suggesting generated code is less likely to work as intended.</li>
-                                    
-                                    <li><span>❌</span> Notable regression in correctness (-1.04 points), implying reduced factual accuracy or logical soundness.</li>
-                                    
-                                    <li><span>❌</span> Decline in readability (-0.61 points), indicating less clear or well-structured outputs.</li>
+                                    <li><span>❌</span> Correctness and functionality scores declined drastically in LLM2.</li>
                                     
                                 </ul>
                             </div>
@@ -740,9 +732,7 @@
                                 <h4>⚠️ Areas of Concern</h4>
                                 <ul class="analysis-list concern">
                                     
-                                    <li><span>⚠️</span> The widespread and substantial decline across all measured aspects of LLM2 raises serious concerns about its suitability for any task where LLM1 was previously used.</li>
-                                    
-                                    <li><span>⚠️</span> The lack of data for other critical metrics (clarity, relevance, guideline adherence, functional correctness, technical precision, test coverage, performance) prevents a holistic understanding but the available data is overwhelmingly negative.</li>
+                                    <li><span>⚠️</span> The significant drop in correctness and functionality raises serious concerns about the reliability of LLM2. Further investigation is needed to understand the root cause of these regressions.</li>
                                     
                                 </ul>
                             </div>
@@ -889,20 +879,20 @@
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
             
                                     <div style="padding: 15px; border-left: 4px solid #667eea; background: #f8f9fa; border-radius: 6px;">
-                                        <h4 style="color: #667eea; margin: 0 0 10px 0;">📖 Readability</h4>
-                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
-                                            <strong>Measures:</strong> Clarity of code structure, naming conventions, comments, and documentation quality.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Exceptionally clear and well-documented)<br>
-                                            <strong>Impact:</strong> Affects maintainability and team productivity.
-                                        </p>
-                                    </div>
-                    
-                                    <div style="padding: 15px; border-left: 4px solid #667eea; background: #f8f9fa; border-radius: 6px;">
                                         <h4 style="color: #667eea; margin: 0 0 10px 0;">✅ Correctness</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> Syntactic accuracy, logical correctness, and adherence to programming best practices.<br>
                                             <strong>Scale:</strong> 0-10 (10 = Perfect syntax and logic)<br>
                                             <strong>Impact:</strong> Determines if generated code will execute without errors.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #667eea; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #667eea; margin: 0 0 10px 0;">📖 Readability</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> Clarity of code structure, naming conventions, comments, and documentation quality.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Exceptionally clear and well-documented)<br>
+                                            <strong>Impact:</strong> Affects maintainability and team productivity.
                                         </p>
                                     </div>
                     
@@ -922,20 +912,20 @@
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
             
                                     <div style="padding: 15px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 6px;">
-                                        <h4 style="color: #28a745; margin: 0 0 10px 0;">💡 Clarity</h4>
-                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
-                                            <strong>Measures:</strong> How easily understandable and well-explained the output is for target users.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Crystal clear and intuitive)<br>
-                                            <strong>Impact:</strong> Affects user adoption and learning curve.
-                                        </p>
-                                    </div>
-                    
-                                    <div style="padding: 15px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 6px;">
                                         <h4 style="color: #28a745; margin: 0 0 10px 0;">🎯 Relevance</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
                                             <strong>Measures:</strong> How well the output matches the specific context and intended use case.<br>
                                             <strong>Scale:</strong> 0-10 (10 = Perfectly targeted and contextual)<br>
                                             <strong>Impact:</strong> Determines practical usefulness in real profiles.
+                                        </p>
+                                    </div>
+                    
+                                    <div style="padding: 15px; border-left: 4px solid #28a745; background: #f8f9fa; border-radius: 6px;">
+                                        <h4 style="color: #28a745; margin: 0 0 10px 0;">💡 Clarity</h4>
+                                        <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
+                                            <strong>Measures:</strong> How easily understandable and well-explained the output is for target users.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Crystal clear and intuitive)<br>
+                                            <strong>Impact:</strong> Affects user adoption and learning curve.
                                         </p>
                                     </div>
                     
@@ -964,11 +954,11 @@
                                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
             
                                     <div style="padding: 15px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 6px;">
-                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
+                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">🎓 Technical Precision</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
-                                            <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test profiles)<br>
-                                            <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
+                                            <strong>Measures:</strong> Correct use of APIs, frameworks, libraries, and technical implementation details.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Expert-level technical accuracy)<br>
+                                            <strong>Impact:</strong> Affects performance, security, and maintainability.
                                         </p>
                                     </div>
                     
@@ -982,11 +972,11 @@
                                     </div>
                     
                                     <div style="padding: 15px; border-left: 4px solid #ffc107; background: #f8f9fa; border-radius: 6px;">
-                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">🎓 Technical Precision</h4>
+                                        <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚙️ Functionality</h4>
                                         <p style="margin: 0; font-size: 0.9em; line-height: 1.5; color: #5a6c7d;">
-                                            <strong>Measures:</strong> Correct use of APIs, frameworks, libraries, and technical implementation details.<br>
-                                            <strong>Scale:</strong> 0-10 (10 = Expert-level technical accuracy)<br>
-                                            <strong>Impact:</strong> Affects performance, security, and maintainability.
+                                            <strong>Measures:</strong> Whether the generated code executes successfully and produces expected results.<br>
+                                            <strong>Scale:</strong> 0-10 (10 = Works perfectly in all test profiles)<br>
+                                            <strong>Impact:</strong> Core determinant of code usability and deployment readiness.
                                         </p>
                                     </div>
                     
@@ -1058,7 +1048,7 @@
         
 
                 <div class="footer">
-                    <p>Generated by Katalon StudioAssist LLM Evaluation Framework | 2025-06-10 17:21:33</p>
+                    <p>Generated by Katalon StudioAssist LLM Evaluation Framework | 2025-06-24 09:31:29</p>
                 </div>
             </div>
 
@@ -1211,7 +1201,7 @@
                 }
 
                 // Chart data
-                const chartScoresData = {"consistency": {"Readability (LLM1)": 9.75, "Readability (LLM2)": 9.142, "Correctness (LLM1)": 9.75, "Correctness (LLM2)": 8.714}, "quality": {"Completeness (LLM1)": 9.625, "Completeness (LLM2)": 7.857, "Readability (LLM1)": 9.75, "Readability (LLM2)": 9.142, "Clarity (LLM1)": 9.75, "Clarity (LLM2)": 9.75, "Relevance (LLM1)": 9.625, "Relevance (LLM2)": 9.625}, "accuracy": {"Correctness (LLM1)": 9.75, "Correctness (LLM2)": 8.714, "Functionality (LLM1)": 9.0, "Functionality (LLM2)": 7.285, "Functional Correctness (LLM1)": 9.0, "Functional Correctness (LLM2)": 9.0, "Technical Precision (LLM1)": 9.75, "Technical Precision (LLM2)": 9.75}, "response_time": {"Average Response Time (LLM1)": 2.3, "Average Response Time (LLM2)": 1.8, "Response Consistency (LLM1)": 0.85, "Response Consistency (LLM2)": 0.92}};
+                const chartScoresData = {"consistency": {"Readability (LLM1)": 10.0, "Readability (LLM2)": 9.4, "Correctness (LLM1)": 9.2, "Correctness (LLM2)": 6.8}, "quality": {"Completeness (LLM1)": 8.2, "Completeness (LLM2)": 9.2, "Readability (LLM1)": 10.0, "Readability (LLM2)": 9.4, "Clarity (LLM1)": 10.0, "Clarity (LLM2)": 10.0, "Relevance (LLM1)": 8.2, "Relevance (LLM2)": 8.2}, "accuracy": {"Correctness (LLM1)": 9.2, "Correctness (LLM2)": 6.8, "Functionality (LLM1)": 7.4, "Functionality (LLM2)": 6.0, "Functional Correctness (LLM1)": 7.4, "Functional Correctness (LLM2)": 7.4, "Technical Precision (LLM1)": 9.2, "Technical Precision (LLM2)": 9.2}, "response_time": {"Average Response Time (LLM1)": 2.3, "Average Response Time (LLM2)": 1.8, "Response Consistency (LLM1)": 0.85, "Response Consistency (LLM2)": 0.92}};
                 console.log('Chart data:', chartScoresData);
 
                 // JSON Data
@@ -1219,20 +1209,20 @@
   "metadata": {
     "feature": "generate_code",
     "llm_version": "LLM1",
-    "creation_timestamp": "2025-06-10T17:13:40.053325",
-    "total_results": 8,
+    "creation_timestamp": "2025-06-12T11:27:07.809352",
+    "total_results": 5,
     "dataset_type": "baseline",
     "evaluation_metadata": {
       "evaluator_model": "gemini-2.5-flash-preview-05-20",
-      "evaluation_timestamp": "2025-06-10T17:15:38.165056",
-      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_LLM1_20250610_171340_b7fc2aa3.json"
+      "evaluation_timestamp": "2025-06-12T11:28:22.008298",
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_baseline_raw_LLM1_20250612_112707_34eee40c.json"
     }
   },
   "inputs": [
     {
       "input_id": "gen_code_001",
       "feature": "generate_code",
-      "prompt": "// Perform a user login:\n// - Open browser to \"https://katalon-demo-cura.herokuapp.com\"\n// - Set text \"John Doe\" into Test Object 'Object Repository/Page_Login/txt_Username'\n// - Set text \"ThisIsNotAPassword\" into Test Object 'Object Repository/Page_Login/txt_Password'\n// - Click Test Object 'Object Repository/Page_Login/btn_Login'\n// - Verify Test Object 'Object Repository/Page_Home/lbl_MakeAppointment' is visible",
+      "prompt": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1242,7 +1232,7 @@
     {
       "input_id": "gen_code_002",
       "feature": "generate_code",
-      "prompt": "/* Interact with a web form:\n* - Select option by value \"Hongkong CURA Healthcare Center\" from Test Object 'Object Repository/Page_Appointment/ddl_Facility'\n* - Check Test Object 'Object Repository/Page_Appointment/chk_ApplyForReadmission'\n* - Set text \"21/05/2024\" into Test Object 'Object Repository/Page_Appointment/txt_VisitDate'\n* - Get text from Test Object 'Object Repository/Page_AppointmentConfirmation/lbl_ConfirmationMessage' and store it in a global variable 'G_AppointmentConfirmationText'*/",
+      "prompt": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1252,7 +1242,7 @@
     {
       "input_id": "gen_code_003",
       "feature": "generate_code",
-      "prompt": "// Automate a mobile app profile (Android):\n// - Start application 'com.android.calculator2'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit5'\n// - Tap Test Object 'Object Repository/Mobile/btn_Plus'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit3'\n// - Verify text \"8\" is present on Test Object 'Object Repository/Mobile/txt_Result'",
+      "prompt": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1262,7 +1252,7 @@
     {
       "input_id": "gen_code_004",
       "feature": "generate_code",
-      "prompt": "/* Perform a POST API request:\n* - Send POST request to 'Object Repository/API/Reqres/CreateUser' with body:\n*   { \"name\": \"morpheus\", \"job\": \"leader\" }\n* - Verify response status code is 201\n* - Verify JSON response contains \"name\" as \"morpheus\" and \"job\" as \"leader\"*/",
+      "prompt": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1272,37 +1262,7 @@
     {
       "input_id": "gen_code_005",
       "feature": "generate_code",
-      "prompt": "// Implement data-driven testing for searching products:\n// - Read data from Excel file \"Data Files/ProductSearchData.xlsx\" (Sheet1)\n// - For each row:\n//   - Open browser to \"https://www.demoblaze.com\"\n//   - Set text from column \"SearchTerm\" into Test Object 'Object Repository/Page_Home/txt_SearchInput'\n//   - Click Test Object 'Object Repository/Page_Home/btn_Search'\n//   - Verify Test Object 'Object Repository/Page_Search/lbl_SearchResult' contains text from column \"ExpectedProduct\"",
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "prompt_id": "generate-code"
-    },
-    {
-      "input_id": "gen_code_006",
-      "feature": "generate_code",
-      "prompt": "/* Create a custom keyword named 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp' that returns the current system timestamp as a string in 'yyyyMMdd_HHmmss' format. */",
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "prompt_id": "generate-code"
-    },
-    {
-      "input_id": "gen_code_007",
-      "feature": "generate_code",
-      "prompt": "// Handle dynamic element and error handling:\n// - Wait for Test Object 'Object Repository/Page_Dashboard/div_DynamicWidget' to be visible with a timeout of 20 seconds\n// - Click Test Object 'Object Repository/Page_Dashboard/btn_ConfigureWidget'\n// - If an element is not found or an exception occurs, take a screenshot and save it as \"Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\" in the Reports folder.",
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "prompt_id": "generate-code"
-    },
-    {
-      "input_id": "gen_code_008",
-      "feature": "generate_code",
-      "prompt": "/* Perform a GET API request with parameters and validate schema:\n* - Send GET request to 'Object Repository/API/Reqres/GetUsers' with query parameters:\n*   - page: \"2\"\n* - Verify response status code is 200\n* - Validate JSON response against schema file \"Data Files/UserListSchema.json\"*/",
+      "prompt": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1314,11 +1274,11 @@
     "gen_code_001": {
       "input_id": "gen_code_001",
       "feature": "generate_code",
-      "user_input": "// Perform a user login:\n// - Open browser to \"https://katalon-demo-cura.herokuapp.com\"\n// - Set text \"John Doe\" into Test Object 'Object Repository/Page_Login/txt_Username'\n// - Set text \"ThisIsNotAPassword\" into Test Object 'Object Repository/Page_Login/txt_Password'\n// - Click Test Object 'Object Repository/Page_Login/btn_Login'\n// - Verify Test Object 'Object Repository/Page_Home/lbl_MakeAppointment' is visible",
+      "user_input": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
       "api_input": {
         "id": "studio-g4",
         "inputParameters": {
-          "user_input": "// Perform a user login:\n// - Open browser to \"https://katalon-demo-cura.herokuapp.com\"\n// - Set text \"John Doe\" into Test Object 'Object Repository/Page_Login/txt_Username'\n// - Set text \"ThisIsNotAPassword\" into Test Object 'Object Repository/Page_Login/txt_Password'\n// - Click Test Object 'Object Repository/Page_Login/btn_Login'\n// - Verify Test Object 'Object Repository/Page_Home/lbl_MakeAppointment' is visible"
+          "user_input": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible."
         },
         "promptId": "generate-code",
         "feature": "generate_code"
@@ -1327,34 +1287,33 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Open browser to \"https://katalon-demo-cura.herokuapp.com\"\nWebUI.openBrowser('https://katalon-demo-cura.herokuapp.com')\n\n// Set text \"John Doe\" into Test Object 'Object Repository/Page_Login/txt_Username'\nWebUI.setText(findTestObject('Object Repository/Page_Login/txt_Username'), 'John Doe')\n\n// Set text \"ThisIsNotAPassword\" into Test Object 'Object Repository/Page_Login/txt_Password'\nWebUI.setText(findTestObject('Object Repository/Page_Login/txt_Password'), 'ThisIsNotAPassword')\n\n// Click Test Object 'Object Repository/Page_Login/btn_Login'\nWebUI.click(findTestObject('Object Repository/Page_Login/btn_Login'))\n\n// Verify Test Object 'Object Repository/Page_Home/lbl_MakeAppointment' is visible\nWebUI.verifyElementVisible(findTestObject('Object Repository/Page_Home/lbl_MakeAppointment'))",
+      "api_output": "// Open browser and navigate to the specified URL\nWebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')\n\n// Enter 'John Doe' into the username field\nWebUI.setText(findTestObject('Test Objects/LoginPage/txt_Username'), 'John Doe')\n\n// Enter 'ThisIsNotAPassword' into the password field\nWebUI.setText(findTestObject('Test Objects/LoginPage/txt_Password'), 'ThisIsNotAPassword')\n\n// Click the login button\nWebUI.click(findTestObject('Test Objects/LoginPage/btn_Login'))\n\n// Verify that the Make Appointment text is visible on the home page\nWebUI.verifyElementVisible(findTestObject('Test Objects/HomePage/txt_MakeAppointment'))",
       "gui_output": "Code generated below prompt in Script editor",
       "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:12:54.960308",
-      "response_time": 6.138622999191284,
+      "timestamp": "2025-06-12T11:26:47.818740",
+      "response_time": 5.065280914306641,
       "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 10,
           "readability": 10,
-          "functionality": 8
+          "functionality": 10
         },
         "feedback": {
-          "completeness": "The generated code addresses all requirements explicitly stated in the user input. Every instruction has a corresponding line of code.",
-          "correctness": "The syntax is perfectly valid for Katalon Studio. It correctly uses `WebUI` keywords (`openBrowser`, `setText`, `click`, `verifyElementVisible`) and the `findTestObject()` function to reference test objects by their repository path. All arguments are passed correctly.",
-          "readability": "The code is highly readable. It maintains the comments from the user input, which clearly explain each step. The code is well-structured and easy to follow, with proper indentation.",
-          "functionality": "The code would execute successfully in Katalon Studio, assuming the test objects exist and the application behaves as expected (i.e., elements are present when the script tries to interact with them). However, for a complete and robust test case, it lacks `WebUI.closeBrowser()` at the end, which is crucial for proper resource management. Also, it doesn't include explicit waits (e.g., `waitForElementVisible`) which are often necessary in real-world profiles to prevent failures due to timing issues or slow page loads. While these don't prevent the *execution* of the requested steps, they are important for stable automation."
+          "completeness": "The generated code addresses all requirements specified in the user input. Every action requested (open browser, navigate, enter text, click, verify visibility) is present and correctly implemented.",
+          "correctness": "The syntax is perfectly valid for Katalon Studio. It uses the correct `WebUI` keywords (`openBrowser`, `setText`, `click`, `verifyElementVisible`) and the `findTestObject()` method to correctly reference test objects. There are no syntax errors or incorrect keyword usages.",
+          "readability": "The code is exceptionally well-structured. Each line represents a distinct action, and the comments are clear, concise, and accurately describe the purpose of each step, directly mapping to the user's intent. Indentation is clean and consistent.",
+          "functionality": "This code would execute successfully in Katalon Studio, assuming the referenced test objects (`Test Objects/LoginPage/txt_Username`, `Test Objects/LoginPage/txt_Password`, `Test Objects/LoginPage/btn_Login`, `Test Objects/HomePage/txt_MakeAppointment`) exist and are correctly defined within the project. The flow is logical and follows standard web automation practices."
         },
-        "overall_assessment": "The StudioAssist output is excellent. It accurately translates the user's natural language instructions into functional and syntactically correct Katalon Studio code. It's highly complete and readable. The only minor functional omissions are the lack of a `closeBrowser` call and robust waiting strategies, which are common best practices for stable test automation but were not explicitly requested by the user.",
-        "overall_score": 9.5,
+        "overall_assessment": "The StudioAssist output is outstanding. It flawlessly translates the natural language prompt into highly functional, correct, complete, and readable Katalon Studio automation code. It demonstrates a strong understanding of common web automation actions and Katalon's API. This is an excellent example of effective code generation.",
+        "overall_score": 10,
         "suggestions": [
-          "Add `WebUI.closeBrowser()` at the end of the test case to ensure the browser instance is properly closed after execution, preventing resource leaks.",
-          "Consider incorporating explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForElementClickable`) before interacting with elements to make the test more robust against varying page load times and dynamic content.",
-          "For production-grade tests, consider adding basic error handling (e.g., `try-catch` blocks) around critical steps to manage unexpected failures gracefully."
+          "While not explicitly requested by the prompt, for a complete test script, it's good practice to add `WebUI.closeBrowser()` at the end to ensure the browser instance is closed after the test execution.",
+          "For increased robustness in real-world profiles, consider adding explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForPageLoad`) before interacting with elements, especially after navigation or clicks that trigger page loads. However, for this specific prompt, the current output is sufficient."
         ],
         "meets_requirements": true,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:13:52.659573"
+        "evaluation_timestamp": "2025-06-12T11:27:16.123026"
       },
       "human_validation": null,
       "error": null
@@ -1362,11 +1321,11 @@
     "gen_code_002": {
       "input_id": "gen_code_002",
       "feature": "generate_code",
-      "user_input": "/* Interact with a web form:\n* - Select option by value \"Hongkong CURA Healthcare Center\" from Test Object 'Object Repository/Page_Appointment/ddl_Facility'\n* - Check Test Object 'Object Repository/Page_Appointment/chk_ApplyForReadmission'\n* - Set text \"21/05/2024\" into Test Object 'Object Repository/Page_Appointment/txt_VisitDate'\n* - Get text from Test Object 'Object Repository/Page_AppointmentConfirmation/lbl_ConfirmationMessage' and store it in a global variable 'G_AppointmentConfirmationText'*/",
+      "user_input": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
       "api_input": {
         "id": "studio-g4",
         "inputParameters": {
-          "user_input": "/* Interact with a web form:\n* - Select option by value \"Hongkong CURA Healthcare Center\" from Test Object 'Object Repository/Page_Appointment/ddl_Facility'\n* - Check Test Object 'Object Repository/Page_Appointment/chk_ApplyForReadmission'\n* - Set text \"21/05/2024\" into Test Object 'Object Repository/Page_Appointment/txt_VisitDate'\n* - Get text from Test Object 'Object Repository/Page_AppointmentConfirmation/lbl_ConfirmationMessage' and store it in a global variable 'G_AppointmentConfirmationText'*/"
+          "user_input": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */"
         },
         "promptId": "generate-code",
         "feature": "generate_code"
@@ -1375,33 +1334,34 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Select the option by value \"Hongkong CURA Healthcare Center\" from the dropdown\nWebUI.selectOptionByValue(findTestObject('Object Repository/Page_Appointment/ddl_Facility'), 'Hongkong CURA Healthcare Center', false)\n\n// Check the checkbox for Apply For Readmission\nWebUI.check(findTestObject('Object Repository/Page_Appointment/chk_ApplyForReadmission'))\n\n// Set the visit date text field to \"21/05/2024\"\nWebUI.setText(findTestObject('Object Repository/Page_Appointment/txt_VisitDate'), '21/05/2024')\n\n// Get the confirmation message text and store it in global variable G_AppointmentConfirmationText\nGlobalVariable.G_AppointmentConfirmationText = WebUI.getText(findTestObject('Object Repository/Page_AppointmentConfirmation/lbl_ConfirmationMessage'))",
+      "api_output": "// Tap on the login button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Login'), 0)\n// Enter email into the email text field\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Email'), 'user@example.com', 0)\n// Enter password into the password text field\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Password'), 'password123', 0)\n// Swipe up on the scroll view to find the submit button\nMobile.swipe(0, 800, 0, 200)\n// Tap on the submit button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Submit'), 0)",
       "gui_output": "Code generated below prompt in Script editor",
       "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:05.373082",
-      "response_time": 9.411442995071411,
+      "timestamp": "2025-06-12T11:26:52.264669",
+      "response_time": 3.4440019130706787,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 10,
+          "completeness": 5,
           "correctness": 10,
           "readability": 10,
-          "functionality": 10
+          "functionality": 4
         },
         "feedback": {
-          "completeness": "The code fully addresses all four requirements specified in the user input. No steps or interactions were missed.",
-          "correctness": "The syntax is perfectly valid for Katalon Studio. It correctly uses standard WebUI keywords (`selectOptionByValue`, `check`, `setText`, `getText`), `findTestObject` for locating test objects, and `GlobalVariable` for accessing global variables. The arguments passed to the keywords are also correct.",
-          "readability": "The code is exceptionally readable. Each line is accompanied by a clear, concise, and accurate comment describing its purpose. The code is well-structured with proper indentation, making it easy to understand the flow of actions.",
-          "functionality": "This code would execute successfully in Katalon Studio, assuming the specified Test Objects exist in the Object Repository and the global variable `G_AppointmentConfirmationText` is defined. The keywords chosen are appropriate for the described interactions. While `setText` on a date field can sometimes be tricky depending on the date picker implementation (e.g., if it's read-only and requires a calendar interaction), for a direct 'set text' instruction, `WebUI.setText` is the correct and most common approach."
+          "completeness": "The code is missing the crucial first step: `Start 'Test Objects/Mobile/Application'`. This is a fundamental omission that prevents the script from running as a standalone test. Additionally, the 'swipe to find' part is implemented as a generic swipe, not a robust method that actively searches for the element during the swipe (e.g., `Mobile.swipeToElement`), which means it doesn't fully address the 'find' aspect of the requirement.",
+          "correctness": "All Katalon Studio keywords (`Mobile.tap`, `Mobile.setText`, `Mobile.swipe`, `findTestObject`) are used correctly with valid syntax and parameters. The `0` for timeout is a valid parameter.",
+          "readability": "The code is very readable. It includes clear, concise comments for each step, and the structure is straightforward and easy to understand.",
+          "functionality": "The code would not execute successfully as a standalone script because it omits the `Mobile.startApplication` step. Without the application being launched, subsequent actions like tapping or setting text will fail. While the individual `Mobile.tap`, `Mobile.setText`, and `Mobile.swipe` commands are syntactically correct, their successful execution is dependent on the application being in the correct state, which is not ensured by the generated code. The `Mobile.swipe` uses fixed coordinates, which might not reliably reveal the `btn_Submit` across different devices or screen sizes, making the 'find' aspect unreliable."
         },
-        "overall_assessment": "The StudioAssist output is outstanding. It provides a complete, correct, highly readable, and functional code snippet that perfectly matches the user's natural language instructions. It demonstrates a strong understanding of Katalon Studio's WebUI automation capabilities and best practices for code generation.",
-        "overall_score": 10,
+        "overall_assessment": "The StudioAssist output demonstrates good understanding of individual Katalon Mobile keywords and produces highly readable code with appropriate comments. However, it critically fails on completeness by omitting the initial application launch step, which is explicitly stated in the user's prompt. Furthermore, the implementation of the 'swipe to find' action is not robust, relying on a fixed coordinate swipe rather than a more intelligent method to locate the element. This significantly impacts the overall functionality and reliability of the generated script.",
+        "overall_score": 7,
         "suggestions": [
-          "For more robust scripts, especially in real-world profiles, consider adding explicit waits (e.g., `WebUI.waitForElementPresent`, `WebUI.waitForElementVisible`, `WebUI.waitForElementClickable`) before interacting with elements to ensure they are ready. While not requested by the prompt, it's a good practice.",
-          "If `WebUI.setText` consistently fails for the date field due to a complex date picker, explore alternative methods like `WebUI.sendKeys` or simulating clicks on calendar elements, but this is an application-specific consideration rather than a flaw in the generated code for 'set text'."
+          "Add `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` at the very beginning of the script to ensure the mobile application is launched before any interactions.",
+          "For the 'swipe to find and tap' requirement, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'))` or `Mobile.swipeToText('Submit')` (if 'Submit' is the visible text on the button) instead of a fixed coordinate swipe. This makes the test more robust and ensures the element is actually found and brought into view before attempting to tap it.",
+          "If `Mobile.swipeToElement` is used, the subsequent `Mobile.tap` might become redundant if the element is already interactable after the swipe, but keeping it is generally safer."
         ],
-        "meets_requirements": true,
+        "meets_requirements": false,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:14:05.602543"
+        "evaluation_timestamp": "2025-06-12T11:27:30.814606"
       },
       "human_validation": null,
       "error": null
@@ -1409,11 +1369,11 @@
     "gen_code_003": {
       "input_id": "gen_code_003",
       "feature": "generate_code",
-      "user_input": "// Automate a mobile app profile (Android):\n// - Start application 'com.android.calculator2'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit5'\n// - Tap Test Object 'Object Repository/Mobile/btn_Plus'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit3'\n// - Verify text \"8\" is present on Test Object 'Object Repository/Mobile/txt_Result'",
+      "user_input": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
       "api_input": {
         "id": "studio-g4",
         "inputParameters": {
-          "user_input": "// Automate a mobile app profile (Android):\n// - Start application 'com.android.calculator2'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit5'\n// - Tap Test Object 'Object Repository/Mobile/btn_Plus'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit3'\n// - Verify text \"8\" is present on Test Object 'Object Repository/Mobile/txt_Result'"
+          "user_input": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'."
         },
         "promptId": "generate-code",
         "feature": "generate_code"
@@ -1422,33 +1382,33 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Start application 'com.android.calculator2'\nMobile.startApplication('com.android.calculator2', false)\n\n// Tap Test Object 'Object Repository/Mobile/btn_Digit5'\nMobile.tap(findTestObject('Object Repository/Mobile/btn_Digit5'), 10)\n\n// Tap Test Object 'Object Repository/Mobile/btn_Plus'\nMobile.tap(findTestObject('Object Repository/Mobile/btn_Plus'), 10)\n\n// Tap Test Object 'Object Repository/Mobile/btn_Digit3'\nMobile.tap(findTestObject('Object Repository/Mobile/btn_Digit3'), 10)\n\n// Verify text \"8\" is present on Test Object 'Object Repository/Mobile/txt_Result'\nMobile.verifyElementText(findTestObject('Object Repository/Mobile/txt_Result'), '8')",
+      "api_output": "// Send a POST request to 'Test Objects/API/CreateUser' with specified JSON body\nresponse = WS.sendRequest(findTestObject('Test Objects/API/CreateUser', [('body') : '{\"name\": \"morpheus\", \"job\": \"leader\"}']))\n\n// Verify response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n\n// Verify 'name' field in response body is 'morpheus'\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')",
       "gui_output": "Code generated below prompt in Script editor",
       "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:11.516257",
-      "response_time": 5.141714096069336,
+      "timestamp": "2025-06-12T11:26:55.951687",
+      "response_time": 2.684804916381836,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 10,
-          "correctness": 10,
+          "completeness": 7,
+          "correctness": 6,
           "readability": 10,
-          "functionality": 10
+          "functionality": 4
         },
         "feedback": {
-          "completeness": "The generated code addresses all requirements specified in the user input. Every action requested (start app, tap specific buttons, verify text) is translated into a corresponding Katalon keyword call.",
-          "correctness": "The syntax is perfectly valid for Katalon Studio. It correctly uses `Mobile.startApplication`, `Mobile.tap`, `findTestObject`, and `Mobile.verifyElementText` keywords with appropriate parameters. The use of `false` for `clearDeviceData` in `startApplication` and a timeout of `10` seconds for `tap` are good practices.",
-          "readability": "The code is highly readable. Each line of code is preceded by a clear comment that directly corresponds to the user's original instruction, making it very easy to understand the purpose of each step. The indentation is standard and clean.",
-          "functionality": "This code would execute successfully in Katalon Studio, provided that the specified mobile application (`com.android.calculator2`) is installed on the target device/emulator and the Test Objects (`btn_Digit5`, `btn_Plus`, `btn_Digit3`, `txt_Result`) are correctly defined in the Object Repository and accurately identify the elements on the screen."
+          "completeness": "The code attempts to address all requirements from the prompt. However, the method used to send the request body (`findTestObject` with a `body` parameter) is generally not the correct or most robust way to send a raw JSON body for a POST request in Katalon Studio. This means the requirement to send the *specific JSON body* might not be fully met in practice, as it often results in the JSON string being sent as a form parameter rather than the raw request body.",
+          "correctness": "The syntax is valid, and Katalon keywords are correctly used. However, the core issue lies in the semantic correctness of sending the request body. Passing `('body') : '{\"name\": \"morpheus\", \"job\": \"leader\"}'` as a parameter to `findTestObject` is typically used for substituting variables *within* the Test Object's definition (e.g., URL parameters, form data, or variables inside a pre-defined body template). For sending a raw JSON body, the `TestObject` should be retrieved first, and then its `setBodyContent()` method should be used. This is a common misunderstanding and a significant functional flaw for typical REST API testing.",
+          "readability": "The code is exceptionally well-structured. It includes clear, concise comments for each logical step, proper indentation, and meaningful variable names, making it very easy to understand.",
+          "functionality": "While the code will execute without syntax errors, it is highly likely to fail in its primary objective of sending the correct JSON request body. As explained, `findTestObject` with a `body` parameter does not typically set the raw request body for a POST request. This means the API call will likely be malformed, leading to incorrect responses or errors from the server, and consequently, the subsequent verifications (`verifyResponseStatusCode`, `verifyElementPropertyValue`) will fail or operate on an unintended response. It would only work if the `Test Objects/API/CreateUser` object is specifically configured to take a variable named `body` and use it as its raw content, which is an uncommon setup for dynamic raw JSON bodies."
         },
-        "overall_assessment": "The StudioAssist output is exceptional. It demonstrates a complete understanding of the user's intent and translates it into robust, correct, and highly readable Katalon Studio code. It leverages appropriate mobile keywords and best practices for test object handling. This is a perfect example of effective code generation for test automation.",
-        "overall_score": 10,
+        "overall_assessment": "The StudioAssist output demonstrates a good understanding of Katalon's verification keywords and code structure. The readability is excellent. However, it falls short on a critical aspect of API testing: correctly sending a dynamic raw JSON request body. The chosen method for setting the body is semantically incorrect for this common use case, which severely impacts the code's functionality and correctness, making it unlikely to achieve the user's intended outcome without manual correction.",
+        "overall_score": 7,
         "suggestions": [
-          "While not strictly necessary for this simple profile, for more complex applications, consider adding `Mobile.waitForElementPresent` or `Mobile.waitForElementVisible` before `Mobile.tap` or `Mobile.verifyElementText` to ensure elements are ready for interaction, especially if there are loading delays.",
-          "For a complete test script, it's often good practice to add `Mobile.closeApplication()` at the end of the test case to ensure the app is closed cleanly, although it wasn't explicitly requested by the user."
+          "To correctly send a raw JSON body, retrieve the `TestObject` first, then use its `setBodyContent()` method. For example:\n\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n\nTestObject requestObject = findTestObject('Test Objects/API/CreateUser')\nrequestObject.setBodyContent('{\"name\": \"morpheus\", \"job\": \"leader\"}')\nresponse = WS.sendRequest(requestObject)\n",
+          "Consider adding necessary import statements explicitly (e.g., `import com.kms.katalon.core.testobject.TestObject`) for better code clarity and robustness, although Katalon often handles these implicitly."
         ],
-        "meets_requirements": true,
+        "meets_requirements": false,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:14:18.879891"
+        "evaluation_timestamp": "2025-06-12T11:27:51.785540"
       },
       "human_validation": null,
       "error": null
@@ -1456,11 +1416,11 @@
     "gen_code_004": {
       "input_id": "gen_code_004",
       "feature": "generate_code",
-      "user_input": "/* Perform a POST API request:\n* - Send POST request to 'Object Repository/API/Reqres/CreateUser' with body:\n*   { \"name\": \"morpheus\", \"job\": \"leader\" }\n* - Verify response status code is 201\n* - Verify JSON response contains \"name\" as \"morpheus\" and \"job\" as \"leader\"*/",
+      "user_input": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
       "api_input": {
         "id": "studio-g4",
         "inputParameters": {
-          "user_input": "/* Perform a POST API request:\n* - Send POST request to 'Object Repository/API/Reqres/CreateUser' with body:\n*   { \"name\": \"morpheus\", \"job\": \"leader\" }\n* - Verify response status code is 201\n* - Verify JSON response contains \"name\" as \"morpheus\" and \"job\" as \"leader\"*/"
+          "user_input": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/"
         },
         "promptId": "generate-code",
         "feature": "generate_code"
@@ -1469,33 +1429,36 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Send POST request to 'Object Repository/API/Reqres/CreateUser' with specified body\ndef response = WS.sendRequest(findTestObject('API/Reqres/CreateUser', [('name') : 'morpheus', ('job') : 'leader']))\n// Verify response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n// Verify JSON response contains \"name\" as \"morpheus\"\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')\n// Verify JSON response contains \"job\" as \"leader\"\nWS.verifyElementPropertyValue(response, 'job', 'leader')",
+      "api_output": "// Get the test data from 'TestData/Users'\ndef usersData = findTestData('TestData/Users')\n\n// Iterate through each row of the test data\nfor (def index = 1; index <= usersData.getRowNumbers(); index++) {\n    // Open a new browser instance\n    WebUI.openBrowser('')\n    \n    // Navigate to the login page\n    WebUI.navigateToUrl('https://example.com/login')\n    \n    // Enter the username from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Username'), usersData.getValue('username', index))\n    \n    // Enter the password from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Password'), usersData.getValue('password', index))\n    \n    // Click the login button\n    WebUI.click(findTestObject('Test Objects/Web/btn_Login'))\n    \n    // Close the browser\n    WebUI.closeBrowser()\n}",
       "gui_output": "Code generated below prompt in Script editor",
       "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:17.623140",
-      "response_time": 5.104984760284424,
+      "timestamp": "2025-06-12T11:27:01.531562",
+      "response_time": 4.577786684036255,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 7,
-          "correctness": 9,
-          "readability": 9,
-          "functionality": 5
+          "completeness": 10,
+          "correctness": 10,
+          "readability": 10,
+          "functionality": 9
         },
         "feedback": {
-          "completeness": "The code addresses all requirements, including sending the request and performing verifications. However, the method used to send the request body (`findTestObject` with variables) implicitly assumes that the 'CreateUser' Test Object is pre-configured with a templated JSON body that uses these variables (e.g., `{\"name\": \"${name}\", \"job\": \"${job}\"}`). If the Test Object is not set up this way, the specified body will not be sent as intended, making this aspect conditionally complete.",
-          "correctness": "The syntax is valid, and proper Katalon keywords (`WS.sendRequest`, `findTestObject`, `WS.verifyResponseStatusCode`, `WS.verifyElementPropertyValue`) are used correctly. The use of `findTestObject` with a map of variables is syntactically correct for parameterizing a Test Object.",
-          "readability": "The code is well-structured with clear comments for each step. Indentation is proper, and variable naming is straightforward, contributing to good readability.",
-          "functionality": "This is the weakest point. The code's ability to send the specified JSON body is entirely dependent on the 'Object Repository/API/Reqres/CreateUser' Test Object being configured with a templated JSON body that accepts 'name' and 'job' as variables. If the Test Object is a simple URL, or has a different body type (e.g., form-data) or a fixed body, the `[('name') : 'morpheus', ('job') : 'leader']` part will not result in the desired JSON body being sent. This makes the core functionality of sending the body unreliable without specific Test Object setup."
+          "completeness": "The generated code fully addresses all the functional requirements specified in the user input. It correctly implements the iteration through test data and performs all the requested browser actions (open, navigate, input, click, close) for each row. The initial requirement about defining test data is a project setup step, not a code generation step, and the code correctly assumes its existence and usage.",
+          "correctness": "The syntax is valid Groovy, and all Katalon Studio keywords and methods (`findTestData`, `WebUI.openBrowser`, `WebUI.navigateToUrl`, `WebUI.setText`, `WebUI.click`, `WebUI.closeBrowser`, `findTestObject`, `getValue`, `getRowNumbers`) are used correctly and appropriately. The 1-based indexing for `getValue` when iterating through test data rows is also correctly handled.",
+          "readability": "The code is exceptionally readable. It features clear, concise comments for each logical step, proper indentation, and a straightforward structure that makes it very easy to understand the automation flow at a glance.",
+          "functionality": "The code would execute successfully in Katalon Studio, provided that the specified test data file (`TestData/Users`) and test objects (`Test Objects/Web/txt_Username`, `Test Objects/Web/txt_Password`, `Test Objects/Web/btn_Login`) are correctly set up in the project. It accurately implements the loop and browser actions as requested. The only minor deduction is that for real-world robustness, common practices like explicit waits or error handling are often necessary, though not explicitly requested by the prompt."
         },
-        "overall_assessment": "The StudioAssist output provides a concise and syntactically correct solution for the verification steps. However, its approach to sending the request body relies heavily on a specific, unstated configuration of the Test Object in the Object Repository. While this method *can* work if the Test Object is templated, it's not a universally robust way to fulfill the 'send with body' requirement, as it doesn't explicitly define or set the body content within the script itself. This dependency on external configuration reduces its reliability and completeness for a general 'send this body' instruction.",
-        "overall_score": 7,
+        "overall_assessment": "The StudioAssist output is outstanding. It perfectly translates the user's natural language requirements into functional, correct, and highly readable Katalon Studio automation code. It demonstrates a strong understanding of Katalon's API and best practices for basic web automation. It's a near-perfect response to the given prompt.",
+        "overall_score": 9.8,
         "suggestions": [
-          "To make the code more robust and less dependent on specific Test Object configuration, consider dynamically setting the request body. This can be done by retrieving the Test Object, setting its `bodyContent` and `bodyContentType` properties, and then sending it. For example:\n\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n\nTestObject createUserRequest = findTestObject('API/Reqres/CreateUser')\nString jsonBody = '{\"name\": \"morpheus\", \"job\": \"leader\"}'\ncreateUserRequest.setBodyContent(jsonBody)\ncreateUserRequest.setBodyContentType('application/json')\n\ndef response = WS.sendRequest(createUserRequest)\n\nWS.verifyResponseStatusCode(response, 201)\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')\nWS.verifyElementPropertyValue(response, 'job', 'leader')\n",
-          "If the intent is indeed to use Test Object variables, it would be beneficial to explicitly mention this assumption in the comments or prompt, e.g., 'Assuming 'CreateUser' Test Object has a templated JSON body like `{\"name\": \"${name}\", \"job\": \"${job}\"}`'."
+          "For more robust web automation, especially after navigation or clicks, consider adding explicit waits like `WebUI.waitForPageLoad()` or `WebUI.waitForElementPresent()` before interacting with elements to ensure the page is fully loaded and elements are available.",
+          "Implement `try-catch` blocks around critical steps (e.g., the login process) to gracefully handle potential failures, prevent test case abortion, and provide more informative logging or reporting.",
+          "While `WebUI.closeBrowser()` works, `WebUI.closeBrowserAndCleanUp()` is often preferred at the end of a test case or iteration to ensure all browser processes are terminated cleanly and resources are released.",
+          "Consider adding a verification step after the login click (e.g., `WebUI.verifyElementPresent` for an element on the post-login page) to confirm that the login was successful, rather than just assuming it.",
+          "For better maintainability and reusability, the URL `https://example.com/login` could be stored as a Global Variable or in a separate configuration file."
         ],
-        "meets_requirements": false,
+        "meets_requirements": true,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:14:39.245612"
+        "evaluation_timestamp": "2025-06-12T11:28:07.504949"
       },
       "human_validation": null,
       "error": null
@@ -1503,11 +1466,11 @@
     "gen_code_005": {
       "input_id": "gen_code_005",
       "feature": "generate_code",
-      "user_input": "// Implement data-driven testing for searching products:\n// - Read data from Excel file \"Data Files/ProductSearchData.xlsx\" (Sheet1)\n// - For each row:\n//   - Open browser to \"https://www.demoblaze.com\"\n//   - Set text from column \"SearchTerm\" into Test Object 'Object Repository/Page_Home/txt_SearchInput'\n//   - Click Test Object 'Object Repository/Page_Home/btn_Search'\n//   - Verify Test Object 'Object Repository/Page_Search/lbl_SearchResult' contains text from column \"ExpectedProduct\"",
+      "user_input": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
       "api_input": {
         "id": "studio-g4",
         "inputParameters": {
-          "user_input": "// Implement data-driven testing for searching products:\n// - Read data from Excel file \"Data Files/ProductSearchData.xlsx\" (Sheet1)\n// - For each row:\n//   - Open browser to \"https://www.demoblaze.com\"\n//   - Set text from column \"SearchTerm\" into Test Object 'Object Repository/Page_Home/txt_SearchInput'\n//   - Click Test Object 'Object Repository/Page_Home/btn_Search'\n//   - Verify Test Object 'Object Repository/Page_Search/lbl_SearchResult' contains text from column \"ExpectedProduct\""
+          "user_input": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'."
         },
         "promptId": "generate-code",
         "feature": "generate_code"
@@ -1516,175 +1479,33 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Import Excel data file for data-driven testing\ndef testData = findTestData('Data Files/ProductSearchData.xlsx')\n\n// Loop through each row in the test data\nfor (def index = 1; index <= testData.getRowNumbers(); index++) {\n    // Open browser to the specified URL\n    WebUI.openBrowser('https://www.demoblaze.com')\n    \n    // Set text from \"SearchTerm\" column into the search input field\n    WebUI.setText(findTestObject('Object Repository/Page_Home/txt_SearchInput'), testData.getValue('SearchTerm', index))\n    \n    // Click the search button\n    WebUI.click(findTestObject('Object Repository/Page_Home/btn_Search'))\n    \n    // Verify the search result label contains the expected product text\n    WebUI.verifyElementText(findTestObject('Object Repository/Page_Search/lbl_SearchResult'), testData.getValue('ExpectedProduct', index))\n    \n    // Close the browser after each iteration\n    WebUI.closeBrowser()\n}",
+      "api_output": "/*\n * Logs into the application with the provided username and password.\n *\n * @param username The username to enter.\n * @param password The password to enter.\n */\n@Keyword\ndef login(String username, String password) {\n    // Open a new browser window\n    WebUI.openBrowser('')\n    // Navigate to the specified URL\n    WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\n    // Enter the username into the username field\n    WebUI.setText(findTestObject('Test Objects/LoginPage/txt_Username'), username)\n    // Enter the password into the password field\n    WebUI.setText(findTestObject('Test Objects/LoginPage/txt_Password'), password)\n    // Click the login button\n    WebUI.click(findTestObject('Test Objects/LoginPage/btn_Login'))\n}",
       "gui_output": "Code generated below prompt in Script editor",
       "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:24.661188",
-      "response_time": 6.036629915237427,
+      "timestamp": "2025-06-12T11:27:06.807439",
+      "response_time": 4.274093151092529,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 10,
-          "correctness": 9,
-          "readability": 10,
-          "functionality": 9
-        },
-        "feedback": {
-          "completeness": "The code fully addresses all requirements specified in the user input. It correctly implements data-driven testing, reads from the specified Excel file and columns, and performs all requested UI actions (open browser, set text, click, verify). It also includes `WebUI.closeBrowser()` which is good practice for isolating test iterations.",
-          "correctness": "The syntax is valid Groovy/Java, and all Katalon Studio keywords (`WebUI.openBrowser`, `WebUI.setText`, `WebUI.click`, `WebUI.verifyElementText`, `findTestData`, `findTestObject`, `testData.getValue`) are used correctly. The loop indexing (`index = 1` and `getRowNumbers()`) is appropriate for Katalon's 1-based `TestData` object. The only minor point is the implicit import of `WebUI` keywords; while Katalon Studio usually handles this automatically, explicitly adding the import statement would make the script more self-contained and robust.",
-          "readability": "The code is exceptionally well-structured with clear indentation and logical flow. The comments are descriptive and accurately explain each step, making the code very easy to understand and maintain.",
-          "functionality": "The code would execute successfully in Katalon Studio, assuming the specified Test Objects and Excel data file exist. The `WebUI` keywords would be resolved by Katalon's built-in capabilities (including auto-importing `com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI`). The `closeBrowser()` within the loop ensures a clean state for each test iteration, which is generally good for data-driven tests."
-        },
-        "overall_assessment": "The StudioAssist output is excellent. It provides a complete, correct, and highly readable solution that directly addresses the user's data-driven testing requirements. The code is well-structured and follows best practices for test isolation in data-driven profiles. It's a very strong example of effective code generation for Katalon Studio.",
-        "overall_score": 9.5,
-        "suggestions": [
-          "For maximum robustness and clarity, explicitly add `import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI` at the top of the script. While Katalon Studio often auto-imports, explicit imports prevent potential issues if the script is used in contexts where auto-import might not occur.",
-          "Consider adding basic error handling (e.g., `try-catch` blocks) around critical steps like `WebUI.verifyElementText` if the test needs to continue execution even if a verification fails, or to provide more specific error logging. (This is an advanced consideration, not a direct requirement from the prompt)."
-        ],
-        "meets_requirements": true,
-        "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:14:54.826578"
-      },
-      "human_validation": null,
-      "error": null
-    },
-    "gen_code_006": {
-      "input_id": "gen_code_006",
-      "feature": "generate_code",
-      "user_input": "/* Create a custom keyword named 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp' that returns the current system timestamp as a string in 'yyyyMMdd_HHmmss' format. */",
-      "api_input": {
-        "id": "studio-g4",
-        "inputParameters": {
-          "user_input": "/* Create a custom keyword named 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp' that returns the current system timestamp as a string in 'yyyyMMdd_HHmmss' format. */"
-        },
-        "promptId": "generate-code",
-        "feature": "generate_code"
-      },
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "api_output": "import java.text.SimpleDateFormat\nimport java.util.Date\nimport com.kms.katalon.core.annotation.Keyword\n\n/*\n * Returns the current system timestamp as a string in 'yyyyMMdd_HHmmss' format.\n *\n * @return Current timestamp string formatted as 'yyyyMMdd_HHmmss'.\n */\n@Keyword\ndef getCurrentTimestamp() {\n    // Create a SimpleDateFormat object with the desired format\n    SimpleDateFormat sdf = new SimpleDateFormat('yyyyMMdd_HHmmss')\n    // Get the current date\n    Date now = new Date()\n    // Format the current date and return it as a string\n    return sdf.format(now)\n}",
-      "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:29.986852",
-      "response_time": 4.323739767074585,
-      "LLM3_evaluation": {
-        "scores": {
-          "completeness": 10,
+          "completeness": 9,
           "correctness": 10,
           "readability": 10,
           "functionality": 10
         },
         "feedback": {
-          "completeness": "The code fully addresses all requirements specified in the prompt. It correctly defines a custom keyword method, returns the current system timestamp, and formats it precisely as 'yyyyMMdd_HHmmss'. The naming convention for the keyword (e.g., 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp') is correctly reflected in the method signature and implies the necessary file path structure in Katalon Studio.",
-          "correctness": "The syntax is valid Groovy/Java. All necessary imports (`java.text.SimpleDateFormat`, `java.util.Date`, `com.kms.katalon.core.annotation.Keyword`) are present and correctly used. The `@Keyword` annotation is properly applied, and the logic for obtaining and formatting the timestamp is accurate and robust.",
-          "readability": "The code is exceptionally well-structured with clear indentation. It includes a comprehensive Javadoc-style comment for the method, clearly explaining its purpose and return value. Additionally, helpful inline comments explain each step of the process, making the code very easy to understand and maintain.",
-          "functionality": "The code would execute successfully in Katalon Studio without any issues. When placed in the appropriate custom keyword file (e.g., `Keywords/com/katalon/utility/DateTimeHelper.groovy`), it will reliably produce the expected timestamp string in the specified format."
+          "completeness": "The code provides the complete method definition for the custom keyword, including parameters and all requested actions. The 'WebUIKeywords' part of the name refers to the package/folder structure in Katalon Studio (e.g., `Keywords/WebUIKeywords/login.groovy`), which the generated code snippet itself doesn't explicitly create, but the `login` method is correctly defined to be placed within such a structure.",
+          "correctness": "The syntax is valid Groovy/Java, and all Katalon Studio keywords (`WebUI.openBrowser`, `WebUI.navigateToUrl`, `WebUI.setText`, `WebUI.click`, `findTestObject`) are used correctly and appropriately. The `@Keyword` annotation is also correctly applied.",
+          "readability": "The code is exceptionally well-structured with proper indentation. It includes clear Javadoc-style comments for the keyword definition and concise inline comments for each step, making it very easy to understand and maintain.",
+          "functionality": "This code would execute successfully in Katalon Studio, assuming the specified test objects (`Test Objects/LoginPage/txt_Username`, `Test Objects/LoginPage/txt_Password`, `Test Objects/LoginPage/btn_Login`) exist and are correctly defined in the project. The logic flows as expected to perform the login operation."
         },
-        "overall_assessment": "This is an outstanding piece of generated code. It perfectly fulfills all requirements from the user prompt, demonstrating high levels of correctness, readability, and functionality. It is ready for immediate use in a Katalon Studio project and serves as an excellent example of a well-crafted custom keyword.",
-        "overall_score": 10,
+        "overall_assessment": "The StudioAssist output is excellent. It accurately translates the user's request into functional and highly readable Katalon Studio code. It correctly implements all the required actions for a login keyword, demonstrating a strong understanding of Katalon's WebUI API and best practices for custom keyword creation. The only minor nuance is the interpretation of the keyword's full name, which is more about file structure than the code content itself.",
+        "overall_score": 9.75,
         "suggestions": [
-          "While not explicitly requested, for a more globally robust utility, consider adding an optional parameter to specify a `TimeZone` for the `SimpleDateFormat` (e.g., `new SimpleDateFormat('yyyyMMdd_HHmmss', TimeZone.getTimeZone('UTC'))`) to ensure consistent timestamps across different geographical locations or server configurations.",
-          "For profiles where the custom keyword might be called concurrently (though less common in typical Katalon test scripts), `SimpleDateFormat` is not thread-safe. A more thread-safe approach would be to use `java.time.format.DateTimeFormatter` (available in Java 8+) or to wrap `SimpleDateFormat` in a `ThreadLocal`."
+          "While the code itself is perfect for the keyword's content, for a user new to Katalon, it might be helpful to explicitly mention where this code should be placed (e.g., 'This code should be placed in a new keyword file named `login.groovy` under the `Keywords/WebUIKeywords` folder in your Katalon Studio project.').",
+          "Consider adding basic error handling (e.g., `try-catch` blocks or `WebUI.waitForElementPresent` before interacting with elements) for more robust automation, though this was not explicitly requested by the user."
         ],
         "meets_requirements": true,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:15:10.825693"
-      },
-      "human_validation": null,
-      "error": null
-    },
-    "gen_code_007": {
-      "input_id": "gen_code_007",
-      "feature": "generate_code",
-      "user_input": "// Handle dynamic element and error handling:\n// - Wait for Test Object 'Object Repository/Page_Dashboard/div_DynamicWidget' to be visible with a timeout of 20 seconds\n// - Click Test Object 'Object Repository/Page_Dashboard/btn_ConfigureWidget'\n// - If an element is not found or an exception occurs, take a screenshot and save it as \"Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\" in the Reports folder.",
-      "api_input": {
-        "id": "studio-g4",
-        "inputParameters": {
-          "user_input": "// Handle dynamic element and error handling:\n// - Wait for Test Object 'Object Repository/Page_Dashboard/div_DynamicWidget' to be visible with a timeout of 20 seconds\n// - Click Test Object 'Object Repository/Page_Dashboard/btn_ConfigureWidget'\n// - If an element is not found or an exception occurs, take a screenshot and save it as \"Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\" in the Reports folder."
-        },
-        "promptId": "generate-code",
-        "feature": "generate_code"
-      },
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "api_output": "// Wait for Test Object 'Object Repository/Page_Dashboard/div_DynamicWidget' to be visible with a timeout of 20 seconds\ntry {\n    WebUI.waitForElementVisible(findTestObject('Object Repository/Page_Dashboard/div_DynamicWidget'), 20)\n    // Click Test Object 'Object Repository/Page_Dashboard/btn_ConfigureWidget'\n    WebUI.click(findTestObject('Object Repository/Page_Dashboard/btn_ConfigureWidget'))\n} catch (Exception e) {\n    // Take a screenshot and save it as \"Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\" in the Reports folder\n    WebUI.takeScreenshot(('Reports/Failure_Screenshot_' + GlobalVariable.G_CurrentTimestamp) + '.png')\n    throw e\n}",
-      "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:35.206273",
-      "response_time": 4.218116998672485,
-      "LLM3_evaluation": {
-        "scores": {
-          "completeness": 10,
-          "correctness": 10,
-          "readability": 9,
-          "functionality": 10
-        },
-        "feedback": {
-          "completeness": "The code fully addresses all requirements specified in the prompt: waiting for an element, clicking an element, and handling exceptions by taking a screenshot with a dynamic filename in the specified folder.",
-          "correctness": "The syntax is valid Groovy/Java. All Katalon Studio keywords (`WebUI.waitForElementVisible`, `findTestObject`, `WebUI.click`, `WebUI.takeScreenshot`) are used correctly. The `try-catch` block is implemented properly, and the `throw e` ensures the exception is re-thrown, allowing the test case to fail as expected.",
-          "readability": "The code is well-structured with proper indentation. The comments from the prompt are included, which aids understanding. A minor point is that the comment for the click action is on the same line as the `try` block, which could be slightly cleaner if placed on its own line. Also, the string concatenation for the screenshot path could be slightly simplified for better readability.",
-          "functionality": "This code would execute successfully in Katalon Studio, assuming the specified Test Objects exist and `GlobalVariable.G_CurrentTimestamp` is defined. The error handling mechanism is robust, ensuring a screenshot is taken upon failure and the exception is propagated, leading to a clear test failure report."
-        },
-        "overall_assessment": "The StudioAssist output is excellent. It accurately translates the user's natural language requirements into correct, complete, and functional Katalon Studio code. The use of `try-catch` for robust error handling and the dynamic screenshot naming are well implemented. It demonstrates a strong understanding of Katalon Studio's capabilities and best practices for test automation.",
-        "overall_score": 10,
-        "suggestions": [
-          "For improved readability, consider placing comments on separate lines above the code they describe, rather than on the same line as a block opener (e.g., `// Click Test Object...` above `WebUI.click(...)`).",
-          "The string concatenation for the screenshot path `(('Reports/Failure_Screenshot_' + GlobalVariable.G_CurrentTimestamp) + '.png')` can be simplified to `\"Reports/Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\"` for slightly cleaner syntax.",
-          "If `GlobalVariable.G_CurrentTimestamp` is intended to be the exact timestamp of the *failure*, it might be more robust to generate the timestamp inside the `catch` block (e.g., `String timestamp = new Date().format(\"yyyyMMdd_HHmmss\");`) instead of relying on a potentially pre-existing global variable that might have been set at the start of the test run. However, the current implementation directly follows the prompt's instruction."
-        ],
-        "meets_requirements": true,
-        "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:15:25.802038"
-      },
-      "human_validation": null,
-      "error": null
-    },
-    "gen_code_008": {
-      "input_id": "gen_code_008",
-      "feature": "generate_code",
-      "user_input": "/* Perform a GET API request with parameters and validate schema:\n* - Send GET request to 'Object Repository/API/Reqres/GetUsers' with query parameters:\n*   - page: \"2\"\n* - Verify response status code is 200\n* - Validate JSON response against schema file \"Data Files/UserListSchema.json\"*/",
-      "api_input": {
-        "id": "studio-g4",
-        "inputParameters": {
-          "user_input": "/* Perform a GET API request with parameters and validate schema:\n* - Send GET request to 'Object Repository/API/Reqres/GetUsers' with query parameters:\n*   - page: \"2\"\n* - Verify response status code is 200\n* - Validate JSON response against schema file \"Data Files/UserListSchema.json\"*/"
-        },
-        "promptId": "generate-code",
-        "feature": "generate_code"
-      },
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "api_output": "// Send GET request to 'Object Repository/API/Reqres/GetUsers' with query parameter page=2\nresponse = WS.sendRequest(findTestObject('API/Reqres/GetUsers', [('page') : '2']))\n// Verify response status code is 200\nWS.verifyResponseStatusCode(response, 200)\n// Validate JSON response against schema file \"Data Files/UserListSchema.json\"\nWS.validateJsonSchemaInResponse(response, findTestData('Data Files/UserListSchema.json').getFilePath())",
-      "gui_output": "Code generated below prompt in Script editor",
-      "llm_version": "LLM1",
-      "timestamp": "2025-06-10T17:13:39.051881",
-      "response_time": 2.844282865524292,
-      "LLM3_evaluation": {
-        "scores": {
-          "completeness": 10,
-          "correctness": 10,
-          "readability": 10,
-          "functionality": 10
-        },
-        "feedback": {
-          "completeness": "The code fully addresses all requirements specified in the user prompt: sending a GET request with parameters, verifying the status code, and validating the JSON response against a schema file.",
-          "correctness": "The syntax is perfectly valid. It uses the correct Katalon Studio built-in keywords (`WS.sendRequest`, `WS.verifyResponseStatusCode`, `WS.validateJsonSchemaInResponse`) and methods (`findTestObject`, `findTestData`, `getFilePath`) with proper arguments and structure.",
-          "readability": "The code is highly readable. Each line is accompanied by a clear, concise comment that directly reflects the corresponding requirement from the user input. Variable naming (`response`) is appropriate and standard. The structure is logical and easy to follow.",
-          "functionality": "This code would execute successfully in Katalon Studio, assuming the 'API/Reqres/GetUsers' Test Object and 'Data Files/UserListSchema.json' Data File exist and are correctly configured in the project. The parameter passing for the GET request is correctly implemented for Test Objects."
-        },
-        "overall_assessment": "The StudioAssist output is excellent. It perfectly translates the user's natural language requirements into a robust, correct, and highly readable Katalon Studio automation script. It demonstrates a strong understanding of Katalon's API testing capabilities and best practices.",
-        "overall_score": 10,
-        "suggestions": [
-          "For a complete script, ensure that necessary imports (e.g., `import static com.kms.katalon.core.webservice.keyword.WSBuiltinKeywords.*`) are present at the top, though Katalon Studio often handles this automatically or StudioAssist assumes it for snippets.",
-          "While not requested by the prompt, for production-grade scripts, consider adding explicit error handling (e.g., `try-catch` blocks) around API calls to gracefully manage network issues or unexpected responses."
-        ],
-        "meets_requirements": true,
-        "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:15:37.157961"
+        "evaluation_timestamp": "2025-06-12T11:28:20.998536"
       },
       "human_validation": null,
       "error": null
@@ -1692,105 +1513,102 @@
   },
   "comprehensive_analysis": {
     "summary": {
-      "total_evaluated": 8,
+      "total_evaluated": 5,
       "evaluation_errors": 0,
-      "start_time": "2025-06-10T17:13:40.057730",
-      "end_time": "2025-06-10T17:15:38.159226"
+      "start_time": "2025-06-12T11:27:07.816788",
+      "end_time": "2025-06-12T11:28:21.999781"
     },
     "diversity_analysis": {
-      "total_inputs": 8,
-      "unique_patterns": 8,
+      "total_inputs": 5,
+      "unique_patterns": 5,
       "prompt_length_stats": {
-        "min": 175,
-        "max": 504,
-        "mean": 365.5,
-        "median": 385.5,
-        "std_dev": 114.97204629200712
+        "min": 198,
+        "max": 428,
+        "mean": 322.8,
+        "median": 314,
+        "std_dev": 84.52928486625213
       },
       "pattern_categories": {
-        "testing": 7,
+        "testing": 5,
         "web_automation": 3,
         "mobile_testing": 3,
-        "api_testing": 2,
-        "data_driven": 2,
+        "api_testing": 1,
+        "data_driven": 1,
         "custom_keywords": 1
       },
       "complexity_distribution": {
-        "low": 1,
-        "medium": 7,
+        "low": 2,
+        "medium": 3,
         "high": 0
       }
     },
     "quality_analysis": {
-      "total_outputs": 8,
+      "total_outputs": 5,
       "output_length_stats": {
-        "min": 437,
-        "max": 915,
-        "mean": 662,
-        "median": 661.0,
-        "std_dev": 157.77379829544392
+        "min": 404,
+        "max": 825,
+        "mean": 627.2,
+        "median": 632,
+        "std_dev": 168.52210537493295
       },
       "keyword_usage": {
-        "WebUI": 17,
-        "TestObject": 19,
-        "GlobalVariable": 3,
-        "Mobile": 13,
-        "WS": 7,
+        "WebUI": 16,
+        "TestObject": 15,
+        "Mobile": 9,
+        "WS": 3,
         "@Keyword": 1
       },
-      "error_patterns": {
-        "exception_handling": 1
-      },
+      "error_patterns": {},
       "response_time_analysis": {
-        "min": 2.844282865524292,
-        "max": 9.411442995071411,
-        "mean": 5.4024417996406555,
-        "median": 5.12334942817688,
-        "percentile_95": 9.411442995071411
+        "min": 2.684804916381836,
+        "max": 5.065280914306641,
+        "mean": 4.0091935157775875,
+        "median": 4.274093151092529,
+        "percentile_95": 5.065280914306641
       }
     },
     "score_analysis": {
       "criteria_analysis": {
         "completeness": {
           "description": "Does the code address all requirements from the prompt?",
-          "count": 8,
-          "mean": 9.625,
-          "median": 10.0,
-          "std_dev": 1.0606601717798212,
-          "min": 7,
+          "count": 5,
+          "mean": 8.2,
+          "median": 9,
+          "std_dev": 2.16794833886788,
+          "min": 5,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 7,
+            "excellent (8-10)": 3,
             "good (6-8)": 1,
-            "fair (4-6)": 0,
+            "fair (4-6)": 1,
             "poor (0-4)": 0
           }
         },
         "correctness": {
           "description": "Is the syntax valid and does it use proper Katalon keywords?",
-          "count": 8,
-          "mean": 9.75,
-          "median": 10.0,
-          "std_dev": 0.4629100498862757,
-          "min": 9,
+          "count": 5,
+          "mean": 9.2,
+          "median": 10,
+          "std_dev": 1.7888543819998317,
+          "min": 6,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 8,
-            "good (6-8)": 0,
+            "excellent (8-10)": 4,
+            "good (6-8)": 1,
             "fair (4-6)": 0,
             "poor (0-4)": 0
           }
         },
         "readability": {
           "description": "Is the code well-structured with proper indentation and comments?",
-          "count": 8,
-          "mean": 9.75,
-          "median": 10.0,
-          "std_dev": 0.4629100498862757,
-          "min": 9,
+          "count": 5,
+          "mean": 10,
+          "median": 10,
+          "std_dev": 0.0,
+          "min": 10,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 8,
+            "excellent (8-10)": 5,
             "good (6-8)": 0,
             "fair (4-6)": 0,
             "poor (0-4)": 0
@@ -1798,74 +1616,73 @@
         },
         "functionality": {
           "description": "Would this code execute successfully in Katalon Studio?",
-          "count": 8,
-          "mean": 9,
-          "median": 10.0,
-          "std_dev": 1.7728105208558367,
-          "min": 5,
+          "count": 5,
+          "mean": 7.4,
+          "median": 9,
+          "std_dev": 3.1304951684997055,
+          "min": 4,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 7,
+            "excellent (8-10)": 3,
             "good (6-8)": 0,
-            "fair (4-6)": 1,
+            "fair (4-6)": 2,
             "poor (0-4)": 0
           }
         }
       },
       "overall_statistics": {
-        "mean": 9.5,
-        "median": 10.0,
-        "std_dev": 1.0350983390135313,
+        "mean": 8.71,
+        "median": 9.75,
+        "std_dev": 1.5638094513079273,
         "min": 7,
         "max": 10,
-        "meets_requirements_percentage": 87.5
+        "meets_requirements_percentage": 60.0
       },
       "score_distribution": {
         "0-2": 0,
         "2-4": 0,
         "4-6": 0,
-        "6-8": 1,
-        "8-10": 7
+        "6-8": 2,
+        "8-10": 3
       },
       "correlation_analysis": {
-        "completeness_vs_correctness": 0.6546536707079771,
-        "completeness_vs_readability": 0.6546536707079771,
-        "completeness_vs_functionality": 0.9116846116771036,
-        "correctness_vs_readability": 0.3333333333333333,
-        "correctness_vs_functionality": 0.6963106238227914,
-        "readability_vs_functionality": 0.5222329678670935
+        "completeness_vs_correctness": 0.3094263738776381,
+        "completeness_vs_readability": 0.0,
+        "completeness_vs_functionality": 0.9061772377845115,
+        "correctness_vs_readability": 0.0,
+        "correctness_vs_functionality": 0.6071428571428572,
+        "readability_vs_functionality": 0.0
       },
       "improvement_areas": []
     },
     "feedback_analysis": {
       "common_feedback_themes": {
-        "completeness": 3,
-        "accuracy": 16,
-        "clarity": 9,
-        "best_practices": 6,
-        "error_handling": 7
+        "completeness": 2,
+        "accuracy": 15,
+        "clarity": 5,
+        "best_practices": 3,
+        "error_handling": 8
       },
       "suggestion_frequency": {
-        "Add `WebUI.closeBrowser()` at the end of the test case to ensure the browser instance is properly closed after execution, preventing resource leaks.": 1,
-        "Consider incorporating explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForElementClickable`) before interacting with elements to make the test more robust against varying page load times and dynamic content.": 1,
-        "For production-grade tests, consider adding basic error handling (e.g., `try-catch` blocks) around critical steps to manage unexpected failures gracefully.": 1,
-        "For more robust scripts, especially in real-world profiles, consider adding explicit waits (e.g., `WebUI.waitForElementPresent`, `WebUI.waitForElementVisible`, `WebUI.waitForElementClickable`) before interacting with elements to ensure they are ready. While not requested by the prompt, it's a good practice.": 1,
-        "If `WebUI.setText` consistently fails for the date field due to a complex date picker, explore alternative methods like `WebUI.sendKeys` or simulating clicks on calendar elements, but this is an application-specific consideration rather than a flaw in the generated code for 'set text'.": 1,
-        "While not strictly necessary for this simple profile, for more complex applications, consider adding `Mobile.waitForElementPresent` or `Mobile.waitForElementVisible` before `Mobile.tap` or `Mobile.verifyElementText` to ensure elements are ready for interaction, especially if there are loading delays.": 1,
-        "For a complete test script, it's often good practice to add `Mobile.closeApplication()` at the end of the test case to ensure the app is closed cleanly, although it wasn't explicitly requested by the user.": 1,
-        "To make the code more robust and less dependent on specific Test Object configuration, consider dynamically setting the request body. This can be done by retrieving the Test Object, setting its `bodyContent` and `bodyContentType` properties, and then sending it. For example:\n\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n\nTestObject createUserRequest = findTestObject('API/Reqres/CreateUser')\nString jsonBody = '{\"name\": \"morpheus\", \"job\": \"leader\"}'\ncreateUserRequest.setBodyContent(jsonBody)\ncreateUserRequest.setBodyContentType('application/json')\n\ndef response = WS.sendRequest(createUserRequest)\n\nWS.verifyResponseStatusCode(response, 201)\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')\nWS.verifyElementPropertyValue(response, 'job', 'leader')\n": 1,
-        "If the intent is indeed to use Test Object variables, it would be beneficial to explicitly mention this assumption in the comments or prompt, e.g., 'Assuming 'CreateUser' Test Object has a templated JSON body like `{\"name\": \"${name}\", \"job\": \"${job}\"}`'.": 1,
-        "For maximum robustness and clarity, explicitly add `import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI` at the top of the script. While Katalon Studio often auto-imports, explicit imports prevent potential issues if the script is used in contexts where auto-import might not occur.": 1
+        "While not explicitly requested by the prompt, for a complete test script, it's good practice to add `WebUI.closeBrowser()` at the end to ensure the browser instance is closed after the test execution.": 1,
+        "For increased robustness in real-world profiles, consider adding explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForPageLoad`) before interacting with elements, especially after navigation or clicks that trigger page loads. However, for this specific prompt, the current output is sufficient.": 1,
+        "Add `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` at the very beginning of the script to ensure the mobile application is launched before any interactions.": 1,
+        "For the 'swipe to find and tap' requirement, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'))` or `Mobile.swipeToText('Submit')` (if 'Submit' is the visible text on the button) instead of a fixed coordinate swipe. This makes the test more robust and ensures the element is actually found and brought into view before attempting to tap it.": 1,
+        "If `Mobile.swipeToElement` is used, the subsequent `Mobile.tap` might become redundant if the element is already interactable after the swipe, but keeping it is generally safer.": 1,
+        "To correctly send a raw JSON body, retrieve the `TestObject` first, then use its `setBodyContent()` method. For example:\n\nimport com.kms.katalon.core.testobject.TestObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n\nTestObject requestObject = findTestObject('Test Objects/API/CreateUser')\nrequestObject.setBodyContent('{\"name\": \"morpheus\", \"job\": \"leader\"}')\nresponse = WS.sendRequest(requestObject)\n": 1,
+        "Consider adding necessary import statements explicitly (e.g., `import com.kms.katalon.core.testobject.TestObject`) for better code clarity and robustness, although Katalon often handles these implicitly.": 1,
+        "For more robust web automation, especially after navigation or clicks, consider adding explicit waits like `WebUI.waitForPageLoad()` or `WebUI.waitForElementPresent()` before interacting with elements to ensure the page is fully loaded and elements are available.": 1,
+        "Implement `try-catch` blocks around critical steps (e.g., the login process) to gracefully handle potential failures, prevent test case abortion, and provide more informative logging or reporting.": 1,
+        "While `WebUI.closeBrowser()` works, `WebUI.closeBrowserAndCleanUp()` is often preferred at the end of a test case or iteration to ensure all browser processes are terminated cleanly and resources are released.": 1
       },
       "feedback_sentiment": {
-        "positive": 5,
-        "neutral": 3,
+        "positive": 4,
+        "neutral": 1,
         "negative": 0
       }
     },
     "insights": [
       "Limited test coverage: Consider increasing the number of test patterns for more comprehensive evaluation.",
-      "High average response time (5.40s): Consider optimizing API calls or implementing caching.",
       "Excellent overall performance: The current configuration is producing high-quality outputs.",
       "Strong correlation between completeness_vs_functionality (0.91): These criteria are closely related."
     ]
@@ -1875,20 +1692,20 @@
   "metadata": {
     "feature": "generate_code",
     "llm_version": "LLM2",
-    "creation_timestamp": "2025-06-10T17:18:48.893170",
-    "total_results": 8,
+    "creation_timestamp": "2025-06-12T11:30:53.145532",
+    "total_results": 5,
     "dataset_type": "target",
     "evaluation_metadata": {
       "evaluator_model": "gemini-2.5-flash-preview-05-20",
-      "evaluation_timestamp": "2025-06-10T17:20:49.135889",
-      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_LLM2_20250610_171848_e0f70e8d.json"
+      "evaluation_timestamp": "2025-06-12T11:32:15.782386",
+      "original_baseline_file": "poc_data/generate_code/studioassist_generate_code_target_raw_LLM2_20250612_113053_0e3838fe.json"
     }
   },
   "inputs": [
     {
       "input_id": "gen_code_001",
       "feature": "generate_code",
-      "prompt": "// Perform a user login:\n// - Open browser to \"https://katalon-demo-cura.herokuapp.com\"\n// - Set text \"John Doe\" into Test Object 'Object Repository/Page_Login/txt_Username'\n// - Set text \"ThisIsNotAPassword\" into Test Object 'Object Repository/Page_Login/txt_Password'\n// - Click Test Object 'Object Repository/Page_Login/btn_Login'\n// - Verify Test Object 'Object Repository/Page_Home/lbl_MakeAppointment' is visible",
+      "prompt": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1898,7 +1715,7 @@
     {
       "input_id": "gen_code_002",
       "feature": "generate_code",
-      "prompt": "/* Interact with a web form:\n* - Select option by value \"Hongkong CURA Healthcare Center\" from Test Object 'Object Repository/Page_Appointment/ddl_Facility'\n* - Check Test Object 'Object Repository/Page_Appointment/chk_ApplyForReadmission'\n* - Set text \"21/05/2024\" into Test Object 'Object Repository/Page_Appointment/txt_VisitDate'\n* - Get text from Test Object 'Object Repository/Page_AppointmentConfirmation/lbl_ConfirmationMessage' and store it in a global variable 'G_AppointmentConfirmationText'*/",
+      "prompt": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1908,7 +1725,7 @@
     {
       "input_id": "gen_code_003",
       "feature": "generate_code",
-      "prompt": "// Automate a mobile app profile (Android):\n// - Start application 'com.android.calculator2'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit5'\n// - Tap Test Object 'Object Repository/Mobile/btn_Plus'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit3'\n// - Verify text \"8\" is present on Test Object 'Object Repository/Mobile/txt_Result'",
+      "prompt": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1918,7 +1735,7 @@
     {
       "input_id": "gen_code_004",
       "feature": "generate_code",
-      "prompt": "/* Perform a POST API request:\n* - Send POST request to 'Object Repository/API/Reqres/CreateUser' with body:\n*   { \"name\": \"morpheus\", \"job\": \"leader\" }\n* - Verify response status code is 201\n* - Verify JSON response contains \"name\" as \"morpheus\" and \"job\" as \"leader\"*/",
+      "prompt": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1928,37 +1745,7 @@
     {
       "input_id": "gen_code_005",
       "feature": "generate_code",
-      "prompt": "// Implement data-driven testing for searching products:\n// - Read data from Excel file \"Data Files/ProductSearchData.xlsx\" (Sheet1)\n// - For each row:\n//   - Open browser to \"https://www.demoblaze.com\"\n//   - Set text from column \"SearchTerm\" into Test Object 'Object Repository/Page_Home/txt_SearchInput'\n//   - Click Test Object 'Object Repository/Page_Home/btn_Search'\n//   - Verify Test Object 'Object Repository/Page_Search/lbl_SearchResult' contains text from column \"ExpectedProduct\"",
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "prompt_id": "generate-code"
-    },
-    {
-      "input_id": "gen_code_006",
-      "feature": "generate_code",
-      "prompt": "/* Create a custom keyword named 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp' that returns the current system timestamp as a string in 'yyyyMMdd_HHmmss' format. */",
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "prompt_id": "generate-code"
-    },
-    {
-      "input_id": "gen_code_007",
-      "feature": "generate_code",
-      "prompt": "// Handle dynamic element and error handling:\n// - Wait for Test Object 'Object Repository/Page_Dashboard/div_DynamicWidget' to be visible with a timeout of 20 seconds\n// - Click Test Object 'Object Repository/Page_Dashboard/btn_ConfigureWidget'\n// - If an element is not found or an exception occurs, take a screenshot and save it as \"Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\" in the Reports folder.",
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "prompt_id": "generate-code"
-    },
-    {
-      "input_id": "gen_code_008",
-      "feature": "generate_code",
-      "prompt": "/* Perform a GET API request with parameters and validate schema:\n* - Send GET request to 'Object Repository/API/Reqres/GetUsers' with query parameters:\n*   - page: \"2\"\n* - Verify response status code is 200\n* - Validate JSON response against schema file \"Data Files/UserListSchema.json\"*/",
+      "prompt": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
       "config": {
         "mode": "script",
         "katalon_version": "10.2.0"
@@ -1970,10 +1757,10 @@
     "gen_code_001": {
       "input_id": "gen_code_001",
       "feature": "generate_code",
-      "user_input": "// Perform a user login:\n// - Open browser to \"https://katalon-demo-cura.herokuapp.com\"\n// - Set text \"John Doe\" into Test Object 'Object Repository/Page_Login/txt_Username'\n// - Set text \"ThisIsNotAPassword\" into Test Object 'Object Repository/Page_Login/txt_Password'\n// - Click Test Object 'Object Repository/Page_Login/btn_Login'\n// - Verify Test Object 'Object Repository/Page_Home/lbl_MakeAppointment' is visible",
+      "user_input": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test Objects/LoginPage/txt_Username', enter 'ThisIsNotAPassword' into 'Test Objects/LoginPage/txt_Password', click 'Test Objects/LoginPage/btn_Login', then verify 'Test Objects/HomePage/txt_MakeAppointment' is visible.",
       "api_input": {
         "model": "gpt-4o-mini",
-        "prompt": "// Perform a user login:\n// - Open browser to \"https://katalon-demo-cura.herokuapp.com\"\n// - Set tex...",
+        "prompt": "// Open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'John Doe' into 'Test...",
         "llm_type": "personal_openai",
         "api_url": "https://api.openai.com/v1/chat/completions"
       },
@@ -1981,34 +1768,33 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Open the browser to the specified URL\nWebUI.openBrowser('https://katalon-demo-cura.herokuapp.com')\n\n// Set text into the username field\nWebUI.setText(findTestObject('Object Repository/Page_Login/txt_Username'), 'John Doe')\n\n// Set text into the password field\nWebUI.setText(findTestObject('Object Repository/Page_Login/txt_Password'), 'ThisIsNotAPassword')\n\n// Click the login button\nWebUI.click(findTestObject('Object Repository/Page_Login/btn_Login'))\n\n// Verify that the Make Appointment label is visible\nWebUI.verifyElementVisible(findTestObject('Object Repository/Page_Home/lbl_MakeAppointment'))",
+      "api_output": "// Open the browser and navigate to the specified URL\nWebUI.openBrowser('')\nWebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')\n\n// Enter 'John Doe' into the username text field\nWebUI.setText(findTestObject('LoginPage/txt_Username'), 'John Doe')\n\n// Enter 'ThisIsNotAPassword' into the password text field\nWebUI.setText(findTestObject('LoginPage/txt_Password'), 'ThisIsNotAPassword')\n\n// Click on the login button\nWebUI.click(findTestObject('LoginPage/btn_Login'))\n\n// Verify that the make appointment text is visible\nWebUI.verifyElementVisible(findTestObject('HomePage/txt_MakeAppointment'))",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
       "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:16:10.149848",
-      "response_time": 19.6313579082489,
+      "timestamp": "2025-06-12T11:30:34.727372",
+      "response_time": 3.362149953842163,
       "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
           "correctness": 10,
           "readability": 10,
-          "functionality": 9
+          "functionality": 10
         },
         "feedback": {
-          "completeness": "The generated code addresses all requirements explicitly stated in the user prompt. Every step requested is translated into a corresponding Katalon Studio keyword.",
-          "correctness": "The syntax is perfectly valid. It uses the correct Katalon Studio keywords (`WebUI.openBrowser`, `WebUI.setText`, `WebUI.click`, `WebUI.verifyElementVisible`) and correctly utilizes `findTestObject` for referencing test objects by their repository path.",
-          "readability": "The code is exceptionally readable. Each line is accompanied by a clear and concise comment explaining its purpose, directly derived from the user's input. The indentation is standard and clean.",
-          "functionality": "The code would execute successfully in Katalon Studio, assuming the specified Test Objects exist in the Object Repository and the application behaves as expected. However, for robust automation, it lacks a `WebUI.closeBrowser()` call at the end for proper resource cleanup and explicit waits (e.g., `WebUI.waitForElementVisible`, `WebUI.waitForPageLoad`) after actions like `openBrowser` and `click`. While not explicitly requested, these are best practices for stable and reliable test automation."
+          "completeness": "The code fully addresses all requirements specified in the user prompt. Every action requested (open browser, navigate, set text, click, verify visibility) is present and correctly implemented.",
+          "correctness": "The syntax is entirely valid for Katalon Studio Groovy. All Katalon keywords (`WebUI.openBrowser`, `WebUI.navigateToUrl`, `WebUI.setText`, `WebUI.click`, `WebUI.verifyElementVisible`, `findTestObject`) are used correctly and appropriately.",
+          "readability": "The code is exceptionally well-structured. It uses clear, concise comments for each logical block, proper indentation, and a straightforward flow, making it very easy to understand.",
+          "functionality": "The code would execute successfully in Katalon Studio, assuming the referenced Test Objects exist in the project. It correctly performs all the requested actions. While the specific login credentials might not lead to a successful login on the demo site (due to the expected password being 'ThisIsNotAPassword!' with an exclamation mark), the code accurately implements the user's instruction to enter 'ThisIsNotAPassword', thus fulfilling its functional requirement based on the prompt."
         },
-        "overall_assessment": "The StudioAssist output is excellent. It accurately translates the user's natural language instructions into executable Katalon Studio code, demonstrating a strong understanding of both the user's intent and Katalon Studio's API. The code is complete, syntactically correct, and highly readable. While it could be made more robust with additional best practices (like explicit waits and browser closing), it perfectly fulfills the direct requirements of the prompt.",
-        "overall_score": 9.75,
+        "overall_assessment": "This is an excellent output from StudioAssist. The generated code is a perfect translation of the natural language input into robust, readable, and functionally correct Katalon Studio automation script. It demonstrates a strong understanding of Katalon's WebUI keywords and best practices for structuring test steps.",
+        "overall_score": 10,
         "suggestions": [
-          "Add `WebUI.closeBrowser()` at the end of the script to ensure the browser instance is properly closed after the test execution, preventing resource leaks.",
-          "Consider adding explicit waits, such as `WebUI.waitForElementVisible()` or `WebUI.waitForPageLoad()`, after actions like `WebUI.openBrowser()` and `WebUI.click()` to improve script stability and reduce flakiness, especially in environments with varying network speeds or application response times.",
-          "For more complex profiles or production-grade scripts, consider incorporating error handling (e.g., `try-catch` blocks) to gracefully manage unexpected issues during execution."
+          "For a complete test case, consider adding `WebUI.closeBrowser()` at the end to ensure the browser instance is properly closed after the test execution.",
+          "To make tests more robust against loading times, consider adding `WebUI.waitForElementVisible` or `WebUI.waitForPageLoad` after navigation or clicks, especially before interacting with subsequent elements. (This is an enhancement, not a correction, as it wasn't explicitly requested by the prompt)."
         ],
         "meets_requirements": true,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:19:00.123334"
+        "evaluation_timestamp": "2025-06-12T11:31:05.239356"
       },
       "human_validation": null,
       "error": null
@@ -2016,10 +1802,10 @@
     "gen_code_002": {
       "input_id": "gen_code_002",
       "feature": "generate_code",
-      "user_input": "/* Interact with a web form:\n* - Select option by value \"Hongkong CURA Healthcare Center\" from Test Object 'Object Repository/Page_Appointment/ddl_Facility'\n* - Check Test Object 'Object Repository/Page_Appointment/chk_ApplyForReadmission'\n* - Set text \"21/05/2024\" into Test Object 'Object Repository/Page_Appointment/txt_VisitDate'\n* - Get text from Test Object 'Object Repository/Page_AppointmentConfirmation/lbl_ConfirmationMessage' and store it in a global variable 'G_AppointmentConfirmationText'*/",
+      "user_input": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@example.com' into 'Test Objects/Mobile/txt_Email', enter 'password123' into 'Test Objects/Mobile/txt_Password', then swipe up on 'Test Objects/Mobile/scrollView' to find and tap 'Test Objects/Mobile/btn_Submit'. */",
       "api_input": {
         "model": "gpt-4o-mini",
-        "prompt": "/* Interact with a web form:\n* - Select option by value \"Hongkong CURA Healthcare Center\" from Test ...",
+        "prompt": "/* Start 'Test Objects/Mobile/Application', tap on 'Test Objects/Mobile/btn_Login', enter 'user@exam...",
         "llm_type": "personal_openai",
         "api_url": "https://api.openai.com/v1/chat/completions"
       },
@@ -2027,33 +1813,34 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Select the option with value \"Hongkong CURA Healthcare Center\" from the dropdown\nselectOptionByValue(findTestObject('Page_Appointment/ddl_Facility'), 'Hongkong CURA Healthcare Center')\n\n// Check the checkbox for applying for readmission\ncheck(findTestObject('Page_Appointment/chk_ApplyForReadmission'))\n\n// Set the visit date to \"21/05/2024\"\nsetText(findTestObject('Page_Appointment/txt_VisitDate'), '21/05/2024')\n\n// Get the confirmation message text and store it in a global variable\nGlobalVariable.G_AppointmentConfirmationText = getText(findTestObject('Page_AppointmentConfirmation/lbl_ConfirmationMessage'))",
+      "api_output": "// Start the mobile application\nMobile.startApplication('path/to/your/application.apk', false)\n// Tap on the login button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Login'), 10)\n// Enter the email address\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Email'), 'user@example.com', 10)\n// Enter the password\nMobile.setText(findTestObject('Test Objects/Mobile/txt_Password'), 'password123', 10)\n// Swipe up to find the submit button\nMobile.swipe(0, 1000, 0, 500) // Adjust swipe coordinates as necessary\n// Tap on the submit button\nMobile.tap(findTestObject('Test Objects/Mobile/btn_Submit'), 10)",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
       "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:16:33.770609",
-      "response_time": 22.61932396888733,
+      "timestamp": "2025-06-12T11:30:39.559405",
+      "response_time": 3.8300883769989014,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 10,
-          "correctness": 10,
-          "readability": 10,
-          "functionality": 10
+          "completeness": 7,
+          "correctness": 6,
+          "readability": 9,
+          "functionality": 4
         },
         "feedback": {
-          "completeness": "The code addresses all requirements specified in the user input. Each action requested (select option, check checkbox, set text, get text and store in global variable) is perfectly translated.",
-          "correctness": "The syntax is valid and uses proper Katalon Studio keywords (`selectOptionByValue`, `check`, `setText`, `getText`, `findTestObject`). The access to the global variable (`GlobalVariable.G_AppointmentConfirmationText`) is also correct. There are no syntax errors or incorrect keyword usages.",
-          "readability": "The code is exceptionally well-structured. Each line of code is preceded by a clear, concise, and relevant comment explaining its purpose. The indentation is correct, and the overall layout is easy to follow.",
-          "functionality": "Assuming the specified Test Objects exist in the Object Repository and the global variable `G_AppointmentConfirmationText` is defined, this code would execute successfully in Katalon Studio. The keywords are correctly applied to the respective test objects, and the data flow is logical."
+          "completeness": "The code addresses most requirements, but the 'swipe up on Test Objects/Mobile/scrollView to find and tap Test Objects/Mobile/btn_Submit' part is not fully complete. It performs a generic swipe but lacks the specific 'on scrollView' constraint and robust 'find' logic (e.g., waiting or iterating swipes until the element is found). The initial 'Start Test Objects/Mobile/Application' was interpreted as an APK path, whereas it might imply an Application Test Object.",
+          "correctness": "The syntax for all Katalon keywords (`Mobile.startApplication`, `Mobile.tap`, `Mobile.setText`, `findTestObject`) is correct. However, the logical implementation of the 'swipe to find and tap' is not entirely correct for a robust mobile automation profile. `Mobile.swipe` performs a generic screen swipe, not specifically on a Test Object like 'scrollView'. To swipe on a specific object, one would typically need to get its coordinates or use a more advanced keyword like `Mobile.swipeToElement` if the goal is to reveal a hidden element.",
+          "readability": "The code is very well-structured with clear, concise comments for each step. Indentation is proper, making it easy to understand the flow of execution.",
+          "functionality": "The basic interactions (tap, setText) would likely execute successfully. However, the 'swipe' and subsequent 'tap' for the submit button is the weakest point. A single generic `Mobile.swipe` might not reveal the `btn_Submit` element, and there's no explicit wait or verification that the element is visible before attempting to tap it. If `btn_Submit` is not visible after the single swipe, the `Mobile.tap` call will fail. The prompt implied a 'find' action after swiping, which is not robustly implemented here."
         },
-        "overall_assessment": "The StudioAssist output is outstanding. It perfectly translates the natural language instructions into highly functional, correct, and readable Katalon Studio code. It demonstrates a strong understanding of Katalon Studio's Web UI keywords and best practices for interacting with test objects and global variables. This is a production-ready snippet for the given requirements.",
-        "overall_score": 10,
+        "overall_assessment": "The StudioAssist output provides a good foundation for the automation script, correctly handling straightforward actions like tapping and setting text with proper Katalon syntax and excellent readability. However, it struggles with the more complex requirement of swiping on a specific element to find and interact with another, opting for a less robust generic swipe that lacks verification and iterative search capabilities. The interpretation of starting the application could also be improved for better maintainability.",
+        "overall_score": 6,
         "suggestions": [
-          "For this specific prompt, the generated code is optimal and requires no significant improvements. It's concise, correct, and highly readable.",
-          "While not strictly necessary for this prompt, for more robust scripts, one might consider adding explicit `WebUI.` prefixes to keywords (e.g., `WebUI.selectOptionByValue`) for clarity, though Katalon Studio automatically imports these. Also, adding error handling (e.g., `try-catch` blocks or `verifyElementPresent` before interaction) could be beneficial in a real-world profile, but it was not requested by the user."
+          "For starting the application, if 'Test Objects/Mobile/Application' refers to an Application Test Object, use `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` instead of a hardcoded APK path for better maintainability and environment flexibility.",
+          "Improve the 'swipe to find and tap' logic. Instead of a generic `Mobile.swipe`, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'), Mobile.DIRECTION_UP, 10, 100)` which will swipe upwards until the submit button is found (adjust max swipes and offset as needed). This keyword inherently handles the 'find' aspect.",
+          "If the swipe *must* be confined to the 'scrollView' object, you would need to get the coordinates of `findTestObject('Test Objects/Mobile/scrollView')` and then perform `Mobile.swipe` within those bounds, potentially in a loop with `Mobile.verifyElementVisible` for `btn_Submit`."
         ],
-        "meets_requirements": true,
+        "meets_requirements": false,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:19:11.404095"
+        "evaluation_timestamp": "2025-06-12T11:31:23.466633"
       },
       "human_validation": null,
       "error": null
@@ -2061,10 +1848,10 @@
     "gen_code_003": {
       "input_id": "gen_code_003",
       "feature": "generate_code",
-      "user_input": "// Automate a mobile app profile (Android):\n// - Start application 'com.android.calculator2'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit5'\n// - Tap Test Object 'Object Repository/Mobile/btn_Plus'\n// - Tap Test Object 'Object Repository/Mobile/btn_Digit3'\n// - Verify text \"8\" is present on Test Object 'Object Repository/Mobile/txt_Result'",
+      "user_input": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"leader\"}', verify response status code is 201, and verify 'name' field in response body is 'morpheus'.",
       "api_input": {
         "model": "gpt-4o-mini",
-        "prompt": "// Automate a mobile app profile (Android):\n// - Start application 'com.android.calculator2'\n// - T...",
+        "prompt": "// Send a POST request to 'Test Objects/API/CreateUser' with body '{\"name\": \"morpheus\", \"job\": \"lead...",
         "llm_type": "personal_openai",
         "api_url": "https://api.openai.com/v1/chat/completions"
       },
@@ -2072,33 +1859,34 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Start the application with the specified package name\nMobile.startApplication('com.android.calculator2', true)\n// Tap on the digit 5 button\nMobile.tap(findTestObject('Object Repository/Mobile/btn_Digit5'), 0)\n// Tap on the plus button\nMobile.tap(findTestObject('Object Repository/Mobile/btn_Plus'), 0)\n// Tap on the digit 3 button\nMobile.tap(findTestObject('Object Repository/Mobile/btn_Digit3'), 0)\n// Verify that the result text is \"8\"\nMobile.verifyElementText(findTestObject('Object Repository/Mobile/txt_Result'), '8')",
+      "api_output": "// Sending a POST request to the specified API test object\nResponseObject response = WS.sendRequest(findTestObject('API/CreateUser', [('body') : '{\"name\": \"morpheus\", \"job\": \"leader\"}']))\n// Verifying that the response status code is 201\nWS.verifyResponseStatusCode(response, 201)\n// Verifying that the 'name' field in the response body is 'morpheus'\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
       "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:17:00.051516",
-      "response_time": 25.27894902229309,
+      "timestamp": "2025-06-12T11:30:43.051082",
+      "response_time": 2.490165948867798,
       "LLM3_evaluation": {
         "scores": {
           "completeness": 10,
-          "correctness": 10,
+          "correctness": 4,
           "readability": 9,
-          "functionality": 10
+          "functionality": 3
         },
         "feedback": {
-          "completeness": "The code fully addresses all requirements specified in the user input, including starting the application, performing the taps, and verifying the final text.",
-          "correctness": "The syntax is perfectly valid, and all Katalon Studio keywords (`Mobile.startApplication`, `Mobile.tap`, `findTestObject`, `Mobile.verifyElementText`) are used correctly and appropriately for the mobile automation profile.",
-          "readability": "The code is very well-structured with clear and concise comments for each line, making it easy to understand the purpose of each step. The lack of indentation is typical for a top-level script file in Katalon Studio, so it doesn't significantly detract from readability.",
-          "functionality": "This code would execute successfully in Katalon Studio, assuming the specified test objects (`btn_Digit5`, `btn_Plus`, `btn_Digit3`, `txt_Result`) exist in the Object Repository with correct locators and the Android Calculator app (`com.android.calculator2`) is installed on the connected device/emulator. The use of `true` for `clearPackageData` in `startApplication` is a good practice for consistent test runs."
+          "completeness": "The code addresses all requirements specified in the user input: sending a POST request, specifying the test object, including the body, verifying the status code, and verifying a specific field in the response body.",
+          "correctness": "The main issue lies in how the request body is handled. Passing the entire JSON string as a parameter named 'body' to `findTestObject` is not the standard or robust way to set the HTTP request body for a POST request in Katalon Studio. `findTestObject`'s second argument is for substituting variables *within* the test object's definition (e.g., in the URL or body if parameterized as `${variable_name}`). It does not directly set the entire HTTP body content. This approach would only work if the 'CreateUser' test object's HTTP Body was literally configured as `\"${body}\"`, which is highly unconventional. The verification steps (`WS.verifyResponseStatusCode`, `WS.verifyElementPropertyValue`) are correct.",
+          "readability": "The code is well-structured with clear comments explaining each step. Variable naming is appropriate. Indentation is standard. The only minor point is the absence of explicit import statements, but Katalon Studio often handles these implicitly.",
+          "functionality": "This code would likely *not* execute successfully as intended for setting the request body in a typical Katalon Studio project. The request body would either be empty or incorrectly formed, leading to a failed API call (e.g., a 400 Bad Request) because the JSON payload '{\"name\": \"morpheus\", \"job\": \"leader\"}' would not be sent as the HTTP body. It relies on a very specific and non-standard configuration of the 'CreateUser' test object that is unlikely to be the default or expected setup."
         },
-        "overall_assessment": "The StudioAssist output is excellent. It provides a complete, correct, readable, and functional solution that perfectly matches the user's request. It demonstrates a strong understanding of Katalon Studio's mobile automation capabilities and best practices for simple profiles.",
-        "overall_score": 9.75,
+        "overall_assessment": "The StudioAssist output correctly identifies the necessary actions (send request, verify status, verify body field) and uses the appropriate Katalon keywords for verification. However, it has a critical flaw in how it attempts to set the dynamic request body for the POST request. The method used for passing the body content is unconventional and would likely not work as expected in a standard Katalon Studio project, making the code functionally incorrect for its primary purpose of sending a specific JSON body.",
+        "overall_score": 6,
         "suggestions": [
-          "Consider adding `Mobile.closeApplication()` at the end of the script for proper test cleanup, although it was not explicitly requested by the user.",
-          "While `0` is a valid timeout for `Mobile.tap`, using a small positive timeout (e.g., `1` or `5` seconds) can sometimes make tests more robust against minor UI rendering delays, especially in real device testing where performance can vary."
+          "When a full JSON body string is provided in the prompt, the generated code should explicitly retrieve the `RequestObject` from `findTestObject`, then modify its `bodyContent` using `request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(requestBody, \"application/json\"))` before sending the request.",
+          "Alternatively, if the intent is to use parameters, the prompt should be interpreted as providing *individual fields* for parameterization, and the generated code should pass those individual fields as parameters to `findTestObject` (e.g., `findTestObject('API/CreateUser', [('name') : 'morpheus', ('job') : 'leader'])`), assuming the API test object's body is parameterized (e.g., `{\"name\": \"${name}\", \"job\": \"${job}\"}`). Given the prompt provided a *full JSON string*, the first suggestion is more appropriate.",
+          "Consider adding necessary import statements (e.g., `import com.kms.katalon.core.webservice.keyword.WSBuiltinKeywords as WS`, `import com.kms.katalon.core.webservice.model.RequestObject`, `import com.kms.katalon.core.webservice.model.ResponseObject`) for better code clarity and portability, although Katalon Studio often handles these implicitly."
         ],
-        "meets_requirements": true,
+        "meets_requirements": false,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:19:23.730932"
+        "evaluation_timestamp": "2025-06-12T11:31:42.108483"
       },
       "human_validation": null,
       "error": null
@@ -2106,10 +1894,10 @@
     "gen_code_004": {
       "input_id": "gen_code_004",
       "feature": "generate_code",
-      "user_input": "/* Perform a POST API request:\n* - Send POST request to 'Object Repository/API/Reqres/CreateUser' with body:\n*   { \"name\": \"morpheus\", \"job\": \"leader\" }\n* - Verify response status code is 201\n* - Verify JSON response contains \"name\" as \"morpheus\" and \"job\" as \"leader\"*/",
+      "user_input": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate through each row of 'TestData/Users'.\n*   For each row, open browser, navigate to 'https://example.com/login',\n*   enter 'username' from current row into 'Test Objects/Web/txt_Username',\n*   enter 'password' from current row into 'Test Objects/Web/txt_Password',\n*   click 'Test Objects/Web/btn_Login',\n*   then close browser.\n*/",
       "api_input": {
         "model": "gpt-4o-mini",
-        "prompt": "/* Perform a POST API request:\n* - Send POST request to 'Object Repository/API/Reqres/CreateUser' wi...",
+        "prompt": "/*\n*   Define a test data 'TestData/Users' from an Excel file 'Data Files/users.xlsx'.\n*   Iterate t...",
         "llm_type": "personal_openai",
         "api_url": "https://api.openai.com/v1/chat/completions"
       },
@@ -2117,35 +1905,36 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Send POST request to the specified API endpoint with the provided body\nResponseObject response = WS.sendRequest(findTestObject('Object Repository/API/Reqres/CreateUser', [('name') : 'morpheus', ('job') : 'leader'])) \n\n// Verify that the response status code is 201\nWS.verifyResponseStatusCode(response, 201) \n\n// Verify that the JSON response contains \"name\" as \"morpheus\"\nWS.verifyElementPropertyValue(response, 'name', 'morpheus')\n\n// Verify that the JSON response contains \"job\" as \"leader\"\nWS.verifyElementPropertyValue(response, 'job', 'leader')",
+      "api_output": "// Define the test data from an Excel file\ndef testData = findTestData('TestData/Users')\n\n// Iterate through each row of the test data\nfor (def index : (1..testData.getRowNumbers())) {\n    // Open the browser\n    WebUI.openBrowser('')\n    \n    // Navigate to the login page\n    WebUI.navigateToUrl('https://example.com/login')\n    \n    // Enter username from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Username'), testData.getValue('username', index))\n    \n    // Enter password from the current row\n    WebUI.setText(findTestObject('Test Objects/Web/txt_Password'), testData.getValue('password', index))\n    \n    // Click the login button\n    WebUI.click(findTestObject('Test Objects/Web/btn_Login'))\n    \n    // Close the browser\n    WebUI.closeBrowser()\n}",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
       "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:17:17.655052",
-      "response_time": 16.600996732711792,
+      "timestamp": "2025-06-12T11:30:47.492710",
+      "response_time": 3.440117120742798,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 4,
+          "completeness": 10,
           "correctness": 5,
           "readability": 9,
-          "functionality": 3
+          "functionality": 4
         },
         "feedback": {
-          "completeness": "The code correctly addresses sending the POST request, verifying the status code, and verifying JSON response properties. However, it fails to correctly implement sending the specified JSON request body. The parameters passed to `findTestObject` are for variable substitution within the Test Object's definition (e.g., URL, headers, or body if placeholders are used), not for directly providing the entire request body as a literal JSON string.",
-          "correctness": "The syntax used is valid Groovy/Katalon Studio syntax, and the Katalon keywords (`WS.sendRequest`, `findTestObject`, `WS.verifyResponseStatusCode`, `WS.verifyElementPropertyValue`) are correctly spelled and used in terms of their signature. However, the *logic* for sending the request body is incorrect for the most common interpretation of the prompt. Passing `[('name') : 'morpheus', ('job') : 'leader']` to `findTestObject` will only substitute variables if the Test Object itself has placeholders like `${name}` and `${job}` in its HTTP Body. It does not directly construct and send the literal JSON body `{ \"name\": \"morpheus\", \"job\": \"leader\" }` as implied by the prompt.",
-          "readability": "The code is very well-structured with clear and concise comments for each step. The variable naming is appropriate, making the code easy to understand.",
-          "functionality": "While the code would execute without syntax errors, it is highly unlikely to achieve the intended functionality of sending the specified JSON request body. Unless the 'CreateUser' Test Object is specifically pre-configured with placeholders like `{\"name\": \"${name}\", \"job\": \"${job}\"}` in its HTTP Body, the parameters passed to `findTestObject` will not result in the desired JSON body being sent. This fundamental flaw in sending the request body means the entire test would not accurately reflect the user's requirement."
+          "completeness": "The code addresses all requirements specified in the prompt. It correctly identifies the need to define test data, iterate through it, perform browser actions (open, navigate, input, click), and close the browser for each iteration.",
+          "correctness": "The most significant correctness issue is the loop for iterating through test data. Katalon Studio's `findTestData` and its `getValue` method are 0-indexed for rows. The generated loop `for (def index : (1..testData.getRowNumbers()))` will skip the first row (index 0) and will cause an `IndexOutOfBoundsException` when `index` reaches `testData.getRowNumbers()` (which is the count of rows, not the maximum index). The correct iteration should be `for (def index : (0..<testData.getRowNumbers()))` or `for (def index : (0..testData.getRowNumbers()-1))`.",
+          "readability": "The code is very well-structured with clear and concise comments for each major step. Indentation is proper, making it easy to follow the logic. Variable names are generally clear and descriptive.",
+          "functionality": "Due to the incorrect iteration logic for test data (0-indexed vs 1-indexed loop), the code will not execute successfully as intended. It will skip the first row of data and then likely throw an `IndexOutOfBoundsException` when trying to access an out-of-bounds index. While the individual `WebUI` keywords are correctly used, the overall data-driven flow is flawed and will not process all rows as requested."
         },
-        "overall_assessment": "The StudioAssist output demonstrates a good understanding of basic Katalon Studio API testing keywords for sending requests and performing common verifications (status code, JSON property values). The readability is excellent due to clear comments. However, there is a critical misunderstanding in how to dynamically provide a specific JSON request body for a POST request. The current approach of passing parameters to `findTestObject` is meant for variable substitution within a pre-defined Test Object, not for constructing the entire body from scratch. This flaw significantly impacts the completeness and functionality of the generated code, as the core requirement of sending the specified body is not met.",
-        "overall_score": 5,
+        "overall_assessment": "The StudioAssist output provides a good structural and readable solution, clearly outlining all the steps requested by the user. However, it contains a critical functional error in how it iterates through the test data. Katalon Studio's test data rows are 0-indexed, but the generated loop starts from 1 and goes up to the total row count, which will lead to skipping the first row and an `IndexOutOfBoundsException` for the last row. This fundamental flaw prevents the code from executing correctly and fulfilling the core requirement of iterating through *each* row.",
+        "overall_score": 7,
         "suggestions": [
-          "To send a specific JSON body, define the Test Object ('Object Repository/API/Reqres/CreateUser') with its HTTP Body set to 'Raw' and 'JSON (application/json)'. Then, either:",
-          "1.  **Option A (Preferred for fixed or simple dynamic bodies):** Set the HTTP Body directly in the Test Object to `{\"name\": \"morpheus\", \"job\": \"leader\"}`. In this case, the `WS.sendRequest` call would simply be `WS.sendRequest(findTestObject('Object Repository/API/Reqres/CreateUser'))` without any parameters.",
-          "2.  **Option B (For highly dynamic bodies):** If the body needs to be constructed dynamically in the test case, define the Test Object with a placeholder for the entire body, e.g., `\"${requestBody}\"` in its HTTP Body. Then, construct the JSON string in the test case and pass it as a parameter: `String requestBody = '{ \"name\": \"morpheus\", \"job\": \"leader\" }'; ResponseObject response = WS.sendRequest(findTestObject('Object Repository/API/Reqres/CreateUser', [('requestBody') : requestBody]))`.",
-          "3.  **Option C (More advanced, for full control):** Create a `RequestObject` dynamically in the test case, set its URL, method, headers, and `HttpTextBodyContent` directly, then pass this `RequestObject` to `WS.sendRequest`."
+          "**Correct the test data iteration loop:** Change `for (def index : (1..testData.getRowNumbers()))` to `for (def index : (0..<testData.getRowNumbers()))` or `for (def index : (0..testData.getRowNumbers()-1))` to correctly iterate through all 0-indexed rows.",
+          "**Add explicit waits:** Consider adding `WebUI.waitForPageLoad()` after `navigateToUrl` and `WebUI.waitForElementPresent()` or `WebUI.waitForElementClickable()` before `setText` and `click` actions to improve test stability and reliability.",
+          "**Implement error handling:** Wrap critical web operations (e.g., `navigateToUrl`, `setText`, `click`) in `try-catch` blocks to gracefully handle potential failures and provide more informative error messages.",
+          "**Add verification steps:** After clicking the login button, add a verification step (e.g., `WebUI.verifyElementPresent(findTestObject('Test Objects/Web/txt_WelcomeMessage'), 10)`) to confirm that the login was successful for each user.",
+          "**Specify browser type:** While `WebUI.openBrowser('')` uses the default, it's often clearer to explicitly specify the browser, e.g., `WebUI.openBrowser(BrowserType.CHROME)`."
         ],
         "meets_requirements": false,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:19:47.600538"
+        "evaluation_timestamp": "2025-06-12T11:31:58.546135"
       },
       "human_validation": null,
       "error": null
@@ -2153,10 +1942,10 @@
     "gen_code_005": {
       "input_id": "gen_code_005",
       "feature": "generate_code",
-      "user_input": "// Implement data-driven testing for searching products:\n// - Read data from Excel file \"Data Files/ProductSearchData.xlsx\" (Sheet1)\n// - For each row:\n//   - Open browser to \"https://www.demoblaze.com\"\n//   - Set text from column \"SearchTerm\" into Test Object 'Object Repository/Page_Home/txt_SearchInput'\n//   - Click Test Object 'Object Repository/Page_Home/btn_Search'\n//   - Verify Test Object 'Object Repository/Page_Search/lbl_SearchResult' contains text from column \"ExpectedProduct\"",
+      "user_input": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as parameters. Inside the keyword, open browser, navigate to 'https://katalon-demo-cura.herokuapp.com/', enter 'username' into 'Test Objects/LoginPage/txt_Username', enter 'password' into 'Test Objects/LoginPage/txt_Password', and click 'Test Objects/LoginPage/btn_Login'.",
       "api_input": {
         "model": "gpt-4o-mini",
-        "prompt": "// Implement data-driven testing for searching products:\n// - Read data from Excel file \"Data Files/...",
+        "prompt": "// Create a custom keyword named 'WebUIKeywords.login' that takes 'username' and 'password' as param...",
         "llm_type": "personal_openai",
         "api_url": "https://api.openai.com/v1/chat/completions"
       },
@@ -2164,341 +1953,220 @@
         "mode": "script",
         "katalon_version": "10.2.0"
       },
-      "api_output": "// Set up the data file for reading\ndef data = com.kms.katalon.core.testdata.TestDataFactory.findTestData('Data Files/ProductSearchData')\n\n// Loop through each row of the data\nfor (def index = 1; index <= data.getRowNumbers(); index++) {\n    // Open browser to the specified URL\n    WebUI.openBrowser('https://www.demoblaze.com')\n    \n    // Set text from the \"SearchTerm\" column into the search input field\n    WebUI.setText(findTestObject('Object Repository/Page_Home/txt_SearchInput'), data.getValue('SearchTerm', index))\n    \n    // Click the search button\n    WebUI.click(findTestObject('Object Repository/Page_Home/btn_Search'))\n    \n    // Verify the search result contains the expected product name from the data\n    WebUI.verifyTextPresent(data.getValue('ExpectedProduct', index), false) \n\n    // Close the browser after each search\n    WebUI.closeBrowser()\n}",
+      "api_output": "```groovy\nimport com.kms.katalon.core.annotation.Keyword\nimport com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n\n/*\n *  Custom keyword for logging into the application\n *\n *  @param username The username to log in\n *  @param password The password for the user\n */\n@Keyword\ndef login(String username, String password) {\n    WebUI.openBrowser('') // Open a new browser window\n    WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/') // Navigate to the specified URL\n    WebUI.setText(findTestObject('LoginPage/txt_Username'), username) // Enter the username into the username field\n    WebUI.setText(findTestObject('LoginPage/txt_Password'), password) // Enter the password into the password field\n    WebUI.click(findTestObject('LoginPage/btn_Login')) // Click the login button\n}\n```",
       "gui_output": "Output displayed in Katalon Studio generate_code interface",
       "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:17:39.883062",
-      "response_time": 21.22572374343872,
+      "timestamp": "2025-06-12T11:30:52.144259",
+      "response_time": 3.6487953662872314,
       "LLM3_evaluation": {
         "scores": {
-          "completeness": 6,
-          "correctness": 8,
-          "readability": 9,
-          "functionality": 6
-        },
-        "feedback": {
-          "completeness": "The code addresses most requirements, including data-driven setup, browser actions, and element interactions. However, it fails to fully implement the specific verification requirement. The prompt explicitly asks to 'Verify Test Object 'Object Repository/Page_Search/lbl_SearchResult' contains text', but the generated code uses `WebUI.verifyTextPresent`, which checks for the text anywhere on the page, not specifically within the specified Test Object. This is a significant omission regarding the specificity of the verification.",
-          "correctness": "The syntax is valid Groovy and uses proper Katalon keywords. All `WebUI` methods and `findTestObject` calls are syntactically correct. The `data.getValue` with a 1-indexed loop is also correct for Katalon Test Data. The issue with `WebUI.verifyTextPresent` is not a syntax error, but rather an incorrect application of the keyword for the user's specific intent.",
-          "readability": "The code is very well-structured. It includes clear and concise comments for each step, proper indentation, and logical flow, making it easy to understand and maintain.",
-          "functionality": "The code would execute successfully in Katalon Studio without syntax errors. However, the core verification step (`WebUI.verifyTextPresent`) does not perform the intended function as specified in the prompt. It will check for the presence of the 'ExpectedProduct' text anywhere on the page, rather than specifically within the 'lbl_SearchResult' Test Object. This means the test might pass incorrectly if the text appears elsewhere, or fail to accurately validate the content of the target element, thus not fulfilling the functional requirement precisely."
-        },
-        "overall_assessment": "The StudioAssist output provides a good foundation for data-driven web automation, demonstrating a solid understanding of Katalon's data handling and basic web UI actions. The code is highly readable and syntactically sound. However, it critically misses the specific requirement for targeted text verification within a particular Test Object, opting for a general page text check instead. This significantly impacts the completeness and functional accuracy of the solution relative to the user's prompt.",
-        "overall_score": 7,
-        "suggestions": [
-          "Replace `WebUI.verifyTextPresent(data.getValue('ExpectedProduct', index), false)` with `WebUI.verifyElementText(findTestObject('Object Repository/Page_Search/lbl_SearchResult'), data.getValue('ExpectedProduct', index))` to ensure the text is verified specifically within the intended Test Object.",
-          "Alternatively, if a partial match is desired, use `WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_Search/lbl_SearchResult')), data.getValue('ExpectedProduct', index), false)`.",
-          "Consider adding error handling (e.g., `try-catch` blocks) around critical steps for more robust test execution, although not explicitly requested by the user."
-        ],
-        "meets_requirements": false,
-        "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:20:04.040196"
-      },
-      "human_validation": null,
-      "error": null
-    },
-    "gen_code_006": {
-      "input_id": "gen_code_006",
-      "feature": "generate_code",
-      "user_input": "/* Create a custom keyword named 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp' that returns the current system timestamp as a string in 'yyyyMMdd_HHmmss' format. */",
-      "api_input": {
-        "model": "gpt-4o-mini",
-        "prompt": "/* Create a custom keyword named 'com.katalon.utility.DateTimeHelper.getCurrentTimestamp' that retur...",
-        "llm_type": "personal_openai",
-        "api_url": "https://api.openai.com/v1/chat/completions"
-      },
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "api_output": "```groovy\nimport java.text.SimpleDateFormat // Importing the SimpleDateFormat class for formatting the date\nimport java.util.Date // Importing the Date class to get the current date and time\n\n@Keyword\ndef getCurrentTimestamp() {\n    def dateFormat = new SimpleDateFormat(\"yyyyMMdd_HHmmss\") // Creating a DateFormat object with the specified format\n    def currentDate = new Date() // Getting the current date\n    return dateFormat.format(currentDate) // Formatting the current date into the specified string format and returning it\n}\n```",
-      "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:18:01.484367",
-      "response_time": 20.59939694404602,
-      "LLM3_evaluation": {
-        "scores": {
-          "completeness": 10,
-          "correctness": 10,
+          "completeness": 9,
+          "correctness": 9,
           "readability": 10,
-          "functionality": 10
+          "functionality": 9
         },
         "feedback": {
-          "completeness": "The code fully addresses all requirements from the prompt. It correctly defines the `getCurrentTimestamp` method, which returns a string in the specified 'yyyyMMdd_HHmmss' format. The implied class/package structure for the custom keyword name is also correctly handled by the method definition.",
-          "correctness": "The syntax is valid Groovy. It correctly uses the `@Keyword` annotation, imports `SimpleDateFormat` and `Date` classes, and applies standard Java date formatting logic. There are no syntax errors or improper Katalon keyword usage.",
-          "readability": "The code is exceptionally well-structured with proper indentation. The comments are clear, concise, and accurately explain the purpose of each line, significantly enhancing readability and understanding. Variable names are descriptive.",
-          "functionality": "This code would execute successfully in Katalon Studio. When placed in a custom keyword file (e.g., `Keywords/com/katalon/utility/DateTimeHelper.groovy`), it will compile and run as expected, returning the current system timestamp in the desired format."
+          "completeness": "The code addresses almost all requirements. It correctly defines the 'login' method with the specified parameters and performs all requested WebUI actions. The only minor point is that the prompt specified 'WebUIKeywords.login', implying the keyword's full path. The generated code is the 'login' method itself, which would reside within a 'WebUIKeywords' package/file, so it's largely complete in terms of the method definition.",
+          "correctness": "The syntax is valid Groovy and all Katalon keywords are used correctly. The imports and `@Keyword` annotation are also correct. The only minor point is the use of `WebUI.openBrowser('')`. While syntactically valid and often defaults to the configured browser, `WebUI.openBrowser(null)` or simply `WebUI.openBrowser()` is the more idiomatic and robust way to open the default browser.",
+          "readability": "The code is exceptionally well-structured. It includes clear Javadoc-style comments for the keyword and concise inline comments for each step, significantly enhancing readability. Indentation is proper and consistent.",
+          "functionality": "The code would execute successfully in Katalon Studio, assuming the specified Test Objects ('LoginPage/txt_Username', 'LoginPage/txt_Password', 'LoginPage/btn_Login') exist. The `WebUI.openBrowser('')` call, despite being slightly non-standard, typically defaults to the configured browser and would not prevent execution. It correctly performs the login flow as requested."
         },
-        "overall_assessment": "The StudioAssist output is outstanding. It perfectly fulfills all aspects of the user's request, providing a complete, correct, readable, and fully functional custom keyword for Katalon Studio. The inclusion of detailed comments is a significant advantage, making the code easy to understand and maintain.",
-        "overall_score": 10,
+        "overall_assessment": "The StudioAssist output is very good. It accurately translates the user's request into a functional and highly readable custom keyword for Katalon Studio. The use of proper annotations, imports, and built-in keywords is commendable. The inclusion of detailed comments is a significant plus. The only minor areas for improvement relate to best practices for opening a browser and ensuring the keyword's full path aligns with the user's naming convention.",
+        "overall_score": 9,
         "suggestions": [
-          "For more complex keywords or utility methods, consider adding Javadoc-style comments at the method level to formally describe its purpose, parameters, and return value. This enhances documentation for future maintenance.",
-          "While not strictly necessary for custom keywords in Katalon Studio (as `def` works fine), adding the `static` modifier to the method (`static def getCurrentTimestamp()`) is a common practice for utility methods that do not rely on instance state. This allows direct calling without explicit object instantiation, though Katalon handles non-static custom keywords seamlessly."
+          "For opening the default browser, it's generally better practice to use `WebUI.openBrowser(null)` or simply `WebUI.openBrowser()` without any arguments, instead of an empty string `''`. This makes the intent clearer and is more robust.",
+          "While not explicitly requested, consider adding implicit or explicit waits (e.g., `WebUI.waitForElementPresent`, `WebUI.waitForPageLoad`) after navigation and before interacting with elements to make the automation more robust against varying page load times.",
+          "The prompt specified 'WebUIKeywords.login'. While the method name 'login' is correct, ensure the generated keyword file is placed in a 'WebUIKeywords' folder within the 'Keywords' directory of the Katalon project to fully adhere to the user's implied naming convention for the keyword's full path."
         ],
         "meets_requirements": true,
         "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:20:18.488788"
+        "evaluation_timestamp": "2025-06-12T11:32:14.775289"
       },
-      "human_validation": null,
-      "error": null
-    },
-    "gen_code_007": {
-      "input_id": "gen_code_007",
-      "feature": "generate_code",
-      "user_input": "// Handle dynamic element and error handling:\n// - Wait for Test Object 'Object Repository/Page_Dashboard/div_DynamicWidget' to be visible with a timeout of 20 seconds\n// - Click Test Object 'Object Repository/Page_Dashboard/btn_ConfigureWidget'\n// - If an element is not found or an exception occurs, take a screenshot and save it as \"Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\" in the Reports folder.",
-      "api_input": {
-        "model": "gpt-4o-mini",
-        "prompt": "// Handle dynamic element and error handling:\n// - Wait for Test Object 'Object Repository/Page_Dash...",
-        "llm_type": "personal_openai",
-        "api_url": "https://api.openai.com/v1/chat/completions"
-      },
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "api_output": "// Wait for the dynamic widget to be visible for 20 seconds\nWebUI.waitForElementVisible(findTestObject('Object Repository/Page_Dashboard/div_DynamicWidget'), 20)\n\n// Click on the configure widget button\nWebUI.click(findTestObject('Object Repository/Page_Dashboard/btn_ConfigureWidget'))\n\n// Handle exceptions if any element is not found or an error occurs\ntry {\n    // Attempt to wait for the dynamic widget\n    WebUI.waitForElementVisible(findTestObject('Object Repository/Page_Dashboard/div_DynamicWidget'), 20)\n    // Attempt to click the button\n    WebUI.click(findTestObject('Object Repository/Page_Dashboard/btn_ConfigureWidget'))\n} catch (Exception e) {\n    // Take a screenshot if there is an exception\n    String screenshotPath = \"Reports/Failure_Screenshot_\" + GlobalVariable.G_CurrentTimestamp + \".png\"\n    WebUI.takeScreenshot(screenshotPath)\n}",
-      "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:18:31.280358",
-      "response_time": 28.793838262557983,
-      "LLM3_evaluation": {
-        "scores": {
-          "completeness": 5,
-          "correctness": 8,
-          "readability": 7,
-          "functionality": 3
-        },
-        "feedback": {
-          "completeness": "While all required actions (wait, click, error handling with screenshot) are present in the code, the implementation of the error handling is fundamentally flawed due to code duplication and incorrect placement of the 'try-catch' block. The 'try-catch' block should wrap the *initial* attempts to interact with elements, not repeat them. If the initial actions fail, the script will terminate before reaching the 'try-catch' block, thus failing to take the screenshot as required.",
-          "correctness": "The syntax for Katalon keywords (`WebUI.waitForElementVisible`, `WebUI.click`, `findTestObject`, `WebUI.takeScreenshot`) is correct. The `try-catch` block syntax is also correct. The use of `GlobalVariable.G_CurrentTimestamp` is syntactically correct, assuming the variable is defined. The path for the screenshot is also correct. The main issue is the logical correctness of the `try-catch` placement, which impacts functionality, not strictly syntax.",
-          "readability": "Comments are clear and indentation is good. However, the redundant code (duplication of `waitForElementVisible` and `click` calls) within and outside the `try-catch` block significantly reduces readability and makes the flow confusing.",
-          "functionality": "The code would execute, but the core error handling requirement ('If an element is not found or an exception occurs, take a screenshot') is not met effectively. If the initial `WebUI.waitForElementVisible` or `WebUI.click` calls (outside the `try-catch` block) fail, the script will terminate immediately, and the `try-catch` block (which is supposed to handle the error and take a screenshot) will never be reached. This renders the error handling mechanism ineffective for the primary operations."
-        },
-        "overall_assessment": "The StudioAssist output correctly identifies the necessary Katalon keywords and constructs for waiting, clicking, and taking screenshots. However, it fails significantly in the logical implementation of error handling. The duplication of code and the incorrect placement of the `try-catch` block mean that the specified error handling (taking a screenshot on failure) would not actually occur if the initial attempts to interact with elements fail, which is a critical flaw. The code, as written, would likely fail to capture a screenshot on the first occurrence of an element not found or an exception.",
-        "overall_score": 6,
-        "suggestions": [
-          "Wrap the *initial* `WebUI.waitForElementVisible` and `WebUI.click` calls directly within a single `try-catch` block.",
-          "Remove the redundant `WebUI.waitForElementVisible` and `WebUI.click` calls that are currently placed outside the `try-catch` block.",
-          "Consider adding `WebUI.comment` or `KeywordUtil.markFailed` within the `catch` block to log the failure in the Katalon report, providing more context than just a screenshot.",
-          "Ensure `GlobalVariable.G_CurrentTimestamp` is properly defined and populated (e.g., using `new Date().getTime()` or `new SimpleDateFormat(\"yyyyMMdd_HHmmss\").format(new Date())` if it's not already handled by Katalon's default global variables)."
-        ],
-        "meets_requirements": false,
-        "evaluator_model": "gemini-2.5-flash-preview-05-20",
-        "evaluation_timestamp": "2025-06-10T17:20:35.086120"
-      },
-      "human_validation": null,
-      "error": null
-    },
-    "gen_code_008": {
-      "input_id": "gen_code_008",
-      "feature": "generate_code",
-      "user_input": "/* Perform a GET API request with parameters and validate schema:\n* - Send GET request to 'Object Repository/API/Reqres/GetUsers' with query parameters:\n*   - page: \"2\"\n* - Verify response status code is 200\n* - Validate JSON response against schema file \"Data Files/UserListSchema.json\"*/",
-      "api_input": {
-        "model": "gpt-4o-mini",
-        "prompt": "/* Perform a GET API request with parameters and validate schema:\n* - Send GET request to 'Object Re...",
-        "llm_type": "personal_openai",
-        "api_url": "https://api.openai.com/v1/chat/completions"
-      },
-      "config": {
-        "mode": "script",
-        "katalon_version": "10.2.0"
-      },
-      "api_output": "// Send a GET request to the specified API with query parameters\nResponseObject response = WS.sendRequest(findTestObject('Object Repository/API/Reqres/GetUsers', [('page') : '2'])) \n// Verify that the response status code is 200\nWS.verifyResponseStatusCode(response, 200) \n// Validate the JSON response against the schema file\nWS.verifyResponseSchema(response, new File('Data Files/UserListSchema.json')) ",
-      "gui_output": "Output displayed in Katalon Studio generate_code interface",
-      "llm_version": "LLM2",
-      "timestamp": "2025-06-10T17:18:47.891533",
-      "response_time": 15.609268188476562,
-      "LLM3_evaluation": null,
       "human_validation": null,
       "error": null
     }
   },
   "comprehensive_analysis": {
     "summary": {
-      "total_evaluated": 7,
-      "evaluation_errors": 1,
-      "start_time": "2025-06-10T17:18:48.898768",
-      "end_time": "2025-06-10T17:20:49.129906"
+      "total_evaluated": 5,
+      "evaluation_errors": 0,
+      "start_time": "2025-06-12T11:30:53.154823",
+      "end_time": "2025-06-12T11:32:15.776882"
     },
     "diversity_analysis": {
-      "total_inputs": 8,
-      "unique_patterns": 8,
+      "total_inputs": 5,
+      "unique_patterns": 5,
       "prompt_length_stats": {
-        "min": 175,
-        "max": 504,
-        "mean": 365.5,
-        "median": 385.5,
-        "std_dev": 114.97204629200712
+        "min": 198,
+        "max": 428,
+        "mean": 322.8,
+        "median": 314,
+        "std_dev": 84.52928486625213
       },
       "pattern_categories": {
-        "testing": 7,
+        "testing": 5,
         "web_automation": 3,
         "mobile_testing": 3,
-        "api_testing": 2,
-        "data_driven": 2,
+        "api_testing": 1,
+        "data_driven": 1,
         "custom_keywords": 1
       },
       "complexity_distribution": {
-        "low": 1,
-        "medium": 7,
+        "low": 2,
+        "medium": 3,
         "high": 0
       }
     },
     "quality_analysis": {
-      "total_outputs": 8,
+      "total_outputs": 5,
       "output_length_stats": {
-        "min": 405,
-        "max": 868,
-        "mean": 620.375,
-        "median": 578.5,
-        "std_dev": 162.1762158887671
+        "min": 410,
+        "max": 810,
+        "mean": 644,
+        "median": 610,
+        "std_dev": 162.19741058352318
       },
       "keyword_usage": {
-        "WebUI": 15,
-        "TestObject": 20,
-        "GlobalVariable": 2,
-        "Mobile": 9,
-        "WS": 7,
+        "WebUI": 18,
+        "TestObject": 15,
+        "Mobile": 10,
+        "WS": 3,
         "@Keyword": 1
       },
-      "error_patterns": {
-        "error_handling": 1,
-        "exception_handling": 1
-      },
+      "error_patterns": {},
       "response_time_analysis": {
-        "min": 15.609268188476562,
-        "max": 28.793838262557983,
-        "mean": 21.29485684633255,
-        "median": 20.91256034374237,
-        "percentile_95": 28.793838262557983
+        "min": 2.490165948867798,
+        "max": 3.8300883769989014,
+        "mean": 3.354263353347778,
+        "median": 3.440117120742798,
+        "percentile_95": 3.8300883769989014
       }
     },
     "score_analysis": {
       "criteria_analysis": {
         "completeness": {
           "description": "Does the code address all requirements from the prompt?",
-          "count": 7,
-          "mean": 7.857142857142857,
+          "count": 5,
+          "mean": 9.2,
           "median": 10,
-          "std_dev": 2.734262327610589,
-          "min": 4,
+          "std_dev": 1.3038404810405297,
+          "min": 7,
           "max": 10,
           "distribution": {
             "excellent (8-10)": 4,
             "good (6-8)": 1,
-            "fair (4-6)": 2,
+            "fair (4-6)": 0,
             "poor (0-4)": 0
           }
         },
         "correctness": {
           "description": "Is the syntax valid and does it use proper Katalon keywords?",
-          "count": 7,
-          "mean": 8.714285714285714,
-          "median": 10,
-          "std_dev": 1.889822365046136,
-          "min": 5,
+          "count": 5,
+          "mean": 6.8,
+          "median": 6,
+          "std_dev": 2.588435821108957,
+          "min": 4,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 6,
-            "good (6-8)": 0,
-            "fair (4-6)": 1,
+            "excellent (8-10)": 2,
+            "good (6-8)": 1,
+            "fair (4-6)": 2,
             "poor (0-4)": 0
           }
         },
         "readability": {
           "description": "Is the code well-structured with proper indentation and comments?",
-          "count": 7,
-          "mean": 9.142857142857142,
+          "count": 5,
+          "mean": 9.4,
           "median": 9,
-          "std_dev": 1.0690449676496976,
-          "min": 7,
+          "std_dev": 0.5477225575051661,
+          "min": 9,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 6,
-            "good (6-8)": 1,
+            "excellent (8-10)": 5,
+            "good (6-8)": 0,
             "fair (4-6)": 0,
             "poor (0-4)": 0
           }
         },
         "functionality": {
           "description": "Would this code execute successfully in Katalon Studio?",
-          "count": 7,
-          "mean": 7.285714285714286,
-          "median": 9,
-          "std_dev": 3.251373336211726,
+          "count": 5,
+          "mean": 6,
+          "median": 4,
+          "std_dev": 3.24037034920393,
           "min": 3,
           "max": 10,
           "distribution": {
-            "excellent (8-10)": 4,
-            "good (6-8)": 1,
-            "fair (4-6)": 0,
-            "poor (0-4)": 2
+            "excellent (8-10)": 2,
+            "good (6-8)": 0,
+            "fair (4-6)": 2,
+            "poor (0-4)": 1
           }
         }
       },
       "overall_statistics": {
-        "mean": 8.214285714285714,
-        "median": 9.75,
-        "std_dev": 2.152656166559948,
-        "min": 5,
+        "mean": 7.6,
+        "median": 7,
+        "std_dev": 1.816590212458495,
+        "min": 6,
         "max": 10,
-        "meets_requirements_percentage": 50.0
+        "meets_requirements_percentage": 40.0
       },
       "score_distribution": {
         "0-2": 0,
         "2-4": 0,
-        "4-6": 1,
-        "6-8": 2,
-        "8-10": 4
+        "4-6": 0,
+        "6-8": 3,
+        "8-10": 2
       },
       "correlation_analysis": {
-        "completeness_vs_correctness": 0.9261591119440238,
-        "completeness_vs_readability": 0.6923624132292667,
-        "completeness_vs_functionality": 0.9802227465281322,
-        "correctness_vs_readability": 0.4360491817317043,
-        "correctness_vs_functionality": 0.8834820544530265,
-        "readability_vs_functionality": 0.7534953584828875
+        "completeness_vs_correctness": 0.014815221273648968,
+        "completeness_vs_readability": 0.21004201260420147,
+        "completeness_vs_functionality": 0.17751790062418157,
+        "correctness_vs_readability": 0.9522165814091078,
+        "correctness_vs_functionality": 0.9836076496900501,
+        "readability_vs_functionality": 0.9860132971832694
       },
       "improvement_areas": []
     },
     "feedback_analysis": {
       "common_feedback_themes": {
-        "accuracy": 17,
-        "clarity": 8,
+        "completeness": 2,
+        "accuracy": 12,
+        "clarity": 5,
         "best_practices": 4,
-        "error_handling": 13
+        "error_handling": 6
       },
       "suggestion_frequency": {
-        "Add `WebUI.closeBrowser()` at the end of the script to ensure the browser instance is properly closed after the test execution, preventing resource leaks.": 1,
-        "Consider adding explicit waits, such as `WebUI.waitForElementVisible()` or `WebUI.waitForPageLoad()`, after actions like `WebUI.openBrowser()` and `WebUI.click()` to improve script stability and reduce flakiness, especially in environments with varying network speeds or application response times.": 1,
-        "For more complex profiles or production-grade scripts, consider incorporating error handling (e.g., `try-catch` blocks) to gracefully manage unexpected issues during execution.": 1,
-        "For this specific prompt, the generated code is optimal and requires no significant improvements. It's concise, correct, and highly readable.": 1,
-        "While not strictly necessary for this prompt, for more robust scripts, one might consider adding explicit `WebUI.` prefixes to keywords (e.g., `WebUI.selectOptionByValue`) for clarity, though Katalon Studio automatically imports these. Also, adding error handling (e.g., `try-catch` blocks or `verifyElementPresent` before interaction) could be beneficial in a real-world profile, but it was not requested by the user.": 1,
-        "Consider adding `Mobile.closeApplication()` at the end of the script for proper test cleanup, although it was not explicitly requested by the user.": 1,
-        "While `0` is a valid timeout for `Mobile.tap`, using a small positive timeout (e.g., `1` or `5` seconds) can sometimes make tests more robust against minor UI rendering delays, especially in real device testing where performance can vary.": 1,
-        "To send a specific JSON body, define the Test Object ('Object Repository/API/Reqres/CreateUser') with its HTTP Body set to 'Raw' and 'JSON (application/json)'. Then, either:": 1,
-        "1.  **Option A (Preferred for fixed or simple dynamic bodies):** Set the HTTP Body directly in the Test Object to `{\"name\": \"morpheus\", \"job\": \"leader\"}`. In this case, the `WS.sendRequest` call would simply be `WS.sendRequest(findTestObject('Object Repository/API/Reqres/CreateUser'))` without any parameters.": 1,
-        "2.  **Option B (For highly dynamic bodies):** If the body needs to be constructed dynamically in the test case, define the Test Object with a placeholder for the entire body, e.g., `\"${requestBody}\"` in its HTTP Body. Then, construct the JSON string in the test case and pass it as a parameter: `String requestBody = '{ \"name\": \"morpheus\", \"job\": \"leader\" }'; ResponseObject response = WS.sendRequest(findTestObject('Object Repository/API/Reqres/CreateUser', [('requestBody') : requestBody]))`.": 1
+        "For a complete test case, consider adding `WebUI.closeBrowser()` at the end to ensure the browser instance is properly closed after the test execution.": 1,
+        "To make tests more robust against loading times, consider adding `WebUI.waitForElementVisible` or `WebUI.waitForPageLoad` after navigation or clicks, especially before interacting with subsequent elements. (This is an enhancement, not a correction, as it wasn't explicitly requested by the prompt).": 1,
+        "For starting the application, if 'Test Objects/Mobile/Application' refers to an Application Test Object, use `Mobile.startApplication(findTestObject('Test Objects/Mobile/Application'))` instead of a hardcoded APK path for better maintainability and environment flexibility.": 1,
+        "Improve the 'swipe to find and tap' logic. Instead of a generic `Mobile.swipe`, consider using `Mobile.swipeToElement(findTestObject('Test Objects/Mobile/btn_Submit'), Mobile.DIRECTION_UP, 10, 100)` which will swipe upwards until the submit button is found (adjust max swipes and offset as needed). This keyword inherently handles the 'find' aspect.": 1,
+        "If the swipe *must* be confined to the 'scrollView' object, you would need to get the coordinates of `findTestObject('Test Objects/Mobile/scrollView')` and then perform `Mobile.swipe` within those bounds, potentially in a loop with `Mobile.verifyElementVisible` for `btn_Submit`.": 1,
+        "When a full JSON body string is provided in the prompt, the generated code should explicitly retrieve the `RequestObject` from `findTestObject`, then modify its `bodyContent` using `request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(requestBody, \"application/json\"))` before sending the request.": 1,
+        "Alternatively, if the intent is to use parameters, the prompt should be interpreted as providing *individual fields* for parameterization, and the generated code should pass those individual fields as parameters to `findTestObject` (e.g., `findTestObject('API/CreateUser', [('name') : 'morpheus', ('job') : 'leader'])`), assuming the API test object's body is parameterized (e.g., `{\"name\": \"${name}\", \"job\": \"${job}\"}`). Given the prompt provided a *full JSON string*, the first suggestion is more appropriate.": 1,
+        "Consider adding necessary import statements (e.g., `import com.kms.katalon.core.webservice.keyword.WSBuiltinKeywords as WS`, `import com.kms.katalon.core.webservice.model.RequestObject`, `import com.kms.katalon.core.webservice.model.ResponseObject`) for better code clarity and portability, although Katalon Studio often handles these implicitly.": 1,
+        "**Correct the test data iteration loop:** Change `for (def index : (1..testData.getRowNumbers()))` to `for (def index : (0..<testData.getRowNumbers()))` or `for (def index : (0..testData.getRowNumbers()-1))` to correctly iterate through all 0-indexed rows.": 1,
+        "**Add explicit waits:** Consider adding `WebUI.waitForPageLoad()` after `navigateToUrl` and `WebUI.waitForElementPresent()` or `WebUI.waitForElementClickable()` before `setText` and `click` actions to improve test stability and reliability.": 1
       },
       "feedback_sentiment": {
         "positive": 4,
-        "neutral": 2,
+        "neutral": 0,
         "negative": 1
       }
     },
     "insights": [
       "Limited test coverage: Consider increasing the number of test patterns for more comprehensive evaluation.",
-      "High average response time (21.29s): Consider optimizing API calls or implementing caching.",
-      "Excellent overall performance: The current configuration is producing high-quality outputs.",
-      "Strong correlation between completeness_vs_correctness (0.93): These criteria are closely related.",
-      "Strong correlation between completeness_vs_functionality (0.98): These criteria are closely related.",
-      "Strong correlation between correctness_vs_functionality (0.88): These criteria are closely related.",
-      "Strong correlation between readability_vs_functionality (0.75): These criteria are closely related."
+      "Strong correlation between correctness_vs_readability (0.95): These criteria are closely related.",
+      "Strong correlation between correctness_vs_functionality (0.98): These criteria are closely related.",
+      "Strong correlation between readability_vs_functionality (0.99): These criteria are closely related."
     ]
   }
 };
 
                 // Criteria comparison data
-                const criteriaComparisonData = {"readability": {"LLM1_mean": 9.75, "LLM2_mean": 9.142, "difference": -0.608, "trend": "declined"}, "correctness": {"LLM1_mean": 9.75, "LLM2_mean": 8.714, "difference": -1.036, "trend": "declined"}, "completeness": {"LLM1_mean": 9.625, "LLM2_mean": 7.857, "difference": -1.768, "trend": "declined"}, "clarity": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "relevance": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "guideline_adherence": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "functionality": {"LLM1_mean": 9.0, "LLM2_mean": 7.285, "difference": -1.715, "trend": "declined"}, "functional_correctness": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "technical_precision": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "test_coverage": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "response_time": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}, "response_time_consistency": {"LLM1_mean": 0.0, "LLM2_mean": 0.0, "difference": 0.0, "trend": "maintained"}};
+                const criteriaComparisonData = {"readability": {"LLM1_mean": 10.0, "LLM2_mean": 9.4, "difference": -0.6, "trend": "declined"}, "correctness": {"LLM1_mean": 9.2, "LLM2_mean": 6.8, "difference": -2.4, "trend": "declined"}, "completeness": {"LLM1_mean": 8.2, "LLM2_mean": 9.2, "difference": 1.0, "trend": "improved"}, "clarity": {"LLM1_mean": null, "LLM2_mean": null, "difference": 0, "trend": "maintained"}, "relevance": {"LLM1_mean": null, "LLM2_mean": null, "difference": 0, "trend": "maintained"}, "functionality": {"LLM1_mean": 7.4, "LLM2_mean": 6.0, "difference": -1.4, "trend": "declined"}, "functional_correctness": {"LLM1_mean": null, "LLM2_mean": null, "difference": 0, "trend": "maintained"}, "technical_precision": {"LLM1_mean": null, "LLM2_mean": null, "difference": 0, "trend": "maintained"}, "response_time": {"LLM1_mean": null, "LLM2_mean": null, "difference": 0, "trend": "maintained"}, "response_time_consistency": {"LLM1_mean": null, "LLM2_mean": null, "difference": 0, "trend": "maintained"}};
                 console.log('Criteria comparison data:', criteriaComparisonData);
 
                 // Function to create charts with error handling and debugging
