@@ -1,6 +1,35 @@
 [
   {
     "feature": "explain",
+    "date": "2025-06-25 10:05",
+    "url": "comparison_report_explain_code_20250625_100512.html",
+    "models": {
+      "LLM1": {
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
+        "description": "Baseline Model"
+      },
+      "LLM2": {
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
+        "description": "Target Model"
+      }
+    },
+    "llm3": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "type": "evaluation"
+    },
+    "metrics": {
+      "consistency": 0.665,
+      "accuracy": 0.6775,
+      "quality": 0.555,
+      "response_time": 1.0,
+      "overall": 0.6325
+    }
+  },
+  {
+    "feature": "explain",
     "date": "2025-06-24 21:27",
     "url": "comparison_report_explain_code_20250624_212713.html",
     "models": {
