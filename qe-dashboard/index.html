@@ -79,16 +79,13 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .stats-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             margin-bottom: 30px;
-            align-items: center;
         }
         .stat-card {
-            width: 100%;
-            margin: 0 auto;
-            background: rgb(245, 221, 221);
+            background: white;
             padding: 15px;
             border-radius: 8px;
             text-align: center;
@@ -161,8 +158,6 @@
         }
         .tab-content {
             padding: 20px 0;
-            overflow-y: auto;
-            max-height: 80vh;
         }
         .top-performers {
             margin-bottom: 20px;
@@ -190,18 +185,10 @@
             color: #2a5298;
         }
         .stats-grid-inner {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 30px;
             margin-bottom: 15px;
-        }
-        .stats-grid-inner > div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 110px;
         }
         .top-performers {
             margin-top: 10px;
@@ -216,35 +203,13 @@
         }
         .performer-name { font-weight: 500; color: #1e3c72; }
         .performer-score { font-weight: bold; color: #2a5298; }
-        /* Top members trophy icons */
-        .performer-card .trophy {
-            font-size: 1.2em;
-            margin-right: 8px;
-        }
-        .stat-card-content {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        .stats-grid-inner {
-            flex: 0 0 60%;
-            max-width: 60%;
-        }
-        .top-performers {
-            flex: 0 0 40%;
-            max-width: 40%;
-        }
-        .content-wrapper, .dashboard-container {
-            overflow: unset !important;
-        }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
         <div class="header">
             <h1>Quality Engineering Dashboard</h1>
-            <div class="last-updated">Last updated: 2025-06-25 21:16:20 ICT</div>
+            <div class="last-updated">Last updated: 2025-06-25 21:22:28 ICT</div>
         </div>
         <div class="content-wrapper">
             <!-- Only the right panel: Tabs and content -->
@@ -268,49 +233,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - June 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:16:20 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:22:28 ICT</div>
                                         
-                                            <div class="stat-card-content">
-                                                <div class="stats-grid-inner">
-                                                    <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                    <div><div class="stat-number">666</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                    <div><div class="stat-number">118</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                    <div><div class="stat-number">41</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                    <div><div class="stat-number">145</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                    <div><div class="stat-number">436</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                    <div><div class="stat-number">17748</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                                </div>
-                                                
-                                                    <div class="top-performers">
-                                                        <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥇
-                                                                </span>
-                                                                <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
-                                                                <span class="performer-score">83.47</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥈
-                                                                </span>
-                                                                <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">71.72</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥉
-                                                                </span>
-                                                                <span class="performer-name">Linh Phanlinh.phan@katalon.com / Quality Engineer</span>
-                                                                <span class="performer-score">65.08</span>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">100</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">126</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">48</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">100</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">542</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">21248</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Nhi Lynhi.ly@katalon.com / Quality Engineer</span>
+                                                            <span class="performer-score">103.43</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">77.42</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Linh Phanlinh.phan@katalon.com / Quality Engineer</span>
+                                                            <span class="performer-score">62.83</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202506.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
@@ -318,49 +272,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - May 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:16:20 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:22:28 ICT</div>
                                         
-                                            <div class="stat-card-content">
-                                                <div class="stats-grid-inner">
-                                                    <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                    <div><div class="stat-number">618</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                    <div><div class="stat-number">212</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                    <div><div class="stat-number">124</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                    <div><div class="stat-number">170</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                    <div><div class="stat-number">226</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                    <div><div class="stat-number">19351</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                                </div>
-                                                
-                                                    <div class="top-performers">
-                                                        <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥇
-                                                                </span>
-                                                                <span class="performer-name">Linh Phanlinh.phan@katalon.com / Quality Engineer</span>
-                                                                <span class="performer-score">76.33</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥈
-                                                                </span>
-                                                                <span class="performer-name">Man Huaman.hua@katalon.com / Quality Engineer</span>
-                                                                <span class="performer-score">76.15</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥉
-                                                                </span>
-                                                                <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">75.75</span>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">618</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">212</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">124</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">170</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">226</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">19351</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Linh Phanlinh.phan@katalon.com / Quality Engineer</span>
+                                                            <span class="performer-score">76.33</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Man Huaman.hua@katalon.com / Quality Engineer</span>
+                                                            <span class="performer-score">76.15</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">75.75</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202505.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
@@ -368,49 +311,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - April 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:16:20 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:22:28 ICT</div>
                                         
-                                            <div class="stat-card-content">
-                                                <div class="stats-grid-inner">
-                                                    <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                    <div><div class="stat-number">784</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                    <div><div class="stat-number">156</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                    <div><div class="stat-number">117</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                    <div><div class="stat-number">184</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                    <div><div class="stat-number">243</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                    <div><div class="stat-number">14075</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                                </div>
-                                                
-                                                    <div class="top-performers">
-                                                        <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥇
-                                                                </span>
-                                                                <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">101.9</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥈
-                                                                </span>
-                                                                <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">77.4</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥉
-                                                                </span>
-                                                                <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
-                                                                <span class="performer-score">60.73</span>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">784</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">156</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">117</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">184</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">243</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">14075</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Phu Vuongphu.vuong@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">101.9</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">77.4</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
+                                                            <span class="performer-score">60.73</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202504.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
@@ -418,49 +350,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - March 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:16:20 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:22:28 ICT</div>
                                         
-                                            <div class="stat-card-content">
-                                                <div class="stats-grid-inner">
-                                                    <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                    <div><div class="stat-number">694</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                    <div><div class="stat-number">161</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                    <div><div class="stat-number">133</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                    <div><div class="stat-number">166</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                    <div><div class="stat-number">471</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                    <div><div class="stat-number">17545</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                                </div>
-                                                
-                                                    <div class="top-performers">
-                                                        <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥇
-                                                                </span>
-                                                                <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">140.07</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥈
-                                                                </span>
-                                                                <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">110.35</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥉
-                                                                </span>
-                                                                <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
-                                                                <span class="performer-score">60.12</span>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">694</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">161</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">133</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">166</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">471</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">17545</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">140.07</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">110.35</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">An Tranan.vtran@katalon.com / Lead Quality Engineer</span>
+                                                            <span class="performer-score">60.12</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202503.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
@@ -468,49 +389,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - February 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:16:20 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:22:28 ICT</div>
                                         
-                                            <div class="stat-card-content">
-                                                <div class="stats-grid-inner">
-                                                    <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                    <div><div class="stat-number">656</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                    <div><div class="stat-number">128</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                    <div><div class="stat-number">115</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                    <div><div class="stat-number">141</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                    <div><div class="stat-number">115</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                    <div><div class="stat-number">544</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                                </div>
-                                                
-                                                    <div class="top-performers">
-                                                        <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥇
-                                                                </span>
-                                                                <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">49.38</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥈
-                                                                </span>
-                                                                <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">44.5</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥉
-                                                                </span>
-                                                                <span class="performer-name">Vuong (David) Capvuong.cap@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">37.12</span>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">656</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">128</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">115</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">141</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">115</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">544</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Chi Nguyenchi.nguyen@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">49.38</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">44.5</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Vuong (David) Capvuong.cap@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">37.12</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202502.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
@@ -518,49 +428,38 @@
                                     
                                     <div class="stat-card">
                                         <div style="font-weight:600; color:#1e3c72; margin-bottom:6px;">QE Report - January 2025</div>
-                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:16:20 ICT</div>
+                                        <div style="font-size:0.9em; color:#888; margin-bottom:8px;">Generated on 2025-06-25 21:22:28 ICT</div>
                                         
-                                            <div class="stat-card-content">
-                                                <div class="stats-grid-inner">
-                                                    <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
-                                                    <div><div class="stat-number">657</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
-                                                    <div><div class="stat-number">123</div><div class="stat-label">PRs Merged (GitHub)</div></div>
-                                                    <div><div class="stat-number">101</div><div class="stat-label">Direct Commits (GitHub)</div></div>
-                                                    <div><div class="stat-number">175</div><div class="stat-label">JIRA Backlogs Completed</div></div>
-                                                    <div><div class="stat-number">115</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
-                                                    <div><div class="stat-number">145</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
-                                                </div>
-                                                
-                                                    <div class="top-performers">
-                                                        <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥇
-                                                                </span>
-                                                                <span class="performer-name">Vuong (David) Capvuong.cap@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">45.38</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥈
-                                                                </span>
-                                                                <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
-                                                                <span class="performer-score">34.8</span>
-                                                            </div>
-                                                        
-                                                            <div class="performer-card">
-                                                                <span class="trophy">
-                                                                    🥉
-                                                                </span>
-                                                                <span class="performer-name">Linh Phanlinh.phan@katalon.com / Quality Engineer</span>
-                                                                <span class="performer-score">24.38</span>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                
+                                            <div class="stats-grid-inner">
+                                                <div><div class="stat-number">20</div><div class="stat-label">Active Members</div></div>
+                                                <div><div class="stat-number">657</div><div class="stat-label">Bugs Reported (JIRA)</div></div>
+                                                <div><div class="stat-number">123</div><div class="stat-label">PRs Merged (GitHub)</div></div>
+                                                <div><div class="stat-number">101</div><div class="stat-label">Direct Commits (GitHub)</div></div>
+                                                <div><div class="stat-number">175</div><div class="stat-label">JIRA Backlogs Completed</div></div>
+                                                <div><div class="stat-number">115</div><div class="stat-label">Manual Cases Run (TestOps)</div></div>
+                                                <div><div class="stat-number">145</div><div class="stat-label">Auto Cases Run (TestOps)</div></div>
                                             </div>
+                                            
+                                                <div class="top-performers">
+                                                    <h4 style="font-size:1.1em; color:#1e3c72; margin-bottom:6px;">Top Members</h4>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Vuong (David) Capvuong.cap@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">45.38</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Huy (Henrik) Daohuy.dao@katalon.com / Senior Quality Engineer</span>
+                                                            <span class="performer-score">34.8</span>
+                                                        </div>
+                                                    
+                                                        <div class="performer-card">
+                                                            <span class="performer-name">Linh Phanlinh.phan@katalon.com / Quality Engineer</span>
+                                                            <span class="performer-score">24.38</span>
+                                                        </div>
+                                                    
+                                                </div>
+                                            
                                         
                                         <a href="qe_leaderboard_202501.html" class="btn btn-primary btn-sm mt-2">View Report</a>
                                     </div>
@@ -587,19 +486,33 @@
                             </div>
                         </div>
                         
-                        <!-- Manual Test Execution Chart -->
+                        <!-- Test Execution Chart -->
                         <div class="trend-chart">
-                            <h3 class="chart-title">Manual Test Execution Trends</h3>
+                            <h3 class="chart-title">Test Execution Trends</h3>
                             <div class="chart-container">
-                                <canvas id="manualExecutionChart"></canvas>
+                                <canvas id="testExecutionChart"></canvas>
                             </div>
                         </div>
                         
-                        <!-- Automation Test Execution Chart -->
+                        <!-- Individual Performance Charts -->
                         <div class="trend-chart">
-                            <h3 class="chart-title">Automation Test Execution Trends</h3>
+                            <h3 class="chart-title">Bug Scores Trend</h3>
                             <div class="chart-container">
-                                <canvas id="autoExecutionChart"></canvas>
+                                <canvas id="bugScoresChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="trend-chart">
+                            <h3 class="chart-title">GitHub Automation Trend</h3>
+                            <div class="chart-container">
+                                <canvas id="ghAutomationChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="trend-chart">
+                            <h3 class="chart-title">Code Reviews Trend</h3>
+                            <div class="chart-container">
+                                <canvas id="reviewsChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -611,7 +524,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Parse trend data from backend
-        const trendData = {"active_members": [20, 20, 20, 20, 20, 20], "auto_cases": [145, 544, 17545, 14075, 19351, 17748], "bugs_reported": [657, 656, 694, 784, 618, 666], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01"], "direct_commits": [101, 115, 133, 117, 124, 41], "jira_backlogs": [175, 141, 166, 184, 170, 145], "manual_cases": [115, 115, 471, 243, 226, 436], "prs_merged": [123, 128, 161, 156, 212, 118]};
+        const trendData = {"active_members": [20, 20, 20, 20, 20, 20], "auto_cases": [145, 544, 17545, 14075, 19351, 21248], "bugs_reported": [657, 656, 694, 784, 618, 100], "dates": ["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01"], "direct_commits": [101, 115, 133, 117, 124, 48], "jira_backlogs": [175, 141, 166, 184, 170, 100], "manual_cases": [115, 115, 471, 243, 226, 542], "prs_merged": [123, 128, 161, 156, 212, 126]};
         // Common chart options
         const commonOptions = {
             responsive: true,
@@ -680,8 +593,8 @@
             options: commonOptions
         });
 
-        // Manual Test Execution Chart
-        new Chart(document.getElementById('manualExecutionChart'), {
+        // Test Execution Chart
+        new Chart(document.getElementById('testExecutionChart'), {
             type: 'line',
             data: {
                 labels: trendData.dates,
@@ -691,18 +604,7 @@
                         data: trendData.manual_cases,
                         borderColor: '#28a745',
                         tension: 0.1
-                    }
-                ]
-            },
-            options: commonOptions
-        });
-
-        // Automation Test Execution Chart
-        new Chart(document.getElementById('autoExecutionChart'), {
-            type: 'line',
-            data: {
-                labels: trendData.dates,
-                datasets: [
+                    },
                     {
                         label: 'Auto Cases',
                         data: trendData.auto_cases,
@@ -711,6 +613,27 @@
                     }
                 ]
             },
+            options: commonOptions
+        });
+
+        // Bug Scores Chart
+        new Chart(document.getElementById('bugScoresChart'), {
+            type: 'line',
+            data: {},
+            options: commonOptions
+        });
+
+        // GH Automation Chart
+        new Chart(document.getElementById('ghAutomationChart'), {
+            type: 'line',
+            data: {},
+            options: commonOptions
+        });
+
+        // Reviews Chart
+        new Chart(document.getElementById('reviewsChart'), {
+            type: 'line',
+            data: {},
             options: commonOptions
         });
     </script>
