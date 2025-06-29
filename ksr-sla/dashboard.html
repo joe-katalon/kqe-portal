@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KSR SLA Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        .header {
+            background: #1939a7;
+            color: #fff;
+            padding: 16px 0 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(25,57,167,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .logo {
+            display: none;
+        }
+        .katalon-logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 16px;
+        }
+        .katalon-logo img {
+            height: 48px;
+            vertical-align: middle;
+        }
+        .header-title {
+            display: inline-block;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            vertical-align: middle;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: row;
+            max-width: none;
+            margin: 0 50px;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .left-panel {
+            width: 20%;
+            min-width: 220px;
+            max-width: 400px;
+            height: calc(100vh - 80px);
+            position: sticky;
+            top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            overflow-y: auto;
+            font-size: 0.88rem;
+            background: #f7f8fa;
+            border-right: 1.5px solid #e0e0e0;
+            padding: 0;
+        }
+        .right-panel {
+            flex: 1;
+            min-width: 0;
+            padding-left: 24px;
+            overflow-x: auto;
+        }
+        .card {
+            background: #f3f4f6;
+            border-radius: 6px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 4px 16px rgba(25,57,167,0.10);
+            padding: 6px 6px 0 6px;
+            margin-bottom: 0;
+            font-size: 0.88rem;
+        }
+        .card > form,
+        .card > .filter-row:last-child,
+        .card > .filter-row.flex-row:last-child,
+        .card > .priority-toggle-group:last-child,
+        .card > .severity-toggle-group:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.05rem;
+            color: #1939a7;
+            margin-bottom: 8px;
+        }
+        .sla-settings-card {
+            flex: 1 1 260px;
+            max-width: 340px;
+            min-width: 220px;
+        }
+        .filters-card {
+            flex: 2 1 420px;
+            min-width: 320px;
+            max-width: 100%;
+        }
+        .left-panel .card.filters-card {
+            margin-bottom: 0;
+            border-radius: 6px;
+        }
+        .created-slider-section {
+            margin-top: 2px;
+            border-radius: 6px;
+        }
+        .sla-settings th, .sla-settings td {
+            padding: 2px 6px;
+            text-align: center;
+        }
+        .sla-settings input[type=number] {
+            border: 1px solid #bfc7d1;
+            border-radius: 4px;
+            padding: 2px 4px;
+            font-size: 0.98rem;
+        }
+        #apply-sla-btn, #toggle-highlight-btn {
+            background: #1939a7;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 0.98rem;
+            margin-top: 6px;
+            margin-right: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #apply-sla-btn:hover, #toggle-highlight-btn:hover {
+            background: #0e255c;
+        }
+        #toggle-highlight-btn.active {
+            background: #e53935;
+            color: #fff;
+        }
+        .filter-row {
+            margin-bottom: 8px;
+            padding: 4px 0;
+        }
+        .filter-row.flex-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .filter-label {
+            min-width: 70px;
+            font-weight: 500;
+            color: #1939a7;
+            font-size: 0.98rem;
+        }
+        .priority-label {
+            margin-right: 12px;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+        .priority-icon {
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+        .product-toggle-group, .priority-toggle-group, .severity-toggle-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .product-toggle-btn, .priority-toggle-btn, .severity-toggle-btn {
+            background: #fff;
+            color: #222;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 0.87rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s, border 0.15s;
+            outline: none;
+            text-decoration: none;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+        }
+        .product-toggle-btn.selected, .priority-toggle-btn.selected, .severity-toggle-btn.selected {
+            color: #222;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1.5px solid #1939a7;
+            background: #fff;
+        }
+        .product-toggle-btn.deselected, .priority-toggle-btn.deselected, .severity-toggle-btn.deselected {
+            color: #bfc7d1;
+            text-decoration: line-through;
+            font-weight: 400;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+        }
+        .priority-btn-icon {
+            height: 16px;
+            width: 16px;
+            margin-right: 6px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .section-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1939a7;
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+        .product-chart {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(25,57,167,0.07);
+            padding: 18px 10px 24px 10px;
+            margin-bottom: 28px;
+        }
+        .product-chart h2 {
+            font-size: 1.1rem;
+            color: #1939a7;
+            margin-top: 0;
+        }
+        canvas {
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+        .footer {
+            background: #1939a7;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0 12px 0;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            margin-top: 40px;
+        }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; margin: 0 4px; }
+            .left-panel { width: 100%; max-width: 100%; height: auto; position: static; padding-bottom: 12px; }
+            .right-panel { padding-left: 0; }
+        }
+        @media (max-width: 600px) {
+            .header-title { font-size: 1.2rem; }
+            .card { padding: 6px 1px; }
+            .product-chart { padding: 4px 0 8px 0; }
+        }
+        label, .product-toggle-btn {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        label:hover, .product-toggle-btn:hover {
+            color: #1939a7;
+        }
+        .created-slider-section {
+            margin-top: auto;
+            padding: 10px 4px 4px 4px;
+            background: #f3f4f6;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 4px 16px rgba(25,57,167,0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .created-slider-label {
+            font-size: 0.89rem;
+            font-weight: 500;
+            color: #1939a7;
+            margin-bottom: 6px;
+        }
+        .created-slider-value {
+            font-size: 0.89rem;
+            margin-top: 4px;
+            text-align: right;
+            color: #222;
+        }
+        .created-slider {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="katalon-logo">
+            <img src="https://d1h3p5fzmizjvp.cloudfront.net/themes/katalon_4/images/header/katalon_logo.svg" alt="Katalon Logo">
+        </div>
+        <span class="header-title">KSR SLA Dashboard</span>
+    </div>
+    <div class="main-content">
+        <div class="left-panel">
+            <div class="card sla-settings-card">
+                <h2 class="section-title">SLA Settings</h2>
+                <form class="sla-settings" id="sla-settings-form" onsubmit="return false;">
+                    <table>
+                        <tr><th></th><th>Acknowledge</th><th>Resolution</th></tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td><input type="number" min="0" id="sla-ack-medium" value="48" style="width:60px"></td>
+                            <td><input type="number" min="0" id="sla-res-medium" value="240" style="width:60px"></td>
+                        </tr>
+                        <tr>
+                            <td>High</td>
+                            <td><input type="number" min="0" id="sla-ack-high" value="24" style="width:60px"></td>
+                            <td><input type="number" min="0" id="sla-res-high" value="120" style="width:60px"></td>
+                        </tr>
+                        <tr>
+                            <td>Low</td>
+                            <td><input type="number" min="0" id="sla-ack-low" value="72" style="width:60px"></td>
+                            <td><input type="number" min="0" id="sla-res-low" value="480" style="width:60px"></td>
+                        </tr>
+                    </table>
+                    <button type="button" id="apply-sla-btn" onclick="applySLASettings()">Apply SLA</button>
+                    <label style="margin-left:8px; font-weight:400; font-size:0.98rem; vertical-align:middle; cursor:pointer;">
+                        <input type="checkbox" id="highlight-violation-checkbox" style="vertical-align:middle; margin-right:4px;" checked>
+                        Highlight Violated KSR
+                    </label>
+                </form>
+            </div>
+            <div class="card filters-card">
+                <h2 class="section-title">Filters</h2>
+                <div class="filter-row" id="product-filters">
+                    <div class="product-toggle-group" id="product-toggle-group">
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="G2-G3_Migration">G2-G3 Migration</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Reporting_&_Analytics">Reporting & Analytics</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Studio">Studio</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Admin">Admin</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="TestOps_-_Core">TestOps - Core</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="OP_Server">OP Server</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="AI">AI</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="TestCloud">TestCloud</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Platform_General">Platform General</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Manual_Testing">Manual Testing</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Commerce_Engine">Commerce Engine</button>
+                        
+                            <button type="button" class="product-toggle-btn selected" data-product="Unknown">Unknown</button>
+                        
+                    </div>
+                </div>
+                <div class="filter-row flex-row" id="priority-filters">
+                    <span class="filter-label">Priority:</span>
+                    <div class="priority-toggle-group" id="priority-toggle-group">
+                        
+                            <button type="button" class="priority-toggle-btn selected" data-priority="High">
+                                
+                                    <img src="https://katalon.atlassian.net/images/icons/priorities/critical.svg" class="priority-btn-icon" alt="High">
+                                
+                                High
+                            </button>
+                        
+                            <button type="button" class="priority-toggle-btn selected" data-priority="Low">
+                                
+                                    <img src="https://katalon.atlassian.net/images/icons/priorities/low.svg" class="priority-btn-icon" alt="Low">
+                                
+                                Low
+                            </button>
+                        
+                            <button type="button" class="priority-toggle-btn selected" data-priority="Medium">
+                                
+                                    <img src="https://katalon.atlassian.net/images/icons/priorities/medium.svg" class="priority-btn-icon" alt="Medium">
+                                
+                                Medium
+                            </button>
+                        
+                    </div>
+                </div>
+                <div class="filter-row flex-row" id="severity-filters">
+                    <span class="filter-label">Severity:</span>
+                    <div class="severity-toggle-group" id="severity-toggle-group">
+                        
+                            <button type="button" class="severity-toggle-btn selected" data-severity="Cosmetic">Cosmetic</button>
+                        
+                            <button type="button" class="severity-toggle-btn selected" data-severity="Critical">Critical</button>
+                        
+                            <button type="button" class="severity-toggle-btn selected" data-severity="Major">Major</button>
+                        
+                            <button type="button" class="severity-toggle-btn selected" data-severity="Minor">Minor</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="created-slider-section">
+                <div class="created-slider-label">Created Time Filter</div>
+                <input type="range" min="1" max="1" value="1" class="created-slider" id="created-slider">
+                <div class="created-slider-value" id="created-slider-value">Last 1 day</div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div style="margin-bottom: 18px;"></div>
+            
+                <div class="product-chart" id="chart-container-G2-G3_Migration">
+                    <h2>G2-G3 Migration</h2>
+                    <canvas id="statusChart_G2-G3_Migration" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Reporting_&_Analytics">
+                    <h2>Reporting & Analytics</h2>
+                    <canvas id="statusChart_Reporting_&_Analytics" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Studio">
+                    <h2>Studio</h2>
+                    <canvas id="statusChart_Studio" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Admin">
+                    <h2>Admin</h2>
+                    <canvas id="statusChart_Admin" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-TestOps_-_Core">
+                    <h2>TestOps - Core</h2>
+                    <canvas id="statusChart_TestOps_-_Core" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-OP_Server">
+                    <h2>OP Server</h2>
+                    <canvas id="statusChart_OP_Server" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-AI">
+                    <h2>AI</h2>
+                    <canvas id="statusChart_AI" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-TestCloud">
+                    <h2>TestCloud</h2>
+                    <canvas id="statusChart_TestCloud" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Platform_General">
+                    <h2>Platform General</h2>
+                    <canvas id="statusChart_Platform_General" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Manual_Testing">
+                    <h2>Manual Testing</h2>
+                    <canvas id="statusChart_Manual_Testing" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Commerce_Engine">
+                    <h2>Commerce Engine</h2>
+                    <canvas id="statusChart_Commerce_Engine" width="1200" height="500"></canvas>
+                </div>
+            
+                <div class="product-chart" id="chart-container-Unknown">
+                    <h2>Unknown</h2>
+                    <canvas id="statusChart_Unknown" width="1200" height="500"></canvas>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2025 Katalon. All rights reserved. &nbsp;|&nbsp;
+        <a href="https://katalon.com" style="color:#fff;text-decoration:underline;">Visit Katalon.com</a>
+    </div>
+    <script>
+        const allProductData = {"AI": [{"client_name": "AT\u0026T", "created": "2025-05-13T18:20:04", "key": "KSR-7540", "priority": "High", "severity": "Minor", "status_times": {"NEW": 6.5841666666666665, "UNDER INVESTIGATION": 1113.3636695183334}}, {"client_name": "Jazz Pakistan", "created": "2025-05-08T13:32:26", "key": "KSR-7445", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 1051.8114512386112, "NEW": 115.97305555555556, "UNDER INVESTIGATION": 76.95722222222223}}], "Admin": [{"client_name": "AlphaGraphics", "created": "2025-06-20T22:52:39", "key": "KSR-7919", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 138.20755836944446, "NEW": 65.19583333333334, "UNDER INVESTIGATION": 0.001388888888888889}}, {"client_name": "Athene", "created": "2025-06-26T16:01:12", "key": "KSR-7970", "priority": "High", "severity": "Major", "status_times": {"NEW": 5.8775, "UNDER INVESTIGATION": 60.384780678333335}}, {"client_name": "Auchan Retail International SA ", "created": "2025-05-20T17:53:35", "key": "KSR-7638", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 436.74228071805555, "NEW": 235.7913888888889, "UNDER INVESTIGATION": 279.85555555555555}}, {"client_name": "Banco Santander", "created": "2025-03-19T13:59:51", "key": "KSR-7086", "priority": "High", "severity": "Major", "status_times": {"NEW": 1448.7127777777778, "UNDER INVESTIGATION": 995.5720038380555}}, {"client_name": "Bell", "created": "2025-04-11T14:14:29", "key": "KSR-7266", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 1741.9536705391668, "NEW": 150.08583333333334, "[REPORTER] UNDER INVESTIGATION": 0.001388888888888889}}, {"client_name": "bimbomnichanel@gmail.com", "created": "2025-02-18T16:31:03", "key": "KSR-6855", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2729.7686705894444, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 213.94416666666666, "NEW": 0.0033333333333333335, "[PRODUCT] UNDER INVESTIGATION": 194.04777777777778}}, {"client_name": "California Department of Health Care Services", "created": "2025-02-11T04:08:45", "key": "KSR-6810", "priority": "High", "severity": "Major", "status_times": {"NEW": 3.665, "UNDER INVESTIGATION": 1488.008392881111, "[REPORTER] UNDER INVESTIGATION": 1826.4630555555555}}, {"client_name": "CedarGate", "created": "2025-01-09T08:51:43", "key": "KSR-6607", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2213.5172222222222, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 1891.7728380522221, "NEW": 0.07527777777777778, "[PRODUCT] UNDER INVESTIGATION": 0.05444444444444444}}, {"client_name": "DSS", "created": "2025-03-10T10:50:20", "key": "KSR-7005", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2293.8956160725, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 347.705, "NEW": 21.840555555555557, "[PRODUCT] UNDER INVESTIGATION": 0.0016666666666666668}}, {"client_name": "DSS", "created": "2025-02-24T14:26:44", "key": "KSR-6886", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2994.4517272088888, "NEW": 1.3844444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "DSS", "created": "2025-02-04T12:22:56", "key": "KSR-6761", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9314494566665, "NEW": 1030.9675, "[PRODUCT] UNDER INVESTIGATION": 0.0011111111111111111}}, {"client_name": "DSS", "created": "2024-12-18T08:41:51", "key": "KSR-6503", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9295050994447, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 2186.6444444444446, "NEW": 0.009166666666666667, "[PRODUCT] UNDER INVESTIGATION": 0.0011111111111111111}}, {"client_name": "FEMA - Department of Homeland Security", "created": "2025-06-11T02:30:05", "key": "KSR-7830", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 89.83756084305556, "IN PLANNING": 0.7727777777777778, "IN PROGRESS": 0.0016666666666666668, "NEW": 49.33861111111111, "UNDER INVESTIGATION": 299.8302777777778}}, {"client_name": "Flex ", "created": "2025-06-24T16:52:25", "key": "KSR-7947", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 4.399166666666667, "UNDER INVESTIGATION": 109.00950534305557}}, {"client_name": "Frankenmuth Mutual Insurance Company ", "created": "2025-06-17T22:46:24", "key": "KSR-7893", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 242.5897831461111, "NEW": 13.051388888888889, "UNDER INVESTIGATION": 19.86777777777778}}, {"client_name": "GAIG", "created": "2025-01-10T10:42:38", "key": "KSR-6622", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9245054069447, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 1632.3238888888889, "NEW": 0.3219444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "Gcash", "created": "2024-11-12T16:15:33", "key": "KSR-6256", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 1323.0891666666666, "IN FINAL REVIEW": 4123.166450023055, "IN PLANNING": 0.004722222222222222, "IN PROGRESS": 22.202222222222222, "NEW": 20.915, "[PRODUCT] UNDER INVESTIGATION": 0.6455555555555555}}, {"client_name": "Gerencia Ti Uea", "created": "2025-06-12T02:43:52", "key": "KSR-7844", "priority": "High", "severity": "Minor", "status_times": {"NEW": 0.058055555555555555, "UNDER INVESTIGATION": 415.49311688527774}}, {"client_name": "IMIMobile [CISCO]", "created": "2024-10-18T19:20:14", "key": "KSR-6091", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 5916.30395076361, "NEW": 162.59805555555556, "[PRODUCT] UNDER INVESTIGATION": 8.043055555555556}}, {"client_name": "Inslightly", "created": "2025-06-17T08:48:56", "key": "KSR-7877", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 31.66888888888889, "UNDER INVESTIGATION": 257.7978396733333}}, {"client_name": "ISN", "created": "2025-06-19T04:03:24", "key": "KSR-7903", "priority": "High", "severity": "Major", "status_times": {"NEW": 3.768611111111111, "UNDER INVESTIGATION": 242.45700637138887}}], "Commerce Engine": [{"client_name": "CedarGate", "created": "2025-01-09T08:51:43", "key": "KSR-6607", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2213.5172222222222, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 1891.7728380522221, "NEW": 0.07527777777777778, "[PRODUCT] UNDER INVESTIGATION": 0.05444444444444444}}, {"client_name": "DSS", "created": "2025-03-10T10:50:20", "key": "KSR-7005", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2293.8956160725, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 347.705, "NEW": 21.840555555555557, "[PRODUCT] UNDER INVESTIGATION": 0.0016666666666666668}}, {"client_name": "DSS", "created": "2025-02-24T14:26:44", "key": "KSR-6886", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2994.4517272088888, "NEW": 1.3844444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "DSS", "created": "2025-02-04T12:22:56", "key": "KSR-6761", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9314494566665, "NEW": 1030.9675, "[PRODUCT] UNDER INVESTIGATION": 0.0011111111111111111}}, {"client_name": "DSS", "created": "2024-12-18T08:41:51", "key": "KSR-6503", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9295050994447, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 2186.6444444444446, "NEW": 0.009166666666666667, "[PRODUCT] UNDER INVESTIGATION": 0.0011111111111111111}}, {"client_name": "EnerSys", "created": "2025-06-01T12:01:35", "key": "KSR-7754", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 640.2620051499999, "NEW": 8.748055555555556, "UNDER INVESTIGATION": 21.245833333333334}}, {"client_name": "EZLynx", "created": "2025-03-17T21:53:18", "key": "KSR-7070", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 1607.1970051858334, "NEW": 43.27861111111111, "[REPORTER] UNDER INVESTIGATION": 833.9183333333333}}, {"client_name": "GAIG", "created": "2025-01-10T10:42:38", "key": "KSR-6622", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9245054069447, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 1632.3238888888889, "NEW": 0.3219444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "Gcash", "created": "2024-11-12T16:15:33", "key": "KSR-6256", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 1323.0891666666666, "IN FINAL REVIEW": 4123.166450023055, "IN PLANNING": 0.004722222222222222, "IN PROGRESS": 22.202222222222222, "NEW": 20.915, "[PRODUCT] UNDER INVESTIGATION": 0.6455555555555555}}], "G2-G3 Migration": [{"client_name": "53 bank", "created": "2025-06-09T23:04:18", "key": "KSR-7823", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 425.3011693541667, "NEW": 41.908055555555556, "UNDER INVESTIGATION": 0.001388888888888889}}, {"client_name": "53 Bank", "created": "2025-01-22T22:30:34", "key": "KSR-6715", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.07472222222222222, "UNDER INVESTIGATION": 1488.0103360494443, "[PRODUCT] UNDER INVESTIGATION": 1484.9775, "[REPORTER] UNDER INVESTIGATION": 806.7102777777778}}, {"client_name": "CedarGate", "created": "2025-01-09T08:51:43", "key": "KSR-6607", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2213.5172222222222, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 1891.7728380522221, "NEW": 0.07527777777777778, "[PRODUCT] UNDER INVESTIGATION": 0.05444444444444444}}, {"client_name": "Cisco/IMImobile", "created": "2025-01-22T22:17:48", "key": "KSR-6712", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.13694444444444445, "UNDER INVESTIGATION": 1488.0086714722222, "[PRODUCT] UNDER INVESTIGATION": 215.80083333333334, "[REPORTER] UNDER INVESTIGATION": 2076.0391666666665}}, {"client_name": "DSS", "created": "2025-03-10T10:50:20", "key": "KSR-7005", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2293.8956160725, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 347.705, "NEW": 21.840555555555557, "[PRODUCT] UNDER INVESTIGATION": 0.0016666666666666668}}, {"client_name": "DSS", "created": "2025-02-24T14:26:44", "key": "KSR-6886", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2994.4517272088888, "NEW": 1.3844444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "DSS", "created": "2025-02-04T12:22:56", "key": "KSR-6761", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9314494566665, "NEW": 1030.9675, "[PRODUCT] UNDER INVESTIGATION": 0.0011111111111111111}}, {"client_name": "DSS", "created": "2024-12-18T08:41:51", "key": "KSR-6503", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9295050994447, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 2186.6444444444446, "NEW": 0.009166666666666667, "[PRODUCT] UNDER INVESTIGATION": 0.0011111111111111111}}, {"client_name": "GAIG", "created": "2025-01-10T10:42:38", "key": "KSR-6622", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9245054069447, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 1632.3238888888889, "NEW": 0.3219444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "Gcash", "created": "2024-11-12T16:15:33", "key": "KSR-6256", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 1323.0891666666666, "IN FINAL REVIEW": 4123.166450023055, "IN PLANNING": 0.004722222222222222, "IN PROGRESS": 22.202222222222222, "NEW": 20.915, "[PRODUCT] UNDER INVESTIGATION": 0.6455555555555555}}], "Manual Testing": [{"client_name": "Cardinal Health", "created": "2025-02-28T12:26:02", "key": "KSR-6946", "priority": "High", "severity": "Major", "status_times": {"NEW": 1280.1130555555555, "UNDER INVESTIGATION": 1488.1047821944444, "[PRODUCT] UNDER INVESTIGATION": 133.63055555555556}}, {"client_name": "CedarGate", "created": "2025-01-09T08:51:43", "key": "KSR-6607", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2213.5172222222222, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 1891.7728380522221, "NEW": 0.07527777777777778, "[PRODUCT] UNDER INVESTIGATION": 0.05444444444444444}}, {"client_name": "GAIG", "created": "2025-01-10T10:42:38", "key": "KSR-6622", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9245054069447, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 1632.3238888888889, "NEW": 0.3219444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "Gcash", "created": "2024-11-12T16:15:33", "key": "KSR-6256", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 1323.0891666666666, "IN FINAL REVIEW": 4123.166450023055, "IN PLANNING": 0.004722222222222222, "IN PROGRESS": 22.202222222222222, "NEW": 20.915, "[PRODUCT] UNDER INVESTIGATION": 0.6455555555555555}}], "OP Server": [{"client_name": "AT\u0026T", "created": "2025-05-14T01:45:56", "key": "KSR-7546", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.15638888888888888, "UNDER INVESTIGATION": 1112.3603361686112}}, {"client_name": "AT\u0026T ", "created": "2025-04-28T17:09:35", "key": "KSR-7375", "priority": "Medium", "severity": "Minor", "status_times": {"CLOSED": 577.4188888888889, "NEW": 903.7036695363889}}, {"client_name": "AT\u0026T", "created": "2024-10-25T11:25:01", "key": "KSR-6129", "priority": "Medium", "severity": "Major", "status_times": {"IN FINAL REVIEW": 1487.6833917791666, "NEW": 3.8641666666666667, "UNDER INVESTIGATION": 0.32972222222222225, "[PRODUCT] UNDER INVESTIGATION": 168.6688888888889, "[REPORTER] UNDER INVESTIGATION": 4266.319166666667}}, {"client_name": "AxisBank", "created": "2025-05-09T13:35:19", "key": "KSR-7459", "priority": "High", "severity": "Major", "status_times": {"NEW": 146.9961111111111, "UNDER INVESTIGATION": 1073.697558616389}}, {"client_name": "Banco Santander", "created": "2025-04-30T20:49:29", "key": "KSR-7398", "priority": "High", "severity": "Minor", "status_times": {"New": 1429.4575593491668}}, {"client_name": "FDIC", "created": "2025-03-20T18:03:50", "key": "KSR-7112", "priority": "High", "severity": "Major", "status_times": {"New": 2416.2183941450003}}], "Platform General": [{"client_name": "Banco Santander", "created": "2025-03-20T12:24:08", "key": "KSR-7105", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 2224.5345038169444, "NEW": 5.295277777777778, "[PRODUCT] UNDER INVESTIGATION": 192.05027777777778}}, {"client_name": "CedarGate", "created": "2025-01-09T08:51:43", "key": "KSR-6607", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2213.5172222222222, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 1891.7728380522221, "NEW": 0.07527777777777778, "[PRODUCT] UNDER INVESTIGATION": 0.05444444444444444}}, {"client_name": "Farm Bureau Insurance of Michigan", "created": "2024-05-31T12:52:58", "key": "KSR-5170", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 9379.024227461945, "NEW": 74.09861111111111, "[PRODUCT] UNDER INVESTIGATION": 0.27666666666666667}}, {"client_name": "GAIG", "created": "2025-01-10T10:42:38", "key": "KSR-6622", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9245054069447, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 1632.3238888888889, "NEW": 0.3219444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "Gcash", "created": "2024-11-12T16:15:33", "key": "KSR-6256", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 1323.0891666666666, "IN FINAL REVIEW": 4123.166450023055, "IN PLANNING": 0.004722222222222222, "IN PROGRESS": 22.202222222222222, "NEW": 20.915, "[PRODUCT] UNDER INVESTIGATION": 0.6455555555555555}}, {"client_name": "Jazz Pakistan", "created": "2025-06-20T11:46:01", "key": "KSR-7914", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 67.06783978416667, "NEW": 1.4244444444444444, "UNDER INVESTIGATION": 146.02305555555554}}], "Reporting \u0026 Analytics": [{"client_name": "Accelya Group", "created": "2024-05-29T16:38:04", "key": "KSR-5146", "priority": "High", "severity": "Minor", "status_times": {"NEW": 50.42, "UNDER INVESTIGATION": 1488.1078360808333, "[PRODUCT] UNDER INVESTIGATION": 6705.828611111111, "[REPORTER] UNDER INVESTIGATION": 1253.2913888888888}}, {"client_name": "Auchan Retail International SA ", "created": "2025-05-20T17:53:35", "key": "KSR-7638", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 436.74228071805555, "NEW": 235.7913888888889, "UNDER INVESTIGATION": 279.85555555555555}}, {"client_name": "AxisBank", "created": "2025-05-09T13:35:19", "key": "KSR-7459", "priority": "High", "severity": "Major", "status_times": {"NEW": 146.9961111111111, "UNDER INVESTIGATION": 1073.697558616389}}, {"client_name": "Banco Santander", "created": "2025-06-23T15:49:30", "key": "KSR-7926", "priority": "High", "severity": "Major", "status_times": {"New": 138.45728155722222}}, {"client_name": "Banco Santander", "created": "2025-03-19T13:59:51", "key": "KSR-7086", "priority": "High", "severity": "Major", "status_times": {"NEW": 1448.7127777777778, "UNDER INVESTIGATION": 995.5720038380555}}, {"client_name": "Cedar Gate Technologies", "created": "2025-05-16T15:19:35", "key": "KSR-7609", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 238.7225, "UNDER INVESTIGATION": 812.2333934469444}}, {"client_name": "CedarGate", "created": "2025-01-09T08:51:43", "key": "KSR-6607", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2213.5172222222222, "IN PLANNING": 0.0005555555555555556, "IN PROGRESS": 1891.7728380522221, "NEW": 0.07527777777777778, "[PRODUCT] UNDER INVESTIGATION": 0.05444444444444444}}, {"client_name": "Copeland Corp ", "created": "2025-06-17T19:48:10", "key": "KSR-7884", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 3.020277777777778, "UNDER INVESTIGATION": 275.4592270975}}, {"client_name": "GAIG", "created": "2025-01-10T10:42:38", "key": "KSR-6622", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2446.9245054069447, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 1632.3238888888889, "NEW": 0.3219444444444444, "[PRODUCT] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "Gcash", "created": "2024-11-12T16:15:33", "key": "KSR-6256", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 1323.0891666666666, "IN FINAL REVIEW": 4123.166450023055, "IN PLANNING": 0.004722222222222222, "IN PROGRESS": 22.202222222222222, "NEW": 20.915, "[PRODUCT] UNDER INVESTIGATION": 0.6455555555555555}}, {"client_name": "https://katalon-inc.lightning.force.com/lightning/r/Case/500RA00000akn9FYAQ/view", "created": "2025-06-19T19:36:39", "key": "KSR-7910", "priority": "Medium", "severity": "Cosmetic", "status_times": {"NEW": 1.7583333333333333, "UNDER INVESTIGATION": 228.91311729194445}}], "Studio": [{"client_name": "Adira Finance", "created": "2025-04-24T15:24:47", "key": "KSR-7352", "priority": "High", "severity": "Minor", "status_times": {"CLOSED": 0.0011111111111111111, "IN FINAL REVIEW": 189.14555555555555, "NEW": 7.421388888888889, "UNDER INVESTIGATION": 1299.0803361202777, "[PRODUCT] UNDER INVESTIGATION": 18.58388888888889, "[REPORTER] UNDER INVESTIGATION": 64.63694444444444}}, {"client_name": "AT\u0026T", "created": "2025-05-13T18:20:04", "key": "KSR-7540", "priority": "High", "severity": "Minor", "status_times": {"NEW": 6.5841666666666665, "UNDER INVESTIGATION": 1113.3636695183334}}, {"client_name": "Axis Bank", "created": "2025-02-26T09:50:14", "key": "KSR-6921", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 0.0011111111111111111, "IN PROGRESS": 671.5356141052778, "NEW": 0.7202777777777778, "UNDER INVESTIGATION": 816.5652777777777, "[PRODUCT] UNDER INVESTIGATION": 1408.368611111111, "[REPORTER] UNDER INVESTIGATION": 55.25416666666667}}, {"client_name": "Axis Bank", "created": "2025-02-20T17:42:52", "key": "KSR-6873", "priority": "High", "severity": "Critical", "status_times": {"NEW": 88.23944444444444, "UNDER INVESTIGATION": 1488.10144748, "[PRODUCT] UNDER INVESTIGATION": 1408.3727777777779, "[REPORTER] UNDER INVESTIGATION": 103.85416666666667}}, {"client_name": "Banco Santander", "created": "2025-06-23T18:44:54", "key": "KSR-7930", "priority": "High", "severity": "Minor", "status_times": {"NEW": 14.634166666666667, "UNDER INVESTIGATION": 120.89978152194445}}, {"client_name": "Banco Santander", "created": "2025-03-20T12:24:08", "key": "KSR-7105", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 2224.5345038169444, "NEW": 5.295277777777778, "[PRODUCT] UNDER INVESTIGATION": 192.05027777777778}}, {"client_name": "Bell", "created": "2025-04-11T14:14:29", "key": "KSR-7266", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 1741.9536705391668, "NEW": 150.08583333333334, "[REPORTER] UNDER INVESTIGATION": 0.001388888888888889}}, {"client_name": "bimbomnichanel@gmail.com", "created": "2025-02-18T16:31:03", "key": "KSR-6855", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2729.7686705894444, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 213.94416666666666, "NEW": 0.0033333333333333335, "[PRODUCT] UNDER INVESTIGATION": 194.04777777777778}}, {"client_name": "Cardinal Health", "created": "2025-06-23T15:55:26", "key": "KSR-7928", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 44.443392958333334, "NEW": 2.468888888888889, "UNDER INVESTIGATION": 91.44611111111111}}, {"client_name": "Cardinal Health ", "created": "2025-06-16T14:32:09", "key": "KSR-7870", "priority": "High", "severity": "Minor", "status_times": {"NEW": 49.786944444444444, "UNDER INVESTIGATION": 257.9595041313889}}, {"client_name": "Cardinal Health", "created": "2025-05-29T15:40:01", "key": "KSR-7736", "priority": "High", "severity": "Minor", "status_times": {"NEW": 21.35861111111111, "UNDER INVESTIGATION": 717.2567263836111}}, {"client_name": "Cardinal Health", "created": "2025-05-26T16:40:55", "key": "KSR-7717", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 21.661666666666665, "UNDER INVESTIGATION": 787.9386708525001}}, {"client_name": "Cardinal Health", "created": "2025-04-30T11:26:43", "key": "KSR-7391", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.8308333333333333, "UNDER INVESTIGATION": 1438.0061709825002}}, {"client_name": "Cardinal Health", "created": "2025-04-29T10:54:21", "key": "KSR-7383", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 8.213333333333333, "UNDER INVESTIGATION": 1455.1631154533334}}, {"client_name": "Cedar Gate Technologies", "created": "2025-06-11T22:21:24", "key": "KSR-7842", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 120.0211711125, "NEW": 116.62472222222222, "UNDER INVESTIGATION": 183.27972222222223}}, {"client_name": "Cedar Gate Technologies", "created": "2025-06-06T23:45:10", "key": "KSR-7808", "priority": "High", "severity": "Critical", "status_times": {"IN FINAL REVIEW": 120.00700447611112, "NEW": 2.8466666666666667, "UNDER INVESTIGATION": 415.67583333333334}}, {"client_name": "Cedar Gate Technologies", "created": "2025-05-21T00:05:11", "key": "KSR-7640", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 768.7203378622222, "NEW": 0.9069444444444444, "UNDER INVESTIGATION": 176.56861111111112}}, {"client_name": "Cedar Gate Technologies", "created": "2025-05-16T15:19:35", "key": "KSR-7609", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 238.7225, "UNDER INVESTIGATION": 812.2333934469444}}, {"client_name": "CGI Group", "created": "2025-06-18T23:58:22", "key": "KSR-7902", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 130.14944444444444, "UNDER INVESTIGATION": 120.16006029555557}}, {"client_name": "Conduent", "created": "2025-05-30T05:36:44", "key": "KSR-7740", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 644.3392270572223, "NEW": 52.12444444444444, "UNDER INVESTIGATION": 28.20638888888889}}, {"client_name": "Conduent", "created": "2025-05-12T14:00:41", "key": "KSR-7501", "priority": "High", "severity": "Minor", "status_times": {"NEW": 0.6291666666666667, "UNDER INVESTIGATION": 1147.6417270758334}}, {"client_name": "Copeland Corp ", "created": "2025-06-17T19:48:10", "key": "KSR-7884", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 3.020277777777778, "UNDER INVESTIGATION": 275.4592270975}}, {"client_name": "Deluxe", "created": "2025-06-23T22:58:04", "key": "KSR-7936", "priority": "High", "severity": "Minor", "status_times": {"NEW": 1.7880555555555555, "UNDER INVESTIGATION": 129.52644936694446}}, {"client_name": "EY US", "created": "2025-06-27T05:06:53", "key": "KSR-7989", "priority": "Medium", "severity": "Minor", "status_times": {"New": 53.167560716666664}}, {"client_name": "EZLynx", "created": "2025-03-17T21:53:18", "key": "KSR-7070", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 1607.1970051858334, "NEW": 43.27861111111111, "[REPORTER] UNDER INVESTIGATION": 833.9183333333333}}, {"client_name": "Farm Bureau Insurance of Michigan", "created": "2025-06-11T07:08:44", "key": "KSR-7833", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 137.02478298583333, "NEW": 131.66611111111112, "UNDER INVESTIGATION": 166.44583333333333}}, {"client_name": "Geeth Sagar", "created": "2025-02-27T11:28:01", "key": "KSR-6933", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 2913.949783501111, "NEW": 12.865, "[REPORTER] UNDER INVESTIGATION": 0.0005555555555555556}}, {"client_name": "General Electric", "created": "2025-05-15T16:12:01", "key": "KSR-7592", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 88.84138888888889, "IN PROGRESS": 979.5222835330555, "NEW": 5.7175, "UNDER INVESTIGATION": 0.0008333333333333334}}, {"client_name": "Government of Ontario Canada ", "created": "2025-06-26T20:35:41", "key": "KSR-7975", "priority": "High", "severity": "Minor", "status_times": {"NEW": 3.6727777777777777, "UNDER INVESTIGATION": 58.01478357361111}}, {"client_name": "Health Canada", "created": "2025-04-25T18:43:46", "key": "KSR-7364", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 1.7077777777777778, "UNDER INVESTIGATION": 1488.2797835952779, "[REPORTER] UNDER INVESTIGATION": 61.56527777777778}}, {"client_name": "HealthEdge", "created": "2025-06-24T17:12:31", "key": "KSR-7952", "priority": "High", "severity": "Major", "status_times": {"NEW": 1.2366666666666666, "UNDER INVESTIGATION": 111.83700584}}, {"client_name": "HORNBACH", "created": "2025-06-15T20:07:45", "key": "KSR-7864", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 39.13361111111111, "UNDER INVESTIGATION": 287.01950615777776}}, {"client_name": "https://katalon-inc.lightning.force.com/lightning/r/Case/500RA00000akn9FYAQ/view", "created": "2025-06-19T19:36:39", "key": "KSR-7910", "priority": "Medium", "severity": "Cosmetic", "status_times": {"NEW": 1.7583333333333333, "UNDER INVESTIGATION": 228.91311729194445}}, {"client_name": "ICON Clinical Research Ltd.", "created": "2025-06-15T10:23:09", "key": "KSR-7859", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 53.48, "UNDER INVESTIGATION": 282.41645067527776}}, {"client_name": "ICON Clinical Research Ltd.", "created": "2025-05-31T00:12:32", "key": "KSR-7749", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 120.00506181888889, "NEW": 65.22694444444444, "UNDER INVESTIGATION": 520.8413888888889}}, {"client_name": "Ilham", "created": "2025-06-02T16:46:23", "key": "KSR-7759", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 4.187777777777778, "UNDER INVESTIGATION": 637.3214507344444}}, {"client_name": "iSchemaView Inc.", "created": "2025-06-27T05:20:25", "key": "KSR-7990", "priority": "Medium", "severity": "Minor", "status_times": {"New": 52.94200635472222}}], "TestCloud": [{"client_name": "Auchan Portugal", "created": "2024-05-31T15:17:03", "key": "KSR-5172", "priority": "High", "severity": "Minor", "status_times": {"NEW": 66.23694444444445, "UNDER INVESTIGATION": 1488.0145029152777, "[REPORTER] UNDER INVESTIGATION": 7896.746666666667}}, {"client_name": "California Independent Systems Operator", "created": "2025-06-26T06:01:22", "key": "KSR-7966", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 3.956111111111111, "UNDER INVESTIGATION": 72.30339290222223}}, {"client_name": "Cardinal Health", "created": "2025-06-24T10:49:43", "key": "KSR-7942", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.7461111111111111, "UNDER INVESTIGATION": 118.70755959722221}}, {"client_name": "Cardinal Health", "created": "2025-06-23T15:55:26", "key": "KSR-7928", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 44.443392958333334, "NEW": 2.468888888888889, "UNDER INVESTIGATION": 91.44611111111111}}, {"client_name": "Cardinal Health ", "created": "2025-06-16T14:32:09", "key": "KSR-7870", "priority": "High", "severity": "Minor", "status_times": {"NEW": 49.786944444444444, "UNDER INVESTIGATION": 257.9595041313889}}, {"client_name": "Cardinal Health", "created": "2025-05-29T15:40:01", "key": "KSR-7736", "priority": "High", "severity": "Minor", "status_times": {"NEW": 21.35861111111111, "UNDER INVESTIGATION": 717.2567263836111}}, {"client_name": "Cardinal Health", "created": "2025-05-14T14:19:12", "key": "KSR-7554", "priority": "Medium", "severity": "Major", "status_times": {"IN PLANNING": 1075.9611709577778, "NEW": 0.38861111111111113, "UNDER INVESTIGATION": 23.6125}}, {"client_name": "Cardinal Health", "created": "2025-04-30T11:26:43", "key": "KSR-7391", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.8308333333333333, "UNDER INVESTIGATION": 1438.0061709825002}}, {"client_name": "Cardinal Health", "created": "2025-04-29T10:54:21", "key": "KSR-7383", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 8.213333333333333, "UNDER INVESTIGATION": 1455.1631154533334}}, {"client_name": "Cardinal Health", "created": "2025-03-31T09:54:04", "key": "KSR-7177", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 105.34416666666667, "IN PLANNING": 0.0008333333333333334, "IN PROGRESS": 11.273888888888889, "NEW": 1.2494444444444444, "UNDER INVESTIGATION": 1488.2258932758332, "[PRODUCT] UNDER INVESTIGATION": 554.2869444444444}}, {"client_name": "chatchai.bun@roojai.com", "created": "2025-06-26T11:09:36", "key": "KSR-7969", "priority": "Medium", "severity": "Major", "status_times": {"NEW": 6.048333333333333, "UNDER INVESTIGATION": 65.07394921222222}}, {"client_name": "GCash", "created": "2025-05-28T12:42:54", "key": "KSR-7729", "priority": "Medium", "severity": "Major", "status_times": {"IN FINAL REVIEW": 0.005277777777777778, "IN PROGRESS": 215.52867209972223, "NEW": 2.495277777777778, "UNDER INVESTIGATION": 547.5380555555555}}, {"client_name": "GCash", "created": "2025-05-28T10:35:29", "key": "KSR-7728", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 4.618333333333333, "UNDER INVESTIGATION": 763.0725610119445}}, {"client_name": "Gcash", "created": "2025-01-08T15:27:22", "key": "KSR-6591", "priority": "High", "severity": "Major", "status_times": {"NEW": 1.0583333333333333, "UNDER INVESTIGATION": 1488.0106165933332, "[REPORTER] UNDER INVESTIGATION": 2633.757222222222}}, {"client_name": "Gcash", "created": "2024-12-10T20:22:27", "key": "KSR-6445", "priority": "High", "severity": "Major", "status_times": {"IN FINAL REVIEW": 4150.213949954445, "NEW": 13.251666666666667, "[PRODUCT] UNDER INVESTIGATION": 650.4425}}, {"client_name": "Inslightly", "created": "2025-06-17T08:48:56", "key": "KSR-7877", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 31.66888888888889, "UNDER INVESTIGATION": 257.7978396733333}}, {"client_name": "Jainam Share Consultants Pvt Ltd", "created": "2025-06-16T13:50:48", "key": "KSR-7869", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 0.6547222222222222, "UNDER INVESTIGATION": 307.7808952813889}}, {"client_name": "Jainam Share Consultants Pvt Ltd", "created": "2025-03-24T18:44:07", "key": "KSR-7135", "priority": "High", "severity": "Major", "status_times": {"NEW": 15.311111111111112, "UNDER INVESTIGATION": 1488.1075619777778, "[PRODUCT] UNDER INVESTIGATION": 816.1283333333333}}, {"client_name": "Jazz Pakistan", "created": "2025-06-15T16:59:12", "key": "KSR-7860", "priority": "High", "severity": "Minor", "status_times": {"NEW": 21.109166666666667, "UNDER INVESTIGATION": 308.1864509177778}}, {"client_name": "Jazz Pakistan", "created": "2025-06-12T14:12:29", "key": "KSR-7849", "priority": "High", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 94.04728427777778, "NEW": 0.5027777777777778, "UNDER INVESTIGATION": 309.52416666666664}}, {"client_name": "Jazz Pakistan", "created": "2025-06-13T13:01:04", "key": "KSR-7856", "priority": "High", "severity": "Minor", "status_times": {"NEW": 1.4919444444444445, "UNDER INVESTIGATION": 379.77256207777776}}, {"client_name": "Jazz Pakistan", "created": "2025-05-23T12:17:58", "key": "KSR-7687", "priority": "High", "severity": "Major", "status_times": {"NEW": 28.164722222222224, "UNDER INVESTIGATION": 857.818117853611}}, {"client_name": "Jazz Pakistan", "created": "2025-05-15T14:01:05", "key": "KSR-7588", "priority": "High", "severity": "Major", "status_times": {"NEW": 0.22416666666666665, "UNDER INVESTIGATION": 1076.0400623236112}}, {"client_name": "Jazz Pakistan", "created": "2025-05-05T10:50:55", "key": "KSR-7417", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 1.0125, "UNDER INVESTIGATION": 1318.4211734816668}}], "TestOps - Core": [{"client_name": "AlphaGraphics", "created": "2025-06-20T22:52:39", "key": "KSR-7919", "priority": "Medium", "severity": "Minor", "status_times": {"IN FINAL REVIEW": 138.20755836944446, "NEW": 65.19583333333334, "UNDER INVESTIGATION": 0.001388888888888889}}, {"client_name": "Altec Industries ", "created": "2025-05-16T00:16:25", "key": "KSR-7594", "priority": "Low", "severity": "Minor", "status_times": {"New": 1066.0086694897223}}, {"client_name": "Banco Santander", "created": "2025-06-23T18:44:54", "key": "KSR-7930", "priority": "High", "severity": "Minor", "status_times": {"NEW": 14.634166666666667, "UNDER INVESTIGATION": 120.89978152194445}}, {"client_name": "Banco Santander", "created": "2025-06-23T15:53:27", "key": "KSR-7927", "priority": "High", "severity": "Major", "status_times": {"New": 138.39144821055555}}, {"client_name": "Banco Santander", "created": "2025-06-23T15:49:30", "key": "KSR-7926", "priority": "High", "severity": "Major", "status_times": {"New": 138.45728155722222}}, {"client_name": "Banco Santander", "created": "2025-03-19T13:59:51", "key": "KSR-7086", "priority": "High", "severity": "Major", "status_times": {"NEW": 1448.7127777777778, "UNDER INVESTIGATION": 995.5720038380555}}, {"client_name": "British Business Bank", "created": "2025-04-03T10:07:30", "key": "KSR-7201", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 125.83361111111111, "UNDER INVESTIGATION": 1488.2806150719443, "[PRODUCT] UNDER INVESTIGATION": 334.2475, "[REPORTER] UNDER INVESTIGATION": 139.79555555555555}}, {"client_name": "Canadian Blood Services ", "created": "2025-06-27T02:29:34", "key": "KSR-7982", "priority": "Medium", "severity": "Minor", "status_times": {"New": 55.78950402500001}}, {"client_name": "Cedar Gate Technologies ", "created": "2025-05-22T15:41:13", "key": "KSR-7662", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 629.5675, "UNDER INVESTIGATION": 277.0278378338889}}, {"client_name": "Customized Energy Solutions", "created": "2025-06-05T05:14:40", "key": "KSR-7783", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 303.96222222222224, "UNDER INVESTIGATION": 277.0756160083333}}, {"client_name": "Eksa\u00e9", "created": "2025-05-23T19:18:20", "key": "KSR-7695", "priority": "Low", "severity": "Minor", "status_times": {"NEW": 601.9205555555556, "UNDER INVESTIGATION": 277.05617178777777}}, {"client_name": "Fidelity Investments", "created": "2025-05-17T06:39:25", "key": "KSR-7615", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 6.189444444444445, "UNDER INVESTIGATION": 1029.4358942091667}}, {"client_name": "Flex ", "created": "2025-06-24T16:52:25", "key": "KSR-7947", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 4.399166666666667, "UNDER INVESTIGATION": 109.00950534305557}}, {"client_name": "HealthEdge ", "created": "2025-06-17T20:15:22", "key": "KSR-7885", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 65.75361111111111, "UNDER INVESTIGATION": 212.27256142750002}}], "Unknown": [{"client_name": "ICE", "created": "2024-11-21T23:24:55", "key": "KSR-6318", "priority": "Medium", "severity": "Minor", "status_times": {"NEW": 9.430277777777778, "UNDER INVESTIGATION": 1488.0183950966666, "[REPORTER] UNDER INVESTIGATION": 3769.4183333333335}}]};
+        const productKeys = Object.keys(allProductData);
+        // Gather all unique priorities and severities
+        const allPriorities = Array.from(new Set(
+            Object.values(allProductData).flatMap(issues => issues.map(item => item.priority))
+        ));
+        const allSeverities = Array.from(new Set(
+            Object.values(allProductData).flatMap(issues => issues.map(item => item.severity))
+        ));
+        let selectedPriorities = new Set(allPriorities);
+        let selectedSeverities = new Set(allSeverities);
+        let selectedProducts = new Set(productKeys.map(p => p.replace(/\s/g, '_')));
+        // Store chart instances by chartId
+        const chartInstances = {};
+
+        // SLA settings (hours)
+        let slaSettings = {
+            'Medium': { ack: 48, res: 240 },
+            'High': { ack: 24, res: 120 },
+            'Low': { ack: 72, res: 480 }
+        };
+
+        // Add JS variable to control highlight
+        let highlightViolation = true;
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... existing code ...
+            // Highlight violation checkbox
+            const highlightCheckbox = document.getElementById('highlight-violation-checkbox');
+            if (highlightCheckbox) {
+                highlightCheckbox.addEventListener('change', function() {
+                    highlightViolation = this.checked;
+                    renderAllCharts();
+                });
+            }
+        });
+
+        function getSLA(priority) {
+            return slaSettings[priority] || { ack: 24, res: 120 };
+        }
+
+        // Created time filter logic
+        let createdDaysLimit = null; // null means show all
+        function getMaxCreatedDays() {
+            let maxDays = 1;
+            const now = new Date();
+            Object.values(allProductData).forEach(issues => {
+                issues.forEach(item => {
+                    if (item.created) {
+                        const createdDate = new Date(item.created);
+                        const diffDays = Math.ceil((now - createdDate) / (1000 * 60 * 60 * 24));
+                        if (diffDays > maxDays) maxDays = diffDays;
+                    }
+                });
+            });
+            return maxDays;
+        }
+        function updateCreatedSlider() {
+            const slider = document.getElementById('created-slider');
+            const valueLabel = document.getElementById('created-slider-value');
+            const maxDays = getMaxCreatedDays();
+            slider.max = maxDays;
+            if (createdDaysLimit === null) {
+                slider.value = maxDays;
+            } else {
+                slider.value = createdDaysLimit;
+            }
+            valueLabel.textContent = `Last ${slider.value} day${slider.value == 1 ? '' : 's'}`;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... existing code ...
+            // Created slider
+            const slider = document.getElementById('created-slider');
+            slider.addEventListener('input', function() {
+                const valueLabel = document.getElementById('created-slider-value');
+                valueLabel.textContent = `Last ${this.value} day${this.value == 1 ? '' : 's'}`;
+            });
+            slider.addEventListener('change', function() {
+                createdDaysLimit = parseInt(this.value);
+                renderAllCharts();
+            });
+            // Set initial slider
+            updateCreatedSlider();
+        });
+        // Update getFilteredData to filter by created date
+        function getFilteredData(ksrData) {
+            let filtered = ksrData.filter(item => selectedPriorities.has(item.priority) && selectedSeverities.has(item.severity));
+            if (createdDaysLimit !== null) {
+                const now = new Date();
+                filtered = filtered.filter(item => {
+                    if (!item.created) return true;
+                    const createdDate = new Date(item.created);
+                    const diffDays = Math.ceil((now - createdDate) / (1000 * 60 * 60 * 24));
+                    return diffDays <= createdDaysLimit;
+                });
+            }
+            return filtered;
+        }
+
+        // Calculate SLA violation for each KSR
+        function markSLAViolations(filteredData) {
+            filteredData.forEach(item => {
+                // Ack: time in New
+                const ackTime = item.status_times['New'] || 0;
+                // Res: sum of all time in non-New, non-Closed statuses
+                let resTime = 0;
+                for (const [status, hours] of Object.entries(item.status_times)) {
+                    if (status !== 'New' && status !== 'CLOSED') {
+                        resTime += hours;
+                    }
+                }
+                const sla = getSLA(item.priority);
+                item.ack_violation = ackTime > sla.ack;
+                item.res_violation = resTime > sla.res;
+                item.ack_time = ackTime;
+                item.res_time = resTime;
+            });
+        }
+
+        function renderAllCharts() {
+            const displayedProducts = [];
+            Object.entries(allProductData).forEach(function(entry) {
+                var product = entry[0];
+                var ksrData = entry[1];
+                const safeProduct = product.replace(/\s/g, '_');
+                const chartId = "statusChart_" + safeProduct;
+                const containerId = "chart-container-" + safeProduct;
+                const container = document.getElementById(containerId);
+                // Deep clone the filtered data for this chart
+                const filteredData = JSON.parse(JSON.stringify(getFilteredData(ksrData)));
+                if (filteredData.length === 0) {
+                    // Hide chart if no data
+                    if (container) container.style.display = 'none';
+                    if (chartInstances[chartId]) {
+                        chartInstances[chartId].destroy();
+                        delete chartInstances[chartId];
+                    }
+                    return;
+                } else {
+                    if (container) container.style.display = '';
+                    displayedProducts.push(product);
+                }
+                markSLAViolations(filteredData);
+                const allStatuses = Array.from(new Set(
+                    filteredData.flatMap(item => Object.keys(item.status_times))
+                ));
+                const labels = filteredData.map(item => item.key);
+                const datasets = allStatuses.map((status, i) => {
+                    // Highlight violated KSRs with a red border if any SLA is violated
+                    const borderColor = filteredData.map(item => (highlightViolation && (item.ack_violation || item.res_violation)) ? 'red' : 'rgba(0,0,0,0)');
+                    const borderWidth = filteredData.map(item => (highlightViolation && (item.ack_violation || item.res_violation)) ? 3 : 1);
+                    return {
+                        label: status,
+                        data: filteredData.map(item => item.status_times[status] || 0),
+                        backgroundColor: `hsl(${(i * 47) % 360}, 60%, 60%)`,
+                        borderColor: borderColor,
+                        borderWidth: borderWidth,
+                        stack: 'Stack 0',
+                    };
+                });
+                if (chartInstances[chartId]) {
+                    chartInstances[chartId].destroy();
+                }
+                chartInstances[chartId] = new Chart(document.getElementById(chartId), {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Time in Status (hours) per Issue'
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        // Only show non-zero status
+                                        const value = context.raw;
+                                        if (!value) return '';
+                                        // Only show if value is non-zero
+                                        if (value === 0) return '';
+                                        return `${context.dataset.label}: ${formatDuration(value)}`;
+                                    },
+                                    afterBody: function(context) {
+                                        // Show Severity, Priority (text only), Created, Client Name, and SLA violation
+                                        if (context && context.length > 0) {
+                                            const issueIdx = context[0].dataIndex;
+                                            const issue = filteredData[issueIdx];
+                                            let lines = [];
+                                            if (issue) {
+                                                if (issue.created) {
+                                                    const d = new Date(issue.created);
+                                                    const y = d.getFullYear();
+                                                    const m = String(d.getMonth()+1).padStart(2,'0');
+                                                    const day = String(d.getDate()).padStart(2,'0');
+                                                    const h = String(d.getHours()).padStart(2,'0');
+                                                    const min = String(d.getMinutes()).padStart(2,'0');
+                                                    lines.push(`Created: ${y}-${m}-${day} ${h}:${min}`);
+                                                }
+                                                if (issue.client_name) {
+                                                    lines.push(`Client: ${issue.client_name}`);
+                                                }
+                                                lines.push(`Severity: ${issue.severity}`);
+                                                lines.push(`Priority: ${issue.priority}`);
+                                                if (issue.ack_violation) lines.push('ACK SLA Violated');
+                                                if (issue.res_violation) lines.push('RES SLA Violated');
+                                            }
+                                            return lines;
+                                        }
+                                        return [];
+                                    }
+                                },
+                                enabled: true,
+                                usePointStyle: true,
+                                displayColors: false
+                            },
+                            legend: {
+                                position: 'top',
+                            }
+                        },
+                        onClick: function(evt, elements) {
+                            if (elements && elements.length > 0) {
+                                const element = elements[0];
+                                const issueIdx = element.index;
+                                const issue = filteredData[issueIdx];
+                                if (issue && issue.key) {
+                                    const url = `https://katalon.atlassian.net/browse/${issue.key}`;
+                                    window.open(url, '_blank');
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                stacked: true,
+                                title: {
+                                    display: true,
+                                    text: 'Issue Key'
+                                }
+                            },
+                            y: {
+                                stacked: true,
+                                title: {
+                                    display: true,
+                                    text: 'Hours'
+                                },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+            console.log('Currently displayed product dashboards:', displayedProducts);
+        }
+
+        console.log('Dashboard script loaded');
+
+        // Function to apply SLA settings
+        function applySLASettings() {
+            console.log('applySLASettings function called');
+            const btn = document.getElementById('apply-sla-btn');
+            if (btn) btn.textContent = 'Applying...';
+            
+            slaSettings['Medium'].ack = parseFloat(document.getElementById('sla-ack-medium').value) || 0;
+            slaSettings['Medium'].res = parseFloat(document.getElementById('sla-res-medium').value) || 0;
+            slaSettings['High'].ack = parseFloat(document.getElementById('sla-ack-high').value) || 0;
+            slaSettings['High'].res = parseFloat(document.getElementById('sla-res-high').value) || 0;
+            slaSettings['Low'].ack = parseFloat(document.getElementById('sla-ack-low').value) || 0;
+            slaSettings['Low'].res = parseFloat(document.getElementById('sla-res-low').value) || 0;
+            
+            console.log('Updated SLA settings:', slaSettings);
+            renderAllCharts();
+            
+            if (btn) {
+                setTimeout(() => {
+                    btn.textContent = 'Apply SLA';
+                }, 500);
+            }
+        }
+
+        // Attach SLA settings listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const applyBtn = document.getElementById('apply-sla-btn');
+            if (applyBtn) {
+                applyBtn.addEventListener('click', applySLASettings);
+                console.log('SLA button event listener attached');
+            } else {
+                console.error('Apply SLA button not found');
+            }
+            // Product toggle buttons
+            document.querySelectorAll('.product-toggle-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const prod = this.getAttribute('data-product');
+                    if (selectedProducts.has(prod)) {
+                        selectedProducts.delete(prod);
+                        this.classList.remove('selected');
+                        this.classList.add('deselected');
+                    } else {
+                        selectedProducts.add(prod);
+                        this.classList.add('selected');
+                        this.classList.remove('deselected');
+                    }
+                    renderAllCharts();
+                });
+            });
+            // Priority toggle buttons
+            document.querySelectorAll('.priority-toggle-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const prio = this.getAttribute('data-priority');
+                    if (selectedPriorities.has(prio)) {
+                        selectedPriorities.delete(prio);
+                        this.classList.remove('selected');
+                        this.classList.add('deselected');
+                    } else {
+                        selectedPriorities.add(prio);
+                        this.classList.add('selected');
+                        this.classList.remove('deselected');
+                    }
+                    renderAllCharts();
+                });
+            });
+            // Severity toggle buttons
+            document.querySelectorAll('.severity-toggle-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const sev = this.getAttribute('data-severity');
+                    if (selectedSeverities.has(sev)) {
+                        selectedSeverities.delete(sev);
+                        this.classList.remove('selected');
+                        this.classList.add('deselected');
+                    } else {
+                        selectedSeverities.add(sev);
+                        this.classList.add('selected');
+                        this.classList.remove('deselected');
+                    }
+                    renderAllCharts();
+                });
+            });
+        });
+
+        renderAllCharts();
+    </script>
+</body>
+</html>
