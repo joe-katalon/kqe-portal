@@ -5,19 +5,19 @@
     "url": "comparison_report_explain_code_20250626_172709.html",
     "models": {
       "LLM1": {
-        "type": "unknown",
-        "model": "unknown",
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
       "LLM2": {
-        "type": "unknown",
-        "model": "unknown",
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
         "description": "Target Model"
       }
     },
     "llm3": {
-      "provider": "unknown",
-      "model": "unknown",
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
       "type": "evaluation"
     },
     "metrics": {
@@ -34,19 +34,19 @@
     "url": "comparison_report_generate_code_20250626_171000.html",
     "models": {
       "LLM1": {
-        "type": "unknown",
-        "model": "unknown",
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
       "LLM2": {
-        "type": "unknown",
-        "model": "unknown",
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
         "description": "Target Model"
       }
     },
     "llm3": {
-      "provider": "unknown",
-      "model": "unknown",
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
       "type": "evaluation"
     },
     "metrics": {
@@ -63,19 +63,19 @@
     "url": "comparison_report_chat_window_20250626_164459.html",
     "models": {
       "LLM1": {
-        "type": "unknown",
-        "model": "unknown",
+        "type": "katalon_ai",
+        "model": "gpt-4o-mini",
         "description": "Baseline Model"
       },
       "LLM2": {
-        "type": "unknown",
-        "model": "unknown",
+        "type": "personal_openai",
+        "model": "gpt-4o-mini",
         "description": "Target Model"
       }
     },
     "llm3": {
-      "provider": "unknown",
-      "model": "unknown",
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
       "type": "evaluation"
     },
     "metrics": {
