@@ -146,7 +146,9 @@
                     <span class="text-lg mr-2">📊</span>
                     Feature Trends
                 </h2>
-                <div id="featureTrendsContainer" class="space-y-4"></div>
+                <div class="chart-container">
+                    <canvas id="allFeaturesTrendChart" class="medium-chart w-full"></canvas>
+                </div>
             </div>
 
             <!-- Compact LLM3 Judge System -->
@@ -287,7 +289,7 @@
                 displayReports(reportsData);
                 updateCharts(reportsData);
                 updateSystemInfo(reportsData);
-                updateFeatureTrends(reportsData);
+                updateAllFeaturesTrendChart(reportsData);
             } catch (error) {
                 console.error('Error loading reports:', error);
                 document.getElementById('reportsTable').innerHTML = `
@@ -733,7 +735,7 @@
             }
 
             displayReports(filteredReports);
-            updateFeatureTrends(filteredReports);
+            updateAllFeaturesTrendChart(filteredReports);
         }
 
         // Event listeners
@@ -744,98 +746,77 @@
         // Initial load
         loadReports();
 
-        // Add feature trends chart rendering
-        function updateFeatureTrends(reports) {
-            const container = document.getElementById('featureTrendsContainer');
-            if (!container) return;
-            container.innerHTML = '';
+        // Remove updateFeatureTrends and instead add updateAllFeaturesTrendChart
+        function updateAllFeaturesTrendChart(reports) {
+            const canvas = document.getElementById('allFeaturesTrendChart');
+            if (!canvas) return;
+            const ratio = window.devicePixelRatio || 1;
+            canvas.style.height = '120px';
+            canvas.height = 120 * ratio;
+            canvas.width = canvas.offsetWidth * ratio;
+            const ctx = canvas.getContext('2d');
+            ctx.scale(ratio, ratio);
+
+            // Group reports by feature
             const features = [...new Set(reports.map(r => r.feature))];
-            features.forEach(feature => {
-                const featureReports = reports.filter(r => r.feature === feature).slice(0, 10).reverse();
-                const canvasId = `trendChart_${feature}`;
-                container.innerHTML += `
-                    <div>
-                        <div class="font-semibold mb-1">${getFeatureDisplayName(feature)}</div>
-                        <canvas id="${canvasId}" class="medium-chart w-full"></canvas>
-                    </div>
-                `;
-                setTimeout(() => {
-                    const trendCanvas = document.getElementById(canvasId);
-                    if (!trendCanvas) return;
-                    const ratio = window.devicePixelRatio || 1;
-                    trendCanvas.style.height = '120px';
-                    trendCanvas.height = 120 * ratio;
-                    trendCanvas.width = trendCanvas.offsetWidth * ratio;
-                    const ctx = trendCanvas.getContext('2d');
-                    ctx.scale(ratio, ratio);
-                    new Chart(trendCanvas, {
-                        type: 'line',
-                        data: {
-                            labels: featureReports.map(r => new Date(r.date).toLocaleDateString()),
-                            datasets: [
-                                {
-                                    label: 'Overall',
-                                    data: featureReports.map(r => r.metrics?.overall || 0),
-                                    borderColor: '#8B5CF6',
-                                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                                    tension: 0.3,
-                                    fill: true,
-                                    pointRadius: 2,
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: 'Consistency',
-                                    data: featureReports.map(r => r.metrics?.consistency || 0),
-                                    borderColor: '#3B82F6',
-                                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                                    tension: 0.3,
-                                    pointRadius: 2,
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: 'Accuracy',
-                                    data: featureReports.map(r => r.metrics?.accuracy || 0),
-                                    borderColor: '#10B981',
-                                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                                    tension: 0.3,
-                                    pointRadius: 2,
-                                    borderWidth: 2
-                                }
-                            ]
+            const colorPalette = [
+                '#8B5CF6', // violet
+                '#3B82F6', // blue
+                '#10B981', // green
+                '#F59E42', // orange
+                '#EF4444', // red
+                '#6366F1', // indigo
+                '#F472B6', // pink
+                '#FBBF24', // yellow
+            ];
+            // Get all unique dates (sorted)
+            const allDates = [...new Set(reports.map(r => r.date))].sort();
+            // Prepare datasets for each feature
+            const datasets = features.map((feature, idx) => {
+                // For each date, get the latest report for this feature
+                const data = allDates.map(date => {
+                    const report = reports.filter(r => r.feature === feature && r.date === date).slice(-1)[0];
+                    return report ? (report.metrics?.overall || 0) : null;
+                });
+                return {
+                    label: getFeatureDisplayName(feature),
+                    data: data,
+                    borderColor: colorPalette[idx % colorPalette.length],
+                    backgroundColor: colorPalette[idx % colorPalette.length] + '33',
+                    tension: 0.3,
+                    fill: false,
+                    pointRadius: 2,
+                    borderWidth: 2,
+                    spanGaps: true
+                };
+            });
+            new Chart(canvas, {
+                type: 'line',
+                data: {
+                    labels: allDates.map(d => new Date(d).toLocaleDateString()),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1,
+                            ticks: { font: { size: 8 } }
                         },
-                        options: {
-                            responsive: false,
-                            maintainAspectRatio: false,
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    max: 1,
-                                    ticks: {
-                                        font: { size: 8 }
-                                    }
-                                },
-                                x: {
-                                    ticks: {
-                                        font: { size: 8 },
-                                        maxRotation: 45
-                                    }
-                                }
-                            },
-                            plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        font: { size: 8 },
-                                        padding: 5
-                                    }
-                                }
-                            },
-                            animation: {
-                                duration: 500
-                            }
+                        x: {
+                            ticks: { font: { size: 8 }, maxRotation: 45 }
                         }
-                    });
-                }, 0);
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { size: 8 }, padding: 5 }
+                        }
+                    },
+                    animation: { duration: 500 }
+                }
             });
         }
     </script>
