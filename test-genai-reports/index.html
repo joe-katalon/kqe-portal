@@ -415,7 +415,7 @@
                 // Get LLM3 display info
                 const llm3Info = report.llm3 || { provider: 'unknown', model: 'unknown' };
                 const llm3Display = llm3Info.provider !== 'unknown' 
-                    ? `${llm3Info.provider.charAt(0).toUpperCase() + llm3Info.provider.slice(1)} ${llm3Info.model.split('-')[0]}`
+                    ? `${llm3Info.provider.charAt(0).toUpperCase() + llm3Info.provider.slice(1)} ${(llm3Info.model || llm3Info.description || 'Unknown').split('-')[0]}`
                     : 'Unknown Judge';
 
                 // Get Jira backlog score and story points
@@ -431,8 +431,8 @@
                                     ${getFeatureDisplayName(report.feature)}
                                 </div>
                                 <div class="text-xs text-gray-500">
-                                    <div>LLM1: ${report.models?.LLM1?.type || 'Unknown'} (${report.models?.LLM1?.model || 'Unknown'})</div>
-                                    <div>LLM2: ${report.models?.LLM2?.type || 'Unknown'} (${report.models?.LLM2?.model || 'Unknown'})</div>
+                                    <div>LLM1: ${report.models?.LLM1?.type || report.models?.LLM1?.description || report.models?.LLM1?.name || 'Unknown'} (${report.models?.LLM1?.model || report.models?.LLM1?.name || 'Unknown'})</div>
+                                    <div>LLM2: ${report.models?.LLM2?.type || report.models?.LLM2?.description || report.models?.LLM2?.name || 'Unknown'} (${report.models?.LLM2?.model || report.models?.LLM2?.name || 'Unknown'})</div>
                                 </div>
                             </div>
                         </td>
@@ -445,7 +445,9 @@
                                     ${new Date(report.date).toLocaleTimeString()}
                                 </div>
                                 <div class="text-xs text-blue-600 mt-1">
-                                    🧠 ${llm3Display}
+                                    🧠 ${report.llm3 && report.llm3.provider !== 'unknown' 
+                                        ? `${report.llm3.provider.charAt(0).toUpperCase() + report.llm3.provider.slice(1)} ${(report.llm3.model || report.llm3.description || 'Unknown').split('-')[0]}`
+                                        : 'Unknown Judge'}
                                 </div>
                             </div>
                         </td>
